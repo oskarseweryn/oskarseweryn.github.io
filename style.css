@@ -151,6 +151,18 @@ a:hover { color: var(--accent); }
   font-size: 15px;
 }
 
+/* ---------- About ---------- */
+.about .bio {
+  max-width: 760px;
+  font-size: 16.5px;
+  color: var(--fg-dim);
+  margin: 0;
+}
+.about .bio strong {
+  color: var(--fg);
+  font-weight: 600;
+}
+
 /* ---------- Grid of project cards ---------- */
 .grid {
   display: grid;
@@ -165,11 +177,27 @@ a:hover { color: var(--accent); }
   padding: 22px;
   transition: border-color 0.15s ease, transform 0.1s ease, background 0.15s ease;
 }
-.card:hover {
+a.card:hover {
   border-color: var(--accent);
   background: var(--bg-3);
   transform: translateY(-2px);
   color: var(--fg);
+}
+.card-soon {
+  cursor: default;
+  opacity: 0.92;
+}
+.card-soon:hover {
+  border-color: var(--line);
+  background: var(--bg-2);
+  transform: none;
+}
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
 }
 .card-tag {
   font-family: var(--mono);
@@ -177,7 +205,31 @@ a:hover { color: var(--accent); }
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 14px;
+}
+.status {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--fg-mute);
+  background: var(--bg-3);
+  white-space: nowrap;
+}
+.status-live {
+  color: var(--accent);
+  border-color: rgba(116, 240, 192, 0.35);
+  background: rgba(116, 240, 192, 0.08);
+}
+.status-progress {
+  color: var(--accent-2);
+  border-color: rgba(143, 185, 255, 0.3);
+  background: rgba(143, 185, 255, 0.08);
+}
+.status-planned {
+  color: var(--fg-mute);
 }
 .card h3 {
   font-family: var(--mono);

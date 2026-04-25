@@ -4,12 +4,12 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Oskar Seweryn — Data Scientist · AI-First Problem Solver</title>
-<meta name="description" content="Oskar Seweryn — Data Scientist and AI-first problem solver. Building ML systems, LLM agents, and quantitative trading research." />
+<meta name="description" content="Oskar Seweryn — Data Scientist and AI-first problem solver. Production ML for online travel, intelligent automation, and personal quant research." />
 <meta name="theme-color" content="#0b0d12" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0d12'/%3E%3Ctext x='50%25' y='54%25' font-family='ui-monospace,monospace' font-size='34' font-weight='700' text-anchor='middle' fill='%2374f0c0'%3Eos%3C/text%3E%3C/svg%3E" />
 
 <meta property="og:title" content="Oskar Seweryn — Data Scientist · AI-First Problem Solver" />
-<meta property="og:description" content="ML systems, LLM agents, and quantitative trading research. 8+ years across aviation analytics, financial crime detection, and intelligent automation." />
+<meta property="og:description" content="Production ML for online travel, intelligent automation, and personal quant research. AI-first by default, local-LLM by hardware." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://oskarseweryn.github.io" />
 
@@ -20,6 +20,7 @@
 <header class="nav">
   <a class="brand" href="#top">oskar<span>.seweryn</span></a>
   <nav>
+    <a href="#about">About</a>
     <a href="#work">Work</a>
     <a href="#stack">Stack</a>
     <a href="#contact">Contact</a>
@@ -32,57 +33,85 @@
   <section class="hero">
     <div class="hero-inner">
       <p class="eyebrow">Data Scientist · AI-First Problem Solver</p>
-      <h1>I ship ML systems, LLM agents,<br/>and quantitative trading research.</h1>
+      <h1>AI-first ML, agents,<br/>and the tools that ship them.</h1>
       <p class="lede">
-        8+ years across aviation analytics, financial crime detection, and intelligent automation.
-        Now building AI-first tools that compound — local-LLM fine-tuning, agentic workflows,
-        and reproducible Kaggle / open-source artifacts.
+        I build production data-science systems for online travel, intelligent automation
+        across messy real-world data, and personal quant-research tooling. Everything is
+        AI-first by default — Claude in the loop, local LLMs on the desk, reproducible
+        artifacts at the end.
       </p>
       <div class="cta-row">
-        <a class="btn primary" href="#work">See the work</a>
+        <a class="btn primary" href="#work">See what I'm building</a>
         <a class="btn ghost" href="https://github.com/oskarseweryn" target="_blank" rel="noopener">github.com/oskarseweryn</a>
       </div>
       <ul class="hero-meta">
-        <li><span>Focus</span> ML · LLM agents · Quant</li>
+        <li><span>Focus</span> ML · Agents · Quant infra</li>
         <li><span>Tooling</span> Python · SQL · Claude API</li>
         <li><span>Hardware</span> M3 Ultra · 256 GB unified</li>
       </ul>
     </div>
   </section>
 
+  <section id="about" class="section about">
+    <h2>About</h2>
+    <p class="bio">
+      I've spent years shipping data-science and ML systems inside an
+      <strong>online travel agency</strong> — the kind of problem space where data is messy,
+      stakes are real, and decisions have to hold up in production. Outside the day job, I
+      run <strong>personal quant research</strong> as a serious side practice and build
+      <strong>AI-first tooling</strong> on a Mac Studio M3 Ultra (256&nbsp;GB unified) — local
+      LLMs, agent stacks, and Claude-powered workflows that compound over time.
+    </p>
+  </section>
+
   <section id="work" class="section">
-    <h2>Featured work</h2>
-    <p class="section-sub">Public repos with shareable artifacts — code, benchmarks, and write-ups.</p>
+    <h2>Now building</h2>
+    <p class="section-sub">
+      An honest snapshot of what's in flight. Cards turn into links once the work has a
+      shareable artifact — no vaporware, no fake benchmarks.
+    </p>
 
     <div class="grid">
 
-      <a class="card" href="https://github.com/oskarseweryn/trading-lab" target="_blank" rel="noopener">
-        <div class="card-tag">Quant · Backtesting</div>
-        <h3>trading-lab</h3>
-        <p>Backtesting engine, broker automation, and end-to-end algorithmic strategy research.</p>
-        <div class="card-meta">Python · pandas · brokers API</div>
+      <a class="card" href="https://www.kaggle.com/oskarseweryn" target="_blank" rel="noopener">
+        <div class="card-head">
+          <div class="card-tag">Kaggle</div>
+          <span class="status status-live">live</span>
+        </div>
+        <h3>kaggle / oskarseweryn</h3>
+        <p>Public competition profile. The plan: medal-grade notebooks with reproducible code, clear write-ups, and AI-first iteration loops driving each submission.</p>
+        <div class="card-meta">Python · notebooks · leaderboard signal</div>
       </a>
 
-      <a class="card" href="https://github.com/oskarseweryn/ai-agents" target="_blank" rel="noopener">
-        <div class="card-tag">LLM Agents</div>
-        <h3>ai-agents</h3>
-        <p>LLM agents solving real-world business and data problems — tool use, evals, and orchestration.</p>
-        <div class="card-meta">Claude API · Python · agent stacks</div>
-      </a>
+      <div class="card card-soon" aria-disabled="true">
+        <div class="card-head">
+          <div class="card-tag">Quant infra</div>
+          <span class="status status-progress">in&nbsp;progress</span>
+        </div>
+        <h3>broker-bridge</h3>
+        <p>Tooling for talking to brokers — including the ones without a real API. Focus is on infrastructure and data plumbing for backtesting; no strategies, no signals.</p>
+        <div class="card-meta">Python · async · adapters</div>
+      </div>
 
-      <a class="card" href="https://github.com/oskarseweryn/ds-toolkit" target="_blank" rel="noopener">
-        <div class="card-tag">Data Science</div>
-        <h3>ds-toolkit</h3>
-        <p>End-to-end DS projects: raw data → feature pipelines → production-ready models.</p>
-        <div class="card-meta">scikit-learn · pandas · Docker</div>
-      </a>
+      <div class="card card-soon" aria-disabled="true">
+        <div class="card-head">
+          <div class="card-tag">LLM agents</div>
+          <span class="status status-progress">in&nbsp;progress</span>
+        </div>
+        <h3>local-agent-stack</h3>
+        <p>Agent stack tuned for a 256&nbsp;GB Mac Studio: local 70B+ dense and 100B+ MoE models, eval harnesses, tool-use scaffolding, and Claude as the orchestrator.</p>
+        <div class="card-meta">Claude API · MLX · llama.cpp</div>
+      </div>
 
-      <a class="card" href="https://github.com/oskarseweryn/ai-first-templates" target="_blank" rel="noopener">
-        <div class="card-tag">Templates</div>
+      <div class="card card-soon" aria-disabled="true">
+        <div class="card-head">
+          <div class="card-tag">Automation</div>
+          <span class="status status-planned">planned</span>
+        </div>
         <h3>ai-first-templates</h3>
-        <p>Reusable project starters built AI-first for data science and automation work.</p>
+        <p>Reusable starters for AI-first data and automation projects — Claude Code skills, hooks, and scaffolds that turn the 20× subscription into compounding leverage.</p>
         <div class="card-meta">Claude Code · Python · ergonomics</div>
-      </a>
+      </div>
 
     </div>
   </section>
@@ -116,8 +145,8 @@
       <div>
         <h3>Domain depth</h3>
         <p>
-          Aviation analytics, financial crime / AML detection, and intelligent automation — the same pattern each
-          time: messy data, regulated stakes, model decisions that must be explainable.
+          Online travel, intelligent automation, and personal quant research — the same pattern each
+          time: messy data, real-money stakes, decisions that have to hold up when humans look closer.
         </p>
       </div>
     </div>
@@ -134,6 +163,7 @@
     <p class="section-sub">Open to interesting AI / data / automation problems.</p>
     <div class="links">
       <a href="https://github.com/oskarseweryn" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="https://www.kaggle.com/oskarseweryn" target="_blank" rel="noopener">Kaggle ↗</a>
       <a href="https://www.linkedin.com/in/oskar-seweryn/" target="_blank" rel="noopener">LinkedIn ↗</a>
       <a href="mailto:seweryn.oskar@gmail.com">seweryn.oskar@gmail.com</a>
     </div>
