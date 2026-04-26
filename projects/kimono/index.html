@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sourcing kimon — szkoła judo dla dzieci</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Sourcing kimon judo</h1>
+    <p class="meta">
+      <span id="spec-line">kimona dla dzieci · białe · ~8 oz · rozmiary 110–160 cm · dostawa do Polski</span>
+      <span class="updated">Ostatnia aktualizacja danych: <time id="last-updated">—</time></span>
+    </p>
+    <div class="controls">
+      <fieldset>
+        <legend>Region</legend>
+        <label><input type="radio" name="region" value="PL" checked> Tylko Polska</label>
+        <label><input type="radio" name="region" value="ALL"> Polska + UE</label>
+      </fieldset>
+      <fieldset>
+        <legend>Liczba sztuk</legend>
+        <input type="number" id="quantity-input" value="500" min="1" max="100000" step="1">
+      </fieldset>
+      <button id="refresh-btn" class="refresh-btn" type="button">↻ Odśwież ceny i dostępność</button>
+      <p class="pricing-note" id="pricing-note"></p>
+    </div>
+  </header>
+
+  <main>
+    <table id="vendors">
+      <thead>
+        <tr>
+          <th>Sprzedawca</th>
+          <th>Kraj</th>
+          <th>Produkt</th>
+          <th class="num">Cena jednostkowa</th>
+          <th class="num total-header">500 × cena (PLN)</th>
+          <th>Rozmiary 110–160</th>
+          <th>Gramatura</th>
+          <th>Email</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="vendor-rows"></tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p>Dane odświeżane przez slash command <code>/kimono-sourcing</code> (Claude Code) oraz przez backend scrapujący każdego sprzedawcę z osobna. Ceny bez założonego rabatu — sumy to po prostu cena detaliczna × liczba sztuk. Rzeczywiste ceny hurtowe wracają w odpowiedziach na wysłane maile.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

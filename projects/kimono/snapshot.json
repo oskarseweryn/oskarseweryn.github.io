@@ -1,0 +1,279 @@
+{
+  "last_updated": "2026-04-26",
+  "spec": {
+    "count": 500,
+    "color": "białe",
+    "weight_oz": 8,
+    "size_range": "110-160",
+    "ship_to": "Polska",
+    "embroidery": "brak"
+  },
+  "fx_note": "1 EUR ≈ 4.30 PLN — kurs przybliżony; ceny w walucie oryginalnej są wiążące",
+  "pricing_note": "Ceny jednostkowe poniżej to opublikowane przez sprzedawców ceny DETALICZNE — bez założonego rabatu. Suma to proste przemnożenie ceny detalicznej × liczba sztuk. Rzeczywiste ceny hurtowe będą niższe — wzory emaili w wierszach poniżej proszą każdego sprzedawcę o realną wycenę przy podanej liczbie sztuk.",
+  "vendors": [
+    {
+      "id": "fujimae-pl",
+      "name": "FUJIMAE Polska",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "product_name": "Judoga dla dzieci FUJIMAE",
+      "product_url": "https://www.fujimae.pl/stroje-treningowe/judo/judoga-dla-dzieci-fujimae",
+      "retail_unit_pln": 99,
+      "retail_unit_label": "99 PLN",
+      "retail_total_500_pln": 49500,
+      "sizes_full_coverage": true,
+      "sizes_label": "100–200, pełen zakres",
+      "weight": "~200 g/m² (~7 oz)",
+      "notes": "Strona wspomina o warunkach hurtowych dla klubów; najbliższe dopasowanie do ~8 oz",
+      "email": "sklep@fujimae.pl",
+      "contact_url": "https://www.fujimae.pl/kontakt",
+      "email_draft": {
+        "subject": "Zapytanie hurtowe — {count} kimon judo dla dzieci",
+        "body": "Szanowni Państwo z FUJIMAE Polska,\n\nReprezentuję szkołę judo dla dzieci i planujemy zakup {count} kimon do judo dla dzieci o następującej specyfikacji:\n• gramatura ~8 oz (lekkie, beginner)\n• kolor biały\n• rozmiary 110–160 cm w mieszanej dystrybucji\n• bez haftu klubowego (wycenianego osobno)\n\nKonkretnie interesuje nas produkt:\nhttps://www.fujimae.pl/stroje-treningowe/judo/judoga-dla-dzieci-fujimae\n\nCzy mogliby Państwo przygotować ofertę hurtową na {count} sztuk z uwzględnieniem rabatu klubowego oraz podać:\n1. cenę jednostkową netto przy tej ilości,\n2. dostępność rozmiarów 110/120/130/140/150/160 cm,\n3. czas realizacji zamówienia,\n4. koszt dostawy do Polski,\n5. warunki dla opcjonalnego haftu klubowego (osobno).\n\nCzekam na Państwa ofertę.\n\nPozdrawiam serdecznie,\n[Imię i nazwisko]\n[Nazwa szkoły judo]\n[Telefon · email]"
+      }
+    },
+    {
+      "id": "judomarket-pl",
+      "name": "JudoMarket",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "product_name": "Judoga Future 2 IPPON GEAR 360G Biała",
+      "product_url": "https://judomarket.pl/en/judogi-kimona/337-969-judoga-future-2-ippon-gear-360g-biala.html",
+      "retail_unit_pln": 114,
+      "retail_unit_label": "114 PLN",
+      "retail_total_500_pln": 57000,
+      "sizes_full_coverage": true,
+      "sizes_label": "100–160, pełen zakres",
+      "weight": "335 g/m² (~10 oz)",
+      "notes": "Cięższe niż 8 oz, ale pełen zakres rozmiarów; znana marka",
+      "email": "sklep@judomarket.pl",
+      "contact_url": "https://judomarket.pl/kontakt",
+      "email_draft": {
+        "subject": "Zapytanie hurtowe — {count} kimon judo dla dzieci",
+        "body": "Szanowni Państwo z JudoMarket,\n\nReprezentuję szkołę judo dla dzieci i planujemy zakup {count} kimon do judo dla dzieci o następującej specyfikacji:\n• gramatura ~8 oz (lekkie, beginner)\n• kolor biały\n• rozmiary 110–160 cm w mieszanej dystrybucji\n• bez haftu klubowego (wycenianego osobno)\n\nKonkretnie interesuje nas Judoga Future 2 IPPON GEAR 360G Biała:\nhttps://judomarket.pl/en/judogi-kimona/337-969-judoga-future-2-ippon-gear-360g-biala.html\n\nCzy mogliby Państwo przygotować ofertę hurtową na {count} sztuk z uwzględnieniem rabatu klubowego oraz podać:\n1. cenę jednostkową netto przy tej ilości,\n2. dostępność rozmiarów 110/120/130/140/150/160 cm,\n3. czas realizacji zamówienia,\n4. koszt dostawy do Polski,\n5. warunki dla opcjonalnego haftu klubowego (osobno).\n\nCzekam na Państwa ofertę.\n\nPozdrawiam serdecznie,\n[Imię i nazwisko]\n[Nazwa szkoły judo]\n[Telefon · email]"
+      }
+    },
+    {
+      "id": "bushido-pl",
+      "name": "Bushido Sport",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "product_name": "DBX Bushido Judoga 350g (dziecięca)",
+      "product_url": "https://bushido-sport.pl/pol_m_Asortyment_Odziez-treningowa-i-obuwie_Kimona-do-Judo-Judogi-974.html",
+      "retail_unit_pln": 159.99,
+      "retail_unit_label": "159.99 PLN",
+      "retail_total_500_pln": 79995,
+      "sizes_full_coverage": true,
+      "sizes_label": "120–160 (pełen zakres; do potwierdzenia stan magazynowy)",
+      "weight": "350 g/m² (~10 oz)",
+      "notes": "Polski producent z Żędowic — bezpośrednia oferta od producenta zwykle bije ceny detaliczne przy większych zamówieniach",
+      "email": "biuro@bushido-sport.pl",
+      "contact_url": "https://bushido-sport.pl",
+      "email_draft": {
+        "subject": "Zapytanie hurtowe (producent) — {count} kimon judo dla dzieci",
+        "body": "Szanowni Państwo z Bushido Sport,\n\nReprezentuję szkołę judo dla dzieci i planujemy zakup {count} kimon DBX Bushido (judoga 350g, biała) o następującej specyfikacji:\n• gramatura kurtki 350 g/m² (Państwa standardowy model)\n• kolor biały\n• rozmiary 110–160 cm w mieszanej dystrybucji\n• bez haftu klubowego (wycenianego osobno)\n\nProdukt referencyjny:\nhttps://bushido-sport.pl/pol_m_Asortyment_Odziez-treningowa-i-obuwie_Kimona-do-Judo-Judogi-974.html\n\nPonieważ Państwo są producentem, zwracam się bezpośrednio. Czy mogliby Państwo przygotować ofertę hurtową producencką na {count} sztuk oraz podać:\n1. cenę jednostkową netto przy tej ilości,\n2. dostępność stocku w rozmiarach 110/120/130/140/150/160 cm (lub czas dorobienia brakujących rozmiarów),\n3. czas realizacji zamówienia,\n4. koszt dostawy do Polski,\n5. warunki dla opcjonalnego haftu klubowego (osobno).\n\nCzekam na Państwa ofertę.\n\nPozdrawiam serdecznie,\n[Imię i nazwisko]\n[Nazwa szkoły judo]\n[Telefon · email]"
+      }
+    },
+    {
+      "id": "daniken-pl",
+      "name": "Daniken",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "product_name": "Kimono judo dla dzieci",
+      "product_url": "https://www.daniken.com.pl/kimona-dla-dzieci",
+      "retail_unit_pln": 155,
+      "retail_unit_label": "155 PLN",
+      "retail_total_500_pln": 77500,
+      "sizes_full_coverage": false,
+      "sizes_label": "110–130 (brak większych rozmiarów)",
+      "weight": "nie podano",
+      "notes": "Zakres kończy się na 130 cm — przed zamówieniem ustal dostępność 140–160 cm",
+      "email": "biuro@daniken.com.pl",
+      "contact_url": "https://www.daniken.com.pl",
+      "email_draft": {
+        "subject": "Zapytanie hurtowe — {count} kimon judo dla dzieci (rozmiary 110–160)",
+        "body": "Szanowni Państwo z Daniken,\n\nReprezentuję szkołę judo dla dzieci i planujemy zakup {count} kimon do judo dla dzieci o następującej specyfikacji:\n• gramatura ~8 oz (lekkie, beginner)\n• kolor biały\n• rozmiary 110–160 cm w mieszanej dystrybucji\n• bez haftu klubowego (wycenianego osobno)\n\nNa Państwa stronie widzę rozmiary 110–130. Pytanie kluczowe: czy są dostępne większe rozmiary do 160 cm (np. 140, 150, 160) — bądź na zamówienie?\n\nKategoria referencyjna:\nhttps://www.daniken.com.pl/kimona-dla-dzieci\n\nCzy mogliby Państwo przygotować ofertę hurtową na {count} sztuk z uwzględnieniem rabatu klubowego oraz podać:\n1. cenę jednostkową netto przy tej ilości,\n2. potwierdzenie pełnego zakresu rozmiarów 110/120/130/140/150/160 cm,\n3. czas realizacji zamówienia (zwłaszcza dla rozmiarów spoza obecnej oferty),\n4. koszt dostawy do Polski,\n5. warunki dla opcjonalnego haftu klubowego (osobno).\n\nCzekam na Państwa ofertę.\n\nPozdrawiam serdecznie,\n[Imię i nazwisko]\n[Nazwa szkoły judo]\n[Telefon · email]"
+      }
+    },
+    {
+      "id": "groundgame-pl",
+      "name": "Ground Game",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "product_name": "Deshi 2.0 White (dziecięce)",
+      "product_url": "https://groundgame.com/product-pol-1614-GI-Kimono-do-Judo-dla-dzieci-Deshi-2-0-Biale.html",
+      "retail_unit_pln": 179.99,
+      "retail_unit_label": "179.99 PLN",
+      "retail_total_500_pln": 89995,
+      "sizes_full_coverage": false,
+      "sizes_label": "100–150 (brak 160)",
+      "weight": "kurtka 350 g/m², spodnie 8 oz bawełna",
+      "notes": "Gramatura spodni zgadza się z 8 oz, ale zakres kończy się na 150 cm — ustal dostępność 160 cm",
+      "email": "shop@groundgame.com",
+      "contact_url": "https://groundgame.com",
+      "email_draft": {
+        "subject": "Zapytanie hurtowe — {count} kimon Deshi 2.0 dla dzieci",
+        "body": "Szanowni Państwo z Ground Game,\n\nReprezentuję szkołę judo dla dzieci i planujemy zakup {count} kimon Deshi 2.0 White dla dzieci o następującej specyfikacji:\n• model: Deshi 2.0 White\n• kolor biały\n• rozmiary 110–160 cm w mieszanej dystrybucji\n• bez haftu klubowego (wycenianego osobno)\n\nProdukt referencyjny:\nhttps://groundgame.com/product-pol-1614-GI-Kimono-do-Judo-dla-dzieci-Deshi-2-0-Biale.html\n\nWidzę, że obecny zakres to 100–150 cm. Pytanie kluczowe: czy rozmiar 160 cm jest dostępny lub możliwy do dorobienia?\n\nCzy mogliby Państwo przygotować ofertę hurtową na {count} sztuk z uwzględnieniem rabatu klubowego oraz podać:\n1. cenę jednostkową netto przy tej ilości,\n2. potwierdzenie pełnego zakresu rozmiarów 110/120/130/140/150/160 cm,\n3. czas realizacji zamówienia,\n4. koszt dostawy do Polski,\n5. warunki dla opcjonalnego haftu klubowego (osobno).\n\nCzekam na Państwa ofertę.\n\nPozdrawiam serdecznie,\n[Imię i nazwisko]\n[Nazwa szkoły judo]\n[Telefon · email]"
+      }
+    },
+    {
+      "id": "uone-pl",
+      "name": "Uone",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "product_name": "Judogi Uone 350 gsm biała",
+      "product_url": "https://www.u1.net.pl/judogi-uone-350-gsm-biala-dla-dziewczynki/",
+      "retail_unit_pln": 219,
+      "retail_unit_label": "219 PLN",
+      "retail_total_500_pln": 109500,
+      "sizes_full_coverage": true,
+      "sizes_label": "100–190, pełen zakres",
+      "weight": "350 g/m² (~10 oz)",
+      "notes": "Polski producent z 2-letnią gwarancją na szwy; wysoka cena detaliczna",
+      "email": "sklep@u1.net.pl",
+      "contact_url": "https://www.u1.net.pl/kontakt",
+      "email_draft": {
+        "subject": "Zapytanie hurtowe — {count} kimon Uone dla dzieci",
+        "body": "Szanowni Państwo z Uone,\n\nReprezentuję szkołę judo dla dzieci i planujemy zakup {count} kimon Uone (judogi 350g, białe) o następującej specyfikacji:\n• gramatura 350 g/m² (Państwa standard)\n• kolor biały\n• rozmiary 110–160 cm w mieszanej dystrybucji\n• bez haftu klubowego (wycenianego osobno)\n\nProdukt referencyjny:\nhttps://www.u1.net.pl/judogi-uone-350-gsm-biala-dla-dziewczynki/\n\nPonieważ Państwo są producentem, zwracam się bezpośrednio. Czy mogliby Państwo przygotować ofertę hurtową producencką na {count} sztuk oraz podać:\n1. cenę jednostkową netto przy tej ilości,\n2. dostępność stocku w rozmiarach 110/120/130/140/150/160 cm (lub czas dorobienia),\n3. czas realizacji zamówienia,\n4. koszt dostawy do Polski,\n5. warunki dla opcjonalnego haftu klubowego (osobno).\n\nCzekam na Państwa ofertę.\n\nPozdrawiam serdecznie,\n[Imię i nazwisko]\n[Nazwa szkoły judo]\n[Telefon · email]"
+      }
+    },
+    {
+      "id": "imssport-pl",
+      "name": "IMS Sport",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "product_name": "Adidas Club Junior J350",
+      "product_url": "https://imssport.pl/pl/p/Judoga-adidas-Club-Junior-J350/75",
+      "retail_unit_pln": 154,
+      "retail_unit_label": "154 PLN (promocja; cena katalogowa 196)",
+      "retail_total_500_pln": 77000,
+      "sizes_full_coverage": true,
+      "sizes_label": "100–180, pełen zakres",
+      "weight": "350 g/m²",
+      "notes": "Atest PZJ, premia za markę",
+      "email": "biuro@imssport.pl",
+      "contact_url": "https://imssport.pl/kontakt",
+      "email_draft": {
+        "subject": "Zapytanie hurtowe — {count} kimon Adidas Club J350 dla dzieci",
+        "body": "Szanowni Państwo z IMS Sport,\n\nReprezentuję szkołę judo dla dzieci i planujemy zakup {count} kimon Adidas Club Junior J350 o następującej specyfikacji:\n• model: Adidas Club Junior J350\n• kolor biały\n• rozmiary 110–160 cm w mieszanej dystrybucji\n• bez haftu klubowego (wycenianego osobno)\n\nProdukt referencyjny:\nhttps://imssport.pl/pl/p/Judoga-adidas-Club-Junior-J350/75\n\nCzy mogliby Państwo przygotować ofertę hurtową na {count} sztuk z uwzględnieniem rabatu klubowego oraz podać:\n1. cenę jednostkową netto przy tej ilości,\n2. dostępność rozmiarów 110/120/130/140/150/160 cm,\n3. czas realizacji zamówienia,\n4. koszt dostawy do Polski,\n5. warunki dla opcjonalnego haftu klubowego (osobno).\n\nCzekam na Państwa ofertę.\n\nPozdrawiam serdecznie,\n[Imię i nazwisko]\n[Nazwa szkoły judo]\n[Telefon · email]"
+      }
+    },
+    {
+      "id": "gladiator-pl",
+      "name": "Gladiator-Fight",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "product_name": "DAX Kids 420g (białe)",
+      "product_url": "https://gladiator-fight.com/pl/p/Kimono-do-Judo-BJJ-dla-dzieci-biale/87",
+      "retail_unit_pln": 99,
+      "retail_unit_label": "99 PLN",
+      "retail_total_500_pln": 49500,
+      "sizes_full_coverage": true,
+      "sizes_label": "110–158, pełen zakres",
+      "weight": "420 g/m² (ciężkie)",
+      "notes": "Najtańsza opcja, ale wyraźnie cięższe niż 8 oz",
+      "email": "gladiator.wroclaw@gmail.com",
+      "contact_url": "https://gladiator-fight.com",
+      "email_draft": {
+        "subject": "Zapytanie hurtowe — {count} kimon judo DAX dla dzieci",
+        "body": "Szanowni Państwo z Gladiator-Fight,\n\nReprezentuję szkołę judo dla dzieci i planujemy zakup {count} kimon DAX (kids, białe) o następującej specyfikacji:\n• model: DAX Kids 420g (Państwa oferta)\n• kolor biały\n• rozmiary 110–158 cm w mieszanej dystrybucji\n• bez haftu klubowego (wycenianego osobno)\n\nProdukt referencyjny:\nhttps://gladiator-fight.com/pl/p/Kimono-do-Judo-BJJ-dla-dzieci-biale/87\n\nCzy mogliby Państwo przygotować ofertę hurtową na {count} sztuk z uwzględnieniem rabatu klubowego oraz podać:\n1. cenę jednostkową netto przy tej ilości,\n2. dostępność rozmiarów 110/120/130/140/150/158 cm,\n3. czas realizacji zamówienia,\n4. koszt dostawy do Polski,\n5. warunki dla opcjonalnego haftu klubowego (osobno).\n\nCzekam na Państwa ofertę.\n\nPozdrawiam serdecznie,\n[Imię i nazwisko]\n[Nazwa szkoły judo]\n[Telefon · email]"
+      }
+    },
+    {
+      "id": "mmaniak-pl",
+      "name": "MMAniak",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "product_name": "StormCloud Hajime (z białym pasem gratis)",
+      "product_url": "https://mmaniak.pl/kimona-judo-judogi-dla-dzieci/13067-54386-stormcloud-judoga-dla-dzieci-biala-z-bialym-pasem-gratis.html",
+      "retail_unit_pln": 149,
+      "retail_unit_label": "149 PLN",
+      "retail_total_500_pln": 74500,
+      "sizes_full_coverage": false,
+      "sizes_label": "120–180 (brak 110)",
+      "weight": "nie podano",
+      "notes": "Zakres zaczyna się od 120 cm — ustal dostępność 110 cm lub zastosuj regułę 'rozmiar wyżej'",
+      "email": "bok@mmaniak.pl",
+      "contact_url": "https://mmaniak.pl/kontakt",
+      "email_draft": {
+        "subject": "Zapytanie hurtowe — {count} kimon StormCloud Hajime dla dzieci",
+        "body": "Szanowni Państwo z MMAniak,\n\nReprezentuję szkołę judo dla dzieci i planujemy zakup {count} kimon StormCloud Hajime dla dzieci o następującej specyfikacji:\n• kolor biały\n• rozmiary 110–160 cm w mieszanej dystrybucji\n• bez haftu klubowego (wycenianego osobno)\n\nProdukt referencyjny:\nhttps://mmaniak.pl/kimona-judo-judogi-dla-dzieci/13067-54386-stormcloud-judoga-dla-dzieci-biala-z-bialym-pasem-gratis.html\n\nWidzę, że obecny zakres to 120–180 cm. Pytanie kluczowe: czy rozmiar 110 cm jest dostępny lub czy mogą Państwo polecić odpowiednik dla najmłodszej grupy?\n\nCzy mogliby Państwo przygotować ofertę hurtową na {count} sztuk z uwzględnieniem rabatu klubowego oraz podać:\n1. cenę jednostkową netto przy tej ilości,\n2. potwierdzenie pełnego zakresu rozmiarów 110/120/130/140/150/160 cm,\n3. czas realizacji zamówienia,\n4. koszt dostawy do Polski,\n5. warunki dla opcjonalnego haftu klubowego (osobno).\n\nCzekam na Państwa ofertę.\n\nPozdrawiam serdecznie,\n[Imię i nazwisko]\n[Nazwa szkoły judo]\n[Telefon · email]"
+      }
+    },
+    {
+      "id": "dobrekimona-pl",
+      "name": "Dobrekimona",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "product_name": "Bushido Judoga 350g (dziecięca, biała)",
+      "product_url": "https://dobrekimona.pl/pl/p/BUSHIDO-Judoga-Kimono-do-Judo-Biale-Dzieciece-350g/6032",
+      "retail_unit_pln": 159.99,
+      "retail_unit_label": "159.99 PLN",
+      "retail_total_500_pln": 79995,
+      "sizes_full_coverage": true,
+      "sizes_label": "120–160, pełen zakres",
+      "weight": "350 g/m²",
+      "notes": "Sklep odsprzedający produkty Bushido — przydatny jako benchmark cenowy względem oferty producenta",
+      "email": "sklep@dobrekimona.pl",
+      "contact_url": "https://dobrekimona.pl/kontakt",
+      "email_draft": {
+        "subject": "Zapytanie hurtowe — {count} kimon Bushido 350g dla dzieci",
+        "body": "Szanowni Państwo z Dobrekimona,\n\nReprezentuję szkołę judo dla dzieci i planujemy zakup {count} kimon Bushido Judoga 350g (kids, białe) o następującej specyfikacji:\n• model: BUSHIDO Judoga 350g, biała, dziecięca\n• rozmiary 110–160 cm w mieszanej dystrybucji\n• bez haftu klubowego (wycenianego osobno)\n\nProdukt referencyjny:\nhttps://dobrekimona.pl/pl/p/BUSHIDO-Judoga-Kimono-do-Judo-Biale-Dzieciece-350g/6032\n\nCzy mogliby Państwo przygotować ofertę hurtową na {count} sztuk z uwzględnieniem rabatu klubowego oraz podać:\n1. cenę jednostkową netto przy tej ilości,\n2. dostępność rozmiarów 110/120/130/140/150/160 cm,\n3. czas realizacji zamówienia,\n4. koszt dostawy do Polski,\n5. warunki dla opcjonalnego haftu klubowego (osobno).\n\nCzekam na Państwa ofertę.\n\nPozdrawiam serdecznie,\n[Imię i nazwisko]\n[Nazwa szkoły judo]\n[Telefon · email]"
+      }
+    },
+    {
+      "id": "kwon-de",
+      "name": "KWON",
+      "country": "DE",
+      "region": "EU",
+      "language": "de",
+      "product_name": "KWON CLUBLINE Judoanzug Randori",
+      "product_url": "https://www.kwon.com/KWON-CLUBLINE-Judoanzug-Randori",
+      "retail_unit_pln": 132,
+      "retail_unit_label": "€30.70 (~132 PLN)",
+      "retail_total_500_pln": 65961,
+      "sizes_full_coverage": true,
+      "sizes_label": "120–200 (110 cm do potwierdzenia)",
+      "weight": "8.5 oz bawełna",
+      "notes": "Pan-europejski kanał B2B z formalnym programem dealerskim/klubowym — silny punkt odniesienia w negocjacjach z polskimi sprzedawcami",
+      "email": "info@kwon.de",
+      "contact_url": "https://www.kwon.com/kontakt",
+      "email_draft": {
+        "subject": "Großhandelsanfrage — {count} Kinder-Judoanzüge (Clubline Randori)",
+        "body": "Sehr geehrte Damen und Herren von KWON,\n\nich vertrete eine Kinder-Judoschule in Polen und plane den Bezug von {count} Judoanzügen für Kinder (Modell KWON Clubline Randori, weiß) mit folgender Spezifikation:\n• Stoffgewicht ca. 8 oz (leicht, Anfänger-Qualität)\n• Farbe: weiß\n• Größen 110–160 cm in gemischter Verteilung\n• Ohne Vereinsstickerei (separat zu kalkulieren)\n\nReferenzprodukt:\nhttps://www.kwon.com/KWON-CLUBLINE-Judoanzug-Randori\n\nKönnten Sie uns bitte ein Großhandelsangebot für {count} Stück über Ihr Händler-/Vereinsprogramm zusenden, mit folgenden Angaben:\n1. Stückpreis netto bei dieser Menge,\n2. Verfügbarkeit der Größen 110/120/130/140/150/160 cm (insbesondere ob 110 cm im Sortiment ist),\n3. Lieferzeit,\n4. Versandkosten nach Polen,\n5. Konditionen für optionale Vereinsstickerei (separat).\n\nIch freue mich auf Ihr Angebot.\n\nMit freundlichen Grüßen,\n[Vorname Nachname]\n[Name der Judoschule]\n[Telefon · E-Mail]"
+      }
+    },
+    {
+      "id": "sbj-de",
+      "name": "SBJ-Sportland",
+      "country": "DE",
+      "region": "EU",
+      "language": "de",
+      "product_name": "DAX Bambini Judo Suit White",
+      "product_url": "https://www.sbj-sportland.de/en/Judo-suit-bambini-white.html",
+      "retail_unit_pln": 116,
+      "retail_unit_label": "€26.95 (~116 PLN)",
+      "retail_total_500_pln": 58000,
+      "sizes_full_coverage": true,
+      "sizes_label": "Co 10 cm w zakresie dziecięcym",
+      "weight": "390–450 g/m²",
+      "notes": "Konkurencyjne ceny w EUR; ~7% kurczliwości zaznaczone na stronie produktu",
+      "email": "sportland@sbj-sportland.de",
+      "contact_url": "https://www.sbj-sportland.de/de/info/kontakt.html",
+      "email_draft": {
+        "subject": "Großhandelsanfrage — {count} Kinder-Judoanzüge (DAX Bambini)",
+        "body": "Sehr geehrte Damen und Herren von SBJ-Sportland,\n\nich vertrete eine Kinder-Judoschule in Polen und plane den Bezug von {count} Judoanzügen für Kinder (Modell DAX Bambini, weiß) mit folgender Spezifikation:\n• Stoffgewicht ca. 8 oz, Anfänger-Qualität\n• Farbe: weiß\n• Größen 110–160 cm in gemischter Verteilung\n• Ohne Vereinsstickerei (separat zu kalkulieren)\n\nReferenzprodukt:\nhttps://www.sbj-sportland.de/en/Judo-suit-bambini-white.html\n\nKönnten Sie uns bitte ein Großhandelsangebot für {count} Stück mit Vereins-/Mengenrabatt zusenden, mit folgenden Angaben:\n1. Stückpreis netto bei dieser Menge,\n2. Verfügbarkeit der Größen 110/120/130/140/150/160 cm,\n3. Lieferzeit,\n4. Versandkosten nach Polen,\n5. Konditionen für optionale Vereinsstickerei (separat).\n\nIch freue mich auf Ihr Angebot.\n\nMit freundlichen Grüßen,\n[Vorname Nachname]\n[Name der Judoschule]\n[Telefon · E-Mail]"
+      }
+    }
+  ]
+}
