@@ -1,34 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sourcing kimon — szkoła judo dla dzieci</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Sourcing kimon judo</h1>
-    <p class="meta">
-      <span id="spec-line">kimona dla dzieci · białe · ~8 oz · rozmiary 110–160 cm · dostawa do Polski</span>
-      <span class="updated">Ostatnia aktualizacja danych: <time id="last-updated">—</time></span>
-    </p>
-    <div class="controls">
-      <fieldset>
-        <legend>Region</legend>
-        <label><input type="radio" name="region" value="PL" checked> Tylko Polska</label>
-        <label><input type="radio" name="region" value="ALL"> Polska + UE</label>
-      </fieldset>
-      <fieldset>
-        <legend>Liczba sztuk</legend>
-        <input type="number" id="quantity-input" value="500" min="1" max="100000" step="1">
-      </fieldset>
-      <button id="refresh-btn" class="refresh-btn" type="button">↻ Odśwież ceny i dostępność</button>
-      <p class="pricing-note" id="pricing-note"></p>
-    </div>
-  </header>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>kimono · sourcing dla szkoły judo · Oskar Seweryn</title>
+<meta name="description" content="Sourcing-tool dla szkoły judo dla dzieci: porównanie 12 sklepów (PL + UE), live ceny i dostępność, spersonalizowany wzór maila z prośbą o rabat per sklep." />
+<meta name="theme-color" content="#0b0d12" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0d12'/%3E%3Ctext x='50%25' y='54%25' font-family='ui-monospace,monospace' font-size='34' font-weight='700' text-anchor='middle' fill='%2374f0c0'%3Eos%3C/text%3E%3C/svg%3E" />
 
-  <main>
+<link rel="stylesheet" href="/style.css" />
+<link rel="stylesheet" href="./style.css" />
+<noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body class="subpage page-kimono">
+
+<header class="nav" data-nav>
+  <a class="brand" href="/">oskar<span>.seweryn</span></a>
+  <nav>
+    <a href="/#about">About</a>
+    <a href="/#work">Work</a>
+    <a href="/projects/">Projects</a>
+    <a href="/blog/">Blog</a>
+    <a href="/#contact">Contact</a>
+    <a class="nav-cta" href="https://github.com/oskarseweryn" target="_blank" rel="noopener">GitHub →</a>
+  </nav>
+</header>
+
+<main>
+  <a class="back" href="/projects/" data-reveal>← back to projects</a>
+
+  <div class="page-head">
+    <p class="eyebrow" data-reveal>Sourcing automation · live demo</p>
+    <h1 data-reveal>kimono</h1>
+    <p data-reveal>
+      Sourcing-tool dla szkoły judo dla dzieci. Porównanie 12 sklepów PL + UE, ceny detaliczne × wybrana liczba sztuk, pokrycie rozmiarów per sklep, oraz spersonalizowany wzór maila (PL lub DE) z prośbą o rabat — gotowy do wysłania w jedno kliknięcie.
+    </p>
+  </div>
+
+  <div class="controls" data-reveal>
+    <fieldset>
+      <legend>Region</legend>
+      <label><input type="radio" name="region" value="PL" checked> Tylko Polska</label>
+      <label><input type="radio" name="region" value="ALL"> Polska + UE</label>
+    </fieldset>
+    <fieldset>
+      <legend>Liczba sztuk</legend>
+      <input type="number" id="quantity-input" value="500" min="1" max="100000" step="1">
+    </fieldset>
+    <button id="refresh-btn" class="btn primary" type="button">↻ Odśwież ceny i dostępność</button>
+    <p class="pricing-note" id="pricing-note"></p>
+    <p class="meta-line">Ostatnia aktualizacja danych: <time id="last-updated">—</time></p>
+  </div>
+
+  <div class="table-wrap" data-reveal>
     <table id="vendors">
       <thead>
         <tr>
@@ -45,12 +69,21 @@
       </thead>
       <tbody id="vendor-rows"></tbody>
     </table>
-  </main>
+  </div>
 
-  <footer>
-    <p>Dane odświeżane przez slash command <code>/kimono-sourcing</code> (Claude Code) oraz przez backend scrapujący każdego sprzedawcę z osobna. Ceny bez założonego rabatu — sumy to po prostu cena detaliczna × liczba sztuk. Rzeczywiste ceny hurtowe wracają w odpowiedziach na wysłane maile.</p>
-  </footer>
+  <p class="footnote" data-reveal>
+    Dane odświeżane przez slash command <code>/kimono-sourcing</code> (Claude Code) oraz przez backend FastAPI scrapujący każdego sprzedawcę z osobna. Ceny bez założonego rabatu — sumy to po prostu cena detaliczna × liczba sztuk. Rzeczywiste ceny hurtowe wracają w odpowiedziach na wysłane maile.
+  </p>
 
-  <script src="app.js"></script>
+</main>
+
+<footer>
+  <span>© <span id="yr"></span> Oskar Seweryn</span>
+  <span class="sep">·</span>
+  <span>Built static. Hosted on GitHub Pages.</span>
+</footer>
+
+<script src="/main.js" defer></script>
+<script src="app.js"></script>
 </body>
 </html>
