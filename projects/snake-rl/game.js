@@ -193,15 +193,24 @@
 
     function drawBoard(game, box, label, color) {
       const { x: x0, y: y0, w, h } = box;
-      const cell = Math.floor(Math.min(w, h) / GRID);
+      // Leave 6px on each side for the framed border so it never clips.
+      const cell = Math.floor(Math.min(w - 12, h - 12) / GRID);
       const bw = cell * GRID;
       const bh = cell * GRID;
       const ox = x0 + ((w - bw) >> 1);
       const oy = y0 + ((h - bh) >> 1);
 
-      // frame
+      const accent = color === 'agent' ? COLORS.bodyAgent : COLORS.bodyHuman;
+      const fx0 = ox - 6, fy0 = oy - 6, fw = bw + 12, fh = bh + 12;
+
+      // frame: darker fill + 1px tinted outline matching the player colour
       ctx.fillStyle = '#0d1018';
-      ctx.fillRect(ox - 4, oy - 4, bw + 8, bh + 8);
+      ctx.fillRect(fx0, fy0, fw, fh);
+      ctx.strokeStyle = color === 'agent'
+        ? 'rgba(143, 185, 255, 0.45)'
+        : 'rgba(116, 240, 192, 0.45)';
+      ctx.lineWidth = 1;
+      ctx.strokeRect(fx0 + 0.5, fy0 + 0.5, fw - 1, fh - 1);
 
       // grid lines (subtle)
       ctx.strokeStyle = COLORS.gridLine;
@@ -217,11 +226,11 @@
 
       // food
       if (game.food.x >= 0) {
-        const fx = ox + game.food.x * cell;
-        const fy = oy + game.food.y * cell;
+        const ffx = ox + game.food.x * cell;
+        const ffy = oy + game.food.y * cell;
         ctx.fillStyle = COLORS.food;
         ctx.beginPath();
-        ctx.arc(fx + cell / 2, fy + cell / 2, cell * 0.32, 0, Math.PI * 2);
+        ctx.arc(ffx + cell / 2, ffy + cell / 2, cell * 0.32, 0, Math.PI * 2);
         ctx.fill();
       }
 
@@ -238,23 +247,60 @@
         ctx.fill();
       }
 
-      // label
+      // label — bold, color-coded, sits above its frame
       if (label) {
-        ctx.font = '600 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
-        ctx.fillStyle = COLORS.label;
+        ctx.font = '700 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
         ctx.textAlign = 'left';
-        ctx.textBaseline = 'top';
-        ctx.fillText(label, ox - 4, oy - 18);
+        ctx.textBaseline = 'alphabetic';
+        const ly = fy0 - 6;
+        const labelW = ctx.measureText(label).width;
+        ctx.fillStyle = accent;
+        ctx.fillText(label, fx0, ly);
+        if (typeof game.score === 'number') {
+          ctx.font = '500 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+          ctx.fillStyle = COLORS.label;
+          ctx.fillText(`· ${game.score}`, fx0 + labelW + 8, ly);
+        }
       }
 
       // game-over haze
       if (!game.alive) {
         ctx.fillStyle = 'rgba(8,10,15,0.55)';
-        ctx.fillRect(ox - 4, oy - 4, bw + 8, bh + 8);
+        ctx.fillRect(fx0, fy0, fw, fh);
       }
     }
 
-    return { clear, drawBoard };
+    function drawDivider(cx, y0, h) {
+      // Faint dashed vertical line plus a "VS" pill at the midpoint.
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+      ctx.setLineDash([4, 6]);
+      ctx.beginPath();
+      ctx.moveTo(cx + 0.5, y0 + 12);
+      ctx.lineTo(cx + 0.5, y0 + h - 12);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      const pillW = 28, pillH = 18;
+      const pillX = cx - (pillW >> 1);
+      const pillY = y0 + ((h - pillH) >> 1);
+      ctx.fillStyle = '#11141b';
+      roundRect(ctx, pillX, pillY, pillW, pillH, 9);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(255,255,255,0.12)';
+      ctx.setLineDash([]);
+      ctx.lineWidth = 1;
+      roundRect(ctx, pillX + 0.5, pillY + 0.5, pillW - 1, pillH - 1, 9);
+      ctx.stroke();
+      ctx.fillStyle = '#9aa3b2';
+      ctx.font = '700 10px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('VS', cx, pillY + (pillH >> 1) + 1);
+      ctx.restore();
+    }
+
+    return { clear, drawBoard, drawDivider };
   }
 
   function roundRect(ctx, x, y, w, h, r) {
@@ -626,13 +672,16 @@
     renderer.clear();
     const W = 540, H = 540;
     if (state.mode === 'human') {
-      renderer.drawBoard(state.gameH, { x: 0, y: 24, w: W, h: H - 24 }, 'You', 'human');
+      renderer.drawBoard(state.gameH, { x: 0, y: 28, w: W, h: H - 28 }, 'YOU', 'human');
     } else if (state.mode === 'agent') {
-      renderer.drawBoard(state.gameA, { x: 0, y: 24, w: W, h: H - 24 }, 'Agent', 'agent');
+      renderer.drawBoard(state.gameA, { x: 0, y: 28, w: W, h: H - 28 }, 'AGENT', 'agent');
     } else {
-      const half = (W / 2) | 0;
-      renderer.drawBoard(state.gameH, { x: 0,    y: 24, w: half, h: H - 24 }, 'You', 'human');
-      renderer.drawBoard(state.gameA, { x: half, y: 24, w: half, h: H - 24 }, 'Agent', 'agent');
+      // Reserve a clear gap so the two boards never visually fuse together.
+      const gap = 36;
+      const half = ((W - gap) / 2) | 0;
+      renderer.drawBoard(state.gameH, { x: 0,            y: 28, w: half, h: H - 28 }, 'YOU',   'human');
+      renderer.drawBoard(state.gameA, { x: half + gap,   y: 28, w: half, h: H - 28 }, 'AGENT', 'agent');
+      renderer.drawDivider(half + (gap >> 1), 28, H - 28);
     }
   }
 
