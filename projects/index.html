@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Projects — Oskar Seweryn</title>
+<meta name="description" content="Projects and live demos by Oskar Seweryn — AI-first data science, local LLMs, and quant infrastructure." />
+<meta name="theme-color" content="#0b0d12" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0d12'/%3E%3Ctext x='50%25' y='54%25' font-family='ui-monospace,monospace' font-size='34' font-weight='700' text-anchor='middle' fill='%2374f0c0'%3Eos%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="/style.css" />
+<noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body class="subpage">
+
+<header class="nav" data-nav>
+  <a class="brand" href="/">oskar<span>.seweryn</span></a>
+  <nav>
+    <a href="/#about">About</a>
+    <a href="/#work">Work</a>
+    <a href="/projects/">Projects</a>
+    <a href="/blog/">Blog</a>
+    <a href="/#contact">Contact</a>
+    <a class="nav-cta" href="https://github.com/oskarseweryn" target="_blank" rel="noopener">GitHub →</a>
+  </nav>
+</header>
+
+<main>
+  <a class="back" href="/" data-reveal>← back to home</a>
+
+  <div class="page-head">
+    <p class="eyebrow" data-reveal>Projects</p>
+    <h1 data-reveal>Live demos, reproducible notebooks, and the infrastructure behind them.</h1>
+    <p data-reveal>
+      Cards turn into real links the moment each project has a shareable artifact —
+      a notebook, a demo, a benchmark, or a README worth reading. No fake numbers,
+      no dead links.
+    </p>
+  </div>
+
+  <div class="grid">
+
+    <a class="card" data-reveal href="/projects/snake-rl/">
+      <div class="card-head">
+        <div class="card-tag">Reinforcement learning</div>
+        <span class="status status-live">live demo</span>
+      </div>
+      <h3>snake-rl · beat my agent</h3>
+      <p>Tiny DQN trained from scratch on Snake, exported as JSON, doing pure-JS inference in your browser. Try to beat it &mdash; or watch it play itself.</p>
+      <div class="card-meta">PyTorch · DQN · Canvas · 18k params</div>
+    </a>
+
+    <a class="card" data-reveal href="https://www.kaggle.com/oskarseweryn" target="_blank" rel="noopener">
+      <div class="card-head">
+        <div class="card-tag">Kaggle</div>
+        <span class="status status-live">live</span>
+      </div>
+      <h3>kaggle / oskarseweryn</h3>
+      <p>Public competition profile. Medal-grade notebooks with reproducible code, clear write-ups, and AI-first iteration loops driving each submission.</p>
+      <div class="card-meta">Python · notebooks · leaderboard signal</div>
+    </a>
+
+    <div class="card card-soon" data-reveal aria-disabled="true">
+      <div class="card-head">
+        <div class="card-tag">Quant infra</div>
+        <span class="status status-progress">in&nbsp;progress</span>
+      </div>
+      <h3>broker-bridge</h3>
+      <p>Adapter layer for brokers — including the ones without an official API. Generic infrastructure for backtesting and order plumbing; no strategies, no signals.</p>
+      <div class="card-meta">Python · async · adapters</div>
+    </div>
+
+    <div class="card card-soon" data-reveal aria-disabled="true">
+      <div class="card-head">
+        <div class="card-tag">LLM agents</div>
+        <span class="status status-progress">in&nbsp;progress</span>
+      </div>
+      <h3>local-agent-stack</h3>
+      <p>Agent stack tuned for a 256&nbsp;GB Mac Studio: 70B+ dense and 100B+ MoE quantized models, eval harnesses, tool-use scaffolding, with Claude as orchestrator.</p>
+      <div class="card-meta">Claude API · MLX · llama.cpp</div>
+    </div>
+
+    <div class="card card-soon" data-reveal aria-disabled="true">
+      <div class="card-head">
+        <div class="card-tag">Automation</div>
+        <span class="status status-planned">planned</span>
+      </div>
+      <h3>ai-first-templates</h3>
+      <p>Reusable starters for AI-first data and automation projects — Claude Code skills, hooks, scaffolds. Turning the 20× subscription into compounding leverage.</p>
+      <div class="card-meta">Claude Code · Python · ergonomics</div>
+    </div>
+
+    <div class="card card-soon" data-reveal aria-disabled="true">
+      <div class="card-head">
+        <div class="card-tag">Data</div>
+        <span class="status status-planned">planned</span>
+      </div>
+      <h3>market-data-etl</h3>
+      <p>Notes and tooling around market-data sources, transformations, and ETL patterns — the unglamorous half of any quant workflow, written for humans.</p>
+      <div class="card-meta">Python · DuckDB · parquet</div>
+    </div>
+
+    <div class="card card-soon" data-reveal aria-disabled="true">
+      <div class="card-head">
+        <div class="card-tag">OTA</div>
+        <span class="status status-planned">planned</span>
+      </div>
+      <h3>ota-ml-patterns</h3>
+      <p>Generalized patterns from years of shipping production ML in online travel: feature design, evaluation under shift, and decisions that hold up at scale.</p>
+      <div class="card-meta">Python · ML · production</div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <span>© <span id="yr"></span> Oskar Seweryn</span>
+  <span class="sep">·</span>
+  <span>Built static. Hosted on GitHub Pages.</span>
+</footer>
+
+<script src="/main.js" defer></script>
+</body>
+</html>

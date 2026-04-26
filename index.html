@@ -13,17 +13,19 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://oskarseweryn.github.io" />
 
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="/style.css" />
+<noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
 </head>
-<body>
+<body class="page-home">
 
-<header class="nav">
-  <a class="brand" href="#top">oskar<span>.seweryn</span></a>
+<header class="nav" data-nav>
+  <a class="brand" href="/">oskar<span>.seweryn</span></a>
   <nav>
-    <a href="#about">About</a>
-    <a href="#work">Work</a>
-    <a href="#stack">Stack</a>
-    <a href="#contact">Contact</a>
+    <a href="/#about">About</a>
+    <a href="/#work">Work</a>
+    <a href="/projects/">Projects</a>
+    <a href="/blog/">Blog</a>
+    <a href="/#contact">Contact</a>
     <a class="nav-cta" href="https://github.com/oskarseweryn" target="_blank" rel="noopener">GitHub →</a>
   </nav>
 </header>
@@ -53,8 +55,8 @@
   </section>
 
   <section id="about" class="section about">
-    <h2>About</h2>
-    <p class="bio">
+    <h2 data-reveal>About</h2>
+    <p class="bio" data-reveal>
       I've spent years shipping data-science and ML systems inside an
       <strong>online travel agency</strong> — the kind of problem space where data is messy,
       stakes are real, and decisions have to hold up in production. Outside the day job, I
@@ -65,15 +67,25 @@
   </section>
 
   <section id="work" class="section">
-    <h2>Now building</h2>
-    <p class="section-sub">
+    <h2 data-reveal>Now building</h2>
+    <p class="section-sub" data-reveal>
       An honest snapshot of what's in flight. Cards turn into links once the work has a
       shareable artifact — no vaporware, no fake benchmarks.
     </p>
 
     <div class="grid">
 
-      <a class="card" href="https://www.kaggle.com/oskarseweryn" target="_blank" rel="noopener">
+      <a class="card" data-reveal href="/projects/snake-rl/">
+        <div class="card-head">
+          <div class="card-tag">Reinforcement learning</div>
+          <span class="status status-live">live demo</span>
+        </div>
+        <h3>snake-rl · beat my agent</h3>
+        <p>Tiny DQN trained from scratch on Snake, exported as JSON, doing pure-JS inference in your browser. Try to beat it &mdash; or watch it play itself.</p>
+        <div class="card-meta">PyTorch · DQN · Canvas · 18k params</div>
+      </a>
+
+      <a class="card" data-reveal href="https://www.kaggle.com/oskarseweryn" target="_blank" rel="noopener">
         <div class="card-head">
           <div class="card-tag">Kaggle</div>
           <span class="status status-live">live</span>
@@ -83,7 +95,7 @@
         <div class="card-meta">Python · notebooks · leaderboard signal</div>
       </a>
 
-      <div class="card card-soon" aria-disabled="true">
+      <div class="card card-soon" data-reveal aria-disabled="true">
         <div class="card-head">
           <div class="card-tag">Quant infra</div>
           <span class="status status-progress">in&nbsp;progress</span>
@@ -93,7 +105,7 @@
         <div class="card-meta">Python · async · adapters</div>
       </div>
 
-      <div class="card card-soon" aria-disabled="true">
+      <div class="card card-soon" data-reveal aria-disabled="true">
         <div class="card-head">
           <div class="card-tag">LLM agents</div>
           <span class="status status-progress">in&nbsp;progress</span>
@@ -103,23 +115,23 @@
         <div class="card-meta">Claude API · MLX · llama.cpp</div>
       </div>
 
-      <div class="card card-soon" aria-disabled="true">
+      <a class="card" data-reveal href="/projects/">
         <div class="card-head">
-          <div class="card-tag">Automation</div>
-          <span class="status status-planned">planned</span>
+          <div class="card-tag">More</div>
+          <span class="status status-live">page</span>
         </div>
-        <h3>ai-first-templates</h3>
-        <p>Reusable starters for AI-first data and automation projects — Claude Code skills, hooks, and scaffolds that turn the 20× subscription into compounding leverage.</p>
-        <div class="card-meta">Claude Code · Python · ergonomics</div>
-      </div>
+        <h3>/projects</h3>
+        <p>The full list, with status and what each one ships when it's ready. Live demos land here as they go from "in progress" to "shareable".</p>
+        <div class="card-meta">Updated when work moves →</div>
+      </a>
 
     </div>
   </section>
 
   <section id="stack" class="section alt">
-    <h2>How I work</h2>
+    <h2 data-reveal>How I work</h2>
     <div class="two-col">
-      <div>
+      <div data-reveal>
         <h3>AI-first by default</h3>
         <p>
           Every project is shaped around the assumption that an LLM is part of the toolchain — not as a gimmick,
@@ -127,7 +139,7 @@
           models share the same goal: collapse the time from question to shippable artifact.
         </p>
       </div>
-      <div>
+      <div data-reveal>
         <h3>Local compute, no excuses</h3>
         <p>
           Mac Studio M3 Ultra · 256 GB unified memory means 70B+ dense models, 100B+ MoE quantized, and full
@@ -135,14 +147,14 @@
           on the desk.
         </p>
       </div>
-      <div>
+      <div data-reveal>
         <h3>Reproducible &amp; visible</h3>
         <p>
           Kaggle leaderboards, public GitHub repos, and clean READMEs over private one-offs. If it doesn't have a
           benchmark, a notebook, or a write-up, it didn't ship.
         </p>
       </div>
-      <div>
+      <div data-reveal>
         <h3>Domain depth</h3>
         <p>
           Online travel, intelligent automation, and personal quant research — the same pattern each
@@ -151,7 +163,7 @@
       </div>
     </div>
 
-    <div class="chips">
+    <div class="chips" data-reveal>
       <span>Python</span><span>SQL</span><span>Claude API</span><span>scikit-learn</span>
       <span>pandas</span><span>PyTorch</span><span>Docker</span><span>dbt</span>
       <span>NumPy</span><span>LLM agents</span><span>Backtesting</span><span>Kaggle</span>
@@ -159,9 +171,9 @@
   </section>
 
   <section id="contact" class="section contact">
-    <h2>Get in touch</h2>
-    <p class="section-sub">Open to interesting AI / data / automation problems.</p>
-    <div class="links">
+    <h2 data-reveal>Get in touch</h2>
+    <p class="section-sub" data-reveal>Open to interesting AI / data / automation problems.</p>
+    <div class="links" data-reveal>
       <a href="https://github.com/oskarseweryn" target="_blank" rel="noopener">GitHub ↗</a>
       <a href="https://www.kaggle.com/oskarseweryn" target="_blank" rel="noopener">Kaggle ↗</a>
       <a href="https://www.linkedin.com/in/oskar-seweryn/" target="_blank" rel="noopener">LinkedIn ↗</a>
@@ -177,8 +189,6 @@
   <span>Built static. Hosted on GitHub Pages.</span>
 </footer>
 
-<script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
-</script>
+<script src="/main.js" defer></script>
 </body>
 </html>

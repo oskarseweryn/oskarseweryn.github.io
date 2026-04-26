@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Beat my Snake agent — Oskar Seweryn</title>
+<meta name="description" content="A small DQN agent trained from scratch on Snake. Plays in your browser. Try to beat it." />
+<meta name="theme-color" content="#0b0d12" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0d12'/%3E%3Ctext x='50%25' y='54%25' font-family='ui-monospace,monospace' font-size='34' font-weight='700' text-anchor='middle' fill='%2374f0c0'%3Eos%3C/text%3E%3C/svg%3E" />
+
+<meta property="og:title" content="Beat my Snake agent" />
+<meta property="og:description" content="A reinforcement-learning agent trained from scratch on Snake. Plays in your browser. See if you can beat it." />
+<meta property="og:type" content="website" />
+
+<link rel="stylesheet" href="/style.css" />
+<link rel="stylesheet" href="snake.css" />
+<noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body class="subpage page-snake">
+
+<header class="nav" data-nav>
+  <a class="brand" href="/">oskar<span>.seweryn</span></a>
+  <nav>
+    <a href="/#about">About</a>
+    <a href="/#work">Work</a>
+    <a href="/projects/">Projects</a>
+    <a href="/blog/">Blog</a>
+    <a href="/#contact">Contact</a>
+    <a class="nav-cta" href="https://github.com/oskarseweryn" target="_blank" rel="noopener">GitHub →</a>
+  </nav>
+</header>
+
+<main>
+  <a class="back" href="/projects/" data-reveal>← back to projects</a>
+
+  <div class="page-head">
+    <p class="eyebrow" data-reveal>RL · live demo</p>
+    <h1 data-reveal>Beat my Snake agent.</h1>
+    <p data-reveal>
+      A small DQN trained from scratch on a 12&times;12 Snake board, exported as plain
+      JSON, doing pure-JS inference in your browser. Try to beat it &mdash; or watch it
+      play itself.
+    </p>
+  </div>
+
+  <section class="snake-stage" data-reveal>
+    <div class="snake-board-wrap">
+      <canvas id="board" width="540" height="540" aria-label="Snake board"></canvas>
+      <div id="game-overlay" class="snake-overlay" hidden>
+        <div class="snake-overlay-card">
+          <h3 id="overlay-title">Game over</h3>
+          <p id="overlay-body">Press <kbd>Space</kbd> or tap restart.</p>
+          <button class="btn primary" id="overlay-restart">Restart</button>
+        </div>
+      </div>
+    </div>
+
+    <aside class="snake-side">
+      <div class="snake-mode-row" role="tablist" aria-label="Mode">
+        <button class="mode-btn is-active" data-mode="human"  role="tab" aria-selected="true">You play</button>
+        <button class="mode-btn"           data-mode="agent"  role="tab" aria-selected="false">Agent plays</button>
+        <button class="mode-btn"           data-mode="versus" role="tab" aria-selected="false">Side by side</button>
+      </div>
+
+      <div class="snake-scoreboard">
+        <div class="score-card">
+          <div class="score-label">You</div>
+          <div class="score-val" id="score-human">0</div>
+          <div class="score-sub">best <span id="best-human">0</span></div>
+        </div>
+        <div class="score-card">
+          <div class="score-label">Agent</div>
+          <div class="score-val" id="score-agent">0</div>
+          <div class="score-sub">best <span id="best-agent">0</span></div>
+        </div>
+      </div>
+
+      <div class="snake-controls">
+        <div class="control-row">
+          <button class="btn ghost" id="btn-restart">Restart</button>
+          <button class="btn ghost" id="btn-pause">Pause</button>
+        </div>
+        <label class="speed-row">
+          <span>Speed</span>
+          <input type="range" id="speed" min="3" max="30" value="11" />
+          <span class="speed-val" id="speed-val">11&nbsp;fps</span>
+        </label>
+        <p class="snake-hint" id="snake-hint">
+          Arrow keys or <kbd>WASD</kbd>. <kbd>Space</kbd> to pause / restart on game over.
+        </p>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-card-head">
+          <span class="card-tag">Agent</span>
+          <span class="status status-progress" id="agent-status">loading…</span>
+        </div>
+        <ul class="agent-meta" id="agent-meta">
+          <li><span>arch</span> 11 → 128 → 128 → 3 (MLP)</li>
+          <li><span>algo</span> DQN · ε-greedy · target net</li>
+          <li><span>params</span> 18,435 · ReLU</li>
+          <li><span>state</span> 11 binary features</li>
+          <li><span>actions</span> straight / right / left</li>
+          <li><span>greedy</span> mean 24 · max 37 (50 eps)</li>
+        </ul>
+      </div>
+    </aside>
+  </section>
+
+  <section class="section snake-section" data-reveal>
+    <h2>Training curves</h2>
+    <p class="section-sub">
+      Real run, no rendered assets. Smoothed per-episode score and reward over training,
+      shown straight from the JSON history file.
+    </p>
+    <div class="curves">
+      <div class="curve-card">
+        <div class="curve-head">
+          <h3>Score per episode</h3>
+          <span id="curve-score-meta" class="curve-meta">&mdash;</span>
+        </div>
+        <canvas id="curve-score" width="640" height="220"></canvas>
+      </div>
+      <div class="curve-card">
+        <div class="curve-head">
+          <h3>Reward per episode</h3>
+          <span id="curve-reward-meta" class="curve-meta">&mdash;</span>
+        </div>
+        <canvas id="curve-reward" width="640" height="220"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section class="section snake-section" data-reveal>
+    <h2>How it works, end-to-end</h2>
+    <div class="pipeline">
+      <div class="pipe-card">
+        <div class="pipe-num">01</div>
+        <h3>Environment</h3>
+        <p>
+          Custom Snake env in ~150 lines of Python. 12&times;12 grid, three relative
+          actions (straight / turn right / turn left). Reward is +1 per food, &minus;1
+          on death, with a small per-step penalty to discourage looping.
+        </p>
+      </div>
+      <div class="pipe-card">
+        <div class="pipe-num">02</div>
+        <h3>State features</h3>
+        <p>
+          11 hand-crafted binary features: three immediate-collision flags
+          (front / right / left), a one-hot of current heading, and four food-relative
+          direction flags. Same code path runs in Python during training and JS at
+          inference time &mdash; identical numbers, by construction.
+        </p>
+      </div>
+      <div class="pipe-card">
+        <div class="pipe-num">03</div>
+        <h3>Algorithm</h3>
+        <p>
+          Vanilla DQN with a target network, replay buffer (100k transitions), Adam,
+          Huber loss, ε-decay from 1.0 to 0.02 over 60k steps. ~10k gradient steps
+          across 4k episodes is enough for the policy to ramp from random to
+          consistent food-chasing.
+        </p>
+      </div>
+      <div class="pipe-card">
+        <div class="pipe-num">04</div>
+        <h3>Export &amp; deploy</h3>
+        <p>
+          Trained on M3 Ultra in a few minutes. Final weights are dumped as a single
+          JSON file (architecture + params), no ONNX runtime required. The browser
+          does its own forward pass in plain JavaScript &mdash; this whole page is
+          static, hosted on GitHub Pages.
+        </p>
+      </div>
+    </div>
+
+    <p class="section-sub" style="margin-top:28px">
+      Training code, env, and exported weights:
+      <a class="inline-link" href="https://github.com/oskarseweryn/oskarseweryn.github.io/tree/main/projects/snake-rl" target="_blank" rel="noopener">
+        github.com/oskarseweryn/oskarseweryn.github.io/projects/snake-rl ↗
+      </a>
+    </p>
+  </section>
+</main>
+
+<footer>
+  <span>© <span id="yr"></span> Oskar Seweryn</span>
+  <span class="sep">·</span>
+  <span>Built static. Hosted on GitHub Pages.</span>
+</footer>
+
+<script src="/main.js" defer></script>
+<script src="game.js" defer></script>
+</body>
+</html>

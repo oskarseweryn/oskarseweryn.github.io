@@ -1,0 +1,83 @@
+[train] starting — episodes=4000 grid=12
+[train] ep=   1 score=  0 len=  20 eps=1.000 smooth_score=0.00 elapsed=0.0s
+[train] ep=  50 score=  0 len=  19 eps=0.976 smooth_score=0.12 elapsed=0.1s
+[train] ep= 100 score=  0 len=  13 eps=0.955 smooth_score=0.13 elapsed=0.3s
+[train] ep= 150 score=  0 len=  16 eps=0.931 smooth_score=0.10 elapsed=0.7s
+[train] ep= 200 score=  0 len=   8 eps=0.908 smooth_score=0.17 elapsed=1.2s
+[train] ep= 250 score=  1 len=  50 eps=0.885 smooth_score=0.23 elapsed=1.6s
+[train] ep= 300 score=  0 len=  11 eps=0.864 smooth_score=0.31 elapsed=2.0s
+[train] ep= 350 score=  1 len=  21 eps=0.837 smooth_score=0.42 elapsed=2.6s
+[train] ep= 400 score=  0 len=  10 eps=0.815 smooth_score=0.44 elapsed=3.0s
+[train] ep= 450 score=  0 len=  36 eps=0.791 smooth_score=0.44 elapsed=3.4s
+[train] ep= 500 score=  0 len=   8 eps=0.762 smooth_score=0.65 elapsed=4.0s
+[train] ep= 550 score=  1 len=  22 eps=0.740 smooth_score=0.68 elapsed=4.4s
+[train] ep= 600 score=  1 len=  42 eps=0.710 smooth_score=0.92 elapsed=5.0s
+[train] ep= 650 score=  2 len= 105 eps=0.679 smooth_score=1.15 elapsed=5.6s
+[train] ep= 700 score=  0 len=  18 eps=0.650 smooth_score=1.21 elapsed=6.2s
+[train] ep= 750 score=  2 len=  40 eps=0.620 smooth_score=1.26 elapsed=6.7s
+[train] ep= 800 score=  0 len=  17 eps=0.595 smooth_score=1.23 elapsed=7.1s
+[train] ep= 850 score=  0 len=  20 eps=0.569 smooth_score=1.31 elapsed=7.6s
+[train] ep= 900 score=  2 len=  51 eps=0.543 smooth_score=1.37 elapsed=8.1s
+[train] ep= 950 score=  2 len=  38 eps=0.517 smooth_score=1.40 elapsed=8.6s
+[train] ep=1000 score=  0 len=  17 eps=0.485 smooth_score=1.79 elapsed=9.3s
+[train] ep=1050 score=  2 len=  45 eps=0.459 smooth_score=1.84 elapsed=9.8s
+[train] ep=1100 score=  2 len=  13 eps=0.434 smooth_score=1.97 elapsed=10.3s
+[train] ep=1150 score=  1 len=  31 eps=0.408 smooth_score=2.03 elapsed=10.9s
+[train] ep=1200 score=  1 len=  11 eps=0.384 smooth_score=1.91 elapsed=11.3s
+[train] ep=1250 score=  1 len=  15 eps=0.353 smooth_score=2.40 elapsed=12.0s
+[train] ep=1300 score=  5 len=  64 eps=0.320 smooth_score=2.92 elapsed=12.8s
+[train] ep=1350 score=  5 len=  70 eps=0.286 smooth_score=3.15 elapsed=13.5s
+[train] ep=1400 score=  6 len= 109 eps=0.241 smooth_score=4.04 elapsed=14.5s
+[train] ep=1450 score=  5 len=  54 eps=0.196 smooth_score=4.70 elapsed=15.6s
+[train] ep=1500 score= 12 len= 128 eps=0.163 smooth_score=4.34 elapsed=16.3s
+[train] ep=1550 score=  4 len=  40 eps=0.108 smooth_score=5.80 elapsed=17.6s
+[train] ep=1600 score=  7 len=  71 eps=0.020 smooth_score=10.01 elapsed=19.9s
+[train] ep=1650 score= 20 len= 177 eps=0.020 smooth_score=13.61 elapsed=23.0s
+[train] ep=1700 score=  8 len=  89 eps=0.020 smooth_score=15.33 elapsed=26.0s
+[train] ep=1750 score=  3 len=  30 eps=0.020 smooth_score=16.10 elapsed=29.2s
+[train] ep=1800 score= 27 len= 231 eps=0.020 smooth_score=16.20 elapsed=32.4s
+[train] ep=1850 score=  5 len=  64 eps=0.020 smooth_score=16.99 elapsed=36.0s
+[train] ep=1900 score= 12 len=  93 eps=0.020 smooth_score=16.62 elapsed=39.3s
+[train] ep=1950 score= 28 len= 278 eps=0.020 smooth_score=17.04 elapsed=42.7s
+[train] ep=2000 score= 25 len= 234 eps=0.020 smooth_score=16.54 elapsed=46.1s
+[train] ep=2050 score= 25 len= 218 eps=0.020 smooth_score=17.16 elapsed=49.4s
+[train] ep=2100 score=  8 len=  80 eps=0.020 smooth_score=16.98 elapsed=52.8s
+[train] ep=2150 score= 12 len= 110 eps=0.020 smooth_score=15.56 elapsed=55.7s
+[train] ep=2200 score= 15 len= 130 eps=0.020 smooth_score=16.21 elapsed=59.1s
+[train] ep=2250 score= 25 len= 221 eps=0.020 smooth_score=16.28 elapsed=62.3s
+[train] ep=2300 score= 22 len= 223 eps=0.020 smooth_score=16.56 elapsed=65.8s
+[train] ep=2350 score=  5 len=  50 eps=0.020 smooth_score=15.56 elapsed=68.9s
+[train] ep=2400 score= 23 len= 189 eps=0.020 smooth_score=16.07 elapsed=72.3s
+[train] ep=2450 score=  9 len=  84 eps=0.020 smooth_score=15.31 elapsed=75.2s
+[train] ep=2500 score= 26 len= 221 eps=0.020 smooth_score=15.06 elapsed=78.4s
+[train] ep=2550 score= 22 len= 209 eps=0.020 smooth_score=15.56 elapsed=81.5s
+[train] ep=2600 score=  7 len=  44 eps=0.020 smooth_score=14.87 elapsed=84.4s
+[train] ep=2650 score= 20 len= 174 eps=0.020 smooth_score=15.43 elapsed=87.5s
+[train] ep=2700 score= 10 len=  86 eps=0.020 smooth_score=15.61 elapsed=90.7s
+[train] ep=2750 score=  6 len=  59 eps=0.020 smooth_score=15.37 elapsed=93.9s
+[train] ep=2800 score= 19 len= 169 eps=0.020 smooth_score=15.18 elapsed=96.9s
+[train] ep=2850 score= 10 len= 128 eps=0.020 smooth_score=15.57 elapsed=100.4s
+[train] ep=2900 score= 24 len= 251 eps=0.020 smooth_score=15.69 elapsed=103.6s
+[train] ep=2950 score= 13 len= 123 eps=0.020 smooth_score=15.28 elapsed=106.7s
+[train] ep=3000 score= 20 len= 180 eps=0.020 smooth_score=16.45 elapsed=110.2s
+[train] ep=3050 score= 10 len=  96 eps=0.020 smooth_score=16.14 elapsed=113.4s
+[train] ep=3100 score= 11 len=  85 eps=0.020 smooth_score=15.19 elapsed=116.4s
+[train] ep=3150 score=  8 len=  66 eps=0.020 smooth_score=14.95 elapsed=119.5s
+[train] ep=3200 score= 13 len= 118 eps=0.020 smooth_score=16.26 elapsed=123.0s
+[train] ep=3250 score= 16 len= 183 eps=0.020 smooth_score=16.57 elapsed=126.5s
+[train] ep=3300 score= 14 len=  96 eps=0.020 smooth_score=16.32 elapsed=129.8s
+[train] ep=3350 score= 28 len= 334 eps=0.020 smooth_score=15.10 elapsed=132.8s
+[train] ep=3400 score= 14 len= 115 eps=0.020 smooth_score=15.67 elapsed=135.9s
+[train] ep=3450 score= 16 len= 162 eps=0.020 smooth_score=17.73 elapsed=139.9s
+[train] ep=3500 score= 19 len= 172 eps=0.020 smooth_score=16.55 elapsed=143.0s
+[train] ep=3550 score= 22 len= 181 eps=0.020 smooth_score=16.00 elapsed=146.2s
+[train] ep=3600 score= 21 len= 191 eps=0.020 smooth_score=15.87 elapsed=149.3s
+[train] ep=3650 score= 21 len= 184 eps=0.020 smooth_score=16.12 elapsed=152.7s
+[train] ep=3700 score= 20 len= 198 eps=0.020 smooth_score=15.24 elapsed=155.8s
+[train] ep=3750 score= 20 len= 170 eps=0.020 smooth_score=16.10 elapsed=159.3s
+[train] ep=3800 score= 14 len= 109 eps=0.020 smooth_score=16.72 elapsed=162.7s
+[train] ep=3850 score= 14 len= 130 eps=0.020 smooth_score=16.01 elapsed=165.8s
+[train] ep=3900 score= 14 len= 132 eps=0.020 smooth_score=15.99 elapsed=169.1s
+[train] ep=3950 score= 20 len= 205 eps=0.020 smooth_score=16.44 elapsed=172.4s
+[train] ep=4000 score= 16 len= 183 eps=0.020 smooth_score=16.49 elapsed=175.6s
+[train] done in 175.6s — best smoothed score 18.10
