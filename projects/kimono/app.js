@@ -1,11 +1,12 @@
 "use strict";
 
 // Backend used by the "Odśwież" button.
-//   - localhost  → local FastAPI on :8001 (works during development / friend demo on Oskar's laptop)
-//   - elsewhere  → empty string → button shows offline-mode banner with run instructions
-//                  (replace with deployed origin once backend is hosted: Cloudflare Worker, Vercel, etc.)
+//   - localhost  → local FastAPI on :8001 (development)
+//   - elsewhere  → Hugging Face Space (always-on Docker FastAPI deploy)
 const IS_LOCAL = location.hostname === "localhost" || location.hostname === "127.0.0.1";
-const BACKEND_URL = IS_LOCAL ? "http://localhost:8001" : "";
+const BACKEND_URL = IS_LOCAL
+  ? "http://localhost:8001"
+  : "https://oskarseweryn-kimono-backend.hf.space";
 
 const FX_TO_PLN = { PLN: 1, EUR: 4.30, USD: 4.00, GBP: 5.10 };
 
