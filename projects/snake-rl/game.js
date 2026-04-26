@@ -306,8 +306,9 @@
   const $ = (sel) => document.querySelector(sel);
 
   const state = {
-    mode: 'human',          // 'human' | 'agent' | 'versus'
+    mode: 'agent',          // 'human' | 'agent' | 'versus' — start with the agent so visitors see it first
     paused: false,
+    armed: true,            // in human/versus this flips to false until first arrow press
     gameH: null,            // human game (used in human + versus)
     gameA: null,            // agent game (used in agent + versus)
     pendingDir: null,       // queued absolute heading from keyboard
@@ -345,6 +346,13 @@
     $('#overlay-restart').addEventListener('click', restart);
 
     window.addEventListener('keydown', onKey);
+
+    // Sync the live state.mode with whatever the markup defaults to, then
+    // re-apply it so the UI side-effects (overlay, hint copy, button state)
+    // run exactly once during boot.
+    const initialMode = state.mode;
+    state.mode = '__none__';
+    setMode(initialMode);
 
     // Load policy. We try the latest-best file first; fall back to the
     // final-snapshot file if that's all that's been written so far.
@@ -414,6 +422,11 @@
     if (want === -1) return;
     e.preventDefault();
     state.pendingDir = want;
+    // First arrow press un-pauses the world in human/versus mode.
+    if (!state.armed) {
+      state.armed = true;
+      $('#game-overlay').hidden = true;
+    }
   }
 
   function setMode(mode) {
@@ -429,18 +442,18 @@
     state.pendingDir = null;
     state.paused = false;
     $('#btn-pause').textContent = 'Pause';
-    $('#game-overlay').hidden = true;
     updateScores();
     const hint = $('#snake-hint');
     if (hint) {
       if (mode === 'agent') {
         hint.innerHTML = 'Agent in control. Use the speed slider, or hit <kbd>Space</kbd> to pause.';
       } else if (mode === 'versus') {
-        hint.innerHTML = 'You (left) vs agent (right). Arrow keys or <kbd>WASD</kbd>.';
+        hint.innerHTML = 'You (left) vs agent (right). Arrow keys or <kbd>WASD</kbd>. Press any arrow to start.';
       } else {
         hint.innerHTML = 'Arrow keys or <kbd>WASD</kbd>. <kbd>Space</kbd> to pause / restart on game over.';
       }
     }
+    armOrPrompt();
   }
 
   function restart() {
@@ -449,8 +462,26 @@
     state.pendingDir = null;
     state.paused = false;
     $('#btn-pause').textContent = 'Pause';
-    $('#game-overlay').hidden = true;
     updateScores();
+    armOrPrompt();
+  }
+
+  /** In human/versus mode, freeze the world and show a "press an arrow" prompt;
+   *  in agent mode, run immediately and clear any leftover overlay. */
+  function armOrPrompt() {
+    const overlay = $('#game-overlay');
+    if (state.mode === 'agent') {
+      state.armed = true;
+      overlay.hidden = true;
+      return;
+    }
+    state.armed = false;
+    $('#overlay-title').textContent = state.mode === 'versus'
+      ? 'Ready to race the agent?'
+      : 'Ready when you are.';
+    $('#overlay-body').innerHTML =
+      'Press an <kbd>arrow key</kbd> or <kbd>WASD</kbd> to start.';
+    overlay.hidden = false;
   }
 
   function togglePause() {
@@ -462,13 +493,16 @@
   function tick(t) {
     const dt = (t - state.last) / 1000;
     state.last = t;
-    if (!state.paused) {
+    if (!state.paused && state.armed) {
       state.accum += dt;
       const stepDur = 1 / state.fps;
       while (state.accum > stepDur) {
         state.accum -= stepDur;
         advance();
       }
+    } else {
+      // Avoid a sudden burst of catch-up steps after the player un-pauses.
+      state.accum = 0;
     }
     const canvas = $('#board');
     if (canvas) {
