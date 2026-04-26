@@ -44,6 +44,10 @@
   place-items: center;
   z-index: 2;
 }
+/* `display: grid` above wins over the user-agent `[hidden] { display: none }`
+ * because they share specificity. Make the [hidden] case explicit so the
+ * overlay actually disappears when JS sets element.hidden = true. */
+.snake-overlay[hidden] { display: none; }
 .snake-overlay-card {
   background: var(--bg-3);
   border: 1px solid var(--line);
