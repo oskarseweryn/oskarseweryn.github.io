@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-27",
+  "last_updated": "2026-04-28",
   "spec": {
     "count": 500,
     "color": "białe",
@@ -283,13 +283,13 @@
       "language": "en",
       "product_name": "100% Cotton Kids Judo Kimono — 350 GSM (OEM/ODM)",
       "product_url": "https://www.bjjgisupplier.com/sale-54425082-100-cotton-kids-judo-kimonos-with-350gsm-fabric-weight-and-custom-oem-odm-service.html",
-      "retail_unit_pln": null,
-      "retail_unit_label": "RFQ — cena po wysłaniu zapytania",
-      "retail_total_500_pln": null,
+      "retail_unit_pln": 95,
+      "retail_unit_label": "¥173.49 CNY / szt. @ 50–99 (~95 PLN)",
+      "retail_total_500_pln": 47710,
       "sizes_full_coverage": true,
       "sizes_label": "OEM — rozmiary do uzgodnienia (110–160 standardowo dostępne)",
       "weight": "350 g/m² (~10 oz, 100% bawełna)",
-      "notes": "Bezpośrednia fabryka z Dongguan; ceny B2B tylko na zapytanie (RFQ). Doliczyć cło UE (~12%) + VAT 23% + fracht morski (~6 tyg.) lub lotniczy (~7 dni). Próbka przed zamówieniem masowym jest standardem.",
+      "notes": "Cena ¥173.49/szt. opublikowana dla MOQ 50–99 — przy 500 szt. fabryka da niższy tier, RFQ jest obowiązkowe by go uzyskać. MOQ 50, próbka 7 dni, FOB/CFR/CIF/EXW/DDP, T/T/L/C/PayPal. Doliczyć cło UE (~12%) + VAT 23% + fracht (sea ~15–35 dni / air ~7–10 dni / express ~3–7 dni).",
       "email": "sophie@boultonbjjgi.com",
       "contact_url": "https://www.bjjgisupplier.com/contactus.html",
       "email_draft": {
@@ -303,8 +303,8 @@
       "country": "CN",
       "region": "CN",
       "language": "en",
-      "product_name": "Wesing judo uniform line — kids' sizes (B2B)",
-      "product_url": "https://www.wesingsports.com/product/24/",
+      "product_name": "Wesing judo uniform — children's variant (柔道服 儿童)",
+      "product_url": "https://www.wesingsports.com/product/212.html",
       "retail_unit_pln": null,
       "retail_unit_label": "RFQ — cena po wysłaniu zapytania",
       "retail_total_500_pln": null,
@@ -320,25 +320,25 @@
       }
     },
     {
-      "id": "madeinchina-cn",
-      "name": "Made-in-China (RFQ aggregator)",
+      "id": "tide-cn",
+      "name": "Qingdao Tide Sports",
       "country": "CN",
       "region": "CN",
       "language": "en",
-      "product_name": "100+ certified CN judo-gi factories (multi-supplier RFQ)",
-      "product_url": "https://www.made-in-china.com/products-search/hot-china-products/Judo_Gi.html",
-      "retail_unit_pln": null,
-      "retail_unit_label": "RFQ — wielu dostawców",
-      "retail_total_500_pln": null,
+      "product_name": "Tide BJJ/Judo Uniform — kids & adults, 100% cotton",
+      "product_url": "https://tidesports.en.made-in-china.com/product/QdEaTFXoYqGp/China-Factory-Martial-Arts-Brazilian-Jiu-Jitsu-Uniform-Bjj-Gi-Kimono-Judo-Uniform.html",
+      "retail_unit_pln": 120,
+      "retail_unit_label": "$29.90 USD / szt. @ 200+ (~120 PLN)",
+      "retail_total_500_pln": 59800,
       "sizes_full_coverage": true,
-      "sizes_label": "Zależne od fabryki — wszystkie standardowo produkują 110–160",
-      "weight": "Najczęściej 350 / 450 / 750 / 950 g/m² w katalogach CN",
-      "notes": "Nie pojedynczy sprzedawca, lecz agregator: jedno RFQ trafia do wielu zweryfikowanych chińskich fabryk. Przydatne jako szybki sondaż rynku — odpowiedzi z 5–15 fabryk w 24–72 h. Po wstępnym sondażu wybrać 2–3 najkorzystniejsze i prowadzić bezpośrednio.",
+      "sizes_label": "Sizes 000–8 lub 100–200 cm — pełen zakres dziecięcy",
+      "weight": "Kurtka 450 lub 750 g/m², spodnie 270 g ripstop bawełna",
+      "notes": "Pełna drabinka cenowa publikowana: $33.90 (50–99) / $31.90 (100–199) / $29.90 (200+). 500 szt. wpada w tier 200+, więc ~120 PLN/szt to realna kotwica, nie RFQ. Próbka $180 (jednorazowo). MOQ 50, zdolność 30 000 szt./mies. Doliczyć cło UE (~12%) + VAT 23% + fracht. Fabryka 20 000 m², SMETA + CE + EN71, gold member 2023, klienci m.in. Daedo / Walmart / Costco.",
       "email": null,
-      "contact_url": "https://www.made-in-china.com/products-search/hot-china-products/Judo_Gi.html",
+      "contact_url": "https://tidesports.en.made-in-china.com/product/QdEaTFXoYqGp/China-Factory-Martial-Arts-Brazilian-Jiu-Jitsu-Uniform-Bjj-Gi-Kimono-Judo-Uniform.html",
       "email_draft": {
-        "subject": "RFQ — {count} kids judo gi (Poland buyer, mixed sizes 110–160)",
-        "body": "RFQ to be submitted via the Made-in-China platform's 'Post Buying Request' form rather than direct email — paste the body below into the form.\n\n— — —\n\nWe are a children's judo school in Poland sourcing {count} kids judo gi.\n\nSpecification:\n• 100% cotton, ~8 oz to 350 GSM single weave\n• Color: white\n• Sizes: 110, 120, 130, 140, 150, 160 cm — mixed distribution across the order\n• Beginner-grade quality, no embroidery in this RFQ\n• Destination: Poland (EU)\n\nWe would like to receive offers including:\n1. FOB unit price (USD) at {count} pieces, with tiered pricing for 250 / 1000,\n2. Production lead time after order confirmation,\n3. Sea + air shipping options to Poland (cost + transit time),\n4. Sample policy (cost + lead time for one piece per size before bulk order),\n5. MOQ, payment terms, Trade Assurance availability,\n6. Whether the factory holds any judo federation approvals (national or international).\n\nWe are comparing 5–10 offers and will move to direct correspondence with the 2–3 most competitive on price + lead time. Quotes valid for at least 14 days appreciated.\n\nLooking forward to your offers.\n\nBest regards,\n[Full name]\n[Judo school name]\n[Phone · email]"
+        "subject": "Inquiry — {count} kids judo gi for a Polish judo school (sizes 110–160)",
+        "body": "Submit via the 'Send Inquiry' / 'Chat Now' button on the product page above (Made-in-China doesn't expose a direct sales email). Paste the body below into the inquiry form.\n\n— — —\n\nDear Tide Sports team,\n\nI represent a children's judo school in Poland and we are planning to source {count} judo gi for our students. We saw your BJJ/Judo uniform listing and the published price ladder ($33.90 / $31.90 / $29.90 across MOQ tiers). At {count} units we fall into your 200+ tier; we'd like to confirm and refine the quote.\n\nSpecification:\n• 100% cotton, ~8 oz / single-weave grade for beginner kids (please advise the closest model)\n• Color: white\n• Sizes: 110, 120, 130, 140, 150, 160 cm — mixed distribution across the order\n• No club embroidery in this inquiry (we will quote that separately if relevant)\n\nCould you please confirm / quote:\n1. FOB unit price (USD) at {count} pieces — confirming the 200+ tier rate or any further volume break,\n2. Lead time after order confirmation,\n3. Sea + air + express shipping options to Poland (Gdańsk port preferred for sea) with cost and transit time,\n4. Sample policy and unit-size assortment (we'd like one piece per size before bulk),\n5. Payment terms (T/T deposit %, balance) and whether Trade Assurance is offered,\n6. EU compliance — CE / EN71 / OEKO-TEX certificates available with shipment.\n\nLooking forward to your offer.\n\nBest regards,\n[Full name]\n[Judo school name]\n[Phone · email]"
       }
     }
   ]
