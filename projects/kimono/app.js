@@ -292,9 +292,14 @@ async function refreshAllVisible() {
   btn.textContent = "↻ Odświeżanie…";
 
   // Live refresh only runs against vendors with a published unit price + a
-  // backend scraper. CN/RFQ-only rows have no price to scrape, so skip them.
+  // backend scraper. RFQ-only rows have no price to scrape; CN rows have
+  // tier-based MOQ prices that the backend has no scraper for (the buyer
+  // needs to re-check the tier on the product page after sending an RFQ
+  // anyway, so per-row live refresh isn't meaningful for them).
   const visible = SNAPSHOT.vendors.filter(v =>
-    vendorMatchesRegion(v, CURRENT_REGION) && v.retail_unit_pln != null
+    vendorMatchesRegion(v, CURRENT_REGION)
+    && v.retail_unit_pln != null
+    && v.region !== "CN"
   );
 
   await Promise.allSettled(visible.map(refreshVendor));
