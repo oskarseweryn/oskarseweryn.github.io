@@ -382,6 +382,8 @@ main { padding-top: 128px; } /* 28px portfolio strip + ~100px header */
 }
 
 .kp-form .type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.kp-form .type-grid.type-grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 720px) { .kp-form .type-grid.type-grid-3 { grid-template-columns: 1fr; } }
 @media (max-width: 600px) { .kp-form .type-grid { grid-template-columns: 1fr; } }
 .kp-form .type-card {
   display: block;
@@ -398,25 +400,54 @@ main { padding-top: 128px; } /* 28px portfolio strip + ~100px header */
 
 .kp-form .slots {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
 }
-@media (max-width: 760px) { .kp-form .slots { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 460px) { .kp-form .slots { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 760px) { .kp-form .slots { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 460px) { .kp-form .slots { grid-template-columns: 1fr; } }
 
 .kp-form .slot-btn {
   background: #fff;
   border: 2px solid var(--kp-line);
-  padding: 10px 6px;
+  padding: 10px 8px;
   font-size: 14px;
   font-weight: 600;
   color: var(--kp-text);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
 }
+.kp-form .slot-btn .slot-main { font-size: 14px; font-weight: 700; letter-spacing: 0.3px; }
+.kp-form .slot-btn .slot-sub  { font-size: 10px; font-weight: 400; color: var(--kp-text-muted); letter-spacing: 0; }
 .kp-form .slot-btn:hover { border-color: var(--kp-blue); color: var(--kp-blue); }
+.kp-form .slot-btn:hover .slot-sub { color: var(--kp-blue); opacity: .8; }
 .kp-form .slot-btn.selected { background: var(--kp-blue); border-color: var(--kp-blue); color: #fff; }
+.kp-form .slot-btn.selected .slot-sub { color: rgba(255,255,255,.85); }
+
+.slot-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font-size: 12px;
+  color: var(--kp-text-muted);
+  margin-bottom: 10px;
+  letter-spacing: 0.2px;
+}
+.slot-meta .vip-tag {
+  background: #fff7e6;
+  border: 1px solid #f3d6a4;
+  color: #8a5a00;
+  padding: 1px 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+}
 
 .kp-form-footer {
   display: flex;
