@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>local-llm-offline-demo — Oskar Seweryn</title>
+<meta name="description" content="WOŚP demo: a local LLM running fully offline on a Mac Studio M3 Ultra — no cloud, no API keys, 256 GB unified memory doing the heavy lifting." />
+<meta name="theme-color" content="#0b0d12" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0d12'/%3E%3Ctext x='50%25' y='54%25' font-family='ui-monospace,monospace' font-size='34' font-weight='700' text-anchor='middle' fill='%2374f0c0'%3Eos%3C/text%3E%3C/svg%3E" />
+
+<meta property="og:title" content="local-llm-offline-demo" />
+<meta property="og:description" content="A local LLM, running fully offline on a Mac Studio M3 Ultra. Live demo, recorded for WOŚP." />
+<meta property="og:type" content="video.other" />
+<meta property="og:video" content="https://www.youtube.com/watch?v=C6nJDx_PaeA" />
+
+<link rel="stylesheet" href="/style.css" />
+<noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
+<style>
+  .video-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .video-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .video-caption {
+    color: var(--fg-mute);
+    font-family: var(--mono);
+    font-size: 12.5px;
+    margin-top: 10px;
+  }
+  .pipeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  .pipe-card {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+  .pipe-num {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .pipe-card h3 {
+    font-family: var(--mono);
+    font-size: 16px;
+    margin: 0 0 8px;
+  }
+  .pipe-card p {
+    color: var(--fg-dim);
+    font-size: 14.5px;
+    margin: 0;
+    line-height: 1.55;
+  }
+  .inline-link {
+    color: var(--accent);
+    border-bottom: 1px dashed rgba(116, 240, 192, 0.4);
+  }
+  .inline-link:hover { border-bottom-color: var(--accent); }
+</style>
+</head>
+<body class="subpage">
+
+<header class="nav" data-nav>
+  <a class="brand" href="/">oskar<span>.seweryn</span></a>
+  <nav>
+    <a href="/#about">About</a>
+    <a href="/#work">Work</a>
+    <a href="/projects/">Projects</a>
+    <a href="/blog/">Blog</a>
+    <a href="/#contact">Contact</a>
+    <a class="nav-cta" href="https://github.com/oskarseweryn" target="_blank" rel="noopener">GitHub →</a>
+  </nav>
+</header>
+
+<main>
+  <a class="back" href="/projects/" data-reveal>← back to projects</a>
+
+  <div class="page-head">
+    <p class="eyebrow" data-reveal>Local LLMs · video demo</p>
+    <h1 data-reveal>local-llm-offline-demo</h1>
+    <p data-reveal>
+      A capable LLM, running fully offline on a Mac Studio M3 Ultra &mdash; no cloud,
+      no API keys, no network. Recorded for WOŚP as a live answer to the question
+      &ldquo;what can you actually do without the internet?&rdquo;
+    </p>
+  </div>
+
+  <section class="snake-stage" data-reveal style="margin: 0 auto; max-width: var(--maxw); padding: 0 clamp(20px, 5vw, 56px) 24px;">
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/C6nJDx_PaeA?rel=0"
+        title="WOŚP demo · local LLM running offline"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+    </div>
+    <p class="video-caption">
+      Recorded live · airplane-mode demo · YouTube mirror &mdash;
+      <a class="inline-link" href="https://www.youtube.com/watch?v=C6nJDx_PaeA" target="_blank" rel="noopener">watch on YouTube ↗</a>
+    </p>
+  </section>
+
+  <section class="section" data-reveal>
+    <h2>What you&rsquo;re looking at</h2>
+    <p class="section-sub">
+      Why the demo exists, and what is &mdash; and isn&rsquo;t &mdash; running locally.
+    </p>
+    <div class="pipeline">
+      <div class="pipe-card">
+        <div class="pipe-num">01</div>
+        <h3>The premise</h3>
+        <p>
+          Most &ldquo;AI&rdquo; people see day to day is a thin client over a remote API.
+          Pull the plug and it&rsquo;s gone. This demo flips that: Wi-Fi off, ethernet off,
+          model still answers.
+        </p>
+      </div>
+      <div class="pipe-card">
+        <div class="pipe-num">02</div>
+        <h3>The hardware</h3>
+        <p>
+          Mac Studio M3 Ultra with 256&nbsp;GB unified memory &mdash; RAM and VRAM are the
+          same pool, so a quantized 70B+ dense (or 100B+ MoE) model fits comfortably and
+          stays interactive.
+        </p>
+      </div>
+      <div class="pipe-card">
+        <div class="pipe-num">03</div>
+        <h3>The stack</h3>
+        <p>
+          A local inference runtime (llama.cpp / MLX class) loading an open-weights
+          model with a quantized format. No bespoke training &mdash; the point is that
+          off-the-shelf weights are already enough to be useful offline.
+        </p>
+      </div>
+      <div class="pipe-card">
+        <div class="pipe-num">04</div>
+        <h3>The point</h3>
+        <p>
+          A frame for the &ldquo;local vs. cloud&rdquo; conversation: privacy, latency,
+          cost, sovereignty, and what the gap to frontier models actually feels like
+          for everyday tasks.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-reveal>
+    <h2>Where this fits</h2>
+    <p class="section-sub">
+      Part of an ongoing thread on local-first LLM workflows on this machine.
+    </p>
+    <p style="color: var(--fg-dim); font-size: 15px; max-width: 720px; line-height: 1.6;">
+      The longer arc is a <em>local-agent-stack</em> &mdash; eval harness, tool-use
+      scaffolding, and Claude as orchestrator on top of local open-weights models for
+      the steps that don&rsquo;t need a frontier model. This demo is the cold-open: proof
+      that the substrate works, before any of the orchestration goes on top.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <span>© <span id="yr"></span> Oskar Seweryn</span>
+  <span class="sep">·</span>
+  <span>Built static. Hosted on GitHub Pages.</span>
+</footer>
+
+<script src="/main.js" defer></script>
+</body>
+</html>
