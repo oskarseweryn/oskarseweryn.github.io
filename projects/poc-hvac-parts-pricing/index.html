@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HVAC parts sourcing · Oskar Seweryn</title>
+<meta name="description" content="Sourcing-tool dla małej firmy serwisowej HVAC: 8-SKU koszyk × 15 kanałów (PL publiczne ceny + UE + Chiny RFQ). Macierz cen jednostkowych SKU × Dostawca z najtańszą ofertą per SKU oraz wzór RFQ pod każdy kanał." />
+<meta name="theme-color" content="#1E57AA" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0d12'/%3E%3Ctext x='50%25' y='54%25' font-family='ui-monospace,monospace' font-size='34' font-weight='700' text-anchor='middle' fill='%2374f0c0'%3Eos%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="./style.css" />
+<style>
+  /* Portfolio strip on top of the standalone HVAC page (light theme retained below). */
+  .portfolio-strip {
+    background: #0b0d12;
+    color: #d8dde6;
+    padding: 10px 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .portfolio-strip a {
+    color: #d8dde6;
+    text-decoration: none;
+  }
+  .portfolio-strip a:hover { color: #74f0c0; }
+  .portfolio-strip .brand { font-weight: 600; }
+  .portfolio-strip .brand span { color: #74f0c0; }
+  .portfolio-strip nav { display: flex; gap: 16px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+
+<div class="portfolio-strip">
+  <a class="brand" href="/">oskar<span>.seweryn</span></a>
+  <nav>
+    <a href="/projects/">← all projects</a>
+    <a href="/#about">about</a>
+    <a href="https://github.com/oskarseweryn" target="_blank" rel="noopener">GitHub →</a>
+  </nav>
+</div>
+
+<header>
+  <h1>Sourcing części HVAC</h1>
+  <p class="meta">
+    <span id="spec-line">8 SKU · sezonowe odnowienie magazynu firmy serwisowej · dostawa do Polski</span>
+    <span class="updated">Ostatnia aktualizacja danych: <time id="last-updated">—</time></span>
+  </p>
+  <div class="controls">
+    <fieldset>
+      <legend>Region</legend>
+      <label><input type="radio" name="region" value="PL" checked> Tylko Polska</label>
+      <label><input type="radio" name="region" value="ALL"> Polska + UE</label>
+      <label><input type="radio" name="region" value="GLOBAL"> Polska + UE + Chiny</label>
+    </fieldset>
+    <fieldset>
+      <legend>Akcje</legend>
+      <button id="reset-basket" type="button" class="link-btn">Przywróć domyślne ilości</button>
+      <button id="toggle-all" type="button" class="link-btn">Odznacz wszystkie</button>
+    </fieldset>
+    <p class="pricing-note" id="pricing-note"></p>
+  </div>
+
+  <details class="basket" open>
+    <summary>Koszyk SKU — zaznacz pozycje i ustaw ilości</summary>
+    <table id="basket-table">
+      <thead>
+        <tr>
+          <th class="check-col"></th>
+          <th>SKU</th>
+          <th>Specyfikacja</th>
+          <th class="num qty-col">Ilość</th>
+          <th>Zastosowanie</th>
+        </tr>
+      </thead>
+      <tbody id="basket-rows"></tbody>
+    </table>
+  </details>
+</header>
+
+<main>
+  <h2 class="section-title">Porównanie dostawców</h2>
+  <table id="vendors">
+    <thead>
+      <tr>
+        <th>Dostawca</th>
+        <th>Kraj</th>
+        <th class="num">Pokrycie SKU</th>
+        <th class="num">Suma koszyka (PLN)</th>
+        <th>Czas dostawy</th>
+        <th>Email</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="vendor-rows"></tbody>
+  </table>
+
+  <h2 class="section-title matrix-title">Matryca cen jednostkowych: SKU × Dostawca</h2>
+  <p class="matrix-note">Wartości w PLN za sztukę. Pokazane tylko wybrane SKU i dostawcy widoczni w bieżącym filtrze regionu. CN — wycena na zapytanie (RFQ). „—" = brak w ofercie / brak danych. Najtańsza oferta per SKU jest podświetlona na zielono.</p>
+  <div class="matrix-scroll">
+    <table id="matrix"></table>
+  </div>
+</main>
+
+<footer>
+  <p>
+    Strona statyczna — zero kosztu runtime. Odświeżanie offline przez slash command
+    <code>/hvac-parts-pricing</code> (Claude Code Max). Pełna metodologia w repo:
+    <a href="https://github.com/oskarseweryn/oskarseweryn.github.io" target="_blank" rel="noopener">github.com/oskarseweryn</a>.
+  </p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

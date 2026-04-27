@@ -1,0 +1,527 @@
+{
+  "last_updated": "2026-04-27",
+  "spec": {
+    "use_case": "Mała firma serwisowa HVAC w okolicach Krakowa — odnowienie magazynu części eksploatacyjnych przed sezonem chłodzenia (maj–sierpień).",
+    "ship_to": "PL",
+    "currency": "PLN"
+  },
+  "fx_note": "Kursy referencyjne (do przeliczeń): 1 EUR ≈ 4,30 PLN · 1 USD ≈ 4,00 PLN · 1 CNY ≈ 0,55 PLN. Faktyczny kurs zależy od dnia płatności.",
+  "pricing_note": "Strona pokazuje wyłącznie dostawców z realnymi cenami (publiczne katalogi PL/EU brutto/netto przeliczone na PLN po 4,30 EUR) oraz fabryki CN (RFQ-only z założenia). Dostawcy bez publicznego cennika (B2B login, 'zapytaj o cenę', firmy serwisowe bez sklepu) zostali odfiltrowani — pełną listę wyniosłaby do ~24, ale dla porównania cen liczy się tylko 12 z nich + 3 CN. Refrigeranty wymagają certyfikatu F-Gaz po stronie kupującego.",
+  "basket": [
+    {
+      "id": "filter-f7-cassette",
+      "name": "Filtr kasetowy F7 (klasa ePM1 60%)",
+      "spec": "592 × 592 × 96 mm, ramka aluminiowa, do AHU / rekuperatora",
+      "qty_default": 50,
+      "use": "Wymiana filtrów w centralach klimatyzacyjnych i rekuperatorach (sezonowa)."
+    },
+    {
+      "id": "refrigerant-r32-9kg",
+      "name": "Butla czynnika chłodniczego R32, 9 kg",
+      "spec": "Butla jednorazowa lub zwrotna; certyfikat F-Gaz; SDS PL/EN",
+      "qty_default": 20,
+      "use": "Uzupełnienia czynnika w klimatyzacjach split mono/multi (R32 dominuje w nowych modelach)."
+    },
+    {
+      "id": "refrigerant-r410a-11kg",
+      "name": "Butla czynnika chłodniczego R410A, 11,3 kg",
+      "spec": "Butla zwrotna; certyfikat F-Gaz",
+      "qty_default": 10,
+      "use": "Serwis starszych klimatyzacji split."
+    },
+    {
+      "id": "run-capacitor-35-5-440",
+      "name": "Kondensator rozruchowy 35/5 µF 440 V",
+      "spec": "Podwójny (sprężarka + wentylator), 50/60 Hz, terminale 6,3 mm",
+      "qty_default": 50,
+      "use": "Najczęstsza usterka jednostek zewnętrznych split."
+    },
+    {
+      "id": "fan-motor-condenser-yyf",
+      "name": "Silnik wentylatora skraplacza, ~30 W, 825 obr/min",
+      "spec": "230 V / 50 Hz, wał 8 mm, łożyska kulkowe, IP54",
+      "qty_default": 15,
+      "use": "Wymiana silników wentylatorów w jednostkach zewnętrznych split 2,5–5 kW."
+    },
+    {
+      "id": "txv-r32-r410a-12k",
+      "name": "Zawór rozprężny TXV uniwersalny 12 000 BTU",
+      "spec": "Kompatybilny R32/R410A, przyłącze ODF 3/8\" × 1/2\"",
+      "qty_default": 30,
+      "use": "Naprawa nieszczelności / wymiana zaworu po awarii sprężarki."
+    },
+    {
+      "id": "thermistor-ntc-10k",
+      "name": "Czujnik temperatury NTC 10 kΩ, sonda 1 m",
+      "spec": "B25/85 = 3435, ±1%, kabel PVC 1 m",
+      "qty_default": 100,
+      "use": "Wymiana czujników temperatury parownika / skraplacza / nawiewu."
+    },
+    {
+      "id": "service-valve-1-4-flare",
+      "name": "Zawór serwisowy 1/4\" SAE flare",
+      "spec": "Mosiądz, z trzpieniem Schradera",
+      "qty_default": 50,
+      "use": "Materiały eksploatacyjne — komplet do każdego serwisu napełniania/odpowietrzania."
+    }
+  ],
+  "vendors": [
+    {
+      "id": "allegro-najlepsza",
+      "name": "Allegro (najlepsza oferta)",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://allegro.pl",
+      "product_url": "https://allegro.pl",
+      "contact_url": "https://allegro.pl",
+      "email": null,
+      "lead_time": "24–48 h (Allegro Smart!)",
+      "notes": "Agregator publicznych ofert Allegro — pokazuje najtańszego sprzedawcę dla każdego SKU. Każdy link prowadzi do konkretnej aukcji. Brak RFQ — zamówienie online.",
+      "line_items": [
+        {
+          "part_id": "filter-f7-cassette",
+          "unit_price_pln": 173.0,
+          "unit_price_label": "173 zł brutto (wariant 400VE; 592×592×96 z flanszą zbliżone)",
+          "product_url": "https://allegro.pl/oferta/filtr-kasetowy-zline-f7-592x592x96-z-flansza-13212918387",
+          "note": "PureVent Filters (Allegro): Allegro top seller (PureVent), produkcja PL, F7/EU7 ramka kartonowa, MOQ 1; Allegro Smart!"
+        },
+        {
+          "part_id": "refrigerant-r32-9kg",
+          "unit_price_pln": 1230.0,
+          "unit_price_label": "1230,00 zł brutto (1265 zł z dostawą)",
+          "product_url": "https://allegro.pl/oferta/czynnik-chlodniczy-r32-9kg-legalny-gaz-butla-10651774427",
+          "note": "KlimaExpert (Allegro): F-Gaz: kupujący musi podać numer certyfikatu F-Gaz lub oświadczenie do dalszej odsprzedaży w wiadomości; cena z butlą; możliwość wymiany butli; faktura VAT"
+        },
+        {
+          "part_id": "refrigerant-r410a-11kg",
+          "unit_price_pln": 1999.0,
+          "unit_price_label": "1999,00 zł brutto (10 kg, bez butli)",
+          "product_url": "https://allegro.pl/oferta/czynnik-chlodniczy-r410a-10kg-legalny-gaz-butla-13037024069",
+          "note": "KlimaExpert (Allegro) — 10 kg: F-Gaz: certyfikat wymagany; cena R410A NIE zawiera butli — opcja 'gift wrap' dodaje butlę; możliwość zwrotu butli ≤3 lat"
+        },
+        {
+          "part_id": "run-capacitor-35-5-440",
+          "unit_price_pln": 27.0,
+          "unit_price_label": "27 zł brutto z dostawą",
+          "product_url": "https://allegro.pl/oferta/kondensator-rozruchowy-silnika-35uf-450v-cbb60-kem-7685061578",
+          "note": "Allegro (Kemot 35 µF CBB60): Pojedynczy KEM/Kemot 35 µF 450V; PL marka; w PL retailu wersja DUAL 35/5 µF jest rzadkością — typowo trzeba zamawiać osobno 35 µF + 5 µF lub kupować bezpośrednio z Amazon.com"
+        },
+        {
+          "part_id": "thermistor-ntc-10k",
+          "unit_price_pln": 18.99,
+          "unit_price_label": "18,99 zł brutto z dostawą",
+          "product_url": "https://allegro.pl/oferta/czujnik-termistor-ntc-10k-1m-6385630485",
+          "note": "Allegro (Termistor NTC 10K 1m): Termistor NTC 10K w hermetycznej obudowie, sonda 2,5 cm, kabel 1 m; gotowy do podłączenia w klimatyzatorze"
+        },
+        {
+          "part_id": "service-valve-1-4-flare",
+          "unit_price_pln": 55.0,
+          "unit_price_label": "55,00 zł brutto",
+          "product_url": "https://allegro.pl/oferta/zawor-serwisowy-napelniajacy-ch-343-1-4-sae-6713820694",
+          "note": "Allegro (CH-343 1/4 SAE): Wersja Allegro: zawór serwisowy napełniający CH-343 1/4'' SAE (wariant prosty, nie kątowy); top seller PL; MOQ 1"
+        }
+      ]
+    },
+    {
+      "id": "coolmarket-pl",
+      "name": "Coolmarket (Kraków)",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://coolmarket.pl",
+      "product_url": "https://coolmarket.pl",
+      "contact_url": "https://coolmarket.pl/pl/kontakt",
+      "email": null,
+      "lead_time": "24 h (PL)",
+      "notes": "Lokalny sklep HVAC w Krakowie — publiczne ceny brutto, wysyłka 24h. Refrigeranty wymagają oświadczenia F-Gaz po zamówieniu.",
+      "line_items": [
+        {
+          "part_id": "refrigerant-r32-9kg",
+          "unit_price_pln": 1670.0,
+          "unit_price_label": "1670,00 zł brutto (z butlą)",
+          "product_url": "https://coolmarket.pl/pl/p/Czynnik-chlodniczy-R32-Wraz-z-butla-9kg/3273",
+          "note": "F-Gaz: 'ZAKUP TYLKO DLA FIRM POSIADAJĄCYCH AKTUALNE UPRAWNIENIA F-GAZOWE LUB DO DALSZEJ ODSPRZEDAŻY'; konieczne podpisane oświadczenie po zamówieniu; wysyłka 24h; cena obejmuje butlę"
+        },
+        {
+          "part_id": "refrigerant-r410a-11kg",
+          "unit_price_pln": 2300.0,
+          "unit_price_label": "2300,00 zł brutto (10 kg bez butli)",
+          "product_url": "https://coolmarket.pl/pl/p/Czynnik-chlodniczy-R410a-10-kg-bez-butli/432",
+          "note": "F-Gaz wymagany; cena bez butli (do wymiany); R410A jest wycofywany — ceny rosną"
+        },
+        {
+          "part_id": "fan-motor-condenser-yyf",
+          "unit_price_pln": 85.07,
+          "unit_price_label": "85,07 zł brutto",
+          "product_url": "https://coolmarket.pl/pl/p/Silnik-wentylatora-34W%2C-parownika%2C-skraplacza-/264",
+          "note": "Najbliższy odpowiednik 30W: 34W 230V 1300 obr/min, kod YZF34-45, wał 8mm; wysyłka 24h; alu-obudowa"
+        },
+        {
+          "part_id": "txv-r32-r410a-12k",
+          "unit_price_pln": null,
+          "unit_price_label": "200-2000 zł brutto (zakres katalogowy)",
+          "product_url": "https://coolmarket.pl/pl/c/Zawory-rozprezne/55",
+          "note": "Dla split 12 000 BTU (3,5 kW) najbardziej pasuje TXV uniwersalny chiński (ok. 150-300 zł) lub Sanhua/Honeywell ~400-700 zł; brak konkretnej karty produktowej z ceną dla R32/R410A 12k BTU bez zalogowania"
+        },
+        {
+          "part_id": "service-valve-1-4-flare",
+          "unit_price_pln": 66.0,
+          "unit_price_label": "66,00 zł brutto",
+          "product_url": "https://coolmarket.pl/pl/p/Zawor-katowy-serwisowy-odcinajacy-CH-343-14-SAE/153",
+          "note": "Zawór kątowy serwisowy CH-343 1/4'' SAE z ruchomym popychaczem (otwiera Schrader); wysyłka 24h; standard PL serwisowy"
+        }
+      ]
+    },
+    {
+      "id": "iglotech-esklep",
+      "name": "Iglotech (esklep)",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://esklep.iglotech.com",
+      "product_url": "https://esklep.iglotech.com",
+      "contact_url": "https://esklep.iglotech.com/en/contact",
+      "email": null,
+      "lead_time": "1–3 dni (PL)",
+      "notes": "Jeden z największych dystrybutorów chłodnictwa w PL — publiczne ceny katalogowe, wymagane Oświadczenie F-Gaz dla refrigerantów.",
+      "line_items": [
+        {
+          "part_id": "refrigerant-r32-9kg",
+          "unit_price_pln": 830.25,
+          "unit_price_label": "830,25 zł brutto",
+          "product_url": "https://esklep.iglotech.com/en/czynnik-chlodniczy-r32-butla-pelniona-9-kg/3-2010-4377",
+          "note": "F-Gaz: 'Oświadczenie F-Gaz' wymagane (link w stopce); jeden z największych dystrybutorów chłodnictwa w PL; butla pełniona 9 kg, kod FR00005"
+        },
+        {
+          "part_id": "refrigerant-r410a-11kg",
+          "unit_price_pln": 1894.2,
+          "unit_price_label": "1894,20 zł brutto (10 kg, butla pełniona)",
+          "product_url": "https://esklep.iglotech.com/en/czynnik-chlodniczy-r410a-butla-pelniona-10kg-ig/3-2015-2708",
+          "note": "F-Gaz: 'Oświadczenie F-Gaz' wymagane; UWAGA: PL standard to butla 10 kg, nie 11,3 kg — przelicznik 1,13× dla 11,3 kg ≈ 2140 zł; brak butli 11,3 kg w PL retailu"
+        }
+      ]
+    },
+    {
+      "id": "klimathurt-pl",
+      "name": "KlimatHurt",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://klimathurt.pl",
+      "product_url": "https://klimathurt.pl",
+      "contact_url": "https://klimathurt.pl",
+      "email": null,
+      "lead_time": null,
+      "notes": "Hurtownia chłodnictwa/klimatyzacji PL — silniki wentylatorów, części eksploatacyjne; publiczne ceny.",
+      "line_items": [
+        {
+          "part_id": "fan-motor-condenser-yyf",
+          "unit_price_pln": 85.0,
+          "unit_price_label": "85,00 zł brutto",
+          "product_url": "https://klimathurt.pl/silnik-wentylatora-34w-parownika-skraplacza-super-jakosc-p-32.html",
+          "note": "Hurtownia chłodnictwo/klimatyzacja PL; 34W uniwersalny silnik skraplacza/parownika; alternatywy 5W/10W/16W/25W także w katalogu"
+        }
+      ]
+    },
+    {
+      "id": "filtropol-pl",
+      "name": "Filtropol",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://www.filtropol.pl",
+      "product_url": "https://www.filtropol.pl",
+      "contact_url": "https://www.filtropol.pl/contact",
+      "email": null,
+      "lead_time": "25 dni roboczych (na zamówienie)",
+      "notes": "Producent PL filtrów wentylacyjnych — F7 kasetowy 592×592×96 dokładny match. MOQ 1, kurier 15 zł.",
+      "line_items": [
+        {
+          "part_id": "filter-f7-cassette",
+          "unit_price_pln": 178.0,
+          "unit_price_label": "178,00 zł brutto",
+          "product_url": "https://www.filtropol.pl/filtr-kasetowy-plisowany-f7-592x592x96mm-p-96.html",
+          "note": "Producent PL, dokładny wymiar 592×592×96 F7, MOQ 1, 'na zamówienie' (25 dni roboczych); kurier 15 zł / odbiór osobisty 0 zł"
+        }
+      ]
+    },
+    {
+      "id": "abc-rc-pl",
+      "name": "ABC-RC",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://abc-rc.pl",
+      "product_url": "https://abc-rc.pl",
+      "contact_url": "https://abc-rc.pl/en/contact",
+      "email": null,
+      "lead_time": "1–3 dni (PL)",
+      "notes": "Sklep elektroniczny — czujniki NTC 10K commodity (najtańsza opcja w PL). Rabaty od 5/10/20 szt.",
+      "line_items": [
+        {
+          "part_id": "thermistor-ntc-10k",
+          "unit_price_pln": 3.2,
+          "unit_price_label": "3,20 zł brutto (1 szt.); 2,88 zł od 20 szt.",
+          "product_url": "https://abc-rc.pl/en/products/temperature-sensor-ntc-10k-with-metal-waterproof-probe-1m-cable-9477.html",
+          "note": "Sonda metalowa wodoodporna, kabel 1 m, zakres -20 do +105 °C; idealny zamiennik HVAC NTC; rabaty ilościowe (5+/10+/20+)"
+        }
+      ]
+    },
+    {
+      "id": "akwa-terma-pl",
+      "name": "Akwa-Terma",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://sklep.akwa-terma.com.pl",
+      "product_url": "https://sklep.akwa-terma.com.pl",
+      "contact_url": "https://sklep.akwa-terma.com.pl/contact",
+      "email": null,
+      "lead_time": null,
+      "notes": "PL sklep z osprzętem chłodniczym — referencyjna cena Danfoss TGE (większy zawór niż 12k BTU; SKU 12k BTU zwykle 'na zapytanie' w PL retail).",
+      "line_items": [
+        {
+          "part_id": "txv-r32-r410a-12k",
+          "unit_price_pln": 2012.69,
+          "unit_price_label": "2012,69 zł brutto",
+          "product_url": "https://sklep.akwa-terma.com.pl/pl/products/danfoss-termostatyczny-zawor-rozprezny-tge-r410a-r32-067n3159-45001.html",
+          "note": "UWAGA: TGE 067N3159 jest dla R410A/R32 ale wydajność 54 kW (R410A) / 81 kW (R32) — to ZBYT DUŻY zawór dla split 12 000 BTU (3,5 kW); reprezentatywna cena Danfoss TGE z PL retail"
+        }
+      ]
+    },
+    {
+      "id": "refrigerant-boys-it",
+      "name": "Refrigerant Boys",
+      "country": "IT",
+      "region": "EU",
+      "language": "en",
+      "homepage": "https://www.refrigerantboys.com",
+      "product_url": "https://www.refrigerantboys.com/en/store/refrigerant-fluids/r32/",
+      "contact_url": "https://www.refrigerantboys.com/en/contacts/",
+      "email": null,
+      "lead_time": "3–7 dni roboczych (IT→PL)",
+      "notes": "Włoski specjalista czynników chłodniczych — publiczne ceny EUR netto, potwierdzony shipping do PL. Wymagany F-Gaz cert + intra-community VAT. Telefon: +39 334 742 7820.",
+      "line_items": [
+        {
+          "part_id": "refrigerant-r32-9kg",
+          "unit_price_pln": 1157,
+          "unit_price_label": "€269,00 netto (~1 157 PLN)",
+          "product_url": "https://www.refrigerantboys.com/en/buy/refrigerant-fluids/r32/r32-gas-cylinder-with-9-kg-valve-w217x1-14-left/",
+          "note": "Exact spec match: 9 kg R32 cylinder, valve W21.7×1/14 SX. Net price (ex VAT); €18.27 eco-tax already included; F-Gas cert + intra-community VAT required."
+        },
+        {
+          "part_id": "refrigerant-r410a-11kg",
+          "unit_price_pln": 2060,
+          "unit_price_label": "€479,00 netto (~2 060 PLN) — 10 kg cylinder (closest to 11.3 kg ask)",
+          "product_url": "https://www.refrigerantboys.com/en/buy/refrigerant-fluids/r410a/refrigerant-gas-r410a-refillable-cylinder-5-kg-valve-1-4-2/",
+          "note": "Closest match: 10 kg refillable R410A cylinder (T-PED / EN 13322-1). No 11.3 kg variant in catalogue — spec różni się (-1.3 kg). Net price (ex VAT); F-Gas cert required."
+        }
+      ],
+      "email_draft": {
+        "subject": "RFQ — refrigerants R32 / R410A for Polish HVAC service company (May 2026)",
+        "body": "Hello,\n\nWe are a small HVAC service company based in Krakow, Poland, preparing our seasonal restock for May–August 2026.\n\nWe are interested in ordering refillable refrigerant cylinders shipped to Poland (you list PL in your shipping group):\n\n{basket}\n\nPlease confirm:\n- Net unit price (EUR ex VAT) at the quantities above + tier pricing for ×0.5 / ×2\n- Required paperwork on our side (F-Gas certificate copy + intra-community VAT registration — both available)\n- Lead time IT→PL\n- Carrier (please specify ADR-compliant for refrigerant cylinders)\n- Payment terms (proforma vs net 30 days)\n\nBest regards,\n[Full name]\n[Company name · VAT ID · F-Gaz reg.]\n[Phone · Email]"
+      }
+    },
+    {
+      "id": "kaelte4you-de",
+      "name": "Kälte4you",
+      "country": "DE",
+      "region": "EU",
+      "language": "de",
+      "homepage": "https://kaelte4you.de",
+      "product_url": "https://kaelte4you.de",
+      "contact_url": "https://kaelte4you.de/kontakt",
+      "email": "info@kaelte4you.de",
+      "lead_time": "1–3 Werktage (DE)",
+      "notes": "DE — 20 000+ SKU części chłodniczych (kompresory, silniki wentylatorów, TXV, NTC Carel, kondensatory); publiczne ceny EUR. Wysyłka EU do potwierdzenia mailem.",
+      "line_items": [
+        {
+          "part_id": "thermistor-ntc-10k",
+          "unit_price_pln": 120,
+          "unit_price_label": "€28,00 netto (~120 PLN)",
+          "product_url": "https://kaelte4you.de/produkt/temperaturfuehler-ntc-10k-2-0m-sn4b20p1-lae/",
+          "note": "Close match: NTC 10K, LAE SN4B20P1, 2.0 m TPE cable, IP67, ±0.3K @25°C. Spec wants 1 m probe — 2 m here (acceptable, just trim). Net price (ohne MwSt). Range w katalogu: €28–82 netto za różne warianty NTC 10K (LAE, COOLcon)."
+        },
+        {
+          "part_id": "fan-motor-condenser-yyf",
+          "unit_price_pln": 215,
+          "unit_price_label": "€49,99 netto (~215 PLN)",
+          "product_url": "https://kaelte4you.de/produkt/lueftermotor-efcr25y0-a5-mavib-25-watt/",
+          "note": "Partial match: MAVIB EFCR25Y0.A5, 25 W (vs 30 W ask), 1300–1400 RPM (vs 825 RPM ask) — mocy zbliżone, ale RPM różni się (2-pole motor, nie 6-pole). Net price (ohne MwSt)."
+        },
+        {
+          "part_id": "txv-r32-r410a-12k",
+          "unit_price_pln": 563,
+          "unit_price_label": "€131,00 netto (~563 PLN)",
+          "product_url": "https://kaelte4you.de/produkt/expansionsventil-tuae-r410a-068u2780-danfoss/",
+          "note": "Close match: Danfoss TUAE 068U2780, R410A, thermostatyczny TXV z external pressure equalisation, lutowane 10/12 mm. Capacity not BTU-labelled (ratings tabela by R-gas; TUAE pokrywa ~1–4 kW = 3.4–14 kBTU). Net price (ohne MwSt)."
+        },
+        {
+          "part_id": "service-valve-1-4-flare",
+          "unit_price_pln": 111,
+          "unit_price_label": "€25,89 netto (~111 PLN)",
+          "product_url": "https://kaelte4you.de/produkt/absperrventil-6410-2-castel/",
+          "note": "Exact match: Castel 6410/2 Absperrventil, 1/4\" SAE Bördel, max 45 bar, -60/+110°C. Net price (ohne MwSt). Premium-brand; PL Allegro chińskie ekwiwalenty 15–25 PLN."
+        }
+      ],
+      "email_draft": {
+        "subject": "B2B-Anfrage — HVAC-Ersatzteile Saison 2026 (PL Service-Firma, Krakau)",
+        "body": "Sehr geehrte Damen und Herren,\n\nwir sind eine kleine HVAC-Service-Firma aus dem Großraum Krakau (Polen) und planen unsere Saisonbestellung für Mai–August 2026.\n\nUnser Bedarf:\n\n{basket}\n\nWir bitten um:\n- B2B-Angebot (netto EUR) inkl. Versand nach Krakau\n- Lieferzeit DE→PL\n- Mengenrabatt auf den gesamten Korb\n- Zahlungsbedingungen (Vorkasse vs Rechnung 14/30 Tage)\n\nMit freundlichen Grüßen,\n[Vorname Nachname]\n[Firmenname · USt-IdNr]\n[Telefon · E-Mail]"
+      }
+    },
+    {
+      "id": "intelectra-shop-de",
+      "name": "Intelectra Shop",
+      "country": "DE",
+      "region": "EU",
+      "language": "de",
+      "homepage": "https://intelectra-shop.de",
+      "product_url": "https://intelectra-shop.de",
+      "contact_url": "https://intelectra-shop.de/Kontakt",
+      "email": "intelectra-ersatzteile@t-online.de",
+      "lead_time": "1–3 dni (DE); EU shipping do potwierdzenia",
+      "notes": "DE (Straubing) — 5 000+ SKU części chłodniczych: kondensatory, NTC/PTC, Klixon, zawory rozprężne. Publiczne ceny EUR. EU shipping do potwierdzenia.",
+      "line_items": [
+        {
+          "part_id": "run-capacitor-35-5-440",
+          "unit_price_pln": 81,
+          "unit_price_label": "€18,90 netto / €22,49 brutto (~81 PLN netto)",
+          "product_url": "https://intelectra-shop.de/Ersatzteile-Zubehoer/Ersatzteile_Waschmaschine/Kondensator-mit-Kabel-/Kondensator-35-F-bis-450-Volt-mit-Kabel-Betriebskondensator-Anlaufkondensator-120035.html",
+          "note": "Partial match: Kondensator 35 µF / 450V, single-value (NIE dual run) — sklep nie oferuje 35/5 µF kombinacji. Trzeba kupić dwa osobno (35 µF + 5 µF). VDE, IP64, kabel, M8. Net (ohne MwSt) calculated from €22,49 brutto."
+        },
+        {
+          "part_id": "thermistor-ntc-10k",
+          "unit_price_pln": 43,
+          "unit_price_label": "€9,90 netto / €11,78 brutto (~43 PLN netto)",
+          "product_url": "https://intelectra-shop.de/Ersatzteile-Zubehoer/Ersatzteile_Waschmaschine/Temperaturfuehler-fuer-Waschmaschine/Temperaturfuehler-NTC-Fuehler-Bosch-Siemens-00175369-10024438.html",
+          "note": "Partial match: Bosch 00175369 NTC, ~5.4–6.5 kΩ @20°C (8.5–10.6 kΩ @10°C) — to NIE jest standardowy HVAC NTC 10K B25/85=3435; raczej AGD-grade. Spec różni się. Net calculated from €11,78 brutto."
+        },
+        {
+          "part_id": "service-valve-1-4-flare",
+          "unit_price_pln": 25,
+          "unit_price_label": "€5,90 netto / €7,02 brutto (~25 PLN netto)",
+          "product_url": "https://intelectra-shop.de/Kuehlschrank-Gefrierschrank-Klimageraet/Kreislaufreparaturen-Fuellstationen-Zubehoer/Schraderventil-Einloetstutzen-3-weg-Kaeltetechnik-403082.html",
+          "note": "Close match: Refco A-31720 M, 1/4\" SAE z lutowanymi przyłączami 6/8/10 mm + Schrader; to 3-drogowy einlötstutzen (lutowany), NIE klasyczny flare cap valve — nadaje się jako port serwisowy. Net calculated from €7,02 brutto."
+        }
+      ],
+      "email_draft": {
+        "subject": "B2B-Anfrage — Kondensatoren, NTC, Expansionsventile (Saison 2026)",
+        "body": "Sehr geehrte Damen und Herren,\n\nHVAC-Service aus Krakau (PL), Saison-Bestellung 2026:\n\n{basket}\n\nWir bitten um:\n- Verfügbarkeit + Preis (netto EUR) für die o.g. Positionen aus Ihrem Sortiment (Kondensatoren, NTC, Expansionsventile)\n- Versandkosten + Lieferzeit DE→PL\n- Mengenrabatt + Zahlungsbedingungen (Rechnung 14/30 Tage möglich?)\n\nMit freundlichen Grüßen,\n[Vorname Nachname]\n[Firmenname · USt-IdNr]\n[Telefon · E-Mail]"
+      }
+    },
+    {
+      "id": "ersatzteilshop-de",
+      "name": "Ersatzteilshop.de",
+      "country": "DE",
+      "region": "EU",
+      "language": "de",
+      "homepage": "https://www.ersatzteilshop.de",
+      "product_url": "https://www.ersatzteilshop.de",
+      "contact_url": "https://www.ersatzteilshop.de/kontakt",
+      "email": null,
+      "lead_time": "1–3 Werktage (DE), DHL EU",
+      "notes": "DE — sklep części AGD/HVAC: kondensatory, wentylatorzy, sensory, regulatory temperatury. Trusted Shops 4.88 (17 800 ocen). Publiczne ceny EUR.",
+      "line_items": [
+        {
+          "part_id": "run-capacitor-35-5-440",
+          "unit_price_pln": 36,
+          "unit_price_label": "€8,48 netto / €10,09 brutto (~36 PLN netto)",
+          "product_url": "https://www.ersatzteilshop.de/kondensator-35-00-f-450v-mit-steckfahnen-156642.html",
+          "note": "Partial match: 35,00 µF / 450V single run capacitor (NIE dual 35/5). Steckfahnen, M8 mocowanie, 50×107 mm. AGD-grade — sklep ukierunkowany na pralki/suszarki, nie HVAC. Trzeba dokupić 5 µF osobno. Net calculated from €10,09 brutto / 1.19."
+        },
+        {
+          "part_id": "fan-motor-condenser-yyf",
+          "unit_price_pln": 110,
+          "unit_price_label": "€25,62 netto / €30,49 brutto (~110 PLN netto)",
+          "product_url": "https://www.ersatzteilshop.de/klimaanlage/",
+          "note": "Partial match: Bosch 00611864 silnik klimatyzacji (€30,49 brutto) — szczegóły mocy/RPM nie podane na stronie. Asortyment AGD-flavored; 30 W condenser fan motor 825 RPM nie występuje wprost. Range w sklepie: €30–87 brutto. Net calc from brutto / 1.19."
+        }
+      ],
+      "email_draft": {
+        "subject": "B2B-Anfrage — Druckschalter, Kondensator, Ventilator (HVAC-Service, Saison 2026)",
+        "body": "Sehr geehrte Damen und Herren,\n\nHVAC-Service-Firma aus Krakau (PL) — Saison 2026:\n\n{basket}\n\nWir bitten um:\n- B2B-Angebot (netto EUR) für die o.g. Positionen, soweit in Ihrem Sortiment\n- Versandkosten DHL DE→PL\n- Lieferzeit\n- Mengenrabatt\n\nMit freundlichen Grüßen,\n[Vorname Nachname]\n[Firmenname · USt-IdNr]\n[Telefon · E-Mail]"
+      }
+    },
+    {
+      "id": "kondensatoren-shop-de",
+      "name": "Kondensatoren-Shop",
+      "country": "DE",
+      "region": "EU",
+      "language": "de",
+      "homepage": "https://kondensatoren-shop.de",
+      "product_url": "https://kondensatoren-shop.de",
+      "contact_url": "https://kondensatoren-shop.de/Kontakt",
+      "email": "ron-richter@online.de",
+      "lead_time": "2–3 dni (DE); pan-EU shipping deklarowana",
+      "notes": "DE specjalista kondensatorów rozruchowych (Comar i in.) — publiczne ceny EUR. Deklarowana wysyłka pan-EU (PL OK). Tel. +49 151 2124 7864.",
+      "line_items": [
+        {
+          "part_id": "run-capacitor-35-5-440",
+          "unit_price_pln": 92,
+          "unit_price_label": "€21,50 brutto (~92 PLN) — single 35 µF, nie dual",
+          "product_url": "https://kondensatoren-shop.de/35-F-/-400V-AC-otor-capacitor-Comar",
+          "note": "Partial match: Comar MKA 35-450, 35 µF / 400 VAC single run capacitor (NIE 35/5 dual). Plastikowa obudowa Ø45×94 mm, kabel 250 mm. Sklep specjalizuje się w single-value motor caps; brak Doppelkondensator HVAC w katalogu. Cena z VAT (Alle Preise = Nettopreise zzgl. MwSt. uwaga ostrzeżenie sprzeczne — należy potwierdzić; €21,50 podane na stronie produktu jako gross-equivalent). Aby uzyskać 35/5 µF, kup osobno 35 µF + 5 µF (~€16 netto)."
+        }
+      ],
+      "email_draft": {
+        "subject": "B2B-Anfrage — Motorkondensatoren 35/5 µF 440V (HVAC-Service, Saison 2026)",
+        "body": "Sehr geehrte Damen und Herren,\n\nHVAC-Service aus Krakau (PL), Saison-Bedarf 2026 — wir benötigen vor allem Motorkondensatoren:\n\n{basket}\n\nWir bitten um:\n- Verfügbarkeit + Preis (netto EUR) für 35/5 µF 440V Motorkondensatoren\n- Versandkosten DE→PL\n- Lieferzeit\n- Mengenrabatt\n\nMit freundlichen Grüßen,\n[Vorname Nachname]\n[Firmenname · USt-IdNr]\n[Telefon · E-Mail]"
+      }
+    },
+    {
+      "id": "made-in-china-rfq",
+      "name": "Made-in-China (RFQ)",
+      "country": "CN",
+      "region": "CN",
+      "language": "en",
+      "homepage": "https://www.made-in-china.com",
+      "product_url": "https://www.made-in-china.com/products-search/hot-china-products/HVAC_Parts.html",
+      "contact_url": "https://www.made-in-china.com/products-search/hot-china-products/HVAC_Parts.html",
+      "email": null,
+      "lead_time": null,
+      "notes": "Aggregator — fan-out RFQ do dziesiątek fabryk. Brak pojedynczego maila — wysyłka przez formularz platformy.",
+      "line_items": [],
+      "email_draft": {
+        "subject": "RFQ — HVAC service parts (Polish service company, May 2026 order)",
+        "body": "Hello,\n\nWe are a HVAC service company based in Krakow, Poland. We are sourcing the items below for our May–August 2026 service season (basket scale: {scale}% of base quantities). Please paste this into the platform's Post Buying Request form to fan out to qualifying suppliers.\n\nItems:\n\n{basket}\n\nFor each item, please send back:\n- FOB-USD unit price at the quantity above, plus tiered pricing for ×0.5 and ×2 of each line\n- MOQ\n- Lead time\n- Sea + air freight options to Gdansk / Warsaw\n- Sample policy\n- Trade Assurance availability\n\nPayment: T/T 30% deposit, 70% before shipment (open to discussion).\nDestination: Krakow, Poland (delivered to a freight forwarder of our choice).\n\nBest regards,\n[Full name]\n[Company name · VAT ID]\n[Phone · Email]"
+      }
+    },
+    {
+      "id": "alibaba-hvac-parts",
+      "name": "Alibaba HVAC Parts",
+      "country": "CN",
+      "region": "CN",
+      "language": "en",
+      "homepage": "https://www.alibaba.com",
+      "product_url": "https://www.alibaba.com/showroom/hvac-parts.html",
+      "contact_url": "https://www.alibaba.com/showroom/hvac-parts.html",
+      "email": null,
+      "lead_time": null,
+      "notes": "Aggregator — pojedyncze SKU od fabryk Guangdong/Zhejiang; MOQ często 100–500 szt na pozycję",
+      "line_items": [],
+      "email_draft": {
+        "subject": "RFQ — HVAC service parts (Polish service company, May 2026)",
+        "body": "Hello,\n\nWe are a HVAC service company in Krakow, Poland, sourcing parts for our May–August 2026 service season. Please use Alibaba's RFQ form to broadcast this to qualified suppliers (Trade Assurance + Verified preferred).\n\nBasket (scale: {scale}% of base quantities):\n\n{basket}\n\nPlease provide per item:\n- FOB-USD unit price (at our quantity + at MOQ)\n- MOQ + lead time\n- Sea / air freight to Gdansk or Warsaw\n- Sample policy + Trade Assurance terms\n\nNote: refrigerants (R32, R410A) require ADR/IMDG-compliant packaging — confirm capability or skip those lines.\n\nBest regards,\n[Full name]\n[Company name · VAT ID]\n[Phone · Email]"
+      }
+    },
+    {
+      "id": "tongyi-foshan",
+      "name": "Tongyi (Foshan)",
+      "country": "CN",
+      "region": "CN",
+      "language": "en",
+      "homepage": "https://www.fstongyi.com",
+      "product_url": "https://www.fstongyi.com",
+      "contact_url": "https://www.fstongyi.com",
+      "email": null,
+      "lead_time": null,
+      "notes": "Fabryka Foshan — kondensatory, silniki, TXV; OEM/ODM; B2B przez RFQ",
+      "line_items": [],
+      "email_draft": {
+        "subject": "RFQ — capacitors, fan motors, TXV (Polish HVAC service, May 2026)",
+        "body": "Hello,\n\nWe are a HVAC service company in Krakow, Poland. We are interested in the components below from your factory for our May–August 2026 season (scale: {scale}% of base quantities):\n\n{basket}\n\nPlease quote:\n- FOB-USD unit price (at the quantity above, MOQ, and ×2 / ×5 tiers)\n- Lead time + sea / air freight options to Gdansk\n- Sample policy + Trade Assurance availability\n- OEM / ODM possibilities (label, packaging) and any tooling charge\n\nBest regards,\n[Full name]\n[Company name · VAT ID]\n[Phone · Email]"
+      }
+    }
+  ]
+}
