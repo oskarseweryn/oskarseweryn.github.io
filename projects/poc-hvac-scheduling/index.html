@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KlimaPro — umów wizytę online · POC by Oskar Seweryn</title>
+  <meta name="description" content="POC: rezerwacja wizyt serwisowych HVAC online dla polskiej firmy. Geofence 100 km wokół Krakowa, kalendarz dostępnych slotów, automatyczny zapis do Google Calendar technika. Stylistyka 1:1 z klimainwest.pl.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%232095f3'/%3E%3Ctext x='50%25' y='66%25' font-family='Arial,sans-serif' font-size='40' font-weight='800' text-anchor='middle' fill='white'%3EK%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <a href="/projects/" class="kp-portfolio-back">← oskar.seweryn / projects</a>
+
+  <header class="kp-header">
+    <a href="#" class="kp-logo">
+      <span class="mark">K</span>
+      <span>
+        <span class="wordmark">KLIMAPRO</span>
+        <span class="tag">Klimatyzacje · Serwis · Montaż</span>
+      </span>
+    </a>
+    <nav class="kp-nav">
+      <a href="#umow">Umów wizytę</a>
+      <a href="#uslugi">Serwis</a>
+      <a href="#montaz">Montaż</a>
+      <a href="#o-nas">O nas</a>
+      <a href="#umow" class="kp-nav-cta">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="kp-hero" id="umow">
+      <div class="kp-container kp-hero-inner">
+
+        <div>
+          <div class="kp-eyebrow">Małopolska · 100 km od Krakowa</div>
+          <h1>Umów wizytę<br>online</h1>
+          <p>
+            Wybierz dogodny termin, podaj adres i opisz problem. Po potwierdzeniu termin trafia
+            <strong>automatycznie</strong> do kalendarza naszego technika — bez telefonów, bez nieporozumień.
+          </p>
+          <div style="margin-top:28px;">
+            <a href="#booking" class="button-default">Zarezerwuj termin</a>
+            <a href="#uslugi" class="button-default" style="border-color:rgba(255,255,255,.55);">Zakres usług</a>
+          </div>
+          <div class="kp-stats">
+            <div>
+              <div class="stat-num">24 / 7</div>
+              <div class="stat-lbl">Rezerwacja online</div>
+            </div>
+            <div>
+              <div class="stat-num">100 km</div>
+              <div class="stat-lbl">Od Krakowa</div>
+            </div>
+            <div>
+              <div class="stat-num">90 min</div>
+              <div class="stat-lbl">Standardowy slot</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOKING CARD -->
+        <div class="kp-card" id="booking">
+          <div class="kp-card-header">
+            <div class="eye">Formularz rezerwacji</div>
+            <h2>Umów wizytę technika</h2>
+          </div>
+
+          <div class="kp-banner-demo">
+            <strong>POC demo</strong> — formularz interaktywny w przeglądarce, kalendarz zamockowany, brak wysyłki maili. Pełna wersja (real Google login + Calendar API) w repo.
+          </div>
+
+          <form class="kp-form" id="booking-form" novalidate>
+
+            <section class="step">
+              <div class="step-head"><span class="step-num">1</span> Twoje dane</div>
+              <div class="row">
+                <div>
+                  <label class="kp-label" for="phone">Telefon *</label>
+                  <input
+                    type="tel" id="phone" name="phone" required
+                    placeholder="+48 600 123 456"
+                    pattern="^(\+?48)?[\s-]?\d{3}[\s-]?\d{3}[\s-]?\d{3}$">
+                  <div class="helper">Format: 600 123 456 lub +48 600 123 456</div>
+                </div>
+                <div>
+                  <label class="kp-label" for="customer-name">Imię i nazwisko *</label>
+                  <input type="text" id="customer-name" name="customer_name" required minlength="3" placeholder="np. Jan Kowalski">
+                  <div class="helper">W produkcji wypełni się automatycznie po logowaniu Google.</div>
+                </div>
+              </div>
+            </section>
+
+            <section class="step">
+              <div class="step-head"><span class="step-num">2</span> Adres wizyty</div>
+              <label class="kp-label" for="address">Ulica, numer, miasto *</label>
+              <input type="text" id="address" name="address" required minlength="5" placeholder="np. Rynek Główny 1, Kraków">
+              <div id="geocode-result" style="margin-top:8px; min-height:24px;"></div>
+            </section>
+
+            <section class="step">
+              <div class="step-head"><span class="step-num">3</span> Typ zlecenia</div>
+              <div class="type-grid">
+                <label class="type-card">
+                  <input type="radio" name="request_type" value="montaz" required>
+                  <span class="name">Montaż</span>
+                  <span class="desc">Nowa instalacja klimatyzacji, rekuperacji lub pompy ciepła.</span>
+                </label>
+                <label class="type-card">
+                  <input type="radio" name="request_type" value="serwis" required>
+                  <span class="name">Serwis</span>
+                  <span class="desc">Przegląd, naprawa, czyszczenie, uzupełnienie czynnika.</span>
+                </label>
+              </div>
+            </section>
+
+            <section class="step">
+              <div class="step-head"><span class="step-num">4</span> Opis problemu / zakresu prac</div>
+              <textarea name="description" required minlength="10" rows="4"
+                placeholder="np. Klimatyzator w sypialni nie chłodzi, słyszalne klikanie z jednostki zewnętrznej. Marka Daikin, ok. 3 lata."></textarea>
+            </section>
+
+            <section class="step">
+              <div class="step-head"><span class="step-num">5</span> Wybierz termin</div>
+              <label class="kp-label" for="date">Dzień</label>
+              <input type="date" id="date" name="date" required style="width:auto;">
+              <div id="slots" style="margin-top:14px;">
+                <div class="helper">Wybierz dzień, aby zobaczyć dostępne godziny.</div>
+              </div>
+              <input type="hidden" name="slot_start_iso" id="slot_start_iso">
+            </section>
+
+            <div class="kp-form-footer">
+              <p class="legal">
+                Klikając „Zarezerwuj wizytę” akceptujesz, że termin zostanie zapisany w kalendarzu firmy.
+              </p>
+              <button type="submit" class="button-blue-inverse">Zarezerwuj wizytę</button>
+            </div>
+
+            <div id="result"></div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ADVANTAGES STRIP -->
+    <section class="kp-strip">
+      <div class="kp-container kp-strip-grid">
+        <div>
+          <h3>Elastyczny czas pracy</h3>
+          <p>Sloty 8:00–17:00 od poniedziałku do piątku. Dostępność dopasujesz w kilka kliknięć — bez czekania na połączenie.</p>
+        </div>
+        <div>
+          <h3>Obsługa w Małopolsce</h3>
+          <p>Działamy w promieniu 100 km od Krakowa. Adres weryfikujemy automatycznie podczas rezerwacji.</p>
+        </div>
+        <div>
+          <h3>Pełna automatyzacja</h3>
+          <p>Po potwierdzeniu termin trafia bezpośrednio do kalendarza technika. Bez telefonów, bez nieporozumień.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="kp-section kp-services" id="uslugi">
+      <div class="kp-container kp-services-grid">
+        <div>
+          <div style="font-size:12px; letter-spacing:.22em; font-weight:700; text-transform:uppercase; color: var(--kp-blue); margin-bottom:10px;">
+            Zakres usług
+          </div>
+          <h2>Serwis i montaż klimatyzacji</h2>
+          <p class="lead">
+            W celu zagwarantowania prawidłowego działania klimatyzacji zalecamy regularne przeglądy. Wykonujemy je
+            kompleksowo, niezależnie od marki urządzenia, zarówno w mieszkaniach prywatnych, jak i w lokalach
+            biurowych i usługowych.
+          </p>
+          <p style="margin-top:18px;"><a href="#umow" class="button-blue">Umów przegląd</a></p>
+        </div>
+        <ul class="kp-services-list" id="montaz">
+          <li>Diagnostyka i wykrywanie usterek</li>
+          <li>Czyszczenie i dezynfekcja jednostek</li>
+          <li>Uzupełnianie czynnika chłodniczego</li>
+          <li>Wymiana filtrów i części eksploatacyjnych</li>
+          <li>Sezonowe przeglądy okresowe</li>
+          <li>Montaż klimatyzacji split i multi-split</li>
+          <li>Instalacja pomp ciepła powietrze-powietrze</li>
+          <li>Konsultacja i dobór urządzenia</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="kp-about" id="o-nas">
+      <div class="kp-container">
+        <div style="font-size:12px; letter-spacing:.22em; font-weight:700; text-transform:uppercase; color: var(--kp-blue); margin-bottom:10px;">
+          O nas
+        </div>
+        <h2>Doświadczenie, na którym możesz polegać</h2>
+        <p>
+          Wykonujemy usługi montażowe i serwisowe w branży klimatyzacyjnej. Zdobyte doświadczenie pozwoliło nam
+          poznać potrzeby współczesnego rynku i dostosować do niego ofertę. Wielu zadowolonych klientów świadczy
+          o tym, że robimy to z powodzeniem. Zapraszamy do kontaktu — chętnie odpowiemy na wszelkie pytania.
+        </p>
+        <p style="margin-top:24px;"><a href="#umow" class="button-blue-inverse">Umów wizytę</a></p>
+      </div>
+    </section>
+
+    <!-- POC notes (visible only at bottom) -->
+    <section class="kp-poc-notes">
+      <div class="kp-container">
+        <div class="eye">Notatka projektowa</div>
+        <h2>Co tu się dzieje pod spodem</h2>
+        <ul>
+          <li><strong>Stylistyka 1:1 z klimainwest.pl</strong> — paleta `#2095f3`, Open Sans, sharp inputs (border-radius:0), uppercase headlines, pill buttons. Realna firma HVAC z Krakowa, użyta jako wzorzec wizualny.</li>
+          <li><strong>Geofence 100 km wokół Krakowa</strong> — adres jest geokodowany przez Nominatim (OpenStreetMap), liczona odległość Haversine od centrum Krakowa, walidacja po stronie klienta.</li>
+          <li><strong>Generator slotów</strong> — pn–pt 8:00–17:00, slot 90 min, demo busy-intervals symulujące zajętość kalendarza technika. W produkcji slot-list pochodzi z Google Calendar `freeBusy` API.</li>
+          <li><strong>Booking flow</strong> — w produkcji: Google OAuth (klient), Calendar API service-account (zapis u technika), email klienta dodany jako uczestnik wydarzenia.</li>
+          <li><strong>Stack</strong> — FastAPI + Jinja + HTMX po stronie serwera. Ten static demo to client-side build (Nominatim + JS) — pełen backend w repo.</li>
+        </ul>
+        <p style="margin-top:24px;">
+          <a href="https://github.com/oskarseweryn" target="_blank" rel="noopener" class="button-blue">Repo + uruchomienie lokalne</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="kp-footer">
+    <div class="kp-container">
+      <div class="col">
+        <h4>KlimaPro</h4>
+        <p>Profesjonalny serwis i montaż klimatyzacji w Małopolsce. Działamy w promieniu 100 km od Krakowa.</p>
+      </div>
+      <div class="col">
+        <h4>Kontakt</h4>
+        <p>+48 600 000 000</p>
+        <p>biuro@klimapro.example</p>
+        <p>pn–pt 8:00–17:00</p>
+      </div>
+      <div class="col">
+        <h4>POC by</h4>
+        <p><a href="/" style="color:#AFAFAF;">oskar.seweryn</a></p>
+        <p>Stylistyka inspirowana klimainwest.pl</p>
+        <p>Geokodowanie: OpenStreetMap Nominatim</p>
+      </div>
+      <div class="copyright">
+        <span>© KlimaPro · 2026 · POC demonstracyjny</span>
+        <span>oskarseweryn.github.io</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

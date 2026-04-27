@@ -1,0 +1,673 @@
+/* =====================================================================
+   KlimaPro — styles mirrored 1:1 from klimainwest.pl
+   Brand blue #2095f3 · text #212121 · footer #212224 · gray #8A8A8A
+   Font: Open Sans 300/400/600/700/800
+   ===================================================================== */
+
+:root {
+  --kp-blue: #2095f3;
+  --kp-blue-2: #16AAF5;
+  --kp-text: #212121;
+  --kp-text-soft: #8A8A8A;
+  --kp-text-muted: #7D7D7D;
+  --kp-line: #e0e0e0;
+  --kp-line-2: #EEE;
+  --kp-footer: #212224;
+  --kp-error: #e74c3c;
+  --kp-accent-red: #ff5252;
+}
+
+/* base ----------------------------------------------------------------- */
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Open Sans", system-ui, sans-serif;
+  font-weight: 400;
+  color: var(--kp-text);
+  background: #fff;
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+p {
+  font-size: 15px;
+  line-height: 24px;
+  margin: 0 0 12px;
+}
+
+strong { font-weight: 600; }
+i { font-style: italic; }
+
+a {
+  color: var(--kp-text);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+a:hover { color: var(--kp-blue); }
+
+h1, h2, h3 { margin: 0 0 30px; }
+h1 { font-size: 28px; font-weight: 700; text-transform: uppercase; }
+h2 { font-size: 20px; font-weight: 700; text-transform: uppercase; text-align: center; }
+h3 { font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; }
+
+input, textarea, select {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-family: inherit;
+}
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--kp-blue) !important;
+}
+
+/* header --------------------------------------------------------------- */
+
+.kp-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  background: #fff;
+  padding: 0 50px;
+  border-bottom: 2px solid var(--kp-line);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.kp-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 26px 0;
+}
+
+.kp-logo .mark {
+  width: 37px;
+  height: 37px;
+  background: var(--kp-blue);
+  color: #fff;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+.kp-logo .wordmark {
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.3px;
+  color: var(--kp-text);
+  line-height: 1;
+}
+.kp-logo .tag {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--kp-text-muted);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.kp-nav { padding: 40px 0; }
+
+.kp-nav a {
+  text-transform: uppercase;
+  margin: 0 10px;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  font-weight: 400;
+  color: var(--kp-text);
+}
+.kp-nav a:hover { color: var(--kp-blue); }
+.kp-nav a.active { color: var(--kp-blue) !important; }
+
+.kp-nav a.kp-nav-cta {
+  border: 2px solid var(--kp-blue);
+  padding: 9px 28px;
+  color: var(--kp-blue);
+  margin-left: 10px;
+}
+.kp-nav a.kp-nav-cta:hover {
+  background: var(--kp-blue);
+  color: #fff;
+}
+
+main { padding-top: 100px; }
+
+/* sections ------------------------------------------------------------- */
+
+.kp-section {
+  position: relative;
+  z-index: 9;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+.kp-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* hero / advantages-style section -------------------------------------- */
+
+.kp-hero {
+  background-color: var(--kp-blue);
+  color: #fff;
+  padding: 90px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.kp-hero::before,
+.kp-hero::after {
+  content: "";
+  position: absolute;
+  width: 35%;
+  height: 100%;
+  background-image: url("https://klimainwest.pl/bundles/app/img/lines-bg-white.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 1;
+}
+.kp-hero::before { left: -7%; top: 60px; transform: rotate(90deg); }
+.kp-hero::after  { right: -7%; bottom: 0; transform: rotate(-90deg); }
+
+.kp-hero-inner {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 60px;
+  align-items: start;
+}
+@media (max-width: 960px) {
+  .kp-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.kp-hero h1 {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+  line-height: 1.1;
+  letter-spacing: 0.3px;
+}
+.kp-hero .kp-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 16px;
+}
+.kp-hero p { color: #fff; font-weight: 300; font-size: 16px; line-height: 26px; max-width: 460px; }
+
+.kp-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.25);
+  padding-top: 24px;
+}
+.kp-stats .stat-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+.kp-stats .stat-lbl {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+/* buttons (verbatim from klimainwest) ---------------------------------- */
+
+.button-default {
+  display: inline-block;
+  padding: 10px 30px;
+  margin: 0 5px;
+  border: 2px solid #fff;
+  color: #fff;
+  background: transparent;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+.button-default:hover { background: #fff; color: var(--kp-blue); }
+
+.button-blue {
+  border: 2px solid var(--kp-blue);
+  background: transparent;
+  color: var(--kp-blue);
+  font-size: 14px;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+.button-blue:hover { background: var(--kp-blue); color: #fff; }
+
+.button-blue-inverse {
+  background: var(--kp-blue);
+  color: #fff;
+  border: 2px solid var(--kp-blue);
+  padding: 10px 30px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+.button-blue-inverse:hover { background: #fff; color: var(--kp-blue); }
+
+/* booking card --------------------------------------------------------- */
+
+.kp-card {
+  background: #fff;
+  color: var(--kp-text);
+  padding: 36px 36px 28px;
+  position: relative;
+  z-index: 5;
+}
+.kp-card .kp-card-header {
+  text-align: center;
+  margin-bottom: 26px;
+}
+.kp-card .kp-card-header .eye {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--kp-blue);
+  margin-bottom: 6px;
+}
+.kp-card h2 { color: var(--kp-text); margin: 0 0 12px; }
+
+.kp-form .step {
+  border-top: 1px solid var(--kp-line);
+  padding-top: 22px;
+  margin-top: 22px;
+}
+.kp-form .step:first-of-type { border-top: 0; padding-top: 0; margin-top: 0; }
+.kp-form .step-head {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--kp-text-soft);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.kp-form .step-num {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  background: var(--kp-blue);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.kp-form label.kp-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--kp-text-soft);
+  margin-bottom: 6px;
+}
+
+.kp-form input[type="text"],
+.kp-form input[type="tel"],
+.kp-form input[type="date"],
+.kp-form textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--kp-line);
+  background: #fff;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--kp-text);
+  transition: border-color 0.2s ease-in-out;
+}
+.kp-form input::placeholder, .kp-form textarea::placeholder { color: var(--kp-text-muted); }
+
+.kp-form .helper { font-size: 11px; color: var(--kp-text-muted); margin-top: 4px; }
+
+.kp-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 600px) { .kp-form .row { grid-template-columns: 1fr; } }
+
+.kp-form .static-field {
+  padding: 11px 14px;
+  border: 1px solid var(--kp-line);
+  background: #fafafa;
+  font-size: 14px;
+  color: var(--kp-text-soft);
+  height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.kp-form .type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 600px) { .kp-form .type-grid { grid-template-columns: 1fr; } }
+.kp-form .type-card {
+  display: block;
+  border: 2px solid var(--kp-line);
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.kp-form .type-card:hover { border-color: var(--kp-blue); }
+.kp-form .type-card input { margin-right: 8px; accent-color: var(--kp-blue); }
+.kp-form .type-card .name { font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 0.3px; }
+.kp-form .type-card .desc { display: block; font-size: 12px; color: var(--kp-text-muted); margin-top: 4px; line-height: 18px; }
+.kp-form .type-card:has(input:checked) { border-color: var(--kp-blue); background: #f4faff; }
+
+.kp-form .slots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+@media (max-width: 760px) { .kp-form .slots { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 460px) { .kp-form .slots { grid-template-columns: repeat(2, 1fr); } }
+
+.kp-form .slot-btn {
+  background: #fff;
+  border: 2px solid var(--kp-line);
+  padding: 10px 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--kp-text);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-family: inherit;
+}
+.kp-form .slot-btn:hover { border-color: var(--kp-blue); color: var(--kp-blue); }
+.kp-form .slot-btn.selected { background: var(--kp-blue); border-color: var(--kp-blue); color: #fff; }
+
+.kp-form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border-top: 1px solid var(--kp-line);
+  padding-top: 22px;
+  margin-top: 26px;
+}
+.kp-form-footer .legal { font-size: 11px; color: var(--kp-text-muted); max-width: 320px; line-height: 16px; }
+
+/* status notes inline -------------------------------------------------- */
+
+.kp-note { padding: 10px 14px; border: 1px solid var(--kp-line); font-size: 13px; }
+.kp-note.ok    { border-color: #b7e4c7; background: #f0f9f3; color: #1b6b3b; }
+.kp-note.warn  { border-color: #f3d6a4; background: #fff7e6; color: #8a5a00; }
+.kp-note.err   { border-color: #f5c6cb; background: #fdecea; color: #b00020; }
+
+.kp-banner-demo {
+  background: #fff7e6;
+  border: 1px solid #f3d6a4;
+  padding: 10px 16px;
+  font-size: 12px;
+  color: #8a5a00;
+  margin-bottom: 24px;
+  text-transform: none;
+}
+
+/* services / about / generic content ----------------------------------- */
+
+.kp-services-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 50px;
+}
+@media (max-width: 900px) { .kp-services-grid { grid-template-columns: 1fr; } }
+
+.kp-services h2 { text-align: left; }
+.kp-services .lead { color: var(--kp-text-soft); font-weight: 300; max-width: 380px; }
+
+.kp-services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 30px;
+}
+@media (max-width: 600px) { .kp-services-list { grid-template-columns: 1fr; } }
+.kp-services-list li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 15px;
+  line-height: 22px;
+  color: var(--kp-text);
+}
+.kp-services-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 14px;
+  height: 8px;
+  border-left: 3px solid var(--kp-blue);
+  border-bottom: 3px solid var(--kp-blue);
+  transform: rotate(-45deg);
+}
+
+.kp-about { background: #fff; padding: 80px 0; }
+.kp-about .kp-container { max-width: 760px; text-align: center; }
+.kp-about h2 { text-align: center; }
+.kp-about p { color: var(--kp-text-soft); font-weight: 300; }
+
+/* advantages strip (3 cards, white-on-blue mirroring klimainwest hero) - */
+
+.kp-strip {
+  background: var(--kp-blue);
+  color: #fff;
+  padding: 70px 0;
+  position: relative;
+  overflow: hidden;
+}
+.kp-strip::before, .kp-strip::after {
+  content: "";
+  position: absolute;
+  width: 35%;
+  height: 100%;
+  background-image: url("https://klimainwest.pl/bundles/app/img/lines-bg-white.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.7;
+  pointer-events: none;
+}
+.kp-strip::before { left: -7%; top: 0; transform: rotate(90deg); }
+.kp-strip::after { right: -7%; bottom: 0; transform: rotate(-90deg); }
+
+.kp-strip-grid {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  text-align: center;
+}
+@media (max-width: 800px) { .kp-strip-grid { grid-template-columns: 1fr; gap: 40px; } }
+.kp-strip-grid h3 { color: #fff; font-size: 16px; }
+.kp-strip-grid p { color: rgba(255,255,255,0.9); font-weight: 300; }
+
+/* footer (verbatim klimainwest dark bar) ------------------------------- */
+
+.kp-footer {
+  background: var(--kp-footer);
+  padding: 36px 0 24px;
+}
+.kp-footer .kp-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+.kp-footer h4 {
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+.kp-footer p {
+  font-size: 12px;
+  color: var(--kp-text-muted);
+  margin: 4px 0;
+}
+.kp-footer .col { flex: 1 1 200px; max-width: 280px; }
+.kp-footer .copyright {
+  flex: 1 1 100%;
+  border-top: 1px solid #333;
+  padding-top: 14px;
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #7D7D7D;
+}
+
+/* htmx polish ---------------------------------------------------------- */
+
+.htmx-swapping { opacity: 0; transition: opacity 120ms ease-out; }
+.htmx-settling { opacity: 1; transition: opacity 220ms ease-in; }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(40%) sepia(70%) saturate(2000%) hue-rotate(180deg);
+}
+
+/* confirmation --------------------------------------------------------- */
+
+.kp-confirm {
+  border: 2px solid #b7e4c7;
+  background: #f0f9f3;
+  padding: 28px 32px;
+  margin-top: 24px;
+}
+.kp-confirm .head {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.kp-confirm .badge {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: #28a745; color: #fff;
+  display: grid; place-items: center;
+  font-weight: 700; font-size: 22px;
+  flex-shrink: 0;
+}
+.kp-confirm .eye {
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: #1b6b3b; font-weight: 700;
+}
+.kp-confirm h3 {
+  color: #134d27; font-size: 22px; text-transform: uppercase;
+  margin: 4px 0 6px; letter-spacing: 0.3px;
+}
+.kp-confirm dl {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px;
+  margin: 0;
+}
+@media (max-width: 600px) { .kp-confirm dl { grid-template-columns: 1fr; } }
+.kp-confirm dt {
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #1b6b3b; font-weight: 600; margin-top: 8px;
+}
+.kp-confirm dd { font-weight: 600; color: var(--kp-text); margin: 0; }
+.kp-confirm dd.muted { font-weight: 400; color: var(--kp-text-soft); white-space: pre-line; }
+.kp-confirm dd.mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+.kp-confirm .span2 { grid-column: 1 / -1; }
+
+/* form errors ---------------------------------------------------------- */
+
+.kp-error-box {
+  border: 2px solid #f5c6cb;
+  background: #fdecea;
+  color: #b00020;
+  padding: 14px 18px;
+  margin-top: 16px;
+  font-size: 14px;
+}
+.kp-error-box .head {
+  text-transform: uppercase; font-weight: 700; font-size: 12px;
+  letter-spacing: 0.22em; margin-bottom: 6px;
+}
+
+/* portfolio back-link (overlay top-left) */
+.kp-portfolio-back {
+  position: fixed;
+  top: 12px;
+  left: 14px;
+  z-index: 200;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: #6b7488;
+  background: rgba(255,255,255,0.92);
+  padding: 4px 10px;
+  border: 1px solid #e0e0e0;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+.kp-portfolio-back:hover { color: var(--kp-blue); border-color: var(--kp-blue); }
+
+/* POC notes section (project meta) */
+.kp-poc-notes { background: #fafbfc; padding: 70px 0; border-top: 1px solid var(--kp-line); }
+.kp-poc-notes .eye {
+  font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--kp-blue); font-weight: 700; margin-bottom: 10px; text-align: center;
+}
+.kp-poc-notes h2 { text-align: center; margin-bottom: 28px; }
+.kp-poc-notes ul {
+  max-width: 760px; margin: 0 auto; padding: 0; list-style: none;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.kp-poc-notes li {
+  position: relative; padding-left: 26px;
+  font-size: 15px; line-height: 24px; color: var(--kp-text);
+}
+.kp-poc-notes li::before {
+  content: ""; position: absolute; left: 0; top: 8px;
+  width: 14px; height: 8px;
+  border-left: 3px solid var(--kp-blue);
+  border-bottom: 3px solid var(--kp-blue);
+  transform: rotate(-45deg);
+}
+.kp-poc-notes p { text-align: center; }
