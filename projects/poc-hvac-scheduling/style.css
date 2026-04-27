@@ -66,7 +66,7 @@ input:focus, textarea:focus, select:focus {
 
 .kp-header {
   position: fixed;
-  top: 0;
+  top: 28px;                 /* below the portfolio-back strip */
   left: 0;
   z-index: 99;
   width: 100%;
@@ -75,8 +75,9 @@ input:focus, textarea:focus, select:focus {
   border-bottom: 2px solid var(--kp-line);
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;          /* prevent overlap; on mobile we shrink instead of wrapping */
   justify-content: space-between;
+  gap: 16px;
 }
 
 .kp-logo {
@@ -139,7 +140,7 @@ input:focus, textarea:focus, select:focus {
   color: #fff;
 }
 
-main { padding-top: 100px; }
+main { padding-top: 128px; } /* 28px portfolio strip + ~100px header */
 
 /* sections ------------------------------------------------------------- */
 
@@ -630,23 +631,27 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   letter-spacing: 0.22em; margin-bottom: 6px;
 }
 
-/* portfolio back-link (overlay top-left) */
+/* portfolio back-link — thin top strip (full width, above header) */
 .kp-portfolio-back {
   position: fixed;
-  top: 12px;
-  left: 14px;
-  z-index: 200;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 16px;
+  background: #1E1E1E;
+  color: #AFAFAF;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 11px;
-  letter-spacing: 0.05em;
-  color: #6b7488;
-  background: rgba(255,255,255,0.92);
-  padding: 4px 10px;
-  border: 1px solid #e0e0e0;
+  letter-spacing: 0.04em;
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
+  border-bottom: 1px solid #000;
+  transition: color 0.2s ease-in-out;
 }
-.kp-portfolio-back:hover { color: var(--kp-blue); border-color: var(--kp-blue); }
+.kp-portfolio-back:hover { color: #fff; }
 
 /* POC notes section (project meta) */
 .kp-poc-notes { background: #fafbfc; padding: 70px 0; border-top: 1px solid var(--kp-line); }
@@ -709,3 +714,100 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 .kp-video-caption a { color: var(--kp-blue); }
 .kp-video-caption a:hover { text-decoration: underline; }
+
+/* =====================================================================
+   RESPONSIVE — header / nav / hero / video / sections
+   ===================================================================== */
+
+/* tablet — narrower padding, smaller logo tagline, tighter nav */
+@media (max-width: 960px) {
+  .kp-header { padding: 0 24px; }
+  .kp-logo .tag { display: none; }
+  .kp-logo { padding: 18px 0; gap: 10px; }
+  .kp-nav { padding: 18px 0; display: flex; align-items: center; gap: 0; }
+  .kp-nav a { font-size: 12px; margin: 0 8px; letter-spacing: 0.2px; }
+  .kp-nav a.kp-nav-cta { padding: 7px 18px; margin-left: 10px; }
+  main { padding-top: 110px; }
+  .kp-section { padding: 60px 0; }
+  .kp-hero { padding: 50px 0 60px; }
+  .kp-hero h1 { font-size: 30px; }
+  .kp-stats .stat-num { font-size: 22px; }
+  .kp-card { padding: 24px 22px 22px; }
+  .kp-oauth-video { padding: 48px 0 22px; }
+  .kp-strip { padding: 50px 0; }
+  .kp-poc-notes { padding: 50px 0; }
+  .kp-about { padding: 60px 0; }
+}
+
+/* mobile — drop non-CTA nav links, compact everything */
+@media (max-width: 720px) {
+  .kp-portfolio-back { font-size: 10px; height: 26px; padding: 0 12px; }
+  .kp-portfolio-back .full-label { display: none; }
+
+  .kp-header { padding: 0 14px; gap: 8px; top: 26px; }
+  .kp-logo { padding: 14px 0; }
+  .kp-logo .mark { width: 32px; height: 32px; font-size: 16px; }
+  .kp-logo .wordmark { font-size: 16px; }
+
+  .kp-nav { padding: 12px 0; }
+  .kp-nav a:not(.kp-nav-cta) { display: none; }
+  .kp-nav a.kp-nav-cta {
+    padding: 7px 16px;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    margin-left: 0;
+  }
+
+  main { padding-top: 92px; }
+
+  .kp-hero { padding: 36px 0 50px; }
+  .kp-hero h1 { font-size: 26px; line-height: 1.1; }
+  .kp-hero p { font-size: 15px; line-height: 24px; }
+  .kp-eyebrow { font-size: 11px; }
+  .kp-stats { grid-template-columns: repeat(3, 1fr); gap: 10px; padding-top: 18px; margin-top: 28px; }
+  .kp-stats .stat-num { font-size: 18px; }
+  .kp-stats .stat-lbl { font-size: 9px; }
+
+  .kp-card { padding: 18px 16px; }
+  .kp-card .kp-card-header h2 { font-size: 18px; }
+
+  .kp-form input[type="text"],
+  .kp-form input[type="tel"],
+  .kp-form input[type="date"],
+  .kp-form textarea { font-size: 14px; padding: 10px 12px; }
+
+  .kp-form-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding-top: 16px;
+    margin-top: 18px;
+  }
+  .kp-form-footer .legal { max-width: none; }
+  .kp-form-footer .button-blue-inverse { width: 100%; padding: 12px 14px; }
+
+  .kp-services-list { gap: 10px 14px; }
+  .kp-services h2 { font-size: 22px; }
+
+  .kp-oauth-video { padding: 36px 0 18px; }
+  .kp-oauth-video h2 { font-size: 18px; }
+  .kp-oauth-video .lead { font-size: 14px; line-height: 22px; padding: 0 4px; }
+  .kp-video-caption { font-size: 12px; padding: 0 6px; }
+
+  .kp-strip { padding: 40px 0; }
+  .kp-poc-notes { padding: 40px 0; }
+  .kp-poc-notes li { font-size: 14px; line-height: 22px; }
+  .kp-about { padding: 48px 0; }
+
+  .kp-footer .kp-container { gap: 18px; padding: 0 16px; }
+  .kp-footer .col { flex-basis: 100%; max-width: none; }
+  .kp-footer .copyright { flex-direction: column; gap: 6px; align-items: flex-start; }
+}
+
+/* very small mobile — last polish */
+@media (max-width: 380px) {
+  .kp-logo .wordmark { font-size: 15px; }
+  .kp-nav a.kp-nav-cta { padding: 6px 12px; font-size: 11px; }
+  .kp-hero h1 { font-size: 24px; }
+  .kp-card .kp-card-header h2 { font-size: 16px; }
+}

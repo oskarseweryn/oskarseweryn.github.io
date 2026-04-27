@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <a href="/projects/" class="kp-portfolio-back">← oskar.seweryn / projects</a>
+  <a href="/projects/" class="kp-portfolio-back">← <span class="full-label">oskar.seweryn /&nbsp;</span>projects</a>
 
   <header class="kp-header">
     <a href="#" class="kp-logo">
@@ -31,6 +31,37 @@
   </header>
 
   <main>
+
+    <!-- OAUTH VIDEO (top of page) -->
+    <section class="kp-oauth-video" id="oauth-video">
+      <div class="kp-container">
+        <div class="eye">Demo · Google OAuth · live walkthrough</div>
+        <h2>Logowanie kontem Google — wersja lokalna</h2>
+        <p class="lead">
+          Pełna wersja FastAPI z prawdziwym OAuth 2.0 (Google Identity) działa lokalnie — zobacz na video.
+          Poniżej możesz przeklikać statyczny formularz rezerwacji (Nominatim + walidacja po stronie klienta);
+          po publikacji backendu na Render free tier ta sama ścieżka logowania jest dostępna online dla każdego użytkownika Google.
+        </p>
+        <div class="kp-video-wrap">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/Vw0BfnTeAhA?rel=0"
+            title="KlimaPro POC — Google OAuth login (localhost)"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+        <p class="kp-video-caption">
+          Nagranie z `localhost:8000` — prawdziwy consent screen Google, callback do FastAPI,
+          tożsamość klienta zapisana w sesji. Calendar zamockowany (DEMO=1), żeby uniknąć
+          tworzenia wydarzeń podczas demo.
+          <a href="https://www.youtube.com/watch?v=Vw0BfnTeAhA" target="_blank" rel="noopener">obejrzyj na YouTube ↗</a>
+        </p>
+        <p style="text-align:center; margin-top:22px;">
+          <a href="#umow" class="button-blue-inverse">Przeklikaj formularz ↓</a>
+        </p>
+      </div>
+    </section>
 
     <!-- HERO -->
     <section class="kp-hero" id="umow">
@@ -71,7 +102,7 @@
           </div>
 
           <div class="kp-banner-demo">
-            <strong>POC demo</strong> — formularz interaktywny w przeglądarce, kalendarz zamockowany, brak wysyłki maili. Prawdziwe logowanie Google działa lokalnie — <a href="#oauth-video" style="color:#8a5a00;text-decoration:underline;font-weight:700;">zobacz video</a>.
+            <strong>POC demo</strong> — formularz interaktywny w przeglądarce, kalendarz zamockowany, brak wysyłki maili. Prawdziwe logowanie Google działa lokalnie (<a href="#oauth-video" style="color:#8a5a00;text-decoration:underline;font-weight:700;">video powyżej</a>).
           </div>
 
           <form class="kp-form" id="booking-form" novalidate>
@@ -207,35 +238,6 @@
           o tym, że robimy to z powodzeniem. Zapraszamy do kontaktu — chętnie odpowiemy na wszelkie pytania.
         </p>
         <p style="margin-top:24px;"><a href="#umow" class="button-blue-inverse">Umów wizytę</a></p>
-      </div>
-    </section>
-
-    <!-- OAUTH VIDEO -->
-    <section class="kp-oauth-video" id="oauth-video">
-      <div class="kp-container">
-        <div class="eye">Bonus · prawdziwy Google OAuth</div>
-        <h2>Logowanie kontem Google — wersja lokalna</h2>
-        <p class="lead">
-          Statyczny formularz powyżej to demo client-side. Pełna wersja FastAPI z prawdziwym
-          OAuth 2.0 (Google Identity) działa lokalnie — zobacz na video. Po publikacji backendu
-          (Render free tier, ~10 min) ta sama ścieżka logowania jest dostępna online dla każdego
-          użytkownika Google.
-        </p>
-        <div class="kp-video-wrap">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/Vw0BfnTeAhA?rel=0"
-            title="KlimaPro POC — Google OAuth login (localhost)"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen></iframe>
-        </div>
-        <p class="kp-video-caption">
-          Nagranie z `localhost:8000` — prawdziwy consent screen Google, callback do FastAPI,
-          tożsamość klienta zapisana w sesji. Calendar zamockowany (DEMO=1), żeby uniknąć
-          tworzenia wydarzeń podczas demo.
-          <a href="https://www.youtube.com/watch?v=Vw0BfnTeAhA" target="_blank" rel="noopener">obejrzyj na YouTube ↗</a>
-        </p>
       </div>
     </section>
 
