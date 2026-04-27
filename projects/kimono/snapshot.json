@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-26",
+  "last_updated": "2026-04-27",
   "spec": {
     "count": 500,
     "color": "białe",
@@ -8,8 +8,8 @@
     "ship_to": "Polska",
     "embroidery": "brak"
   },
-  "fx_note": "1 EUR ≈ 4.30 PLN — kurs przybliżony; ceny w walucie oryginalnej są wiążące",
-  "pricing_note": "Ceny jednostkowe poniżej to opublikowane przez sprzedawców ceny DETALICZNE — bez założonego rabatu. Suma to proste przemnożenie ceny detalicznej × liczba sztuk. Rzeczywiste ceny hurtowe będą niższe — wzory emaili w wierszach poniżej proszą każdego sprzedawcę o realną wycenę przy podanej liczbie sztuk.",
+  "fx_note": "Kursy przybliżone: 1 EUR ≈ 4.30 PLN, 1 USD ≈ 4.00 PLN, 1 CNY ≈ 0.55 PLN — ceny w walucie oryginalnej są wiążące.",
+  "pricing_note": "Ceny jednostkowe poniżej to opublikowane przez sprzedawców ceny DETALICZNE — bez założonego rabatu. Suma to proste przemnożenie ceny detalicznej × liczba sztuk. Rzeczywiste ceny hurtowe będą niższe — wzory emaili w wierszach poniżej proszą każdego sprzedawcę o realną wycenę przy podanej liczbie sztuk. Dla sprzedawców z Chin (region CN) ceny detaliczne nie są publikowane — komórka pokazuje 'RFQ', a wzór emaila prosi o ofertę FOB w USD; do końcowego porównania należy doliczyć cło UE (~12%), VAT 23% i fracht.",
   "vendors": [
     {
       "id": "fujimae-pl",
@@ -273,6 +273,72 @@
       "email_draft": {
         "subject": "Großhandelsanfrage — {count} Kinder-Judoanzüge (DAX Bambini)",
         "body": "Sehr geehrte Damen und Herren von SBJ-Sportland,\n\nich vertrete eine Kinder-Judoschule in Polen und plane den Bezug von {count} Judoanzügen für Kinder (Modell DAX Bambini, weiß) mit folgender Spezifikation:\n• Stoffgewicht ca. 8 oz, Anfänger-Qualität\n• Farbe: weiß\n• Größen 110–160 cm in gemischter Verteilung\n• Ohne Vereinsstickerei (separat zu kalkulieren)\n\nReferenzprodukt:\nhttps://www.sbj-sportland.de/en/Judo-suit-bambini-white.html\n\nKönnten Sie uns bitte ein Großhandelsangebot für {count} Stück mit Vereins-/Mengenrabatt zusenden, mit folgenden Angaben:\n1. Stückpreis netto bei dieser Menge,\n2. Verfügbarkeit der Größen 110/120/130/140/150/160 cm,\n3. Lieferzeit,\n4. Versandkosten nach Polen,\n5. Konditionen für optionale Vereinsstickerei (separat).\n\nIch freue mich auf Ihr Angebot.\n\nMit freundlichen Grüßen,\n[Vorname Nachname]\n[Name der Judoschule]\n[Telefon · E-Mail]"
+      }
+    },
+    {
+      "id": "bolton-cn",
+      "name": "Bolton Clothing (Dongguan)",
+      "country": "CN",
+      "region": "CN",
+      "language": "en",
+      "product_name": "100% Cotton Kids Judo Kimono — 350 GSM (OEM/ODM)",
+      "product_url": "https://www.bjjgisupplier.com/sale-54425082-100-cotton-kids-judo-kimonos-with-350gsm-fabric-weight-and-custom-oem-odm-service.html",
+      "retail_unit_pln": null,
+      "retail_unit_label": "RFQ — cena po wysłaniu zapytania",
+      "retail_total_500_pln": null,
+      "sizes_full_coverage": true,
+      "sizes_label": "OEM — rozmiary do uzgodnienia (110–160 standardowo dostępne)",
+      "weight": "350 g/m² (~10 oz, 100% bawełna)",
+      "notes": "Bezpośrednia fabryka z Dongguan; ceny B2B tylko na zapytanie (RFQ). Doliczyć cło UE (~12%) + VAT 23% + fracht morski (~6 tyg.) lub lotniczy (~7 dni). Próbka przed zamówieniem masowym jest standardem.",
+      "email": "sophie@boultonbjjgi.com",
+      "contact_url": "https://www.bjjgisupplier.com/contactus.html",
+      "email_draft": {
+        "subject": "B2B inquiry — {count} kids judo gi for a Polish judo school",
+        "body": "Dear Sophie,\n\nI represent a children's judo school in Poland and we are planning to source {count} kids judo gi for our students.\n\nReference product on your site:\nhttps://www.bjjgisupplier.com/sale-54425082-100-cotton-kids-judo-kimonos-with-350gsm-fabric-weight-and-custom-oem-odm-service.html\n\nSpecification:\n• 100% cotton, 350 GSM (your standard)\n• Color: white\n• Sizes: 110, 120, 130, 140, 150, 160 cm — mixed distribution across the order\n• No club embroidery in this RFQ (we will quote that separately if relevant)\n• Pre-shrunk preferred; please confirm shrinkage rate\n\nCould you please quote:\n1. FOB unit price (USD) at {count} pieces, plus tiered pricing for 250 / 1000 if applicable,\n2. Confirmation that sizes 110–160 cm are produced (or your closest equivalent),\n3. Production lead time after order confirmation,\n4. Shipping options to Poland (sea / air) — cost and transit time,\n5. Sample policy (cost + lead time for one piece per size before bulk order),\n6. MOQ and payment terms (T/T, L/C, deposit %).\n\nWe would also need a Trade Assurance / contract framework — please confirm what you can offer.\n\nLooking forward to your offer.\n\nBest regards,\n[Full name]\n[Judo school name]\n[Phone · email]"
+      }
+    },
+    {
+      "id": "wesing-cn",
+      "name": "Wesing Sports (Fujian)",
+      "country": "CN",
+      "region": "CN",
+      "language": "en",
+      "product_name": "Wesing judo uniform line — kids' sizes (B2B)",
+      "product_url": "https://www.wesingsports.com/product/24/",
+      "retail_unit_pln": null,
+      "retail_unit_label": "RFQ — cena po wysłaniu zapytania",
+      "retail_total_500_pln": null,
+      "sizes_full_coverage": true,
+      "sizes_label": "OEM — rozmiary do uzgodnienia (kolekcja dziecięca dostępna)",
+      "weight": "do uzgodnienia (zazwyczaj 350–450 g/m² w katalogu CN)",
+      "notes": "Założona w 1989 r., fabryka w Fujian (Nan'an), ~500 pracowników. Producent zatwierdzony przez Chiński Związek Judo, AIBA, WKF, WTF. Doliczyć cło UE + VAT + fracht. RFQ obowiązkowe — brak cen detalicznych on-line.",
+      "email": "info@wesingsports.com",
+      "contact_url": "https://www.wesingsports.com/contactus.html",
+      "email_draft": {
+        "subject": "B2B inquiry — {count} kids judo gi for a Polish judo school",
+        "body": "Dear Wesing Sports team,\n\nI represent a children's judo school in Poland and we are planning to source {count} kids judo gi for our students.\n\nWe are aware of Wesing's long manufacturing history and the brand's approval by the Chinese Judo Federation, which is why we are reaching out directly to the factory rather than to a regional distributor.\n\nReference category on your site:\nhttps://www.wesingsports.com/product/24/\n\nSpecification:\n• 100% cotton, ~8 oz / single weave (please advise the closest grade in your catalog)\n• Color: white\n• Sizes: 110, 120, 130, 140, 150, 160 cm — mixed distribution across the order\n• No club embroidery in this RFQ (we will quote that separately if relevant)\n\nCould you please quote:\n1. FOB unit price (USD) at {count} pieces, plus tiered pricing for 250 / 1000 if applicable,\n2. The exact kids judo model best matching the spec above (model code + GSM),\n3. Production lead time after order confirmation,\n4. Shipping options to Poland (sea / air) — cost and transit time,\n5. Sample policy (cost + lead time for one piece per size before bulk order),\n6. MOQ, payment terms, and whether a Trade Assurance / contract framework is available.\n\nLooking forward to your offer.\n\nBest regards,\n[Full name]\n[Judo school name]\n[Phone · email]"
+      }
+    },
+    {
+      "id": "madeinchina-cn",
+      "name": "Made-in-China (RFQ aggregator)",
+      "country": "CN",
+      "region": "CN",
+      "language": "en",
+      "product_name": "100+ certified CN judo-gi factories (multi-supplier RFQ)",
+      "product_url": "https://www.made-in-china.com/products-search/hot-china-products/Judo_Gi.html",
+      "retail_unit_pln": null,
+      "retail_unit_label": "RFQ — wielu dostawców",
+      "retail_total_500_pln": null,
+      "sizes_full_coverage": true,
+      "sizes_label": "Zależne od fabryki — wszystkie standardowo produkują 110–160",
+      "weight": "Najczęściej 350 / 450 / 750 / 950 g/m² w katalogach CN",
+      "notes": "Nie pojedynczy sprzedawca, lecz agregator: jedno RFQ trafia do wielu zweryfikowanych chińskich fabryk. Przydatne jako szybki sondaż rynku — odpowiedzi z 5–15 fabryk w 24–72 h. Po wstępnym sondażu wybrać 2–3 najkorzystniejsze i prowadzić bezpośrednio.",
+      "email": null,
+      "contact_url": "https://www.made-in-china.com/products-search/hot-china-products/Judo_Gi.html",
+      "email_draft": {
+        "subject": "RFQ — {count} kids judo gi (Poland buyer, mixed sizes 110–160)",
+        "body": "RFQ to be submitted via the Made-in-China platform's 'Post Buying Request' form rather than direct email — paste the body below into the form.\n\n— — —\n\nWe are a children's judo school in Poland sourcing {count} kids judo gi.\n\nSpecification:\n• 100% cotton, ~8 oz to 350 GSM single weave\n• Color: white\n• Sizes: 110, 120, 130, 140, 150, 160 cm — mixed distribution across the order\n• Beginner-grade quality, no embroidery in this RFQ\n• Destination: Poland (EU)\n\nWe would like to receive offers including:\n1. FOB unit price (USD) at {count} pieces, with tiered pricing for 250 / 1000,\n2. Production lead time after order confirmation,\n3. Sea + air shipping options to Poland (cost + transit time),\n4. Sample policy (cost + lead time for one piece per size before bulk order),\n5. MOQ, payment terms, Trade Assurance availability,\n6. Whether the factory holds any judo federation approvals (national or international).\n\nWe are comparing 5–10 offers and will move to direct correspondence with the 2–3 most competitive on price + lead time. Quotes valid for at least 14 days appreciated.\n\nLooking forward to your offers.\n\nBest regards,\n[Full name]\n[Judo school name]\n[Phone · email]"
       }
     }
   ]

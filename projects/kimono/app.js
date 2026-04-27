@@ -8,7 +8,7 @@ const BACKEND_URL = IS_LOCAL
   ? "http://localhost:8001"
   : "https://oskarseweryn-kimono-backend.hf.space";
 
-const FX_TO_PLN = { PLN: 1, EUR: 4.30, USD: 4.00, GBP: 5.10 };
+const FX_TO_PLN = { PLN: 1, EUR: 4.30, USD: 4.00, GBP: 5.10, CNY: 0.55 };
 
 const fmtPLN = (n) => new Intl.NumberFormat("pl-PL", { style: "currency", currency: "PLN", maximumFractionDigits: 0 }).format(n);
 
@@ -41,7 +41,14 @@ function unitPriceToPLN(retailUnitPLN) {
 }
 
 function totalForVendor(v) {
+  if (v.retail_unit_pln == null) return null;
   return Math.round(v.retail_unit_pln * QUANTITY);
+}
+
+function vendorMatchesRegion(v, region) {
+  if (region === "PL") return v.region === "PL";
+  if (region === "ALL") return v.region === "PL" || v.region === "EU";
+  return true; // GLOBAL — includes CN
 }
 
 function render() {
@@ -55,13 +62,19 @@ function render() {
   const tbody = document.getElementById("vendor-rows");
   tbody.innerHTML = "";
 
-  const visible = SNAPSHOT.vendors.filter(v =>
-    CURRENT_REGION === "PL" ? v.region === "PL" : true
-  );
+  const visible = SNAPSHOT.vendors.filter(v => vendorMatchesRegion(v, CURRENT_REGION));
 
   visible
     .slice()
-    .sort((a, b) => a.retail_unit_pln - b.retail_unit_pln)
+    .sort((a, b) => {
+      const pa = a.retail_unit_pln;
+      const pb = b.retail_unit_pln;
+      // RFQ-only (null price) rows sort to the bottom
+      if (pa == null && pb == null) return 0;
+      if (pa == null) return 1;
+      if (pb == null) return -1;
+      return pa - pb;
+    })
     .forEach(v => {
       tbody.appendChild(buildVendorRow(v));
       tbody.appendChild(buildEmailRow(v));
@@ -81,6 +94,11 @@ function buildVendorRow(v) {
     ? `<a href="mailto:${escape(v.email)}" onclick="event.stopPropagation()">${escape(v.email)}</a>`
     : `<span class="no-email">brak publicznego adresu — <a href="${escape(v.contact_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">formularz</a></span>`;
 
+  const totalPLN = totalForVendor(v);
+  const totalCellInner = totalPLN == null
+    ? `<span class="rfq-tag">RFQ</span>`
+    : `<strong>${fmtPLN(totalPLN)}</strong>`;
+
   tr.innerHTML = `
     <td>
       <div class="vendor-name-cell">
@@ -97,7 +115,7 @@ function buildVendorRow(v) {
       <div class="price-base">${escape(v.retail_unit_label)}</div>
     </td>
     <td class="num total-cell" data-id="${v.id}">
-      <strong>${fmtPLN(totalForVendor(v))}</strong>
+      ${totalCellInner}
     </td>
     <td>${sizesCell}</td>
     <td>${escape(v.weight)}</td>
@@ -273,8 +291,10 @@ async function refreshAllVisible() {
   const origLabel = btn.textContent;
   btn.textContent = "↻ Odświeżanie…";
 
+  // Live refresh only runs against vendors with a published unit price + a
+  // backend scraper. CN/RFQ-only rows have no price to scrape, so skip them.
   const visible = SNAPSHOT.vendors.filter(v =>
-    CURRENT_REGION === "PL" ? v.region === "PL" : true
+    vendorMatchesRegion(v, CURRENT_REGION) && v.retail_unit_pln != null
   );
 
   await Promise.allSettled(visible.map(refreshVendor));
