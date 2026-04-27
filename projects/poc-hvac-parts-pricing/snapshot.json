@@ -124,6 +124,63 @@
       ]
     },
     {
+      "id": "ceneo-najlepsza",
+      "name": "Ceneo (najlepsza oferta)",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://www.ceneo.pl",
+      "product_url": "https://www.ceneo.pl",
+      "contact_url": "https://www.ceneo.pl",
+      "email": null,
+      "lead_time": "zależnie od sklepu (Ceneo agreguje wiele dostawców)",
+      "notes": "Agregator porównywarki cen Ceneo — najtańsza oferta per SKU (klik prowadzi do strony porównawczej, gdzie można wybrać konkretny sklep). UWAGA: dla refrigerantów (R32/R410A) Ceneo nie ma wyników — F-Gaz to kanał B2B-licencjonowany. Niektóre wyniki to luźne dopasowania (np. TXV automotive zamiast HVAC) — sprawdź notes per pozycja.",
+      "line_items": [
+        {
+          "part_id": "filter-f7-cassette",
+          "unit_price_pln": 78.0,
+          "unit_price_label": "od 78,00 zł",
+          "product_url": "https://www.ceneo.pl/164645123",
+          "note": "Ceneo aggregator: Cheapest match is Vents F7 filter for VUT 160 recuperator (small format). Standard 592x592x96 cassette F7 ePM1 starts ~134 zl (Defro FDF7F)."
+        },
+        {
+          "part_id": "run-capacitor-35-5-440",
+          "unit_price_pln": 14.89,
+          "unit_price_label": "od 14,89 zł",
+          "product_url": "https://www.ceneo.pl/179830606",
+          "note": "Sok (single shop): Sok 35uF/450V single-phase motor run capacitor. Lamex LXKON33 with cable at 21.20 zl is the typical retail benchmark."
+        },
+        {
+          "part_id": "fan-motor-condenser-yyf",
+          "unit_price_pln": 55.0,
+          "unit_price_label": "od 55,00 zł",
+          "product_url": "https://www.ceneo.pl/189841670",
+          "note": "Ceneo aggregator: 5/28W 230V condenser fan motor (low-power split unit replacement). 10/38W variant 60 zl, 16/65W variant 65 zl."
+        },
+        {
+          "part_id": "txv-r32-r410a-12k",
+          "unit_price_pln": 8.0,
+          "unit_price_label": "od 8,00 zł",
+          "product_url": "https://www.ceneo.pl/126704437",
+          "note": "Thermotec: Thermotec KTT140012 - automotive A/C TXV (likely R134a/R1234yf, not residential R32/R410A 12k BTU). True residential TXV not stocked on Ceneo - source from chlodnictwo24/Danfoss distributors."
+        },
+        {
+          "part_id": "thermistor-ntc-10k",
+          "unit_price_pln": 50.2,
+          "unit_price_label": "od 50,20 zł",
+          "product_url": "https://www.ceneo.pl/szukaj-czujnik+NTC+10k+klimatyzacja",
+          "note": "Kermi (OEM): Kermi-branded NTC 10k temperature sensor (HVAC accessory). Generic OEM-replacement NTC probes from China are <10 zl on Allegro but not retailed on Ceneo."
+        },
+        {
+          "part_id": "service-valve-1-4-flare",
+          "unit_price_pln": 32.8,
+          "unit_price_label": "od 32,80 zł",
+          "product_url": "https://www.ceneo.pl/szukaj-zawor+serwisowy+klimatyzacja",
+          "note": "Ceneo aggregator: CPS AVS10 Schrader-style internal valve cores (10-pack), not full body 1/4 SAE flare service valve. Full-body service valves are HVAC-distributor SKUs (refnet, hvactrade.pl); typical price 60-90 zl."
+        }
+      ]
+    },
+    {
       "id": "coolmarket-pl",
       "name": "Coolmarket (Kraków)",
       "country": "PL",

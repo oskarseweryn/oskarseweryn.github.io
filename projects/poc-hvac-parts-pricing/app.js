@@ -2,9 +2,20 @@
 
 // Static frontend for HVAC parts sourcing comparison.
 // Reads `snapshot.json` (rewritten by /hvac-parts-pricing slash command).
-// No backend, no LLM calls at view time.
+// Live refresh button calls a FastAPI backend that re-scrapes vendor product
+// URLs in real time (JSON-LD/OpenGraph/microdata).
 
 const FX_TO_PLN = { PLN: 1, EUR: 4.30, USD: 4.00, GBP: 5.10, CNY: 0.55 };
+
+// Backend URL: localhost in dev, HuggingFace Space in production.
+const IS_LOCAL = location.hostname === "localhost" || location.hostname === "127.0.0.1";
+const BACKEND_URL = IS_LOCAL
+  ? "http://127.0.0.1:8001"
+  : "https://oskarseweryn-hvac-parts-backend.hf.space";
+
+// Live state per (vendor_id, part_id): { state: "loading"|"live"|"error", price_pln, label, error, ts }
+const LIVE_STATE = {};
+const liveKey = (vid, pid) => `${vid}::${pid}`;
 
 const fmtPLN = (n) =>
   new Intl.NumberFormat("pl-PL", { style: "currency", currency: "PLN", maximumFractionDigits: 0 }).format(n);
@@ -55,14 +66,32 @@ function findLineItem(vendor, partId) {
   return vendor.line_items.find(li => li.part_id === partId) || null;
 }
 
+// Returns the effective unit_price_pln for a (vendor, part_id):
+// live state wins if available, else the snapshot's line_item.
+function effectivePrice(vendor, partId) {
+  const live = LIVE_STATE[liveKey(vendor.id, partId)];
+  if (live && live.state === "live" && live.price_pln != null) {
+    return live.price_pln;
+  }
+  const li = findLineItem(vendor, partId);
+  return li ? li.unit_price_pln : null;
+}
+
+function effectiveLabel(vendor, partId) {
+  const live = LIVE_STATE[liveKey(vendor.id, partId)];
+  if (live && live.state === "live" && live.label) return live.label;
+  const li = findLineItem(vendor, partId);
+  return li ? (li.unit_price_label || (li.unit_price_pln != null ? `${li.unit_price_pln} PLN` : null)) : null;
+}
+
 function basketTotalForVendor(v) {
   if (v.region === "CN") return null; // RFQ-only
   let total = 0;
   let anyPriced = false;
   for (const part of enabledParts()) {
-    const li = findLineItem(v, part.id);
-    if (li && li.unit_price_pln != null) {
-      total += li.unit_price_pln * qtyFor(part.id);
+    const price = effectivePrice(v, part.id);
+    if (price != null) {
+      total += price * qtyFor(part.id);
       anyPriced = true;
     }
   }
@@ -72,10 +101,8 @@ function basketTotalForVendor(v) {
 function coverageForVendor(v) {
   const enabled = enabledParts();
   if (!v.line_items) return { found: 0, total: enabled.length };
-  const found = enabled.filter(p => {
-    const li = findLineItem(v, p.id);
-    return li && (li.unit_price_pln != null || li.product_url);
-  }).length;
+  const found = enabled.filter(p => effectivePrice(v, p.id) != null
+    || (findLineItem(v, p.id)?.product_url)).length;
   return { found, total: enabled.length };
 }
 
@@ -373,16 +400,16 @@ function renderMatrix() {
   });
   header += `</tr></thead>`;
 
-  // Find cheapest vendor per SKU (PLN, only priced PL/EU cells)
+  // Find cheapest vendor per SKU (using effective prices — live wins over snapshot)
   const cheapestByPart = {};
   enabled.forEach(part => {
     let best = null;
     visibleVendors.forEach(v => {
       if (v.region === "CN") return;
-      const li = findLineItem(v, part.id);
-      if (li && li.unit_price_pln != null) {
-        if (best == null || li.unit_price_pln < best.price) {
-          best = { vendor: v.id, price: li.unit_price_pln };
+      const price = effectivePrice(v, part.id);
+      if (price != null) {
+        if (best == null || price < best.price) {
+          best = { vendor: v.id, price };
         }
       }
     });
@@ -395,16 +422,27 @@ function renderMatrix() {
     body += `<tr><td class="sku-cell">${escape(shortPartName(part.name))}<br><span class="sku-spec">${escape(part.spec)}</span></td>`;
     visibleVendors.forEach(v => {
       const li = findLineItem(v, part.id);
+      const live = LIVE_STATE[liveKey(v.id, part.id)];
       if (v.region === "CN") {
         body += `<td class="cell-rfq">RFQ</td>`;
-      } else if (li && li.unit_price_pln != null) {
-        const isCheapest = cheapestByPart[part.id] === v.id && Object.values(cheapestByPart).filter(x => x).length > 0;
-        const priceTxt = li.product_url
-          ? `<a href="${escape(li.product_url)}" target="_blank" rel="noopener">${fmtPLNCompact(li.unit_price_pln)}</a>`
-          : fmtPLNCompact(li.unit_price_pln);
-        body += `<td class="cell-priced ${isCheapest ? "cell-cheapest" : ""}">${priceTxt}</td>`;
+      } else if (live && live.state === "loading") {
+        body += `<td class="cell-loading">…</td>`;
       } else {
-        body += `<td class="cell-empty">—</td>`;
+        const price = effectivePrice(v, part.id);
+        if (price != null) {
+          const isCheapest = cheapestByPart[part.id] === v.id;
+          const isLive = live && live.state === "live";
+          const url = live?.url || li?.product_url;
+          const inner = url
+            ? `<a href="${escape(url)}" target="_blank" rel="noopener">${fmtPLNCompact(price)}</a>`
+            : fmtPLNCompact(price);
+          const liveDot = isLive ? `<span class="live-dot" title="live · ${escape(new Date(live.ts).toLocaleTimeString('pl-PL'))}"></span>` : "";
+          body += `<td class="cell-priced ${isCheapest ? "cell-cheapest" : ""} ${isLive ? "cell-live" : ""}">${liveDot}${inner}</td>`;
+        } else if (live && live.state === "error") {
+          body += `<td class="cell-error" title="${escape(live.error || 'błąd')}">⚠</td>`;
+        } else {
+          body += `<td class="cell-empty">—</td>`;
+        }
       }
     });
     body += `</tr>`;
@@ -476,6 +514,128 @@ function escape(s) {
     .replace(/'/g, "&#39;");
 }
 
+// ---------- live refresh via backend ---------- //
+
+async function refreshAllVisible() {
+  const btn = document.getElementById("refresh-btn");
+  btn.disabled = true;
+  const origLabel = btn.textContent;
+  btn.textContent = "↻ Odświeżanie…";
+
+  // Refresh visible non-CN vendors that have at least one line_item with a product_url
+  const visible = SNAPSHOT.vendors.filter(v =>
+    vendorMatchesRegion(v, CURRENT_REGION) &&
+    v.region !== "CN" &&
+    (v.line_items || []).some(li => li.product_url)
+  );
+
+  if (visible.length === 0) {
+    btn.disabled = false;
+    btn.textContent = origLabel;
+    return;
+  }
+
+  // Mark all targeted cells as loading
+  visible.forEach(v => {
+    (v.line_items || []).forEach(li => {
+      if (li.product_url) {
+        LIVE_STATE[liveKey(v.id, li.part_id)] = { state: "loading" };
+      }
+    });
+  });
+  renderVendors();
+  renderMatrix();
+
+  await Promise.allSettled(visible.map(v => refreshVendor(v)));
+
+  btn.disabled = false;
+  btn.textContent = "↻ Odśwież ponownie";
+
+  // Banner if backend was unreachable
+  const reachable = Object.values(LIVE_STATE).some(s => s.state === "live" || (s.state === "error" && !s.network_failure));
+  if (!reachable) {
+    showOfflineBanner();
+  }
+}
+
+async function refreshVendor(vendor) {
+  let res;
+  try {
+    res = await fetch(`${BACKEND_URL}/refresh/${encodeURIComponent(vendor.id)}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    });
+  } catch (err) {
+    // Network failure (CORS, backend down) — mark all this vendor's targeted items as errored.
+    (vendor.line_items || []).forEach(li => {
+      if (li.product_url) {
+        LIVE_STATE[liveKey(vendor.id, li.part_id)] = {
+          state: "error",
+          error: "backend nieosiągalny — uruchom backend lokalnie",
+          network_failure: true,
+        };
+      }
+    });
+    renderVendors();
+    renderMatrix();
+    return;
+  }
+
+  if (!res.ok) {
+    (vendor.line_items || []).forEach(li => {
+      if (li.product_url) {
+        LIVE_STATE[liveKey(vendor.id, li.part_id)] = { state: "error", error: `HTTP ${res.status}` };
+      }
+    });
+    renderVendors();
+    renderMatrix();
+    return;
+  }
+
+  const data = await res.json();
+  const items = data.line_items || [];
+  items.forEach(item => {
+    const k = liveKey(vendor.id, item.part_id);
+    if (item.ok && item.price_pln != null) {
+      const cur = (item.currency || "PLN").toUpperCase();
+      const label = cur === "PLN"
+        ? `${fmtPLNCompact(item.price_pln)} PLN · live`
+        : `${item.price.toLocaleString("pl-PL", { maximumFractionDigits: 2 })} ${cur} (~${fmtPLNCompact(item.price_pln)} PLN) · live`;
+      LIVE_STATE[k] = {
+        state: "live",
+        price_pln: item.price_pln,
+        price_orig: item.price,
+        currency: cur,
+        label,
+        url: item.url,
+        availability: item.availability,
+        ts: Date.now(),
+      };
+    } else {
+      LIVE_STATE[k] = { state: "error", error: item.error || data.error || "brak danych" };
+    }
+  });
+
+  renderVendors();
+  renderMatrix();
+}
+
+function showOfflineBanner() {
+  let banner = document.getElementById("offline-banner");
+  if (banner) { banner.scrollIntoView({ behavior: "smooth", block: "nearest" }); return; }
+  banner = document.createElement("div");
+  banner.id = "offline-banner";
+  banner.className = "offline-banner";
+  banner.innerHTML = `
+    <strong>Live refresh działa lokalnie.</strong>
+    Strona pokazuje zapisany snapshot. Aby pobierać aktualne ceny i dostępność z 12 dostawców na żywo, uruchom backend lokalnie:
+    <pre>cd backend &amp;&amp; uvicorn main:app --port 8001</pre>
+    Backend scrapuje JSON-LD / OpenGraph / microdata per produkt i zwraca aktualne ceny.
+    <button type="button" class="dismiss" onclick="document.getElementById('offline-banner').remove()">×</button>
+  `;
+  document.querySelector("header .controls").appendChild(banner);
+}
+
 // ---------- bootstrap ---------- //
 
 document.querySelectorAll('input[name="region"]').forEach(radio => {
@@ -497,6 +657,8 @@ document.getElementById("toggle-all").addEventListener("click", e => {
   e.target.textContent = anyEnabled ? "Zaznacz wszystkie" : "Odznacz wszystkie";
   render();
 });
+
+document.getElementById("refresh-btn").addEventListener("click", refreshAllVisible);
 
 loadSnapshot()
   .then(data => {
