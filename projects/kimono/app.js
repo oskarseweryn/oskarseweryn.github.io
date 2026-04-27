@@ -225,16 +225,17 @@ function setRowState(vendorId, state, payload) {
   }
 
   if (state === "live") {
-    const { price, currency, availability } = payload;
+    const { price, currency, availability, tier } = payload;
     const fxRate = FX_TO_PLN[currency] || 1;
     const pricePLN = price * fxRate;
     const totalPLN = pricePLN * QUANTITY;
 
     const base = priceCell.querySelector(".price-base");
     if (base) {
+      const tierSuffix = tier ? ` @ ${tier}` : "";
       base.textContent = currency && currency !== "PLN"
-        ? `${price} ${currency} (~${Math.round(pricePLN)} PLN)`
-        : `${price} ${currency || "PLN"}`;
+        ? `${price} ${currency}${tierSuffix} (~${Math.round(pricePLN)} PLN)`
+        : `${price} ${currency || "PLN"}${tierSuffix}`;
     }
 
     const live = document.createElement("span");
@@ -291,15 +292,12 @@ async function refreshAllVisible() {
   const origLabel = btn.textContent;
   btn.textContent = "↻ Odświeżanie…";
 
-  // Live refresh only runs against vendors with a published unit price + a
-  // backend scraper. RFQ-only rows have no price to scrape; CN rows have
-  // tier-based MOQ prices that the backend has no scraper for (the buyer
-  // needs to re-check the tier on the product page after sending an RFQ
-  // anyway, so per-row live refresh isn't meaningful for them).
+  // Live refresh only runs against vendors with a published unit price.
+  // RFQ-only rows (e.g. Wesing) have no price to scrape, so skip them.
+  // CN rows with a published tier price are refreshed via dedicated
+  // backend scrapers that return the matching tier.
   const visible = SNAPSHOT.vendors.filter(v =>
-    vendorMatchesRegion(v, CURRENT_REGION)
-    && v.retail_unit_pln != null
-    && v.region !== "CN"
+    vendorMatchesRegion(v, CURRENT_REGION) && v.retail_unit_pln != null
   );
 
   await Promise.allSettled(visible.map(refreshVendor));
