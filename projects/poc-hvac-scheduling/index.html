@@ -71,7 +71,7 @@
           </div>
 
           <div class="kp-banner-demo">
-            <strong>POC demo</strong> — formularz interaktywny w przeglądarce, kalendarz zamockowany, brak wysyłki maili. Pełna wersja (real Google login + Calendar API) w repo.
+            <strong>POC demo</strong> — formularz interaktywny w przeglądarce, kalendarz zamockowany, brak wysyłki maili. Prawdziwe logowanie Google działa lokalnie — <a href="#oauth-video" style="color:#8a5a00;text-decoration:underline;font-weight:700;">zobacz video</a>.
           </div>
 
           <form class="kp-form" id="booking-form" novalidate>
@@ -210,6 +210,35 @@
       </div>
     </section>
 
+    <!-- OAUTH VIDEO -->
+    <section class="kp-oauth-video" id="oauth-video">
+      <div class="kp-container">
+        <div class="eye">Bonus · prawdziwy Google OAuth</div>
+        <h2>Logowanie kontem Google — wersja lokalna</h2>
+        <p class="lead">
+          Statyczny formularz powyżej to demo client-side. Pełna wersja FastAPI z prawdziwym
+          OAuth 2.0 (Google Identity) działa lokalnie — zobacz na video. Po publikacji backendu
+          (Render free tier, ~10 min) ta sama ścieżka logowania jest dostępna online dla każdego
+          użytkownika Google.
+        </p>
+        <div class="kp-video-wrap">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/Vw0BfnTeAhA?rel=0"
+            title="KlimaPro POC — Google OAuth login (localhost)"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+        <p class="kp-video-caption">
+          Nagranie z `localhost:8000` — prawdziwy consent screen Google, callback do FastAPI,
+          tożsamość klienta zapisana w sesji. Calendar zamockowany (DEMO=1), żeby uniknąć
+          tworzenia wydarzeń podczas demo.
+          <a href="https://www.youtube.com/watch?v=Vw0BfnTeAhA" target="_blank" rel="noopener">obejrzyj na YouTube ↗</a>
+        </p>
+      </div>
+    </section>
+
     <!-- POC notes (visible only at bottom) -->
     <section class="kp-poc-notes">
       <div class="kp-container">
@@ -219,7 +248,7 @@
           <li><strong>Stylistyka 1:1 z klimainwest.pl</strong> — paleta `#2095f3`, Open Sans, sharp inputs (border-radius:0), uppercase headlines, pill buttons. Realna firma HVAC z Krakowa, użyta jako wzorzec wizualny.</li>
           <li><strong>Geofence 100 km wokół Krakowa</strong> — adres jest geokodowany przez Nominatim (OpenStreetMap), liczona odległość Haversine od centrum Krakowa, walidacja po stronie klienta.</li>
           <li><strong>Generator slotów</strong> — pn–pt 8:00–17:00, slot 90 min, demo busy-intervals symulujące zajętość kalendarza technika. W produkcji slot-list pochodzi z Google Calendar `freeBusy` API.</li>
-          <li><strong>Booking flow</strong> — w produkcji: Google OAuth (klient), Calendar API service-account (zapis u technika), email klienta dodany jako uczestnik wydarzenia.</li>
+          <li><strong>Booking flow</strong> — w produkcji: Google OAuth (klient — działa lokalnie, zob. video powyżej), Calendar API service-account (zapis u technika), email klienta dodany jako uczestnik wydarzenia.</li>
           <li><strong>Stack</strong> — FastAPI + Jinja + HTMX po stronie serwera. Ten static demo to client-side build (Nominatim + JS) — pełen backend w repo.</li>
         </ul>
         <p style="margin-top:24px;">
