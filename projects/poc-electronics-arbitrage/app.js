@@ -213,7 +213,7 @@ function renderTopPaths() {
 
   const tbody = document.querySelector('#top-paths tbody');
   tbody.innerHTML = top.map((r, i) => `
-    <tr class="path-row" onclick="openPathDetail('${r.sku.id}','${r.buyC}','${r.sellC}')" title="Pokaż macierz cen i breakdown dla tego SKU">
+    <tr class="path-row${i === 0 && r.marginEur > 0 ? ' path-row-best' : ''}" onclick="openPathDetail('${r.sku.id}','${r.buyC}','${r.sellC}')" title="Pokaż macierz cen i breakdown dla tego SKU">
       <td>${i + 1}</td>
       <td>${r.sku.brand} <span class="muted">·</span> ${shortName(r.sku.name)}</td>
       <td><strong>${r.buyC}</strong> <span class="muted">${r.buyOffer.retailer}</span></td>
@@ -251,6 +251,20 @@ function renderSkus() {
 }
 
 function renderMatrix(sku) {
+  // Find the best profitable (buyC, sellC) pair for this SKU under current mode.
+  let bestKey = null, bestMargin = 0;
+  for (const buyC of COUNTRIES) {
+    for (const sellC of COUNTRIES) {
+      if (buyC === sellC) continue;
+      const bp = bestPath(sku, buyC, sellC, MODE);
+      if (!bp) continue;
+      const sellEur = medianRetailEur(sku, sellC);
+      if (!sellEur) continue;
+      const m = sellEur - bp.landed.eur;
+      if (m > bestMargin) { bestMargin = m; bestKey = `${buyC}__${sellC}`; }
+    }
+  }
+
   const rows = COUNTRIES.map(buyC => {
     const cells = COUNTRIES.map(sellC => {
       if (buyC === sellC) return `<td class="diag">—</td>`;
@@ -259,12 +273,14 @@ function renderMatrix(sku) {
       const sellEur = medianRetailEur(sku, sellC);
       const margin = sellEur - best.landed.eur;
       const pct = margin / sellEur;
-      const cls = margin >= 0 ? 'pos' : 'neg';
-      const id = `${sku.id}__${buyC}__${sellC}`;
+      const isBest = `${buyC}__${sellC}` === bestKey;
+      const cls = (margin >= 0 ? 'pos' : 'neg') + (isBest ? ' cell-best' : '');
+      const bestBadge = isBest ? '<div class="best-badge">NAJLEPSZY</div>' : '';
       return `
         <td class="cell ${cls}" data-buy="${buyC}" data-sell="${sellC}"
             onclick="openCellDetail('${sku.id}','${buyC}','${sellC}')"
             title="Otwórz ${best.offer.retailer} (${buyC}) w nowej karcie + pokaż breakdown">
+          ${bestBadge}
           <div class="pct">${fmtPct(pct)}</div>
           <div class="sub">${fmtEur(margin)} marża</div>
           <div class="sub">landed ${fmtEur(best.landed.eur)} · target ${fmtEur(sellEur)}</div>
