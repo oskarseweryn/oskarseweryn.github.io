@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Electronics Arbitrage Scanner · Oskar Seweryn</title>
+  <meta name="description" content="Cross-border price scanner Apple & Samsung w PL/DE/LT/UK z kalkulatorem landed cost (VAT, cła, transport). Wskazuje opłacalne ścieżki arbitrażu kup-tu / sprzedaj-tam." />
+  <meta name="theme-color" content="#0b0d12" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0d12'/%3E%3Ctext x='50%25' y='54%25' font-family='ui-monospace,monospace' font-size='34' font-weight='700' text-anchor='middle' fill='%2374f0c0'%3Eos%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    .portfolio-strip {
+      background: #0b0d12;
+      color: #d8dde6;
+      padding: 10px 24px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: -24px -24px 16px -24px;
+    }
+    .portfolio-strip a {
+      color: #d8dde6;
+      text-decoration: none;
+    }
+    .portfolio-strip a:hover { color: #74f0c0; }
+    .portfolio-strip .brand { font-weight: 600; }
+    .portfolio-strip .brand span { color: #74f0c0; }
+    .portfolio-strip nav { display: flex; gap: 16px; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+<div class="portfolio-strip">
+  <a class="brand" href="/">oskar<span>.seweryn</span></a>
+  <nav>
+    <a href="/projects/">← all projects</a>
+    <a href="/#about">about</a>
+    <a href="https://github.com/oskarseweryn" target="_blank" rel="noopener">GitHub →</a>
+  </nav>
+</div>
+
+<header class="topbar">
+  <div class="brand">
+    <h1>Electronics Arbitrage Scanner</h1>
+    <p class="sub">Apple &amp; Samsung flagowce · landed cost dla wszystkich par PL · DE · LT · UK</p>
+  </div>
+  <div class="meta">
+    <div class="meta-row"><span class="k">Snapshot</span><span class="v" id="meta-generated">—</span></div>
+    <div class="meta-row"><span class="k">FX</span><span class="v" id="meta-fx">—</span></div>
+    <div class="meta-row"><span class="k">Tryb</span>
+      <span class="v">
+        <label><input type="radio" name="mode" value="B2C" checked> B2C (konsument)</label>
+        <label><input type="radio" name="mode" value="B2B"> B2B (VAT-UE)</label>
+      </span>
+    </div>
+  </div>
+</header>
+
+<section class="card">
+  <h2>Top 10 ścieżek arbitrażu <span class="muted">(po marży EUR · cena detal w kraju docelowym)</span></h2>
+  <table class="top-paths" id="top-paths">
+    <thead><tr>
+      <th>#</th><th>SKU</th><th>Kup w</th><th>Sprzedaj w</th>
+      <th class="num">Cena lokalna</th><th class="num">Landed cost</th>
+      <th class="num">Cena rynku target</th><th class="num">Marża EUR</th><th class="num">Marża %</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<section class="card">
+  <h2>SKU × buy/sell · macierze cen</h2>
+  <p class="muted">Każda komórka: <strong>landed cost</strong> EUR (kupić w X, dostarczyć do Y) vs <strong>median retail</strong> w Y. Zielony = arbitraż dodatni, czerwony = ujemny. Klik wiersza = breakdown VAT/cła/wysyłki.</p>
+  <div id="sku-list"></div>
+</section>
+
+<section class="card">
+  <h2>Validator kodów rabatowych <span class="muted">(headless cart simulation)</span></h2>
+  <p class="muted">Próbka kodów testowanych podczas ostatniego refreshu. Klasyfikacja: <code>works</code> · <code>expired</code> · <code>excluded_brand</code> · <code>min_order_not_met</code>. Hit rate kodów na flagowce Apple wynosi praktycznie 0% — to nie błąd narzędzia, to MAP policy producenta.</p>
+  <table class="codes" id="codes-table">
+    <thead><tr><th>Kod</th><th>Sklep</th><th>Kraj</th><th>SKU</th><th>Status</th><th>Rabat</th><th>Notatka</th></tr></thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<footer class="foot">
+  <p>© <span id="yr"></span> Oskar Seweryn · static page · GitHub Pages</p>
+</footer>
+
+<script src="./app.js"></script>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

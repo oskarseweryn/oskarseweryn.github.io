@@ -1,0 +1,235 @@
+{
+  "_doc": "Seed snapshot for POC demo — refresh via /electronics-arbitrage. Prices are realistic 2026-05 MSRPs from major retailers, illustrating typical EU price topology (DE cheapest VAT-included, PL highest, LT middle, UK separate due to Brexit). Spreads are seeded to show meaningful arbitrage paths; refresh will replace with live data.",
+  "generated_at": "2026-05-01T12:00:00Z",
+  "generated_by": "seed",
+  "fx_to_eur": {
+    "EUR": 1.0,
+    "PLN": 0.2326,
+    "GBP": 1.1765
+  },
+  "fx_source": "NBP / ECB middle rate seed",
+  "shipping_eur": {
+    "PL_to_PL": 0,  "PL_to_DE": 18, "PL_to_LT": 12, "PL_to_UK": 30,
+    "DE_to_PL": 18, "DE_to_DE": 0,  "DE_to_LT": 22, "DE_to_UK": 28,
+    "LT_to_PL": 12, "LT_to_DE": 22, "LT_to_LT": 0,  "LT_to_UK": 35,
+    "UK_to_PL": 35, "UK_to_DE": 32, "UK_to_LT": 38, "UK_to_UK": 0
+  },
+  "skus": [
+    {
+      "id": "apple-iphone-16-pro-256",
+      "brand": "Apple",
+      "name": "iPhone 16 Pro 256GB Natural Titanium",
+      "category": "smartphone",
+      "msrp_eur": 1299,
+      "hs_code": "8517.13",
+      "customs_duty_eu_pct": 0.0,
+      "offers": [
+        { "country": "PL", "retailer": "Apple Store PL", "price_local": 5999, "currency": "PLN", "in_stock": true, "url": "https://www.apple.com/pl/shop/buy-iphone/iphone-16-pro" },
+        { "country": "PL", "retailer": "x-kom", "price_local": 5849, "currency": "PLN", "in_stock": true, "url": "https://www.x-kom.pl/" },
+        { "country": "PL", "retailer": "MediaExpert", "price_local": 5949, "currency": "PLN", "in_stock": true, "url": "https://www.mediaexpert.pl/" },
+        { "country": "PL", "retailer": "RTV Euro AGD", "price_local": 5879, "currency": "PLN", "in_stock": true, "url": "https://www.rtveuroagd.pl/" },
+
+        { "country": "DE", "retailer": "Apple Store DE", "price_local": 1349, "currency": "EUR", "in_stock": true, "url": "https://www.apple.com/de/shop/buy-iphone/iphone-16-pro" },
+        { "country": "DE", "retailer": "MediaMarkt", "price_local": 1299, "currency": "EUR", "in_stock": true, "url": "https://www.mediamarkt.de/" },
+        { "country": "DE", "retailer": "Saturn", "price_local": 1319, "currency": "EUR", "in_stock": true, "url": "https://www.saturn.de/" },
+        { "country": "DE", "retailer": "Amazon.de", "price_local": 1279, "currency": "EUR", "in_stock": true, "url": "https://www.amazon.de/" },
+
+        { "country": "LT", "retailer": "Topo Centras", "price_local": 1419, "currency": "EUR", "in_stock": true, "url": "https://www.topocentras.lt/" },
+        { "country": "LT", "retailer": "Pigu.lt", "price_local": 1399, "currency": "EUR", "in_stock": true, "url": "https://pigu.lt/" },
+        { "country": "LT", "retailer": "Bite", "price_local": 1429, "currency": "EUR", "in_stock": true, "url": "https://www.bite.lt/" },
+        { "country": "LT", "retailer": "Skytech", "price_local": 1389, "currency": "EUR", "in_stock": true, "url": "https://www.skytech.lt/" },
+
+        { "country": "UK", "retailer": "Apple Store UK", "price_local": 1099, "currency": "GBP", "in_stock": true, "url": "https://www.apple.com/uk/shop/buy-iphone/iphone-16-pro" },
+        { "country": "UK", "retailer": "Currys", "price_local": 1089, "currency": "GBP", "in_stock": true, "url": "https://www.currys.co.uk/" },
+        { "country": "UK", "retailer": "Argos", "price_local": 1099, "currency": "GBP", "in_stock": true, "url": "https://www.argos.co.uk/" },
+        { "country": "UK", "retailer": "Amazon.co.uk", "price_local": 1075, "currency": "GBP", "in_stock": true, "url": "https://www.amazon.co.uk/" }
+      ]
+    },
+    {
+      "id": "apple-macbook-air-m3-13-256",
+      "brand": "Apple",
+      "name": "MacBook Air M3 13\" 8GB/256GB Midnight",
+      "category": "laptop",
+      "msrp_eur": 1299,
+      "hs_code": "8471.30",
+      "customs_duty_eu_pct": 0.0,
+      "offers": [
+        { "country": "PL", "retailer": "Apple Store PL", "price_local": 5499, "currency": "PLN", "in_stock": true, "url": "https://www.apple.com/pl/shop/buy-mac/macbook-air/13-cali" },
+        { "country": "PL", "retailer": "x-kom", "price_local": 5299, "currency": "PLN", "in_stock": true, "url": "https://www.x-kom.pl/" },
+        { "country": "PL", "retailer": "MediaExpert", "price_local": 5399, "currency": "PLN", "in_stock": true, "url": "https://www.mediaexpert.pl/" },
+
+        { "country": "DE", "retailer": "Apple Store DE", "price_local": 1199, "currency": "EUR", "in_stock": true, "url": "https://www.apple.com/de/shop/buy-mac/macbook-air/13-zoll" },
+        { "country": "DE", "retailer": "MediaMarkt", "price_local": 1149, "currency": "EUR", "in_stock": true, "url": "https://www.mediamarkt.de/" },
+        { "country": "DE", "retailer": "Cyberport", "price_local": 1129, "currency": "EUR", "in_stock": true, "url": "https://www.cyberport.de/" },
+
+        { "country": "LT", "retailer": "Topo Centras", "price_local": 1299, "currency": "EUR", "in_stock": true, "url": "https://www.topocentras.lt/" },
+        { "country": "LT", "retailer": "Pigu.lt", "price_local": 1279, "currency": "EUR", "in_stock": true, "url": "https://pigu.lt/" },
+        { "country": "LT", "retailer": "Skytech", "price_local": 1259, "currency": "EUR", "in_stock": true, "url": "https://www.skytech.lt/" },
+
+        { "country": "UK", "retailer": "Apple Store UK", "price_local": 999, "currency": "GBP", "in_stock": true, "url": "https://www.apple.com/uk/shop/buy-mac/macbook-air/13-inch" },
+        { "country": "UK", "retailer": "John Lewis", "price_local": 1029, "currency": "GBP", "in_stock": true, "url": "https://www.johnlewis.com/" },
+        { "country": "UK", "retailer": "Currys", "price_local": 989, "currency": "GBP", "in_stock": true, "url": "https://www.currys.co.uk/" }
+      ]
+    },
+    {
+      "id": "apple-airpods-pro-2-usbc",
+      "brand": "Apple",
+      "name": "AirPods Pro 2 (USB-C)",
+      "category": "audio",
+      "msrp_eur": 279,
+      "hs_code": "8518.30",
+      "customs_duty_eu_pct": 0.0,
+      "offers": [
+        { "country": "PL", "retailer": "Apple Store PL", "price_local": 1099, "currency": "PLN", "in_stock": true, "url": "https://www.apple.com/pl/shop/buy-airpods/airpods-pro" },
+        { "country": "PL", "retailer": "x-kom", "price_local": 949, "currency": "PLN", "in_stock": true, "url": "https://www.x-kom.pl/" },
+        { "country": "PL", "retailer": "MediaExpert", "price_local": 999, "currency": "PLN", "in_stock": true, "url": "https://www.mediaexpert.pl/" },
+
+        { "country": "DE", "retailer": "Apple Store DE", "price_local": 279, "currency": "EUR", "in_stock": true, "url": "https://www.apple.com/de/shop/buy-airpods/airpods-pro" },
+        { "country": "DE", "retailer": "MediaMarkt", "price_local": 249, "currency": "EUR", "in_stock": true, "url": "https://www.mediamarkt.de/" },
+        { "country": "DE", "retailer": "Amazon.de", "price_local": 229, "currency": "EUR", "in_stock": true, "url": "https://www.amazon.de/" },
+
+        { "country": "LT", "retailer": "Topo Centras", "price_local": 269, "currency": "EUR", "in_stock": true, "url": "https://www.topocentras.lt/" },
+        { "country": "LT", "retailer": "Pigu.lt", "price_local": 259, "currency": "EUR", "in_stock": true, "url": "https://pigu.lt/" },
+        { "country": "LT", "retailer": "Skytech", "price_local": 279, "currency": "EUR", "in_stock": true, "url": "https://www.skytech.lt/" },
+
+        { "country": "UK", "retailer": "Apple Store UK", "price_local": 229, "currency": "GBP", "in_stock": true, "url": "https://www.apple.com/uk/shop/buy-airpods/airpods-pro" },
+        { "country": "UK", "retailer": "Currys", "price_local": 219, "currency": "GBP", "in_stock": true, "url": "https://www.currys.co.uk/" },
+        { "country": "UK", "retailer": "Amazon.co.uk", "price_local": 209, "currency": "GBP", "in_stock": true, "url": "https://www.amazon.co.uk/" }
+      ]
+    },
+    {
+      "id": "samsung-galaxy-s25-ultra-256",
+      "brand": "Samsung",
+      "name": "Galaxy S25 Ultra 256GB Titanium Black",
+      "category": "smartphone",
+      "msrp_eur": 1449,
+      "hs_code": "8517.13",
+      "customs_duty_eu_pct": 0.0,
+      "offers": [
+        { "country": "PL", "retailer": "Samsung.pl", "price_local": 6499, "currency": "PLN", "in_stock": true, "url": "https://www.samsung.com/pl/smartphones/galaxy-s25-ultra/" },
+        { "country": "PL", "retailer": "x-kom", "price_local": 5999, "currency": "PLN", "in_stock": true, "promo_code": "S25-WIOSNA", "promo_pct": 0.05, "url": "https://www.x-kom.pl/" },
+        { "country": "PL", "retailer": "MediaExpert", "price_local": 6299, "currency": "PLN", "in_stock": true, "url": "https://www.mediaexpert.pl/" },
+        { "country": "PL", "retailer": "RTV Euro AGD", "price_local": 6199, "currency": "PLN", "in_stock": true, "url": "https://www.rtveuroagd.pl/" },
+
+        { "country": "DE", "retailer": "Samsung.de", "price_local": 1449, "currency": "EUR", "in_stock": true, "url": "https://www.samsung.com/de/smartphones/galaxy-s25-ultra/" },
+        { "country": "DE", "retailer": "MediaMarkt", "price_local": 1199, "currency": "EUR", "in_stock": true, "promo_code": "S25-200", "promo_pct": 0.14, "url": "https://www.mediamarkt.de/" },
+        { "country": "DE", "retailer": "Saturn", "price_local": 1249, "currency": "EUR", "in_stock": true, "url": "https://www.saturn.de/" },
+        { "country": "DE", "retailer": "Amazon.de", "price_local": 1229, "currency": "EUR", "in_stock": true, "url": "https://www.amazon.de/" },
+
+        { "country": "LT", "retailer": "Samsung.lt", "price_local": 1449, "currency": "EUR", "in_stock": true, "url": "https://www.samsung.com/lt/smartphones/galaxy-s25-ultra/" },
+        { "country": "LT", "retailer": "Topo Centras", "price_local": 1399, "currency": "EUR", "in_stock": true, "url": "https://www.topocentras.lt/" },
+        { "country": "LT", "retailer": "Pigu.lt", "price_local": 1349, "currency": "EUR", "in_stock": true, "url": "https://pigu.lt/" },
+        { "country": "LT", "retailer": "Skytech", "price_local": 1419, "currency": "EUR", "in_stock": true, "url": "https://www.skytech.lt/" },
+
+        { "country": "UK", "retailer": "Samsung.uk", "price_local": 1249, "currency": "GBP", "in_stock": true, "url": "https://www.samsung.com/uk/smartphones/galaxy-s25-ultra/" },
+        { "country": "UK", "retailer": "Currys", "price_local": 1199, "currency": "GBP", "in_stock": true, "url": "https://www.currys.co.uk/" },
+        { "country": "UK", "retailer": "Argos", "price_local": 1219, "currency": "GBP", "in_stock": true, "url": "https://www.argos.co.uk/" },
+        { "country": "UK", "retailer": "Amazon.co.uk", "price_local": 1179, "currency": "GBP", "in_stock": true, "url": "https://www.amazon.co.uk/" }
+      ]
+    },
+    {
+      "id": "samsung-galaxy-watch-7-44",
+      "brand": "Samsung",
+      "name": "Galaxy Watch 7 44mm Bluetooth Green",
+      "category": "wearable",
+      "msrp_eur": 349,
+      "hs_code": "9102.12",
+      "customs_duty_eu_pct": 0.045,
+      "offers": [
+        { "country": "PL", "retailer": "Samsung.pl", "price_local": 1499, "currency": "PLN", "in_stock": true, "url": "https://www.samsung.com/pl/watches/galaxy-watch/galaxy-watch7-44mm/" },
+        { "country": "PL", "retailer": "x-kom", "price_local": 1199, "currency": "PLN", "in_stock": true, "url": "https://www.x-kom.pl/" },
+        { "country": "PL", "retailer": "MediaExpert", "price_local": 1349, "currency": "PLN", "in_stock": true, "url": "https://www.mediaexpert.pl/" },
+
+        { "country": "DE", "retailer": "Samsung.de", "price_local": 349, "currency": "EUR", "in_stock": true, "url": "https://www.samsung.com/de/watches/galaxy-watch/galaxy-watch7-44mm/" },
+        { "country": "DE", "retailer": "MediaMarkt", "price_local": 279, "currency": "EUR", "in_stock": true, "url": "https://www.mediamarkt.de/" },
+        { "country": "DE", "retailer": "Amazon.de", "price_local": 269, "currency": "EUR", "in_stock": true, "url": "https://www.amazon.de/" },
+
+        { "country": "LT", "retailer": "Samsung.lt", "price_local": 349, "currency": "EUR", "in_stock": true, "url": "https://www.samsung.com/lt/watches/galaxy-watch/galaxy-watch7-44mm/" },
+        { "country": "LT", "retailer": "Topo Centras", "price_local": 329, "currency": "EUR", "in_stock": true, "url": "https://www.topocentras.lt/" },
+        { "country": "LT", "retailer": "Pigu.lt", "price_local": 309, "currency": "EUR", "in_stock": true, "url": "https://pigu.lt/" },
+
+        { "country": "UK", "retailer": "Samsung.uk", "price_local": 289, "currency": "GBP", "in_stock": true, "url": "https://www.samsung.com/uk/watches/galaxy-watch/galaxy-watch7-44mm/" },
+        { "country": "UK", "retailer": "Currys", "price_local": 269, "currency": "GBP", "in_stock": true, "url": "https://www.currys.co.uk/" },
+        { "country": "UK", "retailer": "Argos", "price_local": 279, "currency": "GBP", "in_stock": true, "url": "https://www.argos.co.uk/" }
+      ]
+    },
+    {
+      "id": "samsung-galaxy-buds3-pro",
+      "brand": "Samsung",
+      "name": "Galaxy Buds3 Pro Silver",
+      "category": "audio",
+      "msrp_eur": 249,
+      "hs_code": "8518.30",
+      "customs_duty_eu_pct": 0.0,
+      "offers": [
+        { "country": "PL", "retailer": "Samsung.pl", "price_local": 1099, "currency": "PLN", "in_stock": true, "url": "https://www.samsung.com/pl/audio-sound/galaxy-buds/galaxy-buds3-pro/" },
+        { "country": "PL", "retailer": "x-kom", "price_local": 899, "currency": "PLN", "in_stock": true, "url": "https://www.x-kom.pl/" },
+        { "country": "PL", "retailer": "MediaExpert", "price_local": 999, "currency": "PLN", "in_stock": true, "url": "https://www.mediaexpert.pl/" },
+
+        { "country": "DE", "retailer": "Samsung.de", "price_local": 249, "currency": "EUR", "in_stock": true, "url": "https://www.samsung.com/de/audio-sound/galaxy-buds/galaxy-buds3-pro/" },
+        { "country": "DE", "retailer": "MediaMarkt", "price_local": 199, "currency": "EUR", "in_stock": true, "url": "https://www.mediamarkt.de/" },
+        { "country": "DE", "retailer": "Amazon.de", "price_local": 189, "currency": "EUR", "in_stock": true, "url": "https://www.amazon.de/" },
+
+        { "country": "LT", "retailer": "Samsung.lt", "price_local": 249, "currency": "EUR", "in_stock": true, "url": "https://www.samsung.com/lt/audio-sound/galaxy-buds/galaxy-buds3-pro/" },
+        { "country": "LT", "retailer": "Topo Centras", "price_local": 229, "currency": "EUR", "in_stock": true, "url": "https://www.topocentras.lt/" },
+        { "country": "LT", "retailer": "Pigu.lt", "price_local": 219, "currency": "EUR", "in_stock": true, "url": "https://pigu.lt/" },
+
+        { "country": "UK", "retailer": "Samsung.uk", "price_local": 219, "currency": "GBP", "in_stock": true, "url": "https://www.samsung.com/uk/audio-sound/galaxy-buds/galaxy-buds3-pro/" },
+        { "country": "UK", "retailer": "Currys", "price_local": 199, "currency": "GBP", "in_stock": true, "url": "https://www.currys.co.uk/" },
+        { "country": "UK", "retailer": "Argos", "price_local": 209, "currency": "GBP", "in_stock": true, "url": "https://www.argos.co.uk/" }
+      ]
+    }
+  ],
+  "promo_code_validation_log": [
+    {
+      "code": "S25-WIOSNA",
+      "retailer": "x-kom",
+      "country": "PL",
+      "tested_at": "2026-05-01T10:14:22Z",
+      "applies_to_sku": "samsung-galaxy-s25-ultra-256",
+      "discount_pct": 0.05,
+      "status": "works",
+      "notes": "Aplikuje się w koszyku, redukuje 6299 → 5999 PLN. Działa do 2026-05-15."
+    },
+    {
+      "code": "S25-200",
+      "retailer": "MediaMarkt",
+      "country": "DE",
+      "tested_at": "2026-05-01T10:15:08Z",
+      "applies_to_sku": "samsung-galaxy-s25-ultra-256",
+      "discount_pct": 0.14,
+      "status": "works",
+      "notes": "200€ off w koszyku, ważne w okresie 2026-04-25 do 2026-05-08. Limit 1 sztuka per konto."
+    },
+    {
+      "code": "APPLE10",
+      "retailer": "x-kom",
+      "country": "PL",
+      "tested_at": "2026-05-01T10:16:01Z",
+      "applies_to_sku": "apple-iphone-16-pro-256",
+      "discount_pct": 0.0,
+      "status": "excluded_brand",
+      "notes": "Kod istnieje, ale Apple SKU są na liście wykluczeń (MAP policy). Hit rate kodów na flagowce Apple ≈ 0% — to nie błąd POC, to rzeczywistość branży."
+    },
+    {
+      "code": "WELCOME15",
+      "retailer": "MediaExpert",
+      "country": "PL",
+      "tested_at": "2026-05-01T10:17:33Z",
+      "applies_to_sku": "samsung-galaxy-buds3-pro",
+      "discount_pct": 0.0,
+      "status": "min_order_not_met",
+      "notes": "Wymaga koszyka ≥ 5000 PLN. Buds3 Pro 999 PLN — nie kwalifikuje."
+    },
+    {
+      "code": "RTV2026",
+      "retailer": "RTV Euro AGD",
+      "country": "PL",
+      "tested_at": "2026-05-01T10:18:45Z",
+      "applies_to_sku": "apple-iphone-16-pro-256",
+      "discount_pct": 0.0,
+      "status": "expired",
+      "notes": "Kod wygasł 2026-04-30."
+    }
+  ]
+}
