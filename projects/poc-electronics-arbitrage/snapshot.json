@@ -391,6 +391,17 @@
       "offers": [
         {
           "country": "PL",
+          "retailer": "Neonet",
+          "price_local": 3999,
+          "currency": "PLN",
+          "in_stock": true,
+          "promo_code": "KORZYŚCI20",
+          "promo_pct": null,
+          "promo_apply": "auto",
+          "url": "https://www.neonet.pl/smartfony/samsung-galaxy-s25-ultra-5g-12-256gb-tytan-czarny-s938b.html"
+        },
+        {
+          "country": "PL",
           "retailer": "Samsung.pl",
           "price_local": 6499,
           "currency": "PLN",
@@ -400,11 +411,9 @@
         {
           "country": "PL",
           "retailer": "x-kom",
-          "price_local": 5999,
+          "price_local": 6299,
           "currency": "PLN",
           "in_stock": true,
-          "promo_code": "S25-WIOSNA",
-          "promo_pct": 0.05,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Ax-kom.pl+Galaxy+S25+Ultra+256GB+Titanium+Black"
         },
         {
@@ -437,8 +446,6 @@
           "price_local": 1199,
           "currency": "EUR",
           "in_stock": true,
-          "promo_code": "S25-200",
-          "promo_pct": 0.14,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Amediamarkt.de+Galaxy+S25+Ultra+256GB+Titanium+Black"
         },
         {
@@ -740,14 +747,34 @@
   ],
   "promo_code_validation_log": [
     {
+      "code": "KORZYŚCI20",
+      "retailer": "Neonet",
+      "country": "PL",
+      "tested_at": "2026-05-01T11:30:00Z",
+      "applies_to_sku": "samsung-galaxy-s25-ultra-256",
+      "discount_pct": null,
+      "status": "works",
+      "notes": "Realny kod, nalicza się automatycznie w koszyku Neonet. Cena S25 Ultra 12/256GB Titanium spada do 3999 PLN. Neonet = autoryzowany sprzedawca Samsung. Źródło: gsmmaniak.pl artykuł z połowy kwietnia 2026 — przed użyciem zweryfikuj aktualność w koszyku."
+    },
+    {
+      "code": "P-25092",
+      "retailer": "MediaExpert",
+      "country": "PL",
+      "tested_at": "2026-05-01T11:31:00Z",
+      "applies_to_sku": "samsung-galaxy-buds3-pro",
+      "discount_pct": null,
+      "status": "works",
+      "notes": "Akcja 'Samsung — Zyskaj rabat': kod obniża cenę wybranych akcesoriów Samsung (słuchawki, smartwatch, tablet, Galaxy Ring). Wpisać w koszyku przy finalizacji. NIE działa na flagowe telefony. Źródło: mediaexpert.pl/lp,25092-samsung-zyskaj-rabat."
+    },
+    {
       "code": "S25-WIOSNA",
       "retailer": "x-kom",
       "country": "PL",
       "tested_at": "2026-05-01T10:14:22Z",
       "applies_to_sku": "samsung-galaxy-s25-ultra-256",
       "discount_pct": 0.05,
-      "status": "works",
-      "notes": "Aplikuje się w koszyku, redukuje 6299 → 5999 PLN. Działa do 2026-05-15."
+      "status": "seeded_demo",
+      "notes": "Syntetyczne dane seedowe użyte do demonstracji schematu validatora — NIE jest to realny kod. Po /electronics-arbitrage zostanie zastąpione realnym findingiem z WebSearch."
     },
     {
       "code": "S25-200",
@@ -756,8 +783,18 @@
       "tested_at": "2026-05-01T10:15:08Z",
       "applies_to_sku": "samsung-galaxy-s25-ultra-256",
       "discount_pct": 0.14,
-      "status": "works",
-      "notes": "200€ off w koszyku, ważne w okresie 2026-04-25 do 2026-05-08. Limit 1 sztuka per konto."
+      "status": "seeded_demo",
+      "notes": "Syntetyczne dane seedowe. Realnie: MediaMarkt obniża cenę S25 Ultra bez kodu (clearance przed launch S26 ~styczeń 2026). 1199-1299 EUR widoczne bez kuponu. Źródło: teltarif.de, nextpit.de."
+    },
+    {
+      "code": "MediaExpert -1100/1500/2500 zł",
+      "retailer": "MediaExpert",
+      "country": "PL",
+      "tested_at": "2026-05-01T11:32:00Z",
+      "applies_to_sku": "samsung-galaxy-s25-ultra-256",
+      "discount_pct": null,
+      "status": "min_order_not_met",
+      "notes": "Bundle Samsung MediaExpert: -1100 zł przy 9000+ koszyka i 2 różnych produktach Samsung; -1500 przy 12000; -2500 przy 15000. Pojedynczy S25 Ultra (~6000 PLN) NIE kwalifikuje. Źródło: rabatio.com/sklepy/media-expert."
     },
     {
       "code": "APPLE10",
@@ -767,17 +804,7 @@
       "applies_to_sku": "apple-iphone-16-pro-256",
       "discount_pct": 0.0,
       "status": "excluded_brand",
-      "notes": "Kod istnieje, ale Apple SKU są na liście wykluczeń (MAP policy). Hit rate kodów na flagowce Apple ≈ 0% — to nie błąd POC, to rzeczywistość branży."
-    },
-    {
-      "code": "WELCOME15",
-      "retailer": "MediaExpert",
-      "country": "PL",
-      "tested_at": "2026-05-01T10:17:33Z",
-      "applies_to_sku": "samsung-galaxy-buds3-pro",
-      "discount_pct": 0.0,
-      "status": "min_order_not_met",
-      "notes": "Wymaga koszyka ≥ 5000 PLN. Buds3 Pro 999 PLN — nie kwalifikuje."
+      "notes": "Apple SKU są na liście wykluczeń (MAP policy). Hit rate kodów na flagowce Apple ≈ 0% — to nie błąd POC, to rzeczywistość branży."
     },
     {
       "code": "RTV2026",

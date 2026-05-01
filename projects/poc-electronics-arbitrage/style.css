@@ -215,6 +215,8 @@ tbody tr:hover { background: var(--panel-2); }
 .codes .status-expired { background: var(--bad-bg); color: var(--bad); }
 .codes .status-excluded_brand { background: var(--warn-bg); color: var(--warn); }
 .codes .status-min_order_not_met { background: var(--code-bg); color: var(--muted); }
+.codes .status-seeded_demo { background: var(--code-bg); color: var(--muted); border: 1px dashed var(--muted); }
+.codes .status-unverified { background: var(--code-bg); color: var(--warn); border: 1px dashed var(--warn); }
 
 .foot { color: var(--muted); font-size: 12px; padding: 16px 0; text-align: center; }
 .foot code { background: transparent; }
