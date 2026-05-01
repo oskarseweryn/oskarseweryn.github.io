@@ -303,7 +303,7 @@ function renderOffersTable(sku) {
       <td><span class="country-tag">${o.country}</span> ${o.retailer}${promo}</td>
       <td class="num">${o.price_local.toLocaleString('pl-PL')} ${o.currency}</td>
       <td class="num">${fmtEur(eur)}</td>
-      <td>${o.in_stock ? '<span class="muted">w magazynie</span>' : '<span class="muted">brak</span>'}</td>
+      <td>${o.in_stock ? '<span class="muted">w magazynie</span>' : (o.discontinued ? `<span class="muted" title="${o.discontinued_note || ''}">wycofany</span>` : '<span class="muted">brak</span>')}</td>
       <td><a href="${o.url}" target="_blank" rel="noopener">link</a></td>
     </tr>`;
   }).join('');

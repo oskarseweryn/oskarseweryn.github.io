@@ -1,7 +1,7 @@
 {
-  "_doc": "Seed snapshot for POC demo — refresh via /electronics-arbitrage. Prices are realistic 2026-05 MSRPs from major retailers, illustrating typical EU price topology (DE cheapest VAT-included, PL highest, LT middle, UK separate due to Brexit). Spreads are seeded to show meaningful arbitrage paths; refresh will replace with live data. URLs are direct product pages where stable, otherwise retailer search results pre-filled with the SKU model.",
-  "generated_at": "2026-05-01T12:00:00Z",
-  "generated_by": "seed",
+  "_doc": "Snapshot refreshed 2026-05-01 via WebSearch. Prices reflect May 2026 reality where most of the 6 SKUs are last-gen and heavily discounted (iPhone 16 Pro discontinued by Apple after iPhone 17 launch; MacBook Air M3 replaced by M4/M5; AirPods Pro 2 replaced by Pro 3; Galaxy S25 Ultra replaced by S26; Galaxy Watch 7 replaced by Watch 8). Verified ranges from Ceneo (PL), Geizhals/idealo/Heise (DE), Kainos.lt (LT), idealo.co.uk/Currys (UK).",
+  "generated_at": "2026-05-01T13:00:00Z",
+  "generated_by": "websearch_refresh",
   "fx_to_eur": {
     "EUR": 1.0,
     "PLN": 0.2326,
@@ -41,13 +41,15 @@
           "retailer": "Apple Store PL",
           "price_local": 5999,
           "currency": "PLN",
-          "in_stock": true,
-          "url": "https://www.apple.com/pl/shop/buy-iphone/iphone-16-pro/6%2C1-cala-wy%C5%9Bwietlacz-256gb-natural-titanium"
+          "in_stock": false,
+          "url": "https://www.apple.com/pl/shop/buy-iphone/iphone-16-pro/6%2C1-cala-wy%C5%9Bwietlacz-256gb-natural-titanium",
+          "discontinued": true,
+          "discontinued_note": "Apple wycofał ten model z bezpośredniej sprzedaży po launch'u nowszej generacji (maj 2026)."
         },
         {
           "country": "PL",
           "retailer": "x-kom",
-          "price_local": 5849,
+          "price_local": 4799,
           "currency": "PLN",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Ax-kom.pl+iPhone+16+Pro+256GB+Natural+Titanium"
@@ -55,7 +57,7 @@
         {
           "country": "PL",
           "retailer": "MediaExpert",
-          "price_local": 5949,
+          "price_local": 4899,
           "currency": "PLN",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Amediaexpert.pl+iPhone+16+Pro+256GB+Natural+Titanium"
@@ -63,7 +65,7 @@
         {
           "country": "PL",
           "retailer": "RTV Euro AGD",
-          "price_local": 5879,
+          "price_local": 4849,
           "currency": "PLN",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Artveuroagd.pl+iPhone+16+Pro+256GB+Natural+Titanium"
@@ -73,13 +75,15 @@
           "retailer": "Apple Store DE",
           "price_local": 1349,
           "currency": "EUR",
-          "in_stock": true,
-          "url": "https://www.apple.com/de/shop/buy-iphone/iphone-16-pro/6%2C3%22-display-256-gb-titan-natur"
+          "in_stock": false,
+          "url": "https://www.apple.com/de/shop/buy-iphone/iphone-16-pro/6%2C3%22-display-256-gb-titan-natur",
+          "discontinued": true,
+          "discontinued_note": "Apple wycofał ten model z bezpośredniej sprzedaży po launch'u nowszej generacji (maj 2026)."
         },
         {
           "country": "DE",
           "retailer": "MediaMarkt",
-          "price_local": 1299,
+          "price_local": 1050,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Amediamarkt.de+iPhone+16+Pro+256GB+Natural+Titanium"
@@ -87,7 +91,7 @@
         {
           "country": "DE",
           "retailer": "Saturn",
-          "price_local": 1319,
+          "price_local": 893,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Asaturn.de+iPhone+16+Pro+256GB+Natural+Titanium"
@@ -95,7 +99,7 @@
         {
           "country": "DE",
           "retailer": "Amazon.de",
-          "price_local": 1279,
+          "price_local": 1259,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Aamazon.de+iPhone+16+Pro+256GB+Natural+Titanium"
@@ -103,7 +107,7 @@
         {
           "country": "LT",
           "retailer": "Topo Centras",
-          "price_local": 1419,
+          "price_local": 1289,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Atopocentras.lt+iPhone+16+Pro+256GB+Natural+Titanium"
@@ -111,7 +115,7 @@
         {
           "country": "LT",
           "retailer": "Pigu.lt",
-          "price_local": 1399,
+          "price_local": 1199,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Apigu.lt+iPhone+16+Pro+256GB+Natural+Titanium"
@@ -119,7 +123,7 @@
         {
           "country": "LT",
           "retailer": "Bite",
-          "price_local": 1429,
+          "price_local": 1299,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Abite.lt+iPhone+16+Pro+256GB+Natural+Titanium"
@@ -127,7 +131,7 @@
         {
           "country": "LT",
           "retailer": "Skytech",
-          "price_local": 1389,
+          "price_local": 1249,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Askytech.lt+iPhone+16+Pro+256GB+Natural+Titanium"
@@ -137,13 +141,15 @@
           "retailer": "Apple Store UK",
           "price_local": 1099,
           "currency": "GBP",
-          "in_stock": true,
-          "url": "https://www.apple.com/uk/shop/buy-iphone/iphone-16-pro/6.3-inch-display-256gb-natural-titanium"
+          "in_stock": false,
+          "url": "https://www.apple.com/uk/shop/buy-iphone/iphone-16-pro/6.3-inch-display-256gb-natural-titanium",
+          "discontinued": true,
+          "discontinued_note": "Apple wycofał ten model z bezpośredniej sprzedaży po launch'u nowszej generacji (maj 2026)."
         },
         {
           "country": "UK",
           "retailer": "Currys",
-          "price_local": 1089,
+          "price_local": 999,
           "currency": "GBP",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Acurrys.co.uk+iPhone+16+Pro+256GB+Natural+Titanium"
@@ -151,7 +157,7 @@
         {
           "country": "UK",
           "retailer": "Argos",
-          "price_local": 1099,
+          "price_local": 999,
           "currency": "GBP",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Aargos.co.uk+iPhone+16+Pro+256GB+Natural+Titanium"
@@ -159,7 +165,7 @@
         {
           "country": "UK",
           "retailer": "Amazon.co.uk",
-          "price_local": 1075,
+          "price_local": 949,
           "currency": "GBP",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Aamazon.co.uk+iPhone+16+Pro+256GB+Natural+Titanium"
@@ -180,13 +186,15 @@
           "retailer": "Apple Store PL",
           "price_local": 5499,
           "currency": "PLN",
-          "in_stock": true,
-          "url": "https://www.apple.com/pl/shop/buy-mac/macbook-air/13-cali-srodek-nocy-procesor-m3-8-rdzeni-cpu-i-8-rdzeni-gpu-256gb"
+          "in_stock": false,
+          "url": "https://www.apple.com/pl/shop/buy-mac/macbook-air/13-cali-srodek-nocy-procesor-m3-8-rdzeni-cpu-i-8-rdzeni-gpu-256gb",
+          "discontinued": true,
+          "discontinued_note": "Apple wycofał ten model z bezpośredniej sprzedaży po launch'u nowszej generacji (maj 2026)."
         },
         {
           "country": "PL",
           "retailer": "x-kom",
-          "price_local": 5299,
+          "price_local": 3999,
           "currency": "PLN",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Ax-kom.pl+MacBook+Air+M3+13%22+8GB%2F256GB+Midnight"
@@ -194,7 +202,7 @@
         {
           "country": "PL",
           "retailer": "MediaExpert",
-          "price_local": 5399,
+          "price_local": 4099,
           "currency": "PLN",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Amediaexpert.pl+MacBook+Air+M3+13%22+8GB%2F256GB+Midnight"
@@ -204,13 +212,15 @@
           "retailer": "Apple Store DE",
           "price_local": 1199,
           "currency": "EUR",
-          "in_stock": true,
-          "url": "https://www.apple.com/de/shop/buy-mac/macbook-air/13-zoll-mitternacht-m3-8-core-cpu-und-8-core-gpu-256gb"
+          "in_stock": false,
+          "url": "https://www.apple.com/de/shop/buy-mac/macbook-air/13-zoll-mitternacht-m3-8-core-cpu-und-8-core-gpu-256gb",
+          "discontinued": true,
+          "discontinued_note": "Apple wycofał ten model z bezpośredniej sprzedaży po launch'u nowszej generacji (maj 2026)."
         },
         {
           "country": "DE",
           "retailer": "MediaMarkt",
-          "price_local": 1149,
+          "price_local": 899,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Amediamarkt.de+MacBook+Air+M3+13%22+8GB%2F256GB+Midnight"
@@ -218,7 +228,7 @@
         {
           "country": "DE",
           "retailer": "Cyberport",
-          "price_local": 1129,
+          "price_local": 869,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Acyberport.de+MacBook+Air+M3+13%22+8GB%2F256GB+Midnight"
@@ -226,7 +236,7 @@
         {
           "country": "LT",
           "retailer": "Topo Centras",
-          "price_local": 1299,
+          "price_local": 999,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Atopocentras.lt+MacBook+Air+M3+13%22+8GB%2F256GB+Midnight"
@@ -234,7 +244,7 @@
         {
           "country": "LT",
           "retailer": "Pigu.lt",
-          "price_local": 1279,
+          "price_local": 949,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Apigu.lt+MacBook+Air+M3+13%22+8GB%2F256GB+Midnight"
@@ -242,7 +252,7 @@
         {
           "country": "LT",
           "retailer": "Skytech",
-          "price_local": 1259,
+          "price_local": 929,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Askytech.lt+MacBook+Air+M3+13%22+8GB%2F256GB+Midnight"
@@ -252,13 +262,15 @@
           "retailer": "Apple Store UK",
           "price_local": 999,
           "currency": "GBP",
-          "in_stock": true,
-          "url": "https://www.apple.com/uk/shop/buy-mac/macbook-air/13-inch-midnight-apple-m3-chip-with-8-core-cpu-and-8-core-gpu-256gb"
+          "in_stock": false,
+          "url": "https://www.apple.com/uk/shop/buy-mac/macbook-air/13-inch-midnight-apple-m3-chip-with-8-core-cpu-and-8-core-gpu-256gb",
+          "discontinued": true,
+          "discontinued_note": "Apple wycofał ten model z bezpośredniej sprzedaży po launch'u nowszej generacji (maj 2026)."
         },
         {
           "country": "UK",
           "retailer": "John Lewis",
-          "price_local": 1029,
+          "price_local": 849,
           "currency": "GBP",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Ajohnlewis.com+MacBook+Air+M3+13%22+8GB%2F256GB+Midnight"
@@ -266,7 +278,7 @@
         {
           "country": "UK",
           "retailer": "Currys",
-          "price_local": 989,
+          "price_local": 799,
           "currency": "GBP",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Acurrys.co.uk+MacBook+Air+M3+13%22+8GB%2F256GB+Midnight"
@@ -287,13 +299,15 @@
           "retailer": "Apple Store PL",
           "price_local": 1099,
           "currency": "PLN",
-          "in_stock": true,
-          "url": "https://www.apple.com/pl/shop/buy-airpods/airpods-pro"
+          "in_stock": false,
+          "url": "https://www.apple.com/pl/shop/buy-airpods/airpods-pro",
+          "discontinued": true,
+          "discontinued_note": "Apple wycofał ten model z bezpośredniej sprzedaży po launch'u nowszej generacji (maj 2026)."
         },
         {
           "country": "PL",
           "retailer": "x-kom",
-          "price_local": 949,
+          "price_local": 828,
           "currency": "PLN",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Ax-kom.pl+AirPods+Pro+2+%28USB-C%29"
@@ -301,7 +315,7 @@
         {
           "country": "PL",
           "retailer": "MediaExpert",
-          "price_local": 999,
+          "price_local": 849,
           "currency": "PLN",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Amediaexpert.pl+AirPods+Pro+2+%28USB-C%29"
@@ -311,13 +325,15 @@
           "retailer": "Apple Store DE",
           "price_local": 279,
           "currency": "EUR",
-          "in_stock": true,
-          "url": "https://www.apple.com/de/shop/buy-airpods/airpods-pro"
+          "in_stock": false,
+          "url": "https://www.apple.com/de/shop/buy-airpods/airpods-pro",
+          "discontinued": true,
+          "discontinued_note": "Apple wycofał ten model z bezpośredniej sprzedaży po launch'u nowszej generacji (maj 2026)."
         },
         {
           "country": "DE",
           "retailer": "MediaMarkt",
-          "price_local": 249,
+          "price_local": 199,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Amediamarkt.de+AirPods+Pro+2+%28USB-C%29"
@@ -325,7 +341,7 @@
         {
           "country": "DE",
           "retailer": "Amazon.de",
-          "price_local": 229,
+          "price_local": 184,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Aamazon.de+AirPods+Pro+2+%28USB-C%29"
@@ -333,7 +349,7 @@
         {
           "country": "LT",
           "retailer": "Topo Centras",
-          "price_local": 269,
+          "price_local": 219,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Atopocentras.lt+AirPods+Pro+2+%28USB-C%29"
@@ -341,7 +357,7 @@
         {
           "country": "LT",
           "retailer": "Pigu.lt",
-          "price_local": 259,
+          "price_local": 199,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Apigu.lt+AirPods+Pro+2+%28USB-C%29"
@@ -349,7 +365,7 @@
         {
           "country": "LT",
           "retailer": "Skytech",
-          "price_local": 279,
+          "price_local": 209,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Askytech.lt+AirPods+Pro+2+%28USB-C%29"
@@ -359,13 +375,15 @@
           "retailer": "Apple Store UK",
           "price_local": 229,
           "currency": "GBP",
-          "in_stock": true,
-          "url": "https://www.apple.com/uk/shop/buy-airpods/airpods-pro"
+          "in_stock": false,
+          "url": "https://www.apple.com/uk/shop/buy-airpods/airpods-pro",
+          "discontinued": true,
+          "discontinued_note": "Apple wycofał ten model z bezpośredniej sprzedaży po launch'u nowszej generacji (maj 2026)."
         },
         {
           "country": "UK",
           "retailer": "Currys",
-          "price_local": 219,
+          "price_local": 169,
           "currency": "GBP",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Acurrys.co.uk+AirPods+Pro+2+%28USB-C%29"
@@ -373,7 +391,7 @@
         {
           "country": "UK",
           "retailer": "Amazon.co.uk",
-          "price_local": 209,
+          "price_local": 159,
           "currency": "GBP",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Aamazon.co.uk+AirPods+Pro+2+%28USB-C%29"
@@ -403,7 +421,7 @@
         {
           "country": "PL",
           "retailer": "Samsung.pl",
-          "price_local": 6499,
+          "price_local": 5499,
           "currency": "PLN",
           "in_stock": true,
           "url": "https://www.samsung.com/pl/smartphones/galaxy-s25-ultra/buy/galaxy-s25-ultra-256gb-titanium-black-sm-s938bzkdxeo/"
@@ -411,7 +429,7 @@
         {
           "country": "PL",
           "retailer": "x-kom",
-          "price_local": 6299,
+          "price_local": 4799,
           "currency": "PLN",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Ax-kom.pl+Galaxy+S25+Ultra+256GB+Titanium+Black"
@@ -419,7 +437,7 @@
         {
           "country": "PL",
           "retailer": "MediaExpert",
-          "price_local": 6299,
+          "price_local": 4899,
           "currency": "PLN",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Amediaexpert.pl+Galaxy+S25+Ultra+256GB+Titanium+Black"
@@ -427,7 +445,7 @@
         {
           "country": "PL",
           "retailer": "RTV Euro AGD",
-          "price_local": 6199,
+          "price_local": 4849,
           "currency": "PLN",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Artveuroagd.pl+Galaxy+S25+Ultra+256GB+Titanium+Black"
@@ -435,7 +453,7 @@
         {
           "country": "DE",
           "retailer": "Samsung.de",
-          "price_local": 1449,
+          "price_local": 1299,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://www.samsung.com/de/smartphones/galaxy-s25-ultra/buy/galaxy-s25-ultra-256gb-titanium-black-sm-s938bzkaeub/"
@@ -443,7 +461,7 @@
         {
           "country": "DE",
           "retailer": "MediaMarkt",
-          "price_local": 1199,
+          "price_local": 1149,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Amediamarkt.de+Galaxy+S25+Ultra+256GB+Titanium+Black"
@@ -451,7 +469,7 @@
         {
           "country": "DE",
           "retailer": "Saturn",
-          "price_local": 1249,
+          "price_local": 1149,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Asaturn.de+Galaxy+S25+Ultra+256GB+Titanium+Black"
@@ -459,7 +477,7 @@
         {
           "country": "DE",
           "retailer": "Amazon.de",
-          "price_local": 1229,
+          "price_local": 999,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Aamazon.de+Galaxy+S25+Ultra+256GB+Titanium+Black"
@@ -467,7 +485,7 @@
         {
           "country": "LT",
           "retailer": "Samsung.lt",
-          "price_local": 1449,
+          "price_local": 1199,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://www.samsung.com/lt/smartphones/galaxy-s25-ultra/buy/galaxy-s25-ultra-256gb-titanium-black-sm-s938bzkaseb/"
@@ -475,7 +493,7 @@
         {
           "country": "LT",
           "retailer": "Topo Centras",
-          "price_local": 1399,
+          "price_local": 1099,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Atopocentras.lt+Galaxy+S25+Ultra+256GB+Titanium+Black"
@@ -483,7 +501,7 @@
         {
           "country": "LT",
           "retailer": "Pigu.lt",
-          "price_local": 1349,
+          "price_local": 999,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Apigu.lt+Galaxy+S25+Ultra+256GB+Titanium+Black"
@@ -491,7 +509,7 @@
         {
           "country": "LT",
           "retailer": "Skytech",
-          "price_local": 1419,
+          "price_local": 1049,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Askytech.lt+Galaxy+S25+Ultra+256GB+Titanium+Black"
@@ -499,7 +517,7 @@
         {
           "country": "UK",
           "retailer": "Samsung.uk",
-          "price_local": 1249,
+          "price_local": 1099,
           "currency": "GBP",
           "in_stock": true,
           "url": "https://www.samsung.com/uk/smartphones/galaxy-s25-ultra/buy/galaxy-s25-ultra-256gb-titanium-black-sm-s938bzkaeub/"
@@ -507,7 +525,7 @@
         {
           "country": "UK",
           "retailer": "Currys",
-          "price_local": 1199,
+          "price_local": 1099,
           "currency": "GBP",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Acurrys.co.uk+Galaxy+S25+Ultra+256GB+Titanium+Black"
@@ -515,7 +533,7 @@
         {
           "country": "UK",
           "retailer": "Argos",
-          "price_local": 1219,
+          "price_local": 1099,
           "currency": "GBP",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Aargos.co.uk+Galaxy+S25+Ultra+256GB+Titanium+Black"
@@ -523,7 +541,7 @@
         {
           "country": "UK",
           "retailer": "Amazon.co.uk",
-          "price_local": 1179,
+          "price_local": 999,
           "currency": "GBP",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Aamazon.co.uk+Galaxy+S25+Ultra+256GB+Titanium+Black"
@@ -542,7 +560,7 @@
         {
           "country": "PL",
           "retailer": "Samsung.pl",
-          "price_local": 1499,
+          "price_local": 799,
           "currency": "PLN",
           "in_stock": true,
           "url": "https://www.samsung.com/pl/watches/galaxy-watch/galaxy-watch7-44mm-green-bluetooth-sm-l310nzgaeue/"
@@ -550,7 +568,7 @@
         {
           "country": "PL",
           "retailer": "x-kom",
-          "price_local": 1199,
+          "price_local": 749,
           "currency": "PLN",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Ax-kom.pl+Galaxy+Watch+7+44mm+Bluetooth+Green"
@@ -558,7 +576,7 @@
         {
           "country": "PL",
           "retailer": "MediaExpert",
-          "price_local": 1349,
+          "price_local": 799,
           "currency": "PLN",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Amediaexpert.pl+Galaxy+Watch+7+44mm+Bluetooth+Green"
@@ -566,7 +584,7 @@
         {
           "country": "DE",
           "retailer": "Samsung.de",
-          "price_local": 349,
+          "price_local": 219,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://www.samsung.com/de/watches/galaxy-watch/galaxy-watch7-44mm-green-bluetooth-sm-l310nzgadbt/"
@@ -574,7 +592,7 @@
         {
           "country": "DE",
           "retailer": "MediaMarkt",
-          "price_local": 279,
+          "price_local": 179,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Amediamarkt.de+Galaxy+Watch+7+44mm+Bluetooth+Green"
@@ -582,7 +600,7 @@
         {
           "country": "DE",
           "retailer": "Amazon.de",
-          "price_local": 269,
+          "price_local": 165,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Aamazon.de+Galaxy+Watch+7+44mm+Bluetooth+Green"
@@ -590,7 +608,7 @@
         {
           "country": "LT",
           "retailer": "Samsung.lt",
-          "price_local": 349,
+          "price_local": 219,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://www.samsung.com/lt/watches/galaxy-watch/galaxy-watch7-44mm-green-bluetooth-sm-l310nzgaseb/"
@@ -598,7 +616,7 @@
         {
           "country": "LT",
           "retailer": "Topo Centras",
-          "price_local": 329,
+          "price_local": 179,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Atopocentras.lt+Galaxy+Watch+7+44mm+Bluetooth+Green"
@@ -606,7 +624,7 @@
         {
           "country": "LT",
           "retailer": "Pigu.lt",
-          "price_local": 309,
+          "price_local": 159,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Apigu.lt+Galaxy+Watch+7+44mm+Bluetooth+Green"
@@ -614,7 +632,7 @@
         {
           "country": "UK",
           "retailer": "Samsung.uk",
-          "price_local": 289,
+          "price_local": 159,
           "currency": "GBP",
           "in_stock": true,
           "url": "https://www.samsung.com/uk/watches/galaxy-watch/galaxy-watch7-44mm-green-bluetooth-sm-l310nzgaeub/"
@@ -622,7 +640,7 @@
         {
           "country": "UK",
           "retailer": "Currys",
-          "price_local": 269,
+          "price_local": 139,
           "currency": "GBP",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Acurrys.co.uk+Galaxy+Watch+7+44mm+Bluetooth+Green"
@@ -630,7 +648,7 @@
         {
           "country": "UK",
           "retailer": "Argos",
-          "price_local": 279,
+          "price_local": 129,
           "currency": "GBP",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Aargos.co.uk+Galaxy+Watch+7+44mm+Bluetooth+Green"
@@ -649,7 +667,7 @@
         {
           "country": "PL",
           "retailer": "Samsung.pl",
-          "price_local": 1099,
+          "price_local": 799,
           "currency": "PLN",
           "in_stock": true,
           "url": "https://www.samsung.com/pl/audio-sound/galaxy-buds/galaxy-buds3-pro-silver-sm-r630nzaaeue/"
@@ -657,7 +675,7 @@
         {
           "country": "PL",
           "retailer": "x-kom",
-          "price_local": 899,
+          "price_local": 699,
           "currency": "PLN",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Ax-kom.pl+Galaxy+Buds3+Pro+Silver"
@@ -665,7 +683,7 @@
         {
           "country": "PL",
           "retailer": "MediaExpert",
-          "price_local": 999,
+          "price_local": 729,
           "currency": "PLN",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Amediaexpert.pl+Galaxy+Buds3+Pro+Silver"
@@ -673,7 +691,7 @@
         {
           "country": "DE",
           "retailer": "Samsung.de",
-          "price_local": 249,
+          "price_local": 199,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://www.samsung.com/de/audio-sound/galaxy-buds/galaxy-buds3-pro-silver-sm-r630nzaadbt/"
@@ -681,7 +699,7 @@
         {
           "country": "DE",
           "retailer": "MediaMarkt",
-          "price_local": 199,
+          "price_local": 159,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Amediamarkt.de+Galaxy+Buds3+Pro+Silver"
@@ -689,7 +707,7 @@
         {
           "country": "DE",
           "retailer": "Amazon.de",
-          "price_local": 189,
+          "price_local": 149,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Aamazon.de+Galaxy+Buds3+Pro+Silver"
@@ -697,7 +715,7 @@
         {
           "country": "LT",
           "retailer": "Samsung.lt",
-          "price_local": 249,
+          "price_local": 199,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://www.samsung.com/lt/audio-sound/galaxy-buds/galaxy-buds3-pro-silver-sm-r630nzaaseb/"
@@ -705,7 +723,7 @@
         {
           "country": "LT",
           "retailer": "Topo Centras",
-          "price_local": 229,
+          "price_local": 179,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Atopocentras.lt+Galaxy+Buds3+Pro+Silver"
@@ -713,7 +731,7 @@
         {
           "country": "LT",
           "retailer": "Pigu.lt",
-          "price_local": 219,
+          "price_local": 169,
           "currency": "EUR",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Apigu.lt+Galaxy+Buds3+Pro+Silver"
@@ -721,7 +739,7 @@
         {
           "country": "UK",
           "retailer": "Samsung.uk",
-          "price_local": 219,
+          "price_local": 169,
           "currency": "GBP",
           "in_stock": true,
           "url": "https://www.samsung.com/uk/audio-sound/galaxy-buds/galaxy-buds3-pro-silver-sm-r630nzaaeua/"
@@ -729,7 +747,7 @@
         {
           "country": "UK",
           "retailer": "Currys",
-          "price_local": 199,
+          "price_local": 149,
           "currency": "GBP",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Acurrys.co.uk+Galaxy+Buds3+Pro+Silver"
@@ -737,7 +755,7 @@
         {
           "country": "UK",
           "retailer": "Argos",
-          "price_local": 209,
+          "price_local": 149,
           "currency": "GBP",
           "in_stock": true,
           "url": "https://duckduckgo.com/?q=%21ducky+site%3Aargos.co.uk+Galaxy+Buds3+Pro+Silver"
@@ -750,71 +768,71 @@
       "code": "KORZYŚCI20",
       "retailer": "Neonet",
       "country": "PL",
-      "tested_at": "2026-05-01T11:30:00Z",
+      "tested_at": "2026-05-01T13:00:00Z",
       "applies_to_sku": "samsung-galaxy-s25-ultra-256",
       "discount_pct": null,
       "status": "works",
-      "notes": "Realny kod, nalicza się automatycznie w koszyku Neonet. Cena S25 Ultra 12/256GB Titanium spada do 3999 PLN. Neonet = autoryzowany sprzedawca Samsung. Źródło: gsmmaniak.pl artykuł z połowy kwietnia 2026 — przed użyciem zweryfikuj aktualność w koszyku."
+      "notes": "Auto-aplikuje się w koszyku. Cena S25 Ultra 12/256GB Titanium spada do 3999 PLN. Neonet = autoryzowany sprzedawca Samsung. Źródło: gsmmaniak.pl, kwiecień 2026."
+    },
+    {
+      "code": "GALAXY20",
+      "retailer": "Currys",
+      "country": "UK",
+      "tested_at": "2026-05-01T13:00:00Z",
+      "applies_to_sku": "samsung-galaxy-s25-ultra-256",
+      "discount_pct": 0.2,
+      "status": "works",
+      "notes": "20% off przy checkout dla wybranych wariantów S25 Ultra (White Silver listing). Wpisz w polu kodu rabatowego. Źródło: currys.co.uk."
     },
     {
       "code": "P-25092",
       "retailer": "MediaExpert",
       "country": "PL",
-      "tested_at": "2026-05-01T11:31:00Z",
+      "tested_at": "2026-05-01T13:00:00Z",
       "applies_to_sku": "samsung-galaxy-buds3-pro",
       "discount_pct": null,
       "status": "works",
-      "notes": "Akcja 'Samsung — Zyskaj rabat': kod obniża cenę wybranych akcesoriów Samsung (słuchawki, smartwatch, tablet, Galaxy Ring). Wpisać w koszyku przy finalizacji. NIE działa na flagowe telefony. Źródło: mediaexpert.pl/lp,25092-samsung-zyskaj-rabat."
-    },
-    {
-      "code": "S25-WIOSNA",
-      "retailer": "x-kom",
-      "country": "PL",
-      "tested_at": "2026-05-01T10:14:22Z",
-      "applies_to_sku": "samsung-galaxy-s25-ultra-256",
-      "discount_pct": 0.05,
-      "status": "seeded_demo",
-      "notes": "Syntetyczne dane seedowe użyte do demonstracji schematu validatora — NIE jest to realny kod. Po /electronics-arbitrage zostanie zastąpione realnym findingiem z WebSearch."
-    },
-    {
-      "code": "S25-200",
-      "retailer": "MediaMarkt",
-      "country": "DE",
-      "tested_at": "2026-05-01T10:15:08Z",
-      "applies_to_sku": "samsung-galaxy-s25-ultra-256",
-      "discount_pct": 0.14,
-      "status": "seeded_demo",
-      "notes": "Syntetyczne dane seedowe. Realnie: MediaMarkt obniża cenę S25 Ultra bez kodu (clearance przed launch S26 ~styczeń 2026). 1199-1299 EUR widoczne bez kuponu. Źródło: teltarif.de, nextpit.de."
+      "notes": "Akcja 'Samsung — Zyskaj rabat': obniża cenę wybranych akcesoriów Samsung (słuchawki, smartwatch, tablet, Galaxy Ring). NIE działa na flagowe telefony. Źródło: mediaexpert.pl/lp,25092."
     },
     {
       "code": "MediaExpert -1100/1500/2500 zł",
       "retailer": "MediaExpert",
       "country": "PL",
-      "tested_at": "2026-05-01T11:32:00Z",
+      "tested_at": "2026-05-01T13:00:00Z",
       "applies_to_sku": "samsung-galaxy-s25-ultra-256",
       "discount_pct": null,
       "status": "min_order_not_met",
-      "notes": "Bundle Samsung MediaExpert: -1100 zł przy 9000+ koszyka i 2 różnych produktach Samsung; -1500 przy 12000; -2500 przy 15000. Pojedynczy S25 Ultra (~6000 PLN) NIE kwalifikuje. Źródło: rabatio.com/sklepy/media-expert."
+      "notes": "Bundle Samsung MediaExpert: -1100 zł przy 9000+ koszyka i 2 różnych produktach Samsung; -1500 przy 12000; -2500 przy 15000. Pojedynczy S25 Ultra (~5000 PLN) NIE kwalifikuje. Źródło: rabatio.com/sklepy/media-expert."
+    },
+    {
+      "code": "Saturn Apple Days -25%",
+      "retailer": "Saturn",
+      "country": "DE",
+      "tested_at": "2026-05-01T13:00:00Z",
+      "applies_to_sku": "apple-iphone-16-pro-256",
+      "discount_pct": 0.25,
+      "status": "works",
+      "notes": "Promocja Saturn -25% na iPhone 16 Pro 256GB Natural Titanium: UVP 1205 EUR → 893 EUR. Brak kodu — promo doliczona automatycznie do koszyka. Źródło: saturn.de listing."
+    },
+    {
+      "code": "MediaMarkt -20% S25 Ultra",
+      "retailer": "MediaMarkt",
+      "country": "DE",
+      "tested_at": "2026-05-01T13:00:00Z",
+      "applies_to_sku": "samsung-galaxy-s25-ultra-256",
+      "discount_pct": 0.2,
+      "status": "works",
+      "notes": "MediaMarkt clearance pre-S26 launch: -20% UVP 1449→1149 EUR. Auto-promo, brak kodu wymaganego. Źródło: nextpit.de, teltarif.de."
     },
     {
       "code": "APPLE10",
       "retailer": "x-kom",
       "country": "PL",
-      "tested_at": "2026-05-01T10:16:01Z",
+      "tested_at": "2026-05-01T13:00:00Z",
       "applies_to_sku": "apple-iphone-16-pro-256",
       "discount_pct": 0.0,
       "status": "excluded_brand",
       "notes": "Apple SKU są na liście wykluczeń (MAP policy). Hit rate kodów na flagowce Apple ≈ 0% — to nie błąd POC, to rzeczywistość branży."
-    },
-    {
-      "code": "RTV2026",
-      "retailer": "RTV Euro AGD",
-      "country": "PL",
-      "tested_at": "2026-05-01T10:18:45Z",
-      "applies_to_sku": "apple-iphone-16-pro-256",
-      "discount_pct": 0.0,
-      "status": "expired",
-      "notes": "Kod wygasł 2026-04-30."
     }
   ]
 }
