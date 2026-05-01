@@ -213,7 +213,7 @@ function renderTopPaths() {
 
   const tbody = document.querySelector('#top-paths tbody');
   tbody.innerHTML = top.map((r, i) => `
-    <tr>
+    <tr class="path-row" onclick="openPathDetail('${r.sku.id}','${r.buyC}','${r.sellC}')" title="Pokaż macierz cen i breakdown dla tego SKU">
       <td>${i + 1}</td>
       <td>${r.sku.brand} <span class="muted">·</span> ${shortName(r.sku.name)}</td>
       <td><strong>${r.buyC}</strong> <span class="muted">${r.buyOffer.retailer}</span></td>
@@ -262,10 +262,13 @@ function renderMatrix(sku) {
       const cls = margin >= 0 ? 'pos' : 'neg';
       const id = `${sku.id}__${buyC}__${sellC}`;
       return `
-        <td class="cell ${cls}" onclick="showDetail('${sku.id}','${buyC}','${sellC}')">
+        <td class="cell ${cls}" data-buy="${buyC}" data-sell="${sellC}"
+            onclick="openCellDetail('${sku.id}','${buyC}','${sellC}')"
+            title="Otwórz ${best.offer.retailer} (${buyC}) w nowej karcie + pokaż breakdown">
           <div class="pct">${fmtPct(pct)}</div>
           <div class="sub">${fmtEur(margin)} marża</div>
           <div class="sub">landed ${fmtEur(best.landed.eur)} · target ${fmtEur(sellEur)}</div>
+          <div class="sub retailer-hint">→ ${best.offer.retailer}</div>
         </td>
       `;
     }).join('');
@@ -300,12 +303,90 @@ function toggleSku(id) {
   el.classList.toggle('open');
 }
 
-function showDetail(skuId, buyC, sellC) {
+function openPathDetail(skuId, buyC, sellC) {
+  // Click in "Top 10 paths" row → open the matching SKU's matrix and scroll to it
+  const block = document.querySelector(`.sku-block[data-sku="${skuId}"]`);
+  if (!block) return;
+  block.classList.add('open');
+  block.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // After layout settles, populate the detail panel for the clicked path (no auto-open URL)
+  setTimeout(() => showDetail(skuId, buyC, sellC, /* openUrl */ false), 250);
+  // Briefly highlight the matching matrix cell
+  setTimeout(() => {
+    const cell = block.querySelector(`td.cell[data-buy="${buyC}"][data-sell="${sellC}"]`);
+    if (cell) {
+      cell.classList.add('cell-flash');
+      setTimeout(() => cell.classList.remove('cell-flash'), 1500);
+    }
+  }, 350);
+}
+
+function openCellDetail(skuId, buyC, sellC) {
+  // Click in matrix cell → open buy URL in new tab + show detail with promo code info
+  showDetail(skuId, buyC, sellC, /* openUrl */ true);
+}
+
+function findPromoCode(skuId, retailer, country) {
+  return SNAPSHOT.promo_code_validation_log.find(c =>
+    c.applies_to_sku === skuId &&
+    c.retailer === retailer &&
+    c.country === country &&
+    c.status === 'works'
+  );
+}
+
+function showDetail(skuId, buyC, sellC, openUrl) {
   const sku = SNAPSHOT.skus.find(s => s.id === skuId);
   const best = bestPath(sku, buyC, sellC, MODE);
+  if (!best) return;
   const sellEur = medianRetailEur(sku, sellC);
   const margin = sellEur - best.landed.eur;
   const panel = document.getElementById(`detail-${skuId}`);
+  const offer = best.offer;
+
+  if (openUrl && offer.url) {
+    window.open(offer.url, '_blank', 'noopener,noreferrer');
+  }
+
+  const offerCode = offer.promo_code;
+  const offerCodePct = offer.promo_pct;
+  const validatedCode = findPromoCode(skuId, offer.retailer, offer.country);
+
+  let codeSection;
+  if (offerCode) {
+    codeSection = `
+      <div class="code-box code-needed">
+        <div class="code-label">Wymagany kod rabatowy w koszyku</div>
+        <div class="code-value">
+          <code class="big-code">${offerCode}</code>
+          <button class="copy-btn" onclick="copyCode('${offerCode}', this)">skopiuj</button>
+        </div>
+        <div class="code-note">
+          Cena <strong>${offer.price_local.toLocaleString('pl-PL')} ${offer.currency}</strong> wymaga wpisania tego kodu przy finalizacji
+          ${offerCodePct ? `(rabat -${(offerCodePct * 100).toFixed(0)}%)` : ''}.
+          Bez kodu sklep pokaże cenę bazową — arbitraż nie zadziała.
+        </div>
+      </div>
+    `;
+  } else if (validatedCode) {
+    codeSection = `
+      <div class="code-box code-info">
+        <div class="code-label">Kod rabatowy zwalidowany w ostatnim refreshu</div>
+        <div class="code-value">
+          <code class="big-code">${validatedCode.code}</code>
+          <button class="copy-btn" onclick="copyCode('${validatedCode.code}', this)">skopiuj</button>
+        </div>
+        <div class="code-note">${validatedCode.notes}</div>
+      </div>
+    `;
+  } else {
+    codeSection = `
+      <div class="code-box code-none">
+        <div class="code-label">Kod rabatowy: niewymagany / brak walidacji</div>
+        <div class="code-note">Cena widoczna u sprzedawcy bez dodatkowych kuponów. Na flagowcach Apple kody są zwykle wykluczone z MAP policy — to normalne.</div>
+      </div>
+    `;
+  }
 
   const breakdown = best.landed.breakdown.map(b => `
     <div class="label">${b.label}</div>
@@ -313,8 +394,17 @@ function showDetail(skuId, buyC, sellC) {
   `).join('');
 
   panel.innerHTML = `
-    <h4>Breakdown: kup ${buyC} (${best.offer.retailer}) → sprzedaj ${sellC} · tryb ${MODE}</h4>
+    <h4>Kup w ${offer.retailer} (${buyC}) → sprzedaj w ${sellC} <span class="muted">· tryb ${MODE}</span></h4>
     <p class="muted">${best.landed.scenario || ''}</p>
+
+    <div class="cta-row">
+      <a class="cta-button" href="${offer.url}" target="_blank" rel="noopener">
+        Otwórz ${offer.retailer} → ${offer.price_local.toLocaleString('pl-PL')} ${offer.currency} ↗
+      </a>
+    </div>
+
+    ${codeSection}
+
     <div class="breakdown">
       ${breakdown}
       <div class="label total">landed cost EUR</div>
@@ -331,6 +421,21 @@ function showDetail(skuId, buyC, sellC) {
     </p>
   `;
   panel.classList.add('open');
+}
+
+function copyCode(code, btn) {
+  const original = btn.textContent;
+  navigator.clipboard.writeText(code).then(() => {
+    btn.textContent = 'skopiowano ✓';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.classList.remove('copied');
+    }, 2000);
+  }).catch(() => {
+    btn.textContent = 'błąd kopiowania';
+    setTimeout(() => { btn.textContent = original; }, 2000);
+  });
 }
 
 function renderCodes() {
@@ -355,3 +460,6 @@ function shortName(name) {
 
 window.toggleSku = toggleSku;
 window.showDetail = showDetail;
+window.openPathDetail = openPathDetail;
+window.openCellDetail = openCellDetail;
+window.copyCode = copyCode;

@@ -59,6 +59,14 @@ tbody tr:hover { background: var(--panel-2); }
 
 .top-paths td.margin-pos { color: var(--good); font-weight: 600; }
 .top-paths td.margin-neg { color: var(--bad); }
+.top-paths tr.path-row { cursor: pointer; }
+.top-paths tr.path-row:hover { background: var(--panel-2); outline: 1px solid var(--accent); }
+.top-paths tr.path-row td:first-child::before {
+  content: ""; display: inline-block; width: 6px; height: 6px;
+  border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+  transform: rotate(-45deg); margin-right: 8px; vertical-align: middle; opacity: 0.6;
+}
+.top-paths tr.path-row:hover td:first-child::before { border-color: var(--accent); opacity: 1; }
 
 .sku-block {
   border: 1px solid var(--border); border-radius: 8px;
@@ -93,6 +101,16 @@ tbody tr:hover { background: var(--panel-2); }
 .matrix td.cell { cursor: pointer; }
 .matrix td.cell:hover { outline: 1px solid var(--accent); }
 .matrix td.cell .pct { font-weight: 600; }
+.matrix td.cell .retailer-hint { color: var(--accent); margin-top: 2px; opacity: 0.85; }
+.matrix td.cell.cell-flash {
+  outline: 2px solid var(--accent);
+  animation: cell-pulse 1.5s ease-out;
+}
+@keyframes cell-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(79, 156, 255, 0.7); }
+  60%  { box-shadow: 0 0 0 12px rgba(79, 156, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(79, 156, 255, 0); }
+}
 .matrix td.pos { background: var(--good-bg); color: var(--good); }
 .matrix td.neg { background: var(--bad-bg); color: var(--bad); }
 .matrix td.warn-cell { background: var(--warn-bg); color: var(--warn); }
@@ -107,14 +125,54 @@ tbody tr:hover { background: var(--panel-2); }
 }
 
 .detail-panel {
-  margin-top: 12px; padding: 12px; background: var(--code-bg); border-radius: 6px;
+  margin-top: 12px; padding: 14px; background: var(--code-bg); border-radius: 6px;
   font-size: 12.5px; display: none;
 }
 .detail-panel.open { display: block; }
-.detail-panel h4 { margin: 0 0 8px 0; font-size: 13px; }
-.detail-panel .breakdown { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; max-width: 480px; }
+.detail-panel h4 { margin: 0 0 8px 0; font-size: 14px; }
+.detail-panel .breakdown { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; max-width: 520px; }
 .detail-panel .breakdown .label { color: var(--muted); }
 .detail-panel .breakdown .total { border-top: 1px solid var(--border); margin-top: 4px; padding-top: 4px; font-weight: 600; }
+
+.cta-row { margin: 12px 0; }
+.cta-button {
+  display: inline-block; padding: 10px 16px;
+  background: var(--accent); color: #0b0d12;
+  text-decoration: none; border-radius: 6px;
+  font-weight: 700; font-size: 13.5px;
+  letter-spacing: 0.2px;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.cta-button:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(79, 156, 255, 0.4); }
+
+.code-box {
+  margin: 10px 0; padding: 10px 14px;
+  background: var(--panel); border: 1px solid var(--border); border-radius: 6px;
+}
+.code-box.code-needed { border-left: 3px solid var(--warn); }
+.code-box.code-info   { border-left: 3px solid var(--accent); }
+.code-box.code-none   { border-left: 3px solid var(--border); opacity: 0.85; }
+.code-box .code-label {
+  font-size: 11px; font-weight: 600; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;
+}
+.code-box .code-value { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+.code-box .big-code {
+  font-size: 15px; font-weight: 700; padding: 4px 12px;
+  background: var(--code-bg); color: var(--warn);
+  border: 1px dashed var(--warn); border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+.code-box.code-info .big-code { color: var(--accent); border-color: var(--accent); }
+.code-box .copy-btn {
+  padding: 5px 12px; background: var(--code-bg);
+  border: 1px solid var(--border); color: var(--text);
+  cursor: pointer; border-radius: 4px;
+  font-family: inherit; font-size: 12px;
+}
+.code-box .copy-btn:hover { background: var(--panel-2); border-color: var(--accent); }
+.code-box .copy-btn.copied { background: var(--good-bg); color: var(--good); border-color: var(--good); }
+.code-box .code-note { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
 .codes td .status {
   display: inline-block; padding: 1px 8px; border-radius: 999px;
