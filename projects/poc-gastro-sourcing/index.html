@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sourcing gastronomiczny — porównywarka cen B2B dla restauracji</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 id="header-title">Sourcing gastronomiczny</h1>
+    <p class="meta">
+      <span id="spec-line">7 kategorii · 25 SKU · miesięczne zaopatrzenie restauracji · dostawa do Polski</span>
+      <span class="updated">Ostatnia aktualizacja danych: <time id="last-updated">—</time></span>
+    </p>
+    <p class="client-line" id="client-line"></p>
+
+    <div class="controls">
+      <fieldset>
+        <legend>Region dostawców</legend>
+        <label><input type="radio" name="region" value="PL" checked> Tylko Polska</label>
+        <label><input type="radio" name="region" value="ALL"> Polska + UE</label>
+      </fieldset>
+      <fieldset>
+        <legend>Akcje</legend>
+        <button id="reset-basket" type="button" class="link-btn">Przywróć domyślne ilości</button>
+        <button id="toggle-all" type="button" class="link-btn">Odznacz wszystkie</button>
+      </fieldset>
+      <button id="refresh-btn" type="button" class="refresh-btn" title="Pobierz aktualne ceny ze sklepów PL/EU">↻ Odśwież ceny</button>
+      <p class="pricing-note" id="pricing-note"></p>
+    </div>
+
+    <nav class="category-nav" id="category-nav" aria-label="Filtr kategorii"></nav>
+
+    <details class="basket" open>
+      <summary>Koszyk SKU — zaznacz pozycje i ustaw ilości miesięczne</summary>
+      <table id="basket-table">
+        <thead>
+          <tr>
+            <th class="check-col"></th>
+            <th>SKU</th>
+            <th>Specyfikacja</th>
+            <th class="num qty-col">Ilość / mies.</th>
+            <th>Zastosowanie</th>
+          </tr>
+        </thead>
+        <tbody id="basket-rows"></tbody>
+      </table>
+    </details>
+  </header>
+
+  <main>
+    <section id="shopping-plan" class="shopping-plan">
+      <div class="plan-header">
+        <h2>Plan zakupów — gdzie kupić co</h2>
+        <p class="plan-sub">Najniższa cena per pozycja w bieżącym filtrze. Każda kolumna to inny sklep z listą produktów, które tam najtaniej kupisz.</p>
+      </div>
+      <div id="plan-cards" class="plan-cards"></div>
+      <div id="plan-summary" class="plan-summary"></div>
+      <div id="plan-rfq" class="plan-rfq"></div>
+    </section>
+
+    <h2 class="section-title matrix-title">Matryce cen jednostkowych — SKU × Dostawca, per kategoria</h2>
+    <p class="matrix-note">Po jednej tabeli na kategorię. Kolumny dostawców posortowane: najwięcej dopasowanych SKU w danej kategorii pierwsze. Wartości w PLN za jednostkę handlową (kg / l / szt / opak). Najtańsza cena per SKU podświetlona na zielono. „—" = brak w ofercie lub dostawca poza kategorią.</p>
+    <div id="matrices"></div>
+  </main>
+
+  <footer>
+    <p>
+      Strona statyczna — zero kosztu runtime. Odświeżanie cen przez przycisk „↻ Odśwież ceny" u góry —
+      lokalnie wywołuje scraper Pythonowy, na GitHub Pages dispatch'uje workflow GitHub Actions.
+      Nieujęte: rabaty hurtowe / kontrakty B2B, koszty transportu, promocje sezonowe.
+      Źródła: <a href="_source/README.md">README</a> · <a href="_source/docs/methodology.md">metodologia</a> · <a href="_source/backend/README.md">scraper</a> · <a href="https://github.com/oskarseweryn/oskarseweryn.github.io/tree/main/projects/poc-gastro-sourcing" target="_blank" rel="noopener">repo</a>.
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

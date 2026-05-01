@@ -1,0 +1,832 @@
+{
+  "_comment": "Snapshot pre-refresh — wypełniony tylko metadanymi (dostawcy, koszyk, kategorie, wzory RFQ). line_items są puste aż do pierwszego uruchomienia /gastro-sourcing, które pobierze żywe ceny z PL/EU dostawców przez WebSearch + WebFetch. Strona renderuje się poprawnie z pustymi line_items — pokrycie pokaże 0/N i wzywa do uruchomienia slash command.",
+  "last_updated": "2026-05-01",
+  "client": {
+    "id": "butchers-grill-krakow",
+    "name": "Butchers Grill Kraków",
+    "tagline": "Premium dry-aged steak house · Kraków",
+    "city": "Kraków",
+    "ship_to": "Kraków, woj. małopolskie",
+    "currency": "PLN"
+  },
+  "categories": [
+    {
+      "id": "meat",
+      "name_pl": "Mięso",
+      "name_en": "Meat",
+      "icon": "🥩",
+      "color": "#b91c1c"
+    },
+    {
+      "id": "fresh",
+      "name_pl": "Świeże",
+      "name_en": "Fresh produce & dairy",
+      "icon": "🥬",
+      "color": "#15803d"
+    },
+    {
+      "id": "spices",
+      "name_pl": "Przyprawy i marynaty",
+      "name_en": "Spices & marinades",
+      "icon": "🌶️",
+      "color": "#a16207"
+    },
+    {
+      "id": "dry_goods",
+      "name_pl": "Suchy magazyn",
+      "name_en": "Dry goods & oils",
+      "icon": "🫒",
+      "color": "#7c2d12"
+    },
+    {
+      "id": "chemistry",
+      "name_pl": "Chemia profesjonalna",
+      "name_en": "Professional cleaning",
+      "icon": "🧴",
+      "color": "#1e40af"
+    },
+    {
+      "id": "accessories",
+      "name_pl": "Akcesoria gastronomiczne",
+      "name_en": "Kitchen accessories",
+      "icon": "🔪",
+      "color": "#52525b"
+    },
+    {
+      "id": "grill_fuel",
+      "name_pl": "Paliwa grillowe",
+      "name_en": "Grill fuel & smoke wood",
+      "icon": "🔥",
+      "color": "#92400e"
+    }
+  ],
+  "fx_note": "Kursy referencyjne dla snapshot: 1 EUR ≈ 4.30 PLN, 1 USD ≈ 4.00 PLN, 1 GBP ≈ 5.10 PLN, 1 CNY ≈ 0.55 PLN.",
+  "pricing_note": "Ceny pobrane z publicznych katalogów PL/EU dostawców (JSON-LD/OpenGraph). Brak rabatów hurtowych — realny B2B wraca przez RFQ. Dostawcy z polityką B2B-login (Makro, Selgros, Bidfood, Diversey, Ecolab, METRO) widnieją z notatką 'wymaga rejestracji B2B'.",
+  "basket": [
+    {
+      "id": "ribeye-dry-aged-30d",
+      "category": "meat",
+      "name": "Antrykot wołowy dojrzewany na sucho 30 dni",
+      "spec": "Dry-aged 30+ dni, USDA Choice / PL Premium / IE/UK origin, kalibracja 280-320 g/szt po krojeniu",
+      "unit": "kg",
+      "qty_default": 60,
+      "quality_grade": "premium",
+      "freshness": "fresh",
+      "use": "Sygnaturowy ribeye karty — pozycja flagowa steakhouse'u."
+    },
+    {
+      "id": "tenderloin-fillet",
+      "category": "meat",
+      "name": "Polędwica wołowa (filet mignon)",
+      "spec": "Cała polędwica oczyszczona ('peeled'), 2-2.5 kg, klasa premium",
+      "unit": "kg",
+      "qty_default": 40,
+      "quality_grade": "premium",
+      "freshness": "fresh",
+      "use": "Filet mignon i tournedos w karcie — najwyższa marża, najwyższa cena jednostkowa."
+    },
+    {
+      "id": "tomahawk-bone-in",
+      "category": "meat",
+      "name": "Tomahawk wołowy z kością 1.2 kg",
+      "spec": "Frenched bone, dry-aged 21-30 dni, kalibracja 1.1-1.3 kg/szt",
+      "unit": "szt",
+      "qty_default": 30,
+      "quality_grade": "premium",
+      "freshness": "fresh",
+      "use": "Tomahawk dla 2 osób — pozycja 'wow' na Instagrama, świętowanie."
+    },
+    {
+      "id": "picanha-1kg",
+      "category": "meat",
+      "name": "Picanha (kapeluszek wołowy) ok. 1.2 kg",
+      "spec": "Cała picanha z czapką tłuszczu, BR/UY/AR origin lub PL premium",
+      "unit": "kg",
+      "qty_default": 30,
+      "quality_grade": "premium",
+      "freshness": "fresh",
+      "use": "Picanha z grilla — popularny w trendzie steak-house BBQ."
+    },
+    {
+      "id": "ground-beef-80-20",
+      "category": "meat",
+      "name": "Mielona wołowa 80/20 (brisket+chuck blend)",
+      "spec": "Świeżo mielona, blend brisket + chuck, 80% mięso / 20% tłuszcz, opak. 2-5 kg",
+      "unit": "kg",
+      "qty_default": 50,
+      "quality_grade": "premium",
+      "freshness": "fresh",
+      "use": "Burgery 200 g — flagowa pozycja casual karty steakhouse'u."
+    },
+    {
+      "id": "skirt-steak",
+      "category": "meat",
+      "name": "Skirt steak (przepona wołowa)",
+      "spec": "Outside skirt, oczyszczona, USDA Choice lub PL premium",
+      "unit": "kg",
+      "qty_default": 20,
+      "quality_grade": "premium",
+      "freshness": "fresh",
+      "use": "Steak intensywny smakowo, popularny w fine-casual karcie."
+    },
+    {
+      "id": "potatoes-fresh",
+      "category": "fresh",
+      "name": "Ziemniaki świeże klasa I",
+      "spec": "Odmiana zjadana / sałatkowa, kalibracja 40-60 mm, worek 25 kg",
+      "unit": "kg",
+      "qty_default": 200,
+      "quality_grade": "commodity",
+      "freshness": "fresh",
+      "use": "Frytki belgijskie, pieczone ziemniaki ze skórką, gratin."
+    },
+    {
+      "id": "salad-mix-iceberg",
+      "category": "fresh",
+      "name": "Sałata lodowa (iceberg) cała główka",
+      "spec": "Klasa I, kalibracja 400-600 g/szt, opak. 8-10 szt",
+      "unit": "szt",
+      "qty_default": 80,
+      "quality_grade": "commodity",
+      "freshness": "fresh",
+      "use": "Wedge salad — klasyk steakhouse'u, baza sałatek mieszanych."
+    },
+    {
+      "id": "butter-block-82",
+      "category": "fresh",
+      "name": "Masło ekstra 82% kostka 200 g",
+      "spec": "Masło ekstra min. 82% tłuszczu, kostka 200 g, opak. zbiorcze 30 szt",
+      "unit": "szt",
+      "qty_default": 60,
+      "quality_grade": "premium",
+      "freshness": "fresh",
+      "use": "Masło wytapiane do grilla, butter-baste steaków, chleb na stół."
+    },
+    {
+      "id": "salt-flake-maldon",
+      "category": "spices",
+      "name": "Sól płatkowa typu Maldon (sea salt flakes) 1.5 kg",
+      "spec": "Płatki morskie, opak. gastro 1-1.5 kg",
+      "unit": "opak",
+      "qty_default": 6,
+      "quality_grade": "premium",
+      "freshness": "ambient",
+      "use": "Posypka finishingowa na steaki przed serwowaniem — wyróżnik premium."
+    },
+    {
+      "id": "pepper-black-coarse",
+      "category": "spices",
+      "name": "Pieprz czarny grubo mielony 1 kg",
+      "spec": "Tellicherry lub Lampong, świeżo mielony, opak. 1 kg",
+      "unit": "kg",
+      "qty_default": 4,
+      "quality_grade": "premium",
+      "freshness": "ambient",
+      "use": "Crust na steaki, dressing do sałatek, baza marynat."
+    },
+    {
+      "id": "steak-rub-bbq",
+      "category": "spices",
+      "name": "Steak rub BBQ kompozytowy 1 kg",
+      "spec": "Mieszanka sól, pieprz, czosnek, papryka wędzona, brown sugar, opak. 1 kg",
+      "unit": "kg",
+      "qty_default": 3,
+      "quality_grade": "commodity",
+      "freshness": "ambient",
+      "use": "Rub do tomahawka, brisketu, picanhi przed grillowaniem."
+    },
+    {
+      "id": "demi-glace-5l",
+      "category": "spices",
+      "name": "Sos demi-glace gastro 5 l",
+      "spec": "Koncentrat demi-glace na bazie kości wołowych, opak. gastro 5 l",
+      "unit": "opak",
+      "qty_default": 4,
+      "quality_grade": "premium",
+      "freshness": "ambient",
+      "use": "Baza sosów do steaków (red wine, peppercorn, bordelaise)."
+    },
+    {
+      "id": "olive-oil-evoo-5l",
+      "category": "dry_goods",
+      "name": "Oliwa extra vergine 5 l",
+      "spec": "EVOO IT/ES/GR, kanister 5 l, kwasowość <0.5%",
+      "unit": "opak",
+      "qty_default": 8,
+      "quality_grade": "premium",
+      "freshness": "ambient",
+      "use": "Drizzle finishing, vinaigrette, sauteowanie warzyw."
+    },
+    {
+      "id": "balsamic-vinegar-5l",
+      "category": "dry_goods",
+      "name": "Ocet balsamiczny gastro 5 l",
+      "spec": "Aceto balsamico di Modena IGP lub odpowiednik, opak. 5 l",
+      "unit": "opak",
+      "qty_default": 3,
+      "quality_grade": "commodity",
+      "freshness": "ambient",
+      "use": "Glaze redukowany, dressing, marynaty."
+    },
+    {
+      "id": "grill-degreaser-5l",
+      "category": "chemistry",
+      "name": "Odtłuszczacz / środek do mycia grilla 5 l",
+      "spec": "Profesjonalny pH alkaliczny (>12), opak. 5 l, atest HACCP",
+      "unit": "opak",
+      "qty_default": 6,
+      "quality_grade": "premium",
+      "freshness": "ambient",
+      "use": "Mycie rusztu i komory grilla codzienne — szybkie usuwanie tłuszczu po serwisie."
+    },
+    {
+      "id": "kitchen-degreaser-5l",
+      "category": "chemistry",
+      "name": "Płyn do mycia powierzchni kuchennych 5 l",
+      "spec": "Uniwersalny do stali nierdzewnej i blatów, atest HACCP, opak. 5 l",
+      "unit": "opak",
+      "qty_default": 4,
+      "quality_grade": "premium",
+      "freshness": "ambient",
+      "use": "Codzienne mycie blatów i powierzchni kuchni otwartej."
+    },
+    {
+      "id": "paper-towel-industrial-6",
+      "category": "chemistry",
+      "name": "Ręcznik papierowy industrial biały — opak. 6 rolek",
+      "spec": "2-warstwowy, celuloza, ~250 m/rola, opak. 6 rolek (np. Tork lub równoważne)",
+      "unit": "opak",
+      "qty_default": 8,
+      "quality_grade": "commodity",
+      "freshness": "ambient",
+      "use": "Ręczniki w kuchni i toaletach, zużycie ciągłe."
+    },
+    {
+      "id": "disinfectant-surface-5l",
+      "category": "chemistry",
+      "name": "Środek do dezynfekcji powierzchni 5 l",
+      "spec": "Czwartorzędowe związki amonu, atest HACCP/HoReCa, opak. 5 l",
+      "unit": "opak",
+      "qty_default": 4,
+      "quality_grade": "premium",
+      "freshness": "ambient",
+      "use": "Dezynfekcja powierzchni kontaktu z żywnością — wymóg HACCP."
+    },
+    {
+      "id": "leather-bbq-apron",
+      "category": "accessories",
+      "name": "Fartuch skórzany BBQ czarny",
+      "spec": "Skóra licowa lub crazy horse, regulowany pasek karkowy, kieszenie",
+      "unit": "szt",
+      "qty_default": 4,
+      "quality_grade": "premium",
+      "freshness": "ambient",
+      "use": "Mundury kucharzy przy grillu — element identyfikacji wizualnej."
+    },
+    {
+      "id": "meat-thermometer-digital",
+      "category": "accessories",
+      "name": "Termometr cyfrowy do mięsa z sondą",
+      "spec": "Sonda igłowa, zakres -40 do +250°C, dokładność ±1°C, IP65",
+      "unit": "szt",
+      "qty_default": 3,
+      "quality_grade": "commodity",
+      "freshness": "ambient",
+      "use": "Kontrola temperatury wewnętrznej steaków — cooking levels rare/medium/well."
+    },
+    {
+      "id": "kevlar-grill-gloves",
+      "category": "accessories",
+      "name": "Rękawice kevlarowe / aramidowe do grilla",
+      "spec": "Odporne na 250°C+, długość 30 cm (do łokcia), antypoślizgowe",
+      "unit": "para",
+      "qty_default": 4,
+      "quality_grade": "commodity",
+      "freshness": "ambient",
+      "use": "Obsługa rusztu, podnoszenie ciężkich kawałków mięsa z grilla."
+    },
+    {
+      "id": "grill-brush-brass-3pk",
+      "category": "accessories",
+      "name": "Szczotki mosiężne do rusztu (3 szt)",
+      "spec": "Włosie mosiężne, długi trzonek 40 cm, opak. 3 szt",
+      "unit": "opak",
+      "qty_default": 2,
+      "quality_grade": "commodity",
+      "freshness": "ambient",
+      "use": "Czyszczenie rusztu po każdym serwisie — zużycie ~1 szt/m-c."
+    },
+    {
+      "id": "charcoal-restaurant-10kg",
+      "category": "grill_fuel",
+      "name": "Węgiel drzewny restauracyjny 10 kg",
+      "spec": "Dębowy / grabowy, kawałki 5-15 cm, niska zawartość pyłu, worek 10 kg",
+      "unit": "opak",
+      "qty_default": 30,
+      "quality_grade": "premium",
+      "freshness": "ambient",
+      "use": "Główne paliwo grilla — ~1 worek 10 kg / dzień serwisu."
+    },
+    {
+      "id": "smoke-wood-oak-1kg",
+      "category": "grill_fuel",
+      "name": "Zrębki dębowe wędzarnicze 1 kg",
+      "spec": "Drewno dębowe, kawałki 3-5 cm, wilgotność 10-15%, opak. 1 kg",
+      "unit": "kg",
+      "qty_default": 10,
+      "quality_grade": "premium",
+      "freshness": "ambient",
+      "use": "Aromat dymu dębowego dla wołowiny — sygnatura kuchni."
+    }
+  ],
+  "vendors": [
+    {
+      "id": "makro-pl",
+      "name": "Makro Cash & Carry Polska",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://makro.pl",
+      "contact_url": "https://makro.pl/kontakt",
+      "email": null,
+      "lead_time": "24-48h lub odbiór z hali",
+      "min_order_value_pln": 0,
+      "categories_served": [
+        "meat",
+        "fresh",
+        "spices",
+        "dry_goods",
+        "chemistry",
+        "accessories"
+      ],
+      "notes": "Największy hurt HoReCa w PL — szeroka kategorialnie oferta, B2B ceny po zalogowaniu, hala w Krakowie (ul. Zakopiańska).",
+      "line_items": [],
+      "email_draft": {
+        "subject": "Zapytanie ofertowe B2B — Butchers Grill Kraków, miesięczne zaopatrzenie",
+        "body": "Dzień dobry,\n\nNazywam się [Imię i nazwisko], reprezentuję Butchers Grill Kraków — premium steak house w centrum Krakowa (~150 covers/dzień). Chciałbym podjąć współpracę B2B na miesięczne zaopatrzenie restauracji w pełnym zakresie kategorii Państwa oferty.\n\nPozycje koszyka miesięcznego:\n{basket}\n\nPytania:\n1. Cena B2B per pozycja przy podanej ilości miesięcznej oraz przy 2× tej ilości (ekspansja).\n2. Możliwość kontraktu kwartalnego z gwarantowaną ceną.\n3. Lead time, częstotliwość i godziny dostaw do Krakowa (kuchnia czynna 11:00-23:00).\n4. Atesty HACCP dla chemii kontaktującej się z żywnością + łańcuch chłodniczy dla mięsa i nabiału.\n5. Warunki płatności (przelew 21/30 dni).\n6. Dedykowany account manager.\n\nProszę o ofertę mailem lub kontakt telefoniczny.\n\nPozdrawiam,\n[Imię i nazwisko]\n[Nazwa restauracji · NIP]\n[Telefon · email]"
+      },
+      "pricing_status": "b2b_login_required"
+    },
+    {
+      "id": "selgros-pl",
+      "name": "Selgros Cash & Carry",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://selgros.pl",
+      "contact_url": "https://selgros.pl/kontakt",
+      "email": null,
+      "lead_time": "24-48h lub odbiór z hali Modlniczka",
+      "min_order_value_pln": 0,
+      "categories_served": [
+        "meat",
+        "fresh",
+        "spices",
+        "dry_goods",
+        "chemistry",
+        "accessories"
+      ],
+      "notes": "Drugi pod kątem skali HoReCa hurt PL — alternatywa cenowa dla Makro, hala Modlniczka pod Krakowem.",
+      "line_items": [],
+      "email_draft": {
+        "subject": "Zapytanie ofertowe B2B — Butchers Grill Kraków, kontrakt miesięczny",
+        "body": "Dzień dobry,\n\nNazywam się [Imię i nazwisko], Butchers Grill Kraków (premium steak house, ~150 covers/dzień). Rozważamy współpracę B2B z Selgros jako głównego dostawcy miesięcznego.\n\nPlanowany koszyk miesięczny:\n{basket}\n\nProszę o:\n1. Ofertę B2B per pozycja przy podanej ilości i przy 2× tej ilości.\n2. Warunki kontraktu długoterminowego (3-12 mies.) z zamrożoną ceną.\n3. Lead time + okno dostawy do Krakowa.\n4. Atesty HACCP dla chemii + cold chain dla świeżych.\n5. Warunki płatności + min. wartość zamówienia.\n\nPozdrawiam,\n[Imię i nazwisko]\n[Nazwa restauracji · NIP]\n[Telefon · email]"
+      },
+      "pricing_status": "b2b_login_required"
+    },
+    {
+      "id": "bidfood-farutex",
+      "name": "Bidfood Farutex",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://www.bidfood.pl",
+      "contact_url": "https://www.bidfood.pl/kontakt",
+      "email": null,
+      "lead_time": "24-48h chłodnicza dostawa",
+      "min_order_value_pln": 800,
+      "categories_served": [
+        "meat",
+        "fresh",
+        "spices",
+        "dry_goods"
+      ],
+      "notes": "Lider dystrybucji HoReCa premium — mocno mięso i mrożonki, własna flota chłodnicza. Ceny B2B na zapytanie.",
+      "line_items": [],
+      "email_draft": {
+        "subject": "Zapytanie ofertowe B2B — Butchers Grill Kraków, mięso premium + świeże",
+        "body": "Dzień dobry,\n\nNazywam się [Imię i nazwisko], Butchers Grill Kraków — premium steak house specjalizujący się w dry-aged beef, ~150 covers/dzień.\n\nInteresują nas pozycje z Państwa oferty:\n{basket}\n\nPytania:\n1. Cena B2B per pozycja przy podanej ilości miesięcznej + przy 2×.\n2. Dostępność dry-aged beef (30/45 dni) — origin, dostawcy, kalibracja.\n3. Lead time + częstotliwość dostaw chłodniczych do Krakowa.\n4. Atesty (HACCP, GMP, IFS) + dokumenty pochodzenia mięsa.\n5. Możliwość degustacji / próbek przed kontraktem (1-2 dostawy testowe).\n6. Min. wartość zamówienia, warunki płatności.\n\nPozdrawiam,\n[Imię i nazwisko]\n[Nazwa restauracji · NIP]\n[Telefon · email]"
+      },
+      "pricing_status": "b2b_login_required"
+    },
+    {
+      "id": "iglotex-pl",
+      "name": "Iglotex",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://www.iglotex.pl",
+      "contact_url": "https://www.iglotex.pl/kontakt",
+      "email": null,
+      "lead_time": "48h chłodnicza",
+      "min_order_value_pln": 500,
+      "categories_served": [
+        "meat",
+        "fresh"
+      ],
+      "notes": "Dystrybutor mrożonek i mięsa do gastronomii — silna pozycja w segmencie burgerów (mielona) i półproduktów.",
+      "line_items": [],
+      "email_draft": {
+        "subject": "Zapytanie B2B — mielona wołowa premium do steakhouse'u",
+        "body": "Dzień dobry,\n\nButchers Grill Kraków, premium steakhouse. Interesuje nas regularna dostawa mielonej wołowej premium (blend brisket+chuck 80/20) do burgerów flagowych karty.\n\nPlanowane miesięczne pozycje:\n{basket}\n\nPytania:\n1. Cena B2B per pozycja + warunki przy 2×.\n2. Możliwość świeżej (nie mrożonej) mielonej w blende brisket/chuck — codzienna dostawa.\n3. Lead time, godziny dostaw Kraków.\n4. Atesty HACCP, dokumentacja origin mięsa.\n5. Min. wartość zamówienia + warunki płatności.\n\nPozdrawiam,\n[Imię i nazwisko]\n[Nazwa restauracji · NIP]\n[Telefon · email]"
+      },
+      "pricing_status": "b2b_login_required"
+    },
+    {
+      "id": "polish-premium-beef",
+      "name": "Polish Premium Beef",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://polishpremiumbeef.pl",
+      "contact_url": "https://polishpremiumbeef.pl/kontakt",
+      "email": null,
+      "lead_time": "1-3 dni chłodnicza",
+      "min_order_value_pln": 500,
+      "categories_served": [
+        "meat"
+      ],
+      "notes": "Producent PL premium beef — ras Hereford/Angus polskich, dry-aged we własnych dojrzewalniach, certyfikat QMP.",
+      "line_items": [],
+      "email_draft": {
+        "subject": "Zapytanie B2B — polska premium wołowina dry-aged dla steakhouse'u",
+        "body": "Dzień dobry,\n\nNazywam się [Imię i nazwisko], Butchers Grill Kraków — pozycjonujemy się jako najlepszy steak house w Krakowie z mocnym akcentem na 'polish premium beef' jako narrację marki.\n\nMiesięczne zapotrzebowanie:\n{basket}\n\nPytania:\n1. Ceny B2B per pozycja + przy 2× ilości.\n2. Dojrzewalnia własna — możliwość zamówienia konkretnych kalibracji dry-aged (30/45 dni)?\n3. Rasy w bieżącej produkcji (Angus / Hereford / Limousin) + dokumentacja QMP.\n4. Lead time + dostawa do Krakowa (chłodnia własna / kurier chłodniczy).\n5. Próbki / degustacja przed kontraktem miesięcznym.\n6. Warunki płatności + min. zamówienie.\n\nPozdrawiam,\n[Imię i nazwisko]\n[Nazwa restauracji · NIP]\n[Telefon · email]"
+      },
+      "pricing_status": "b2b_login_required"
+    },
+    {
+      "id": "krakowski-rzeznik",
+      "name": "Lokalny rzeźnik Kraków (Zięba / Sutor)",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://zieba.com.pl",
+      "contact_url": "https://zieba.com.pl/kontakt",
+      "email": null,
+      "lead_time": "codzienna dostawa Kraków",
+      "min_order_value_pln": 300,
+      "categories_served": [
+        "meat"
+      ],
+      "notes": "Lokalny rzeźnik — świeże mięso krajowe, kontakt telefoniczny, codzienna dostawa. Najkrótszy łańcuch chłodniczy = najwyższa świeżość.",
+      "line_items": [],
+      "email_draft": {
+        "subject": "Zapytanie — codzienna dostawa świeżego mięsa do steakhouse'u Kraków",
+        "body": "Dzień dobry,\n\nNazywam się [Imię i nazwisko], Butchers Grill Kraków. Szukamy lokalnego dostawcy do uzupełniania świeżego mięsa na bieżąco (poza dry-aged, które bierzemy z dojrzewalni).\n\nMiesięczne zapotrzebowanie:\n{basket}\n\nPytania:\n1. Ceny B2B per pozycja + dostępność stała.\n2. Możliwość codziennej dostawy do Krakowa (3-go) o określonej godzinie (np. 9:00-11:00 przed otwarciem kuchni).\n3. Świeże mielenie wołowiny 80/20 brisket+chuck na zamówienie.\n4. Świeży butchering (skirt, picanha) na zamówienie z możliwością wyboru kalibracji.\n5. Atesty (HACCP, weterynaryjny) + dokumenty pochodzenia.\n6. Warunki płatności (przelew 7/14 dni).\n\nPozdrawiam,\n[Imię i nazwisko]\n[Nazwa restauracji · NIP]\n[Telefon · email]"
+      },
+      "pricing_status": "b2b_login_required"
+    },
+    {
+      "id": "warzywniak-hurt",
+      "name": "Hurt warzywno-owocowy Bronowice",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://www.balicka.pl",
+      "contact_url": "https://www.balicka.pl/kontakt",
+      "email": null,
+      "lead_time": "codzienna dostawa Kraków",
+      "min_order_value_pln": 200,
+      "categories_served": [
+        "fresh"
+      ],
+      "notes": "Hurtownia warzyw na Balickiej — codzienna dostawa, sezonowe lokalne warzywa. Kontakt telefoniczny / WhatsApp.",
+      "line_items": [],
+      "email_draft": {
+        "subject": "Zapytanie — codzienna dostawa świeżych warzyw do Butchers Grill Kraków",
+        "body": "Dzień dobry,\n\nButchers Grill Kraków, premium steak house. Szukamy lokalnego dostawcy świeżych warzyw i owoców z codzienną dostawą.\n\nMiesięczne zapotrzebowanie:\n{basket}\n\nPytania:\n1. Ceny per pozycja + dostępność sezonowa.\n2. Codzienna dostawa do centrum Krakowa (godz. 8:00-10:00).\n3. Klasa I — możliwość kontroli jakości / zwrotów.\n4. Lokalni dostawcy w sezonie (warzywa małopolskie).\n5. Warunki płatności + min. zamówienie dzienne.\n\nPozdrawiam,\n[Imię i nazwisko]\n[Nazwa restauracji · NIP]\n[Telefon · email]"
+      },
+      "pricing_status": "b2b_login_required"
+    },
+    {
+      "id": "diversey-pl",
+      "name": "Diversey Polska",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://www.diversey.com/pl-pl",
+      "contact_url": "https://www.diversey.com/pl-pl/contact",
+      "email": null,
+      "lead_time": "3-5 dni",
+      "min_order_value_pln": 600,
+      "categories_served": [
+        "chemistry"
+      ],
+      "notes": "Globalny lider profesjonalnej chemii HoReCa — Suma, Taski, atesty HACCP. B2B kontrakt = ceny indywidualne; wymagany kontakt z account managerem.",
+      "line_items": [],
+      "email_draft": {
+        "subject": "Zapytanie B2B — chemia profesjonalna dla Butchers Grill Kraków",
+        "body": "Dzień dobry,\n\nButchers Grill Kraków, ~150 covers/dzień, kuchnia otwarta z grillem węglowym. Szukamy stałego dostawcy chemii profesjonalnej z atestami HACCP.\n\nMiesięczne zapotrzebowanie:\n{basket}\n\nPytania:\n1. Ceny B2B per pozycja przy podanej ilości miesięcznej.\n2. Pakiet kontraktowy — czy oferujecie program 'all-in' (chemia + dozowniki + szkolenie HACCP)?\n3. Atesty HACCP / PZH dla każdego produktu.\n4. Lead time + częstotliwość dostaw.\n5. Warunki płatności + min. wartość zamówienia.\n6. Wsparcie techniczne / wizyta technologa na miejscu.\n\nPozdrawiam,\n[Imię i nazwisko]\n[Nazwa restauracji · NIP]\n[Telefon · email]"
+      },
+      "pricing_status": "b2b_login_required"
+    },
+    {
+      "id": "ecolab-pl",
+      "name": "Ecolab Polska",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://pl.ecolab.com",
+      "contact_url": "https://pl.ecolab.com/contact-us",
+      "email": null,
+      "lead_time": "3-5 dni",
+      "min_order_value_pln": 800,
+      "categories_served": [
+        "chemistry"
+      ],
+      "notes": "Premium dostawca chemii pro — często łączony z serwisem dozowników i szkoleniem HACCP.",
+      "line_items": [],
+      "email_draft": {
+        "subject": "Zapytanie B2B — kontrakt chemia pro + HACCP dla steakhouse'u Kraków",
+        "body": "Dzień dobry,\n\nButchers Grill Kraków, premium steak house ~150 covers/dzień. Rozważamy kontrakt długoterminowy z dostawcą chemii pro + wsparcia HACCP.\n\nMiesięczne zapotrzebowanie:\n{basket}\n\nPytania:\n1. Ceny B2B per pozycja w ramach kontraktu rocznego.\n2. Pakiet 'all-in' — chemia + dozowniki + szkolenie HACCP zespołu kuchni?\n3. Audyt HACCP / wizyta technologa.\n4. Atesty + karty MSDS.\n5. Lead time + warunki płatności.\n\nPozdrawiam,\n[Imię i nazwisko]\n[Nazwa restauracji · NIP]\n[Telefon · email]"
+      },
+      "pricing_status": "b2b_login_required"
+    },
+    {
+      "id": "henry-schein-horeca",
+      "name": "Voigt (Henry Schein HoReCa)",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://www.voigt.pl",
+      "contact_url": "https://www.voigt.pl/kontakt",
+      "email": null,
+      "lead_time": "2-4 dni",
+      "min_order_value_pln": 400,
+      "categories_served": [
+        "chemistry",
+        "accessories"
+      ],
+      "notes": "Voigt — polski producent profesjonalnej chemii HoReCa (Tytan, Pip), tańsza alternatywa dla Diversey/Ecolab. Publiczne ceny w katalogu.",
+      "line_items": [],
+      "email_draft": {
+        "subject": "Zapytanie B2B — chemia HoReCa Voigt dla Butchers Grill Kraków",
+        "body": "Dzień dobry,\n\nButchers Grill Kraków, premium steak house. Interesuje nas Państwa oferta chemii pro jako alternatywa cenowa do globalnych marek.\n\nMiesięczne zapotrzebowanie:\n{basket}\n\nPytania:\n1. Ceny B2B per pozycja + warunki przy 2×.\n2. Atesty HACCP / PZH.\n3. Lead time + dostawa do Krakowa.\n4. Możliwość pakietu z drobnymi akcesoriami (szczotki, ścierki).\n5. Warunki płatności + min. zamówienie.\n\nPozdrawiam,\n[Imię i nazwisko]\n[Nazwa restauracji · NIP]\n[Telefon · email]"
+      },
+      "pricing_status": "no_adapter"
+    },
+    {
+      "id": "stalgast-pl",
+      "name": "Stalgast",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://www.stalgast.com",
+      "contact_url": "https://www.stalgast.com/kontakt",
+      "email": null,
+      "lead_time": "3-5 dni",
+      "min_order_value_pln": 500,
+      "categories_served": [
+        "accessories"
+      ],
+      "notes": "Polski producent sprzętu i akcesoriów gastro — szczotki, termometry, deski, naczynia.",
+      "line_items": [],
+      "email_draft": {
+        "subject": "Zapytanie B2B — akcesoria gastro Stalgast dla Butchers Grill Kraków",
+        "body": "Dzień dobry,\n\nButchers Grill Kraków, ~150 covers/dzień, kuchnia otwarta z grillem. Szukamy stałego dostawcy akcesoriów gastronomicznych.\n\nMiesięczne zapotrzebowanie:\n{basket}\n\nPytania:\n1. Ceny B2B per pozycja.\n2. Lead time + dostawa do Krakowa.\n3. Możliwość brandingowych grawerów (logo na deskach do serwowania).\n4. Warunki płatności + min. zamówienie.\n\nPozdrawiam,\n[Imię i nazwisko]\n[Nazwa restauracji · NIP]\n[Telefon · email]"
+      },
+      "pricing_status": "b2b_login_required"
+    },
+    {
+      "id": "weber-grills-pl",
+      "name": "Weber Grills Polska",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://www.weber.com/PL/pl",
+      "contact_url": "https://www.weber.com/PL/pl/contact",
+      "email": null,
+      "lead_time": "2-4 dni kurier",
+      "min_order_value_pln": 0,
+      "categories_served": [
+        "grill_fuel",
+        "accessories"
+      ],
+      "notes": "Weber — premium węgiel drzewny i akcesoria do grilla, publiczne ceny detaliczne. Wyższa półka cenowa.",
+      "line_items": [],
+      "email_draft": null,
+      "pricing_status": "b2b_login_required"
+    },
+    {
+      "id": "metro-de",
+      "name": "METRO Deutschland",
+      "country": "DE",
+      "region": "EU",
+      "language": "de",
+      "homepage": "https://www.metro.de",
+      "contact_url": "https://www.metro.de/kontakt",
+      "email": null,
+      "lead_time": "5-7 dni cross-border",
+      "min_order_value_pln": 1500,
+      "categories_served": [
+        "meat",
+        "spices",
+        "dry_goods",
+        "chemistry",
+        "accessories"
+      ],
+      "notes": "Niemiecka spółka-matka Makro — niektóre kategorie (chemia, akcesoria) tańsze niż w PL. Wymaga numeru DE/EU VAT, dostawa cross-border negocjowana.",
+      "line_items": [],
+      "email_draft": {
+        "subject": "B2B-Anfrage — Cross-border Lieferung nach Krakau, Polen (Steakhouse)",
+        "body": "Sehr geehrte Damen und Herren,\n\nmein Name ist [Vorname Nachname], ich vertrete Butchers Grill Krakau — Premium Dry-Aged Steakhouse in Krakau (~150 Gäste/Tag).\n\nWir prüfen METRO Deutschland als Cross-Border-Lieferant für ausgewählte Kategorien. Unser monatlicher Bedarf:\n{basket}\n\nFragen:\n1. B2B-Preise pro Position bei der angegebenen Monatsmenge und bei 2× dieser Menge.\n2. Cross-border Lieferung nach Krakau (PL) — Konditionen, Frequenz, Logistik.\n3. EU-VAT Verfahren (intra-community supply mit PL VAT-ID).\n4. HACCP-Zertifikate für Chemie + Kühlkette für Fleisch.\n5. Mindestbestellwert für Cross-border + Zahlungsbedingungen.\n\nMit freundlichen Grüßen,\n[Vorname Nachname]\n[Restaurantname · USt-IdNr]\n[Telefon · E-Mail]"
+      },
+      "pricing_status": "b2b_login_required"
+    },
+    {
+      "id": "horeca-it-iberico",
+      "name": "Iberico Premium Spain",
+      "country": "ES",
+      "region": "EU",
+      "language": "en",
+      "homepage": "https://ibericopremium.es",
+      "contact_url": "https://ibericopremium.es/contact",
+      "email": null,
+      "lead_time": "5-7 dni cold chain EU",
+      "min_order_value_pln": 2000,
+      "categories_served": [
+        "meat"
+      ],
+      "notes": "Hiszpański dostawca premium beef + wieprzowiny iberico. Sensowny dla okazjonalnych zamówień specjalności (presa iberica, secreto). UWAGA: weryfikacja cold chain przed zamówieniem.",
+      "line_items": [],
+      "email_draft": {
+        "subject": "B2B inquiry — premium beef + iberico for Krakow steakhouse",
+        "body": "Dear Sirs,\n\nMy name is [Full name], representing Butchers Grill Krakow — premium dry-aged steakhouse in Krakow, Poland (~150 covers/day).\n\nWe are looking for occasional premium beef sourcing, especially specialty cuts not commonly available from PL/DE distributors.\n\nMonthly demand (relevant items):\n{basket}\n\nQuestions:\n1. B2B prices per item at indicated monthly quantity.\n2. Cold chain logistics Spain → Poland — carrier, transit time, temperature monitoring.\n3. EU intra-community VAT procedure with our PL VAT ID.\n4. Minimum order value for EU delivery, payment terms.\n5. Origin documentation + breed information.\n\nBest regards,\n[Full name]\n[Restaurant · VAT ID]\n[Phone · Email]"
+      },
+      "pricing_status": "b2b_login_required"
+    },
+    {
+      "id": "beef-pl",
+      "name": "Beef.pl — BeeF Atelier",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://beef.pl",
+      "url": "https://beef.pl",
+      "contact_url": "https://beef.pl/kontakt",
+      "email": null,
+      "lead_time": "1-2 dni kurier chłodniczy",
+      "min_order_value_pln": 200,
+      "categories_served": [
+        "meat"
+      ],
+      "delivery_areas": "PL nationwide chłodnicza",
+      "notes": "Specjalista premium beef PL — własna dojrzewalnia BeeF Atelier (45 dni dry-aged), Black Angus, Wagyu BMS9+, picanha urugwajska. Publiczne ceny detaliczne; B2B na zapytanie. Platforma: WooCommerce.",
+      "line_items": [
+        {
+          "part_id": "ribeye-dry-aged-30d",
+          "unit_price_pln": 132,
+          "unit_price_label": "132 PLN/kg",
+          "product_url": "https://beef.pl/produkt/ribeye-z-urugwajskiej-wolowiny/",
+          "matched_title": "RibEye z urugwajskiej wołowiny Angus"
+        },
+        {
+          "part_id": "tenderloin-fillet",
+          "unit_price_pln": 145,
+          "unit_price_label": "145 PLN/kg",
+          "product_url": "https://beef.pl/produkt/stek-z-poledwicy-z-australijskiej-wolowiny-wagyu-bms9/",
+          "matched_title": "Stek z polędwicy z australijskiej wołowiny Wagyu BMS9+"
+        },
+        {
+          "part_id": "tomahawk-bone-in",
+          "unit_price_pln": 259,
+          "unit_price_label": "259 PLN/szt",
+          "product_url": "https://beef.pl/produkt/tomahawk-premium-jalowka/",
+          "matched_title": "Tomahawk Premium – Jałówka"
+        },
+        {
+          "part_id": "picanha-1kg",
+          "unit_price_pln": 280,
+          "unit_price_label": "280 PLN/kg",
+          "product_url": "https://beef.pl/produkt/picanha-wagyu-a5-bms-11-12/",
+          "matched_title": "Picanha Wagyu A5 BMS 11/12"
+        }
+      ],
+      "email_draft": {
+        "subject": "Zapytanie B2B — kontrakt miesięczny dry-aged beef Beef.pl",
+        "body": "Dzień dobry,\n\nNazywam się [Imię i nazwisko], Butchers Grill Kraków — premium dry-aged steak house, ~150 covers/dzień. BeeF Atelier z 45-dniowym dojrzewaniem to dokładnie profil mięsa pasujący do naszej karty.\n\nMiesięczne zapotrzebowanie:\n{basket}\n\nPytania:\n1. Ceny B2B per pozycja przy podanej ilości miesięcznej + przy 2×.\n2. Stała dostępność BeeF Atelier 45-dniowego ribeye + tomahawk — gwarancja capacity.\n3. Origin polskich jałówek + dokumenty QMP.\n4. Lead time + dostawa chłodnicza do Krakowa.\n5. Próbki / degustacja przed kontraktem (1-2 dostawy testowe).\n6. Warunki płatności (przelew 14/21 dni), min. zamówienie B2B.\n\nPozdrawiam,\n[Imię i nazwisko]\n[Nazwa restauracji · NIP]\n[Telefon · email]"
+      },
+      "pricing_status": "scraped"
+    },
+    {
+      "id": "bbq-pl",
+      "name": "BBQ.pl — ekskluzywny sklep mięsny",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://bbq.pl",
+      "url": "https://bbq.pl",
+      "contact_url": "https://bbq.pl/kontakt",
+      "email": null,
+      "lead_time": "24h ekspresowo, kurier chłodniczy",
+      "min_order_value_pln": 200,
+      "categories_served": [
+        "meat",
+        "grill_fuel",
+        "accessories",
+        "spices"
+      ],
+      "delivery_areas": "PL nationwide ekspresowa chłodnicza",
+      "notes": "Najszerszy wybór super premium PL — Wagyu A4/A5, Black Angus, dry-aged tomahawk, T-bone, dziczyzna. Również akcesoria grillowe i przyprawy. 20+ lat doświadczenia. Platforma: PrestaShop, microdata + JSON-LD.",
+      "line_items": [
+        {
+          "part_id": "ribeye-dry-aged-30d",
+          "unit_price_pln": 119,
+          "unit_price_label": "119 PLN/kg",
+          "product_url": "https://bbq.pl/stek-z-antrykotu/stek-z-antrykotu-black-angus-usa-usda-choice",
+          "matched_title": "Stek z antrykotu Black Angus USA USDA CHOICE"
+        },
+        {
+          "part_id": "tenderloin-fillet",
+          "unit_price_pln": 974,
+          "unit_price_label": "974 PLN/kg",
+          "product_url": "https://bbq.pl/poledwica-wolowa/poledwica-wolowa-black-angus-usa-usda-choice",
+          "matched_title": "Polędwica wołowa Black Angus USA USDA CHOICE"
+        },
+        {
+          "part_id": "picanha-1kg",
+          "unit_price_pln": 246,
+          "unit_price_label": "246 PLN/kg",
+          "product_url": "https://bbq.pl/picanha-okrywa-krzyzowej/picanha-okrywa-krzyzowej-black-angus-usa",
+          "matched_title": "Picanha (okrywa krzyżowej) Black Angus USA"
+        },
+        {
+          "part_id": "skirt-steak",
+          "unit_price_pln": 109,
+          "unit_price_label": "109 PLN/kg",
+          "product_url": "https://bbq.pl/skirt-steak/skirt-steak-wagyu-bms-5-7-namibia",
+          "matched_title": "Skirt steak Wagyu BMS 5-7 Namibia"
+        },
+        {
+          "part_id": "salt-flake-maldon",
+          "unit_price_pln": 30,
+          "unit_price_label": "30 PLN/opak",
+          "product_url": "https://bbq.pl/suche-marynaty/maldon-sol-morska-w-platkach-wedzona",
+          "matched_title": "Maldon sól morska w płatkach wędzona"
+        },
+        {
+          "part_id": "steak-rub-bbq",
+          "unit_price_pln": 33,
+          "unit_price_label": "33 PLN/kg",
+          "product_url": "https://bbq.pl/suche-marynaty/przyprawa-spice-mix-for-steaks-and-burgers",
+          "matched_title": "Przyprawa Spice Mix for Steaks and Burgers"
+        },
+        {
+          "part_id": "meat-thermometer-digital",
+          "unit_price_pln": 570,
+          "unit_price_label": "570 PLN/szt",
+          "product_url": "https://bbq.pl/akcesoria/accu-probe-pro-x-bezprzewodowy-termometr-do-miesa-z-bluetooth",
+          "matched_title": "ACCU-PROBE™ PRO X bezprzewodowy termometr do mięsa z Bluetooth"
+        }
+      ],
+      "email_draft": {
+        "subject": "Zapytanie B2B — kontrakt premium beef + grill BBQ.pl dla Butchers Grill Kraków",
+        "body": "Dzień dobry,\n\nButchers Grill Kraków, premium dry-aged steak house ~150 covers/dzień. BBQ.pl jako szeroki dostawca premium beef + akcesoriów grillowych jest dla nas naturalnym kandydatem.\n\nMiesięczne zapotrzebowanie:\n{basket}\n\nPytania:\n1. Ceny B2B per pozycja przy podanej ilości miesięcznej + przy 2×.\n2. Wagyu A4/A5 — dostępność stała czy na zamówienie? Origin (JP/AU)?\n3. Łańcuch chłodniczy do Krakowa, gwarancja temperatury.\n4. Lead time przy zamówieniu codziennym vs 2× w tygodniu.\n5. Pakiet kontraktowy łączący mięso + węgiel + akcesoria — preferowane warunki?\n6. Próbki + degustacja przed kontraktem.\n7. Warunki płatności + min. zamówienie B2B.\n\nPozdrawiam,\n[Imię i nazwisko]\n[Nazwa restauracji · NIP]\n[Telefon · email]"
+      },
+      "pricing_status": "scraped"
+    },
+    {
+      "id": "we-are-bbq-de",
+      "name": "WEAREBBQ — Don Marco's official shop",
+      "country": "DE",
+      "region": "EU",
+      "language": "de",
+      "homepage": "https://we-are-bbq.de",
+      "url": "https://we-are-bbq.de",
+      "contact_url": "https://we-are-bbq.de/kontakt",
+      "email": null,
+      "lead_time": "1-2 Werktage DE / 5-7 dni do PL",
+      "min_order_value_pln": 200,
+      "categories_served": [
+        "spices",
+        "grill_fuel"
+      ],
+      "delivery_areas": "DE + EU (PL OK), darmowy fracht ab 50 EUR",
+      "notes": "Oficjalny sklep Don Marco's Barbecue — World BBQ Champion. Premium rubs, wędlinowe gewürze, smoke planks. Publiczne ceny EUR, IFS Higher Level certified. Wysyłka EU standardowa.",
+      "line_items": [
+        {
+          "part_id": "steak-rub-bbq",
+          "unit_price_pln": 107,
+          "unit_price_label": "€24.95/kg (~107 PLN)",
+          "product_url": "https://we-are-bbq.de/produkt/happy-ending-rub-nachfuellbeutel-630g/",
+          "matched_title": "Happy Ending Rub im Nachfuellbeutel, schwarzer wiederverschließbarer Beutel mit Zipper, schwarz gesleeved, Comic Rind massiet ein Steak als Maskotchen"
+        }
+      ],
+      "email_draft": {
+        "subject": "B2B-Anfrage — Don Marco's Premium Rubs für Butchers Grill Krakau",
+        "body": "Sehr geehrte Damen und Herren,\n\nButchers Grill Krakau, Premium Dry-Aged Steakhouse, ~150 Gäste/Tag. Wir suchen einen festen Lieferanten für Premium BBQ-Rubs und Smoke Wood für unsere Steaks und Tomahawk.\n\nMonatlicher Bedarf:\n{basket}\n\nFragen:\n1. B2B-Großhandelspreise pro Position bei der angegebenen Monatsmenge + bei 2×.\n2. EU-Versand nach Krakau, PL — Konditionen, Lead time.\n3. Möglichkeit eines Restaurant-Kontrakts mit garantierten Preisen (3-12 Monate).\n4. EU-VAT Verfahren mit unserem PL VAT-ID.\n5. Sample-Set für Test im Restaurant.\n\nMit freundlichen Grüßen,\n[Vorname Nachname]\n[Restaurantname · USt-IdNr]\n[Telefon · E-Mail]"
+      },
+      "pricing_status": "scraped"
+    }
+  ]
+}

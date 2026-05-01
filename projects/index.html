@@ -39,6 +39,16 @@
 
   <div class="grid">
 
+    <a class="card" data-reveal href="/projects/poc-gastro-sourcing/">
+      <div class="card-head">
+        <div class="card-tag">Sourcing automation</div>
+        <span class="status status-live">live demo</span>
+      </div>
+      <h3>gastro-sourcing &middot; food-cost optimizer dla steak house'u w Krakowie</h3>
+      <p>POC dla restauracji premium (steak house Butchers Grill): miesięczny koszyk 25 SKU w 7 kategoriach (mięso dry-aged, przyprawy, chemia profesjonalna, akcesoria, węgiel drzewny, świeże, suchy magazyn) × ~17 dostawców HoReCa (PL + DE). Główny widok to <strong>plan zakupów</strong> &mdash; karty per sklep z listą produktów, które tam najtaniej kupisz, plus wskaźnik <strong>−% / PLN oszczędności vs średnia rynku</strong> na każdej pozycji i sumarycznie. Reszta to matryce SKU × Dostawca per kategoria (kolumny posortowane po pokryciu). Scraper Pythonowy (httpx + bs4 + JSON-LD/microdata) pobiera ceny z 3 zweryfikowanych e-sklepów (beef.pl dry-aged 45d, bbq.pl Wagyu A5, we-are-bbq.de Don Marco's rubs); pozostali oznaczeni jako <strong>B2B login</strong> z gotowym szablonem RFQ (PL/DE) w jednym kliknięciu z karty. Real-world finding: w gastronomii ~80% hurtowni HoReCa (Makro, Selgros, Bidfood, Diversey, Ecolab, METRO) chowa ceny za loginem B2B &mdash; jedyna realna ścieżka to RFQ; transparentność per pozycja jest sama w sobie konkurencyjną przewagą dla restauratora optymalizującego food cost.</p>
+      <div class="card-meta">Static page · 25 SKU × 7 kategorii × 17 dostawców · scraper py + GH Action refresh · savings vs market avg</div>
+    </a>
+
     <a class="card" data-reveal href="/projects/poc-electronics-arbitrage/">
       <div class="card-head">
         <div class="card-tag">Cross-border arbitrage</div>

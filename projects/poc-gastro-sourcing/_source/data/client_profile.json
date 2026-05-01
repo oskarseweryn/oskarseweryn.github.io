@@ -1,0 +1,22 @@
+{
+  "_comment": "Profil klienta zerowego — Butchers Grill Kraków, premium steak house. Zmienia się per restauracja: nazwa, lokalizacja, profil kulinarny. Kod strony i pula dostawców pozostają bez zmian — onboarding nowego klienta = podmiana tego pliku + basket_seed.json. Patrz docs/onboarding_new_client.md.",
+  "_last_curated": "2026-05-01",
+  "client": {
+    "id": "butchers-grill-krakow",
+    "name": "Butchers Grill Kraków",
+    "type": "steakhouse",
+    "tagline": "Premium dry-aged steak house — pozycjonowany jako najlepszy steak house w Krakowie",
+    "city": "Kraków",
+    "country": "PL",
+    "ship_to": "Kraków",
+    "currency": "PLN",
+    "monthly_food_cost_target_pct": 30,
+    "kitchen_profile": "Grill wołowy nad węglem drzewnym i drewnem dębowym, dry-aged 30+ dni jako wyróżnik karty, lokalna baza warzywna, kuchnia otwarta z bezpośrednim kontaktem szef-gość.",
+    "procurement_pain_points": [
+      "Cena antrykotów dry-aged od dystrybutorów premium waha się tygodniowo, brak transparentnej porównywarki",
+      "Chemia profesjonalna i ręczniki papierowe kupowane reaktywnie z najbliższego cash & carry — nieodkryty potencjał kontraktów hurtowych",
+      "Akcesoria (fartuchy, szczotki, termometry) zamawiane ad-hoc z Allegro — możliwe oszczędności przy zakupie B2B / CN bezpośrednio",
+      "Brak jednego widoku 'food cost' w skali miesiąca — koszt cząstkowy rozproszony po fakturach od 5-7 dostawców"
+    ]
+  }
+}

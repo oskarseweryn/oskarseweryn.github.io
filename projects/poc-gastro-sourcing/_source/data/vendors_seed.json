@@ -1,0 +1,281 @@
+{
+  "_comment": "Pula dostawców gastronomicznych dla porównywarki cen. Wybrana pod profil HoReCa premium (steakhouse Kraków), ale dostawcy są generyczni — pula nadaje się dla każdej restauracji średniej skali w PL. categories_served = lista kategorii z categories.json, które dany dostawca realnie obsługuje (slash command pomija dostawcę przy SKU spoza tej listy). region_serves = ['PL','EU','CN'] określa, kiedy dostawca jest pokazywany na stronie. min_order_value_pln = minimum zamówienia (B2B HoReCa zazwyczaj ma minima 300-1500 PLN).",
+  "_last_curated": "2026-05-01",
+  "vendors": [
+    {
+      "id": "makro-pl",
+      "name": "Makro Cash & Carry Polska",
+      "country": "PL",
+      "region": "PL",
+      "url": "https://makro.pl",
+      "categories_served": [
+        "meat",
+        "fresh",
+        "spices",
+        "dry_goods",
+        "chemistry",
+        "accessories"
+      ],
+      "min_order_value_pln": 0,
+      "delivery_areas": "PL nationwide + cash & carry hala",
+      "notes": "Największy hurt HoReCa w PL — szeroka kategorialnie oferta, B2B ceny po zalogowaniu, hala w Krakowie (ul. Zakopiańska). Brak min. zamówienia przy odbiorze osobistym."
+    },
+    {
+      "id": "selgros-pl",
+      "name": "Selgros Cash & Carry",
+      "country": "PL",
+      "region": "PL",
+      "url": "https://selgros.pl",
+      "categories_served": [
+        "meat",
+        "fresh",
+        "spices",
+        "dry_goods",
+        "chemistry",
+        "accessories"
+      ],
+      "min_order_value_pln": 0,
+      "delivery_areas": "PL nationwide + cash & carry hala (Kraków, Modlniczka)",
+      "notes": "Drugi pod kątem skali HoReCa hurt PL — ceny B2B widoczne po rejestracji, alternatywa dla Makro. Hala Modlniczka pod Krakowem."
+    },
+    {
+      "id": "bidfood-farutex",
+      "name": "Bidfood Farutex",
+      "country": "PL",
+      "region": "PL",
+      "url": "https://www.bidfood.pl",
+      "categories_served": [
+        "meat",
+        "fresh",
+        "spices",
+        "dry_goods"
+      ],
+      "min_order_value_pln": 800,
+      "delivery_areas": "PL nationwide z dostawą lodówkową",
+      "notes": "Lider dystrybucji HoReCa premium — mocno mięso i mrożonki, własna flota chłodnicza. Ceny B2B na zapytanie (account manager)."
+    },
+    {
+      "id": "iglotex-pl",
+      "name": "Iglotex",
+      "country": "PL",
+      "region": "PL",
+      "url": "https://www.iglotex.pl",
+      "categories_served": [
+        "meat",
+        "fresh"
+      ],
+      "min_order_value_pln": 500,
+      "delivery_areas": "PL nationwide chłodnicza",
+      "notes": "Dystrybutor mrożonek i mięsa do gastronomii — silna pozycja w segmencie burgerów (mielona) i półproduktów."
+    },
+    {
+      "id": "polish-premium-beef",
+      "name": "Polish Premium Beef",
+      "country": "PL",
+      "region": "PL",
+      "url": "https://polishpremiumbeef.pl",
+      "categories_served": [
+        "meat"
+      ],
+      "min_order_value_pln": 500,
+      "delivery_areas": "PL nationwide chłodnicza",
+      "notes": "Producent PL premium beef — ras Hereford/Angus polskich, dry-aged we własnych dojrzewalniach, certyfikat QMP."
+    },
+    {
+      "id": "krakowski-rzeznik",
+      "name": "Lokalny rzeźnik Kraków (Zięba / Sutor)",
+      "country": "PL",
+      "region": "PL",
+      "url": "https://zieba.com.pl",
+      "categories_served": [
+        "meat"
+      ],
+      "min_order_value_pln": 300,
+      "delivery_areas": "Kraków + okolice 50 km",
+      "notes": "Lokalny rzeźnik — świeże mięso krajowe, kontakt telefoniczny, dostawa codzienna. Najkrótszy łańcuch chłodniczy = najwyższa świeżość."
+    },
+    {
+      "id": "warzywniak-hurt",
+      "name": "Hurt warzywno-owocowy Bronowice",
+      "country": "PL",
+      "region": "PL",
+      "url": "https://www.balicka.pl",
+      "categories_served": [
+        "fresh"
+      ],
+      "min_order_value_pln": 200,
+      "delivery_areas": "Kraków + woj. małopolskie",
+      "notes": "Hurtownia warzyw na Balickiej — codzienna dostawa, sezonowe lokalne warzywa. Kontakt telefoniczny / WhatsApp."
+    },
+    {
+      "id": "diversey-pl",
+      "name": "Diversey Polska",
+      "country": "PL",
+      "region": "PL",
+      "url": "https://www.diversey.com/pl-pl",
+      "categories_served": [
+        "chemistry"
+      ],
+      "min_order_value_pln": 600,
+      "delivery_areas": "PL nationwide",
+      "notes": "Globalny lider profesjonalnej chemii HoReCa — Suma, Taski, atesty HACCP. B2B kontrakt = ceny indywidualne; wymagany kontakt z account managerem."
+    },
+    {
+      "id": "ecolab-pl",
+      "name": "Ecolab Polska",
+      "country": "PL",
+      "region": "PL",
+      "url": "https://pl.ecolab.com",
+      "categories_served": [
+        "chemistry"
+      ],
+      "min_order_value_pln": 800,
+      "delivery_areas": "PL nationwide",
+      "notes": "Premium dostawca chemii pro — często łączony z serwisem dozowników i szkoleniem HACCP. Kontrakt długoterminowy."
+    },
+    {
+      "id": "henry-schein-horeca",
+      "name": "Henry Schein HoReCa / Voigt",
+      "country": "PL",
+      "region": "PL",
+      "url": "https://www.voigt.pl",
+      "categories_served": [
+        "chemistry",
+        "accessories"
+      ],
+      "min_order_value_pln": 400,
+      "delivery_areas": "PL nationwide",
+      "notes": "Voigt — polski producent profesjonalnej chemii HoReCa (Tytan, Pip), tańsza alternatywa dla Diversey/Ecolab. Publiczne ceny w katalogu."
+    },
+    {
+      "id": "stalgast-pl",
+      "name": "Stalgast",
+      "country": "PL",
+      "region": "PL",
+      "url": "https://www.stalgast.com",
+      "categories_served": [
+        "accessories"
+      ],
+      "min_order_value_pln": 500,
+      "delivery_areas": "PL nationwide",
+      "notes": "Polski producent sprzętu i akcesoriów gastro — szczotki, termometry, deski, naczynia. Publiczne ceny, dystrybucja przez sieć dealerów."
+    },
+    {
+      "id": "weber-grills-pl",
+      "name": "Weber Grills Polska",
+      "country": "PL",
+      "region": "PL",
+      "url": "https://www.weber.com/PL/pl",
+      "categories_served": [
+        "grill_fuel",
+        "accessories"
+      ],
+      "min_order_value_pln": 0,
+      "delivery_areas": "PL nationwide kurier",
+      "notes": "Weber — premium węgiel drzewny i akcesoria do grilla, publiczne ceny detaliczne. Wyższa półka cenowa."
+    },
+    {
+      "id": "metro-de",
+      "name": "METRO Deutschland",
+      "country": "DE",
+      "region": "EU",
+      "url": "https://www.metro.de",
+      "categories_served": [
+        "meat",
+        "spices",
+        "dry_goods",
+        "chemistry",
+        "accessories"
+      ],
+      "min_order_value_pln": 1500,
+      "delivery_areas": "DE + cross-border PL na zapytanie",
+      "notes": "Niemiecka spółka-matka Makro — niektóre kategorie (chemia, akcesoria, dry-goods) tańsze niż w PL Makro. Wymaga numeru DE/EU VAT, dostawa cross-border negocjowana."
+    },
+    {
+      "id": "horeca-it-iberico",
+      "name": "Iberico Premium Spain",
+      "country": "ES",
+      "region": "EU",
+      "url": "https://ibericopremium.es",
+      "categories_served": [
+        "meat"
+      ],
+      "min_order_value_pln": 2000,
+      "delivery_areas": "EU chłodnicza, lead time 5-7 dni",
+      "notes": "Hiszpański dostawca premium beef + wieprzowiny iberico. Sensowny dla okazjonalnych zamówień specjalności (presa iberica, secreto)."
+    },
+    {
+      "id": "beef-pl",
+      "name": "Beef.pl — BeeF Atelier",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://beef.pl",
+      "url": "https://beef.pl",
+      "contact_url": "https://beef.pl/kontakt",
+      "email": null,
+      "lead_time": "1-2 dni kurier chłodniczy",
+      "min_order_value_pln": 200,
+      "categories_served": [
+        "meat"
+      ],
+      "delivery_areas": "PL nationwide chłodnicza",
+      "notes": "Specjalista premium beef PL — własna dojrzewalnia BeeF Atelier (45 dni dry-aged), Black Angus, Wagyu BMS9+, picanha urugwajska. Publiczne ceny detaliczne; B2B na zapytanie. Platforma: WooCommerce.",
+      "line_items": [],
+      "email_draft": {
+        "subject": "Zapytanie B2B — kontrakt miesięczny dry-aged beef Beef.pl",
+        "body": "Dzień dobry,\n\nNazywam się [Imię i nazwisko], Butchers Grill Kraków — premium dry-aged steak house, ~150 covers/dzień. BeeF Atelier z 45-dniowym dojrzewaniem to dokładnie profil mięsa pasujący do naszej karty.\n\nMiesięczne zapotrzebowanie:\n{basket}\n\nPytania:\n1. Ceny B2B per pozycja przy podanej ilości miesięcznej + przy 2×.\n2. Stała dostępność BeeF Atelier 45-dniowego ribeye + tomahawk — gwarancja capacity.\n3. Origin polskich jałówek + dokumenty QMP.\n4. Lead time + dostawa chłodnicza do Krakowa.\n5. Próbki / degustacja przed kontraktem (1-2 dostawy testowe).\n6. Warunki płatności (przelew 14/21 dni), min. zamówienie B2B.\n\nPozdrawiam,\n[Imię i nazwisko]\n[Nazwa restauracji · NIP]\n[Telefon · email]"
+      }
+    },
+    {
+      "id": "bbq-pl",
+      "name": "BBQ.pl — ekskluzywny sklep mięsny",
+      "country": "PL",
+      "region": "PL",
+      "language": "pl",
+      "homepage": "https://bbq.pl",
+      "url": "https://bbq.pl",
+      "contact_url": "https://bbq.pl/kontakt",
+      "email": null,
+      "lead_time": "24h ekspresowo, kurier chłodniczy",
+      "min_order_value_pln": 200,
+      "categories_served": [
+        "meat",
+        "grill_fuel",
+        "accessories",
+        "spices"
+      ],
+      "delivery_areas": "PL nationwide ekspresowa chłodnicza",
+      "notes": "Najszerszy wybór super premium PL — Wagyu A4/A5, Black Angus, dry-aged tomahawk, T-bone, dziczyzna. Również akcesoria grillowe i przyprawy. 20+ lat doświadczenia. Platforma: PrestaShop, microdata + JSON-LD.",
+      "line_items": [],
+      "email_draft": {
+        "subject": "Zapytanie B2B — kontrakt premium beef + grill BBQ.pl dla Butchers Grill Kraków",
+        "body": "Dzień dobry,\n\nButchers Grill Kraków, premium dry-aged steak house ~150 covers/dzień. BBQ.pl jako szeroki dostawca premium beef + akcesoriów grillowych jest dla nas naturalnym kandydatem.\n\nMiesięczne zapotrzebowanie:\n{basket}\n\nPytania:\n1. Ceny B2B per pozycja przy podanej ilości miesięcznej + przy 2×.\n2. Wagyu A4/A5 — dostępność stała czy na zamówienie? Origin (JP/AU)?\n3. Łańcuch chłodniczy do Krakowa, gwarancja temperatury.\n4. Lead time przy zamówieniu codziennym vs 2× w tygodniu.\n5. Pakiet kontraktowy łączący mięso + węgiel + akcesoria — preferowane warunki?\n6. Próbki + degustacja przed kontraktem.\n7. Warunki płatności + min. zamówienie B2B.\n\nPozdrawiam,\n[Imię i nazwisko]\n[Nazwa restauracji · NIP]\n[Telefon · email]"
+      }
+    },
+    {
+      "id": "we-are-bbq-de",
+      "name": "WEAREBBQ — Don Marco's official shop",
+      "country": "DE",
+      "region": "EU",
+      "language": "de",
+      "homepage": "https://we-are-bbq.de",
+      "url": "https://we-are-bbq.de",
+      "contact_url": "https://we-are-bbq.de/kontakt",
+      "email": null,
+      "lead_time": "1-2 Werktage DE / 5-7 dni do PL",
+      "min_order_value_pln": 200,
+      "categories_served": [
+        "spices",
+        "grill_fuel"
+      ],
+      "delivery_areas": "DE + EU (PL OK), darmowy fracht ab 50 EUR",
+      "notes": "Oficjalny sklep Don Marco's Barbecue — World BBQ Champion. Premium rubs, wędlinowe gewürze, smoke planks. Publiczne ceny EUR, IFS Higher Level certified. Wysyłka EU standardowa.",
+      "line_items": [],
+      "email_draft": {
+        "subject": "B2B-Anfrage — Don Marco's Premium Rubs für Butchers Grill Krakau",
+        "body": "Sehr geehrte Damen und Herren,\n\nButchers Grill Krakau, Premium Dry-Aged Steakhouse, ~150 Gäste/Tag. Wir suchen einen festen Lieferanten für Premium BBQ-Rubs und Smoke Wood für unsere Steaks und Tomahawk.\n\nMonatlicher Bedarf:\n{basket}\n\nFragen:\n1. B2B-Großhandelspreise pro Position bei der angegebenen Monatsmenge + bei 2×.\n2. EU-Versand nach Krakau, PL — Konditionen, Lead time.\n3. Möglichkeit eines Restaurant-Kontrakts mit garantierten Preisen (3-12 Monate).\n4. EU-VAT Verfahren mit unserem PL VAT-ID.\n5. Sample-Set für Test im Restaurant.\n\nMit freundlichen Grüßen,\n[Vorname Nachname]\n[Restaurantname · USt-IdNr]\n[Telefon · E-Mail]"
+      }
+    }
+  ]
+}

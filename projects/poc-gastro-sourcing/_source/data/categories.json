@@ -1,0 +1,62 @@
+{
+  "_comment": "Kategorie produktów dla porównywarki cen w gastronomii. Lista zamknięta — UI strony jest zbudowany pod te 7 kategorii. Każdy item w basket ma category-id z tej listy. Każdy vendor deklaruje categories_served jako listę kategorii, które realnie obsługuje (filtruje koszyk per dostawca podczas refresh).",
+  "_last_curated": "2026-05-01",
+  "categories": [
+    {
+      "id": "meat",
+      "name_pl": "Mięso",
+      "name_en": "Meat",
+      "icon": "🥩",
+      "color": "#b91c1c",
+      "notes": "Wołowina, wieprzowina, drób, dry-aged, dziczyzna. Wymaga zimnego łańcucha — region CN wykluczony. Świeżość: zwykle dostawa w ciągu 24-48h od lokalnego/krajowego dostawcy."
+    },
+    {
+      "id": "fresh",
+      "name_pl": "Świeże",
+      "name_en": "Fresh produce & dairy",
+      "icon": "🥬",
+      "color": "#15803d",
+      "notes": "Warzywa, owoce, nabiał, jaja. Bardzo krótka data ważności — tylko PL/UE z bezpośrednią logistyką lodówkową. Ceny mocno zmienne tygodniowo."
+    },
+    {
+      "id": "spices",
+      "name_pl": "Przyprawy i marynaty",
+      "name_en": "Spices & marinades",
+      "icon": "🌶️",
+      "color": "#a16207",
+      "notes": "Sól, pieprz, mieszanki BBQ/steak rub, sosy, marynaty. Trwałe — region CN możliwy dla mieszanek hurtowych."
+    },
+    {
+      "id": "dry_goods",
+      "name_pl": "Suchy magazyn",
+      "name_en": "Dry goods & oils",
+      "icon": "🫒",
+      "color": "#7c2d12",
+      "notes": "Oleje, octy, mąki, ryż, makaron, konserwy. Trwałe, łatwe do zamówienia w kontenerach. PL/UE pierwszy wybór ze względu na cło/koszt transportu."
+    },
+    {
+      "id": "chemistry",
+      "name_pl": "Chemia profesjonalna",
+      "name_en": "Professional cleaning",
+      "icon": "🧴",
+      "color": "#1e40af",
+      "notes": "Odtłuszczacze, środki do mycia grilla i piekarników, dezynfekcja powierzchni, ręczniki papierowe industrial, płyny do zmywarek. Norma HACCP — preferowane atestowane środki UE."
+    },
+    {
+      "id": "accessories",
+      "name_pl": "Akcesoria gastronomiczne",
+      "name_en": "Kitchen accessories",
+      "icon": "🔪",
+      "color": "#52525b",
+      "notes": "Fartuchy, rękawice, noże, deski, termometry, szczotki do rusztu, naczynia serwisowe. Trwałe, bez chłodzenia — region CN w pełni dostępny dla redukcji kosztu."
+    },
+    {
+      "id": "grill_fuel",
+      "name_pl": "Paliwa grillowe",
+      "name_en": "Grill fuel & smoke wood",
+      "icon": "🔥",
+      "color": "#92400e",
+      "notes": "Węgiel drzewny, brykiet, zrębki wędzarnicze (dąb, hickory, jabłoń), podpałka eko. Ciężkie/objętościowe — koszt frachtu CN może zniwelować taniość fabryki, preferowane PL/UE."
+    }
+  ]
+}
