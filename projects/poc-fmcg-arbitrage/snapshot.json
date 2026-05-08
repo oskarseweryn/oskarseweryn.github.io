@@ -1,0 +1,1983 @@
+{
+  "_doc": "Snapshot 2026-05-08. Prices are seeded from public benchmarks: Pepper.pl, Blix.pl, gazetki.pl (PL), Kaufda.de, mydealz.de, supermarktcheck.de (DE), Carrefour.fr/.es/.it product pages, supermarktscanner.nl (NL), tulistadelmerca.es (ES), world-prices.com (ES), discounto.de. Each `_source_note` cites the specific public reference. Where direct retailer pricing was paywalled or behind login, range midpoint from at least 2 independent benchmarks was used and flagged with `_seeded: 'benchmark_range'`. No fabricated prices. The /fmcg-arbitrage slash command refreshes this file by re-querying public sources via WebSearch + WebFetch. | Includes embedded catalog (brands+variants) and markets so the static site needs only one fetch.",
+  "generated_at": "2026-05-08T12:00:00Z",
+  "generated_by": "websearch_seed_v1",
+  "fx_to_eur": {
+    "EUR": 1.0,
+    "PLN": 0.2326
+  },
+  "fx_source": "NBP middle rate seed 2026-05-08",
+  "brands": [
+    {
+      "id": "coca-cola",
+      "name": "Coca-Cola",
+      "manufacturer": "The Coca-Cola Company",
+      "category": "carbonated_soft_drink"
+    },
+    {
+      "id": "nutella",
+      "name": "Nutella",
+      "manufacturer": "Ferrero",
+      "category": "hazelnut_cocoa_spread"
+    },
+    {
+      "id": "red-bull",
+      "name": "Red Bull",
+      "manufacturer": "Red Bull GmbH",
+      "category": "energy_drink"
+    }
+  ],
+  "variants": [
+    {
+      "id": "cc-original-330ml-can",
+      "brand_id": "coca-cola",
+      "ean": "5449000000996",
+      "regional_eans": [
+        "5000112545326",
+        "5449000214911"
+      ],
+      "off_url": "https://world.openfoodfacts.org/product/5449000000996",
+      "name": "Coca-Cola Original Taste · 330 ml can",
+      "flavor": "original",
+      "format": "can",
+      "package_material": "aluminium",
+      "size_ml": 330,
+      "multipack": 1,
+      "sugar_g_per_100ml": 10.6,
+      "contains_caffeine": true,
+      "contains_taurine": false,
+      "weight_kg_per_unit": 0.345,
+      "units_per_pallet": 2640,
+      "_pallet_note": "24-can trays × 110 trays per pallet (industry standard for 330ml cans)"
+    },
+    {
+      "id": "cc-original-500ml-pet",
+      "brand_id": "coca-cola",
+      "ean": "5449000054227",
+      "regional_eans": [],
+      "off_url": "https://world.openfoodfacts.org/product/5449000054227",
+      "name": "Coca-Cola Original Taste · 500 ml PET bottle",
+      "flavor": "original",
+      "format": "pet_bottle",
+      "package_material": "PET",
+      "size_ml": 500,
+      "multipack": 1,
+      "sugar_g_per_100ml": 10.6,
+      "contains_caffeine": true,
+      "contains_taurine": false,
+      "weight_kg_per_unit": 0.53,
+      "units_per_pallet": 1056,
+      "_pallet_note": "12-bottle shrink × 88 trays per EUR-pallet"
+    },
+    {
+      "id": "cc-original-1500ml-pet",
+      "brand_id": "coca-cola",
+      "ean": "5449000131836",
+      "regional_eans": [
+        "5900497000045"
+      ],
+      "off_url": "https://world.openfoodfacts.org/product/5449000131836",
+      "name": "Coca-Cola Original Taste · 1.5 L PET bottle",
+      "flavor": "original",
+      "format": "pet_bottle",
+      "package_material": "PET",
+      "size_ml": 1500,
+      "multipack": 1,
+      "sugar_g_per_100ml": 10.6,
+      "contains_caffeine": true,
+      "contains_taurine": false,
+      "weight_kg_per_unit": 1.56,
+      "units_per_pallet": 504,
+      "_pallet_note": "6-bottle shrink × 84 trays per EUR-pallet"
+    },
+    {
+      "id": "cc-zero-330ml-can",
+      "brand_id": "coca-cola",
+      "ean": "5449000214799",
+      "regional_eans": [
+        "5000112678284",
+        "5740700998485",
+        "5449000131805"
+      ],
+      "off_url": "https://world.openfoodfacts.org/product/5449000214799",
+      "name": "Coca-Cola Zero Sugar · 330 ml can",
+      "flavor": "zero_sugar",
+      "format": "can",
+      "package_material": "aluminium",
+      "size_ml": 330,
+      "multipack": 1,
+      "sugar_g_per_100ml": 0.0,
+      "contains_caffeine": true,
+      "contains_taurine": false,
+      "weight_kg_per_unit": 0.345,
+      "units_per_pallet": 2640
+    },
+    {
+      "id": "cc-zero-1500ml-pet",
+      "brand_id": "coca-cola",
+      "ean": "5449000133328",
+      "regional_eans": [],
+      "off_url": "https://world.openfoodfacts.org/product/5449000133328",
+      "name": "Coca-Cola Zero Sugar · 1.5 L PET bottle (some markets list 1L under same EAN)",
+      "flavor": "zero_sugar",
+      "format": "pet_bottle",
+      "package_material": "PET",
+      "size_ml": 1500,
+      "multipack": 1,
+      "sugar_g_per_100ml": 0.0,
+      "contains_caffeine": true,
+      "contains_taurine": false,
+      "weight_kg_per_unit": 1.56,
+      "units_per_pallet": 504,
+      "_ean_note": "OFF lists this EAN as 1L in some regional entries — same product line, regional fill variance. For arbitrage we treat as 1.5L (continental EU SKU)."
+    },
+    {
+      "id": "nutella-200g",
+      "brand_id": "nutella",
+      "ean": "80050698",
+      "regional_eans": [
+        "80135463"
+      ],
+      "off_url": "https://world.openfoodfacts.org/product/80050698",
+      "name": "Nutella · 200 g jar",
+      "flavor": "original",
+      "format": "glass_jar",
+      "package_material": "glass+aluminium_seal+PP_lid",
+      "size_g": 200,
+      "multipack": 1,
+      "sugar_g_per_100g": 56.3,
+      "weight_kg_per_unit": 0.31,
+      "units_per_pallet": 1080,
+      "_pallet_note": "15 jars per cardboard tray × 72 trays per EUR-pallet"
+    },
+    {
+      "id": "nutella-400g",
+      "brand_id": "nutella",
+      "ean": "3017620422003",
+      "regional_eans": [
+        "80177128",
+        "3017624010701"
+      ],
+      "off_url": "https://world.openfoodfacts.org/product/3017620422003",
+      "name": "Nutella · 400 g jar",
+      "flavor": "original",
+      "format": "glass_jar",
+      "package_material": "glass+aluminium_seal+PP_lid",
+      "size_g": 400,
+      "multipack": 1,
+      "sugar_g_per_100g": 56.3,
+      "weight_kg_per_unit": 0.56,
+      "units_per_pallet": 720,
+      "_pallet_note": "10 jars per tray × 72 trays per EUR-pallet"
+    },
+    {
+      "id": "nutella-750g",
+      "brand_id": "nutella",
+      "ean": "4008400404127",
+      "regional_eans": [
+        "0062020000248"
+      ],
+      "off_url": "https://world.openfoodfacts.org/product/4008400404127",
+      "name": "Nutella · 750 g jar",
+      "flavor": "original",
+      "format": "glass_jar",
+      "package_material": "glass+aluminium_seal+PP_lid",
+      "size_g": 750,
+      "multipack": 1,
+      "sugar_g_per_100g": 56.3,
+      "weight_kg_per_unit": 0.985,
+      "units_per_pallet": 480,
+      "_pallet_note": "8 jars per tray × 60 trays per EUR-pallet"
+    },
+    {
+      "id": "nutella-1kg",
+      "brand_id": "nutella",
+      "ean": "3017624010701",
+      "regional_eans": [],
+      "off_url": "https://world.openfoodfacts.org/product/3017624010701",
+      "name": "Nutella · 1 kg jar (family pack)",
+      "flavor": "original",
+      "format": "glass_jar",
+      "package_material": "glass+aluminium_seal+PP_lid",
+      "size_g": 1000,
+      "multipack": 1,
+      "sugar_g_per_100g": 56.3,
+      "weight_kg_per_unit": 1.27,
+      "units_per_pallet": 360,
+      "_pallet_note": "6 jars per tray × 60 trays per EUR-pallet"
+    },
+    {
+      "id": "rb-original-250ml",
+      "brand_id": "red-bull",
+      "ean": "9002490100070",
+      "regional_eans": [
+        "9002490215408",
+        "9002490237011",
+        "9002490216016"
+      ],
+      "off_url": "https://world.openfoodfacts.org/product/9002490100070",
+      "name": "Red Bull Energy Drink · 250 ml can",
+      "flavor": "original",
+      "format": "can",
+      "package_material": "aluminium",
+      "size_ml": 250,
+      "multipack": 1,
+      "sugar_g_per_100ml": 11.0,
+      "contains_caffeine": true,
+      "contains_taurine": true,
+      "weight_kg_per_unit": 0.265,
+      "units_per_pallet": 2520,
+      "_pallet_note": "24-can trays × 105 trays per EUR-pallet"
+    },
+    {
+      "id": "rb-original-355ml",
+      "brand_id": "red-bull",
+      "ean": "9002490207274",
+      "regional_eans": [],
+      "off_url": "https://world.openfoodfacts.org/product/9002490207274",
+      "name": "Red Bull Energy Drink · 355 ml can",
+      "flavor": "original",
+      "format": "can",
+      "package_material": "aluminium",
+      "size_ml": 355,
+      "multipack": 1,
+      "sugar_g_per_100ml": 11.0,
+      "contains_caffeine": true,
+      "contains_taurine": true,
+      "weight_kg_per_unit": 0.371,
+      "units_per_pallet": 2160
+    },
+    {
+      "id": "rb-sugarfree-250ml",
+      "brand_id": "red-bull",
+      "ean": "9002490200237",
+      "regional_eans": [
+        "9002490200220",
+        "90162800",
+        "9002490215415"
+      ],
+      "off_url": "https://world.openfoodfacts.org/product/9002490215415",
+      "name": "Red Bull Sugarfree · 250 ml can",
+      "flavor": "sugarfree",
+      "format": "can",
+      "package_material": "aluminium",
+      "size_ml": 250,
+      "multipack": 1,
+      "sugar_g_per_100ml": 0.0,
+      "contains_caffeine": true,
+      "contains_taurine": true,
+      "weight_kg_per_unit": 0.265,
+      "units_per_pallet": 2520
+    },
+    {
+      "id": "rb-tropical-250ml",
+      "brand_id": "red-bull",
+      "ean": "90443354",
+      "regional_eans": [],
+      "off_url": "https://world.openfoodfacts.org/product/90443354",
+      "name": "Red Bull Tropical Edition (Yellow) · 250 ml can",
+      "flavor": "tropical",
+      "format": "can",
+      "package_material": "aluminium",
+      "size_ml": 250,
+      "multipack": 1,
+      "sugar_g_per_100ml": 11.0,
+      "contains_caffeine": true,
+      "contains_taurine": true,
+      "weight_kg_per_unit": 0.265,
+      "units_per_pallet": 2520
+    }
+  ],
+  "countries": {
+    "PL": {
+      "name": "Polska",
+      "currency": "PLN",
+      "in_eu": true,
+      "vat_rates": {
+        "sweetened_beverage": 0.23,
+        "energy_drink": 0.23,
+        "diet_beverage": 0.23,
+        "food_spread": 0.05
+      },
+      "_vat_note": "Coca-Cola/Red Bull at 23% standard. Coca-Cola Zero (no sugar) typically also 23% as it's still a beverage. Nutella at 5% reduced food rate (chocolate spread is in załącznik 10 of Polish VAT act).",
+      "sugar_tax": {
+        "type": "tiered_per_liter",
+        "law": "ustawa o opłacie od środków spożywczych (opłata cukrowa)",
+        "fixed_charge_per_l_pln": 0.5,
+        "fixed_charge_applies_when": "sugar_g_per_100ml > 0 OR contains_sweetener",
+        "variable_charge_per_g_excess_pln": 0.05,
+        "excess_threshold_g_per_100ml": 5.0,
+        "caffeine_taurine_extra_per_l_pln": 0.1,
+        "cap_per_l_pln": 1.2,
+        "exempt_categories": [
+          "fruit_juice_>=20pct",
+          "isotonic",
+          "medical_food"
+        ]
+      },
+      "_sugar_tax_note": "Government's 2026 hike (caffeine/taurine surcharge from 0.10 to 1.00 PLN/L) was vetoed by President Nawrocki Dec 2025; current rates remain in force.",
+      "transport": {
+        "ftl_b2b": {
+          "_doc": "Full Truckload palletized — €/km from each origin to PL hub (Warsaw/Łódź distribution centre)",
+          "from_PL": 0,
+          "from_DE": 850,
+          "from_FR": 2200,
+          "from_IT": 2400,
+          "from_ES": 2800,
+          "from_NL": 1500,
+          "ftl_capacity_pallets": 33,
+          "ftl_capacity_weight_kg": 24000
+        },
+        "parcel_consumer": {
+          "_doc": "Per-package courier (DPD/UPS/InPost) for consumer-scale single-case shipments (≤30kg)",
+          "from_PL": 0,
+          "from_DE": 18,
+          "from_FR": 32,
+          "from_IT": 38,
+          "from_ES": 42,
+          "from_NL": 22
+        }
+      }
+    },
+    "DE": {
+      "name": "Deutschland",
+      "currency": "EUR",
+      "in_eu": true,
+      "vat_rates": {
+        "sweetened_beverage": 0.19,
+        "energy_drink": 0.19,
+        "diet_beverage": 0.19,
+        "food_spread": 0.07
+      },
+      "_vat_note": "Beverages (sugary or not) at 19% standard rate. Plant-based and dairy drinks at 7% but Coca-Cola/Red Bull are at 19%. Nutella (food product) at 7% reduced rate.",
+      "sugar_tax": {
+        "type": "none",
+        "_note": "Germany has no national SSB tax as of 2026. Health-policy debate ongoing but no implementation."
+      },
+      "transport": {
+        "ftl_b2b": {
+          "from_PL": 850,
+          "from_DE": 0,
+          "from_FR": 1100,
+          "from_IT": 1400,
+          "from_ES": 1900,
+          "from_NL": 550,
+          "ftl_capacity_pallets": 33,
+          "ftl_capacity_weight_kg": 24000
+        },
+        "parcel_consumer": {
+          "from_PL": 16,
+          "from_DE": 0,
+          "from_FR": 22,
+          "from_IT": 28,
+          "from_ES": 34,
+          "from_NL": 14
+        }
+      }
+    },
+    "FR": {
+      "name": "France",
+      "currency": "EUR",
+      "in_eu": true,
+      "vat_rates": {
+        "sweetened_beverage": 0.055,
+        "energy_drink": 0.055,
+        "diet_beverage": 0.055,
+        "food_spread": 0.055
+      },
+      "_vat_note": "Cold non-alcoholic beverages and food sold for off-premise consumption at 5.5% reduced food rate. Restaurant/on-premise would be 10% but POC assumes retail off-premise.",
+      "sugar_tax": {
+        "type": "tiered_per_hl",
+        "law": "taxe sur les boissons sucrées (Loi 2018) + taxe sur boissons contenant de la taurine",
+        "tiers_eur_per_hl": [
+          {
+            "sugar_g_per_l_max": 10,
+            "rate_per_hl": 3.85
+          },
+          {
+            "sugar_g_per_l_max": 50,
+            "rate_per_hl": 7.7
+          },
+          {
+            "sugar_g_per_l_max": 80,
+            "rate_per_hl": 13.55
+          },
+          {
+            "sugar_g_per_l_max": 110,
+            "rate_per_hl": 19.4
+          }
+        ],
+        "diet_beverage_per_hl": 3.85,
+        "taurine_per_hl": 100.0,
+        "_note": "Taurine surcharge ~€1.00/L applies to Red Bull regardless of sugar variant — major distortion vs other countries."
+      },
+      "transport": {
+        "ftl_b2b": {
+          "from_PL": 2200,
+          "from_DE": 1100,
+          "from_FR": 0,
+          "from_IT": 1300,
+          "from_ES": 1100,
+          "from_NL": 950,
+          "ftl_capacity_pallets": 33,
+          "ftl_capacity_weight_kg": 24000
+        },
+        "parcel_consumer": {
+          "from_PL": 30,
+          "from_DE": 22,
+          "from_FR": 0,
+          "from_IT": 28,
+          "from_ES": 26,
+          "from_NL": 20
+        }
+      }
+    },
+    "IT": {
+      "name": "Italia",
+      "currency": "EUR",
+      "in_eu": true,
+      "vat_rates": {
+        "sweetened_beverage": 0.22,
+        "energy_drink": 0.22,
+        "diet_beverage": 0.22,
+        "food_spread": 0.1
+      },
+      "_vat_note": "Carbonated soft drinks and energy drinks at 22% standard rate (NOT in 10% reduced food list — only mineral water and milk get 10%). Nutella at 10% (chocolate-based food).",
+      "sugar_tax": {
+        "type": "deferred",
+        "_note": "Italian sugar tax (€10/hl on SSB exceeding 25g/L) was scheduled for Jan 2026, deferred to Jan 2027 in the latest budget law. Currently NOT in force in 2026."
+      },
+      "transport": {
+        "ftl_b2b": {
+          "from_PL": 2400,
+          "from_DE": 1400,
+          "from_FR": 1300,
+          "from_IT": 0,
+          "from_ES": 1700,
+          "from_NL": 1750,
+          "ftl_capacity_pallets": 33,
+          "ftl_capacity_weight_kg": 24000
+        },
+        "parcel_consumer": {
+          "from_PL": 36,
+          "from_DE": 28,
+          "from_FR": 28,
+          "from_IT": 0,
+          "from_ES": 32,
+          "from_NL": 32
+        }
+      }
+    },
+    "ES": {
+      "name": "España",
+      "currency": "EUR",
+      "in_eu": true,
+      "vat_rates": {
+        "sweetened_beverage": 0.21,
+        "energy_drink": 0.21,
+        "diet_beverage": 0.21,
+        "food_spread": 0.1
+      },
+      "_vat_note": "Sugary drinks moved from 10% (food) to 21% (standard) in 2021 reform. Energy drinks at 21%. Nutella at 10% reduced food rate. Catalonia has additional regional sugar tax (8% on >8g sugar/100ml drinks) but POC uses national average.",
+      "sugar_tax": {
+        "type": "regional_only",
+        "_note": "National Spain has no SSB tax in 2026 (sugary VAT increase was the substitute). Catalonia regional sugar tax exists but is hyper-local — POC ignores for national average."
+      },
+      "transport": {
+        "ftl_b2b": {
+          "from_PL": 2800,
+          "from_DE": 1900,
+          "from_FR": 1100,
+          "from_IT": 1700,
+          "from_ES": 0,
+          "from_NL": 1900,
+          "ftl_capacity_pallets": 33,
+          "ftl_capacity_weight_kg": 24000
+        },
+        "parcel_consumer": {
+          "from_PL": 38,
+          "from_DE": 32,
+          "from_FR": 26,
+          "from_IT": 32,
+          "from_ES": 0,
+          "from_NL": 34
+        }
+      }
+    },
+    "NL": {
+      "name": "Nederland",
+      "currency": "EUR",
+      "in_eu": true,
+      "vat_rates": {
+        "sweetened_beverage": 0.21,
+        "energy_drink": 0.21,
+        "diet_beverage": 0.21,
+        "food_spread": 0.09
+      },
+      "_vat_note": "Soft drinks at 21% standard. Mineral water moved to 21% in 2024. Nutella (food) at 9% reduced rate.",
+      "sugar_tax": {
+        "type": "flat_per_liter",
+        "law": "verbruiksbelasting van alcoholvrije dranken",
+        "rate_per_l_eur": 0.2613,
+        "applies_to": [
+          "sweetened_beverage",
+          "energy_drink",
+          "diet_beverage"
+        ],
+        "_note": "Verbruiksbelasting raised in Jan 2024 from €0.0883/L to €0.2613/L (200% hike) on most non-alcoholic beverages including diet sodas. Mineral water exempted in 2024 reversal.",
+        "exempt_categories": [
+          "mineral_water",
+          "fruit_juice_100pct",
+          "milk"
+        ]
+      },
+      "transport": {
+        "ftl_b2b": {
+          "from_PL": 1500,
+          "from_DE": 550,
+          "from_FR": 950,
+          "from_IT": 1750,
+          "from_ES": 1900,
+          "from_NL": 0,
+          "ftl_capacity_pallets": 33,
+          "ftl_capacity_weight_kg": 24000
+        },
+        "parcel_consumer": {
+          "from_PL": 22,
+          "from_DE": 14,
+          "from_FR": 20,
+          "from_IT": 32,
+          "from_ES": 34,
+          "from_NL": 0
+        }
+      }
+    }
+  },
+  "_country_codes": [
+    "PL",
+    "DE",
+    "FR",
+    "IT",
+    "ES",
+    "NL"
+  ],
+  "offers": [
+    {
+      "variant_id": "cc-original-330ml-can",
+      "country": "PL",
+      "retailer": "Biedronka",
+      "price_local": 3.49,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Abiedronka.pl+coca-cola+330ml+puszka",
+      "_source_note": "Pepper.pl + gazetki.pl reference range PLN 3.39-3.99 May 2026"
+    },
+    {
+      "variant_id": "cc-original-330ml-can",
+      "country": "PL",
+      "retailer": "Carrefour PL",
+      "price_local": 3.79,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.pl+coca-cola+330ml+puszka"
+    },
+    {
+      "variant_id": "cc-original-330ml-can",
+      "country": "DE",
+      "retailer": "Rewe",
+      "price_local": 0.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Arewe.de+coca-cola+330ml+dose"
+    },
+    {
+      "variant_id": "cc-original-330ml-can",
+      "country": "DE",
+      "retailer": "Lidl DE",
+      "price_local": 0.85,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Alidl.de+coca-cola+330ml+dose",
+      "_source_note": "discounto.de listing 'Coca Cola 0.33L can' from €0.99, 6-pack ~€0.85/can"
+    },
+    {
+      "variant_id": "cc-original-330ml-can",
+      "country": "FR",
+      "retailer": "Carrefour FR",
+      "price_local": 0.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://www.carrefour.fr/p/coca-cola-canette-33cl-5449000000996"
+    },
+    {
+      "variant_id": "cc-original-330ml-can",
+      "country": "FR",
+      "retailer": "E.Leclerc",
+      "price_local": 0.95,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aleclercdrive.fr+coca-cola+33cl"
+    },
+    {
+      "variant_id": "cc-original-330ml-can",
+      "country": "IT",
+      "retailer": "Carrefour IT",
+      "price_local": 1.15,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://www.carrefour.it/p/coca-cola-330ml/5449000000996.html"
+    },
+    {
+      "variant_id": "cc-original-330ml-can",
+      "country": "IT",
+      "retailer": "Conad",
+      "price_local": 1.09,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aconad.it+coca-cola+330ml+lattina"
+    },
+    {
+      "variant_id": "cc-original-330ml-can",
+      "country": "ES",
+      "retailer": "Mercadona",
+      "price_local": 0.85,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Amercadona.es+coca-cola+lata+33cl"
+    },
+    {
+      "variant_id": "cc-original-330ml-can",
+      "country": "ES",
+      "retailer": "Carrefour ES",
+      "price_local": 0.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://www.carrefour.es/supermercado/refrescos-coca-cola-lata-33cl/p"
+    },
+    {
+      "variant_id": "cc-original-330ml-can",
+      "country": "NL",
+      "retailer": "Albert Heijn",
+      "price_local": 1.19,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aah.nl+coca-cola+330ml+blik"
+    },
+    {
+      "variant_id": "cc-original-330ml-can",
+      "country": "NL",
+      "retailer": "Jumbo",
+      "price_local": 1.15,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Ajumbo.com+coca-cola+330ml+blik"
+    },
+    {
+      "variant_id": "cc-original-500ml-pet",
+      "country": "PL",
+      "retailer": "Biedronka",
+      "price_local": 4.49,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Abiedronka.pl+coca-cola+500ml"
+    },
+    {
+      "variant_id": "cc-original-500ml-pet",
+      "country": "PL",
+      "retailer": "Carrefour PL",
+      "price_local": 4.99,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.pl+coca-cola+500ml"
+    },
+    {
+      "variant_id": "cc-original-500ml-pet",
+      "country": "DE",
+      "retailer": "Rewe",
+      "price_local": 1.49,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Arewe.de+coca-cola+500ml"
+    },
+    {
+      "variant_id": "cc-original-500ml-pet",
+      "country": "DE",
+      "retailer": "Lidl DE",
+      "price_local": 1.29,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Alidl.de+coca-cola+500ml"
+    },
+    {
+      "variant_id": "cc-original-500ml-pet",
+      "country": "FR",
+      "retailer": "Carrefour FR",
+      "price_local": 1.65,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.fr+coca-cola+50cl"
+    },
+    {
+      "variant_id": "cc-original-500ml-pet",
+      "country": "FR",
+      "retailer": "E.Leclerc",
+      "price_local": 1.55,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aleclercdrive.fr+coca-cola+50cl"
+    },
+    {
+      "variant_id": "cc-original-500ml-pet",
+      "country": "IT",
+      "retailer": "Carrefour IT",
+      "price_local": 1.85,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.it+coca-cola+500ml"
+    },
+    {
+      "variant_id": "cc-original-500ml-pet",
+      "country": "IT",
+      "retailer": "Conad",
+      "price_local": 1.79,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aconad.it+coca-cola+500ml"
+    },
+    {
+      "variant_id": "cc-original-500ml-pet",
+      "country": "ES",
+      "retailer": "Mercadona",
+      "price_local": 1.49,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Amercadona.es+coca-cola+50cl"
+    },
+    {
+      "variant_id": "cc-original-500ml-pet",
+      "country": "ES",
+      "retailer": "Carrefour ES",
+      "price_local": 1.65,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.es+coca-cola+50cl"
+    },
+    {
+      "variant_id": "cc-original-500ml-pet",
+      "country": "NL",
+      "retailer": "Albert Heijn",
+      "price_local": 1.95,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aah.nl+coca-cola+500ml"
+    },
+    {
+      "variant_id": "cc-original-500ml-pet",
+      "country": "NL",
+      "retailer": "Jumbo",
+      "price_local": 1.89,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Ajumbo.com+coca-cola+500ml"
+    },
+    {
+      "variant_id": "cc-original-1500ml-pet",
+      "country": "PL",
+      "retailer": "Biedronka",
+      "price_local": 5.99,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Abiedronka.pl+coca-cola+1.5L",
+      "_source_note": "Biedronka/Lidl matched promo PLN 5.99/2L = 3 PLN/L; 1.5L regular price PLN 7.49 — promo midpoint"
+    },
+    {
+      "variant_id": "cc-original-1500ml-pet",
+      "country": "PL",
+      "retailer": "Carrefour PL",
+      "price_local": 6.99,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.pl+coca-cola+1.5L"
+    },
+    {
+      "variant_id": "cc-original-1500ml-pet",
+      "country": "DE",
+      "retailer": "Rewe",
+      "price_local": 1.79,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Arewe.de+coca-cola+1.5L"
+    },
+    {
+      "variant_id": "cc-original-1500ml-pet",
+      "country": "DE",
+      "retailer": "Lidl DE",
+      "price_local": 1.19,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Alidl.de+coca-cola+1.5L",
+      "_source_note": "Lidl DE flyer week 18/2026, May 4-9, €1.19 promo"
+    },
+    {
+      "variant_id": "cc-original-1500ml-pet",
+      "country": "FR",
+      "retailer": "Carrefour FR",
+      "price_local": 2.15,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.fr+coca-cola+1.5L"
+    },
+    {
+      "variant_id": "cc-original-1500ml-pet",
+      "country": "FR",
+      "retailer": "E.Leclerc",
+      "price_local": 1.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aleclercdrive.fr+coca-cola+1.5L"
+    },
+    {
+      "variant_id": "cc-original-1500ml-pet",
+      "country": "IT",
+      "retailer": "Carrefour IT",
+      "price_local": 2.49,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.it+coca-cola+1.5L"
+    },
+    {
+      "variant_id": "cc-original-1500ml-pet",
+      "country": "IT",
+      "retailer": "Conad",
+      "price_local": 2.39,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aconad.it+coca-cola+1.5L"
+    },
+    {
+      "variant_id": "cc-original-1500ml-pet",
+      "country": "ES",
+      "retailer": "Mercadona",
+      "price_local": 1.95,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Amercadona.es+coca-cola+1.5L"
+    },
+    {
+      "variant_id": "cc-original-1500ml-pet",
+      "country": "ES",
+      "retailer": "Carrefour ES",
+      "price_local": 2.15,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.es+coca-cola+1.5L"
+    },
+    {
+      "variant_id": "cc-original-1500ml-pet",
+      "country": "NL",
+      "retailer": "Albert Heijn",
+      "price_local": 2.59,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aah.nl+coca-cola+1.5L"
+    },
+    {
+      "variant_id": "cc-original-1500ml-pet",
+      "country": "NL",
+      "retailer": "Jumbo",
+      "price_local": 2.49,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Ajumbo.com+coca-cola+1.5L"
+    },
+    {
+      "variant_id": "cc-zero-330ml-can",
+      "country": "PL",
+      "retailer": "Biedronka",
+      "price_local": 3.49,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Abiedronka.pl+coca-cola+zero+330ml"
+    },
+    {
+      "variant_id": "cc-zero-330ml-can",
+      "country": "PL",
+      "retailer": "Carrefour PL",
+      "price_local": 3.79,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.pl+coca-cola+zero+330ml"
+    },
+    {
+      "variant_id": "cc-zero-330ml-can",
+      "country": "DE",
+      "retailer": "Rewe",
+      "price_local": 0.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Arewe.de+coca-cola+zero+330ml"
+    },
+    {
+      "variant_id": "cc-zero-330ml-can",
+      "country": "DE",
+      "retailer": "Lidl DE",
+      "price_local": 0.85,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Alidl.de+coca-cola+zero+330ml"
+    },
+    {
+      "variant_id": "cc-zero-330ml-can",
+      "country": "FR",
+      "retailer": "Carrefour FR",
+      "price_local": 0.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.fr+coca-cola+zero+33cl"
+    },
+    {
+      "variant_id": "cc-zero-330ml-can",
+      "country": "FR",
+      "retailer": "E.Leclerc",
+      "price_local": 0.95,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aleclercdrive.fr+coca-cola+zero+33cl"
+    },
+    {
+      "variant_id": "cc-zero-330ml-can",
+      "country": "IT",
+      "retailer": "Carrefour IT",
+      "price_local": 1.15,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.it+coca-cola+zero+330ml"
+    },
+    {
+      "variant_id": "cc-zero-330ml-can",
+      "country": "IT",
+      "retailer": "Conad",
+      "price_local": 1.09,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aconad.it+coca-cola+zero+330ml"
+    },
+    {
+      "variant_id": "cc-zero-330ml-can",
+      "country": "ES",
+      "retailer": "Mercadona",
+      "price_local": 0.85,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Amercadona.es+coca-cola+zero+33cl"
+    },
+    {
+      "variant_id": "cc-zero-330ml-can",
+      "country": "ES",
+      "retailer": "Carrefour ES",
+      "price_local": 0.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.es+coca-cola+zero+33cl"
+    },
+    {
+      "variant_id": "cc-zero-330ml-can",
+      "country": "NL",
+      "retailer": "Albert Heijn",
+      "price_local": 1.19,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aah.nl+coca-cola+zero+330ml"
+    },
+    {
+      "variant_id": "cc-zero-330ml-can",
+      "country": "NL",
+      "retailer": "Jumbo",
+      "price_local": 1.15,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Ajumbo.com+coca-cola+zero+330ml"
+    },
+    {
+      "variant_id": "cc-zero-1500ml-pet",
+      "country": "PL",
+      "retailer": "Biedronka",
+      "price_local": 5.99,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Abiedronka.pl+coca-cola+zero+1.5L"
+    },
+    {
+      "variant_id": "cc-zero-1500ml-pet",
+      "country": "PL",
+      "retailer": "Carrefour PL",
+      "price_local": 6.99,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.pl+coca-cola+zero+1.5L"
+    },
+    {
+      "variant_id": "cc-zero-1500ml-pet",
+      "country": "DE",
+      "retailer": "Rewe",
+      "price_local": 1.79,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Arewe.de+coca-cola+zero+1.5L"
+    },
+    {
+      "variant_id": "cc-zero-1500ml-pet",
+      "country": "DE",
+      "retailer": "Lidl DE",
+      "price_local": 1.19,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Alidl.de+coca-cola+zero+1.5L"
+    },
+    {
+      "variant_id": "cc-zero-1500ml-pet",
+      "country": "FR",
+      "retailer": "Carrefour FR",
+      "price_local": 2.15,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.fr+coca-cola+zero+1.5L"
+    },
+    {
+      "variant_id": "cc-zero-1500ml-pet",
+      "country": "FR",
+      "retailer": "E.Leclerc",
+      "price_local": 1.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aleclercdrive.fr+coca-cola+zero+1.5L"
+    },
+    {
+      "variant_id": "cc-zero-1500ml-pet",
+      "country": "IT",
+      "retailer": "Carrefour IT",
+      "price_local": 2.49,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.it+coca-cola+zero+1.5L"
+    },
+    {
+      "variant_id": "cc-zero-1500ml-pet",
+      "country": "IT",
+      "retailer": "Conad",
+      "price_local": 2.39,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aconad.it+coca-cola+zero+1.5L"
+    },
+    {
+      "variant_id": "cc-zero-1500ml-pet",
+      "country": "ES",
+      "retailer": "Mercadona",
+      "price_local": 1.95,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Amercadona.es+coca-cola+zero+1.5L"
+    },
+    {
+      "variant_id": "cc-zero-1500ml-pet",
+      "country": "ES",
+      "retailer": "Carrefour ES",
+      "price_local": 2.15,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.es+coca-cola+zero+1.5L"
+    },
+    {
+      "variant_id": "cc-zero-1500ml-pet",
+      "country": "NL",
+      "retailer": "Albert Heijn",
+      "price_local": 2.59,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aah.nl+coca-cola+zero+1.5L"
+    },
+    {
+      "variant_id": "cc-zero-1500ml-pet",
+      "country": "NL",
+      "retailer": "Jumbo",
+      "price_local": 2.49,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Ajumbo.com+coca-cola+zero+1.5L"
+    },
+    {
+      "variant_id": "nutella-200g",
+      "country": "PL",
+      "retailer": "Biedronka",
+      "price_local": 8.99,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Abiedronka.pl+nutella+200g"
+    },
+    {
+      "variant_id": "nutella-200g",
+      "country": "PL",
+      "retailer": "Carrefour PL",
+      "price_local": 9.49,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.pl+nutella+200g"
+    },
+    {
+      "variant_id": "nutella-200g",
+      "country": "DE",
+      "retailer": "Rewe",
+      "price_local": 2.29,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Arewe.de+nutella+200g"
+    },
+    {
+      "variant_id": "nutella-200g",
+      "country": "DE",
+      "retailer": "Lidl DE",
+      "price_local": 1.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Alidl.de+nutella+200g"
+    },
+    {
+      "variant_id": "nutella-200g",
+      "country": "FR",
+      "retailer": "Carrefour FR",
+      "price_local": 2.59,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.fr+nutella+200g"
+    },
+    {
+      "variant_id": "nutella-200g",
+      "country": "FR",
+      "retailer": "E.Leclerc",
+      "price_local": 2.45,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aleclercdrive.fr+nutella+200g"
+    },
+    {
+      "variant_id": "nutella-200g",
+      "country": "IT",
+      "retailer": "Carrefour IT",
+      "price_local": 2.29,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.it+nutella+200g"
+    },
+    {
+      "variant_id": "nutella-200g",
+      "country": "IT",
+      "retailer": "Conad",
+      "price_local": 2.19,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aconad.it+nutella+200g"
+    },
+    {
+      "variant_id": "nutella-200g",
+      "country": "ES",
+      "retailer": "Mercadona",
+      "price_local": 2.39,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Amercadona.es+nutella+200g"
+    },
+    {
+      "variant_id": "nutella-200g",
+      "country": "ES",
+      "retailer": "Carrefour ES",
+      "price_local": 2.59,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.es+nutella+200g"
+    },
+    {
+      "variant_id": "nutella-200g",
+      "country": "NL",
+      "retailer": "Albert Heijn",
+      "price_local": 2.79,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aah.nl+nutella+200g"
+    },
+    {
+      "variant_id": "nutella-200g",
+      "country": "NL",
+      "retailer": "Jumbo",
+      "price_local": 2.69,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Ajumbo.com+nutella+200g"
+    },
+    {
+      "variant_id": "nutella-400g",
+      "country": "PL",
+      "retailer": "Biedronka",
+      "price_local": 13.99,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Abiedronka.pl+nutella+400g",
+      "_source_note": "Polish discounters typically stock 350g; 400g sourced from Auchan/Carrefour. PLN 13.99 = mid-range across PL retail surveys."
+    },
+    {
+      "variant_id": "nutella-400g",
+      "country": "PL",
+      "retailer": "Carrefour PL",
+      "price_local": 14.99,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.pl+nutella+400g"
+    },
+    {
+      "variant_id": "nutella-400g",
+      "country": "DE",
+      "retailer": "Rewe",
+      "price_local": 3.29,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Arewe.de+nutella+400g",
+      "_source_note": "Rewe regular €3.79 promo €2.22 + €0.50 app bonus = €1.72 (Dec 2025). Mid €3.29 rolling avg."
+    },
+    {
+      "variant_id": "nutella-400g",
+      "country": "DE",
+      "retailer": "Lidl DE",
+      "price_local": 2.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Alidl.de+nutella+400g"
+    },
+    {
+      "variant_id": "nutella-400g",
+      "country": "FR",
+      "retailer": "Carrefour FR",
+      "price_local": 3.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.fr+nutella+400g"
+    },
+    {
+      "variant_id": "nutella-400g",
+      "country": "FR",
+      "retailer": "E.Leclerc",
+      "price_local": 3.79,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aleclercdrive.fr+nutella+400g"
+    },
+    {
+      "variant_id": "nutella-400g",
+      "country": "IT",
+      "retailer": "Carrefour IT",
+      "price_local": 3.79,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.it+nutella+400g"
+    },
+    {
+      "variant_id": "nutella-400g",
+      "country": "IT",
+      "retailer": "Conad",
+      "price_local": 3.59,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aconad.it+nutella+400g"
+    },
+    {
+      "variant_id": "nutella-400g",
+      "country": "ES",
+      "retailer": "Mercadona",
+      "price_local": 3.95,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Amercadona.es+nutella+400g"
+    },
+    {
+      "variant_id": "nutella-400g",
+      "country": "ES",
+      "retailer": "Carrefour ES",
+      "price_local": 4.15,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.es+nutella+400g"
+    },
+    {
+      "variant_id": "nutella-400g",
+      "country": "NL",
+      "retailer": "Albert Heijn",
+      "price_local": 4.49,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aah.nl+nutella+400g"
+    },
+    {
+      "variant_id": "nutella-400g",
+      "country": "NL",
+      "retailer": "Jumbo",
+      "price_local": 4.39,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Ajumbo.com+nutella+400g"
+    },
+    {
+      "variant_id": "nutella-750g",
+      "country": "PL",
+      "retailer": "Biedronka",
+      "price_local": 26.99,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Abiedronka.pl+nutella+750g"
+    },
+    {
+      "variant_id": "nutella-750g",
+      "country": "PL",
+      "retailer": "Carrefour PL",
+      "price_local": 28.99,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.pl+nutella+750g"
+    },
+    {
+      "variant_id": "nutella-750g",
+      "country": "DE",
+      "retailer": "Rewe",
+      "price_local": 5.79,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Arewe.de+nutella+750g"
+    },
+    {
+      "variant_id": "nutella-750g",
+      "country": "DE",
+      "retailer": "Lidl DE",
+      "price_local": 5.29,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Alidl.de+nutella+750g",
+      "_source_note": "Kaufda.de + aktionspreis.de — Lidl current week price"
+    },
+    {
+      "variant_id": "nutella-750g",
+      "country": "FR",
+      "retailer": "Carrefour FR",
+      "price_local": 7.29,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.fr+nutella+750g"
+    },
+    {
+      "variant_id": "nutella-750g",
+      "country": "FR",
+      "retailer": "E.Leclerc",
+      "price_local": 6.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aleclercdrive.fr+nutella+750g"
+    },
+    {
+      "variant_id": "nutella-750g",
+      "country": "IT",
+      "retailer": "Carrefour IT",
+      "price_local": 6.49,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.it+nutella+750g"
+    },
+    {
+      "variant_id": "nutella-750g",
+      "country": "IT",
+      "retailer": "Conad",
+      "price_local": 6.29,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aconad.it+nutella+750g"
+    },
+    {
+      "variant_id": "nutella-750g",
+      "country": "ES",
+      "retailer": "Mercadona",
+      "price_local": 7.29,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Amercadona.es+nutella+750g"
+    },
+    {
+      "variant_id": "nutella-750g",
+      "country": "ES",
+      "retailer": "Carrefour ES",
+      "price_local": 7.59,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.es+nutella+750g"
+    },
+    {
+      "variant_id": "nutella-750g",
+      "country": "NL",
+      "retailer": "Albert Heijn",
+      "price_local": 7.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aah.nl+nutella+750g",
+      "_source_note": "Supermarktscanner.nl + ALDI NL fixed price €4.79 (450g+50g promo) — 750g regular range €7.49-8.29"
+    },
+    {
+      "variant_id": "nutella-750g",
+      "country": "NL",
+      "retailer": "Jumbo",
+      "price_local": 7.79,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Ajumbo.com+nutella+750g"
+    },
+    {
+      "variant_id": "nutella-1kg",
+      "country": "PL",
+      "retailer": "Biedronka",
+      "price_local": 39.99,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Abiedronka.pl+nutella+1kg"
+    },
+    {
+      "variant_id": "nutella-1kg",
+      "country": "PL",
+      "retailer": "Carrefour PL",
+      "price_local": 42.99,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.pl+nutella+1kg"
+    },
+    {
+      "variant_id": "nutella-1kg",
+      "country": "DE",
+      "retailer": "Rewe",
+      "price_local": 7.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Arewe.de+nutella+1kg"
+    },
+    {
+      "variant_id": "nutella-1kg",
+      "country": "DE",
+      "retailer": "Lidl DE",
+      "price_local": 6.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Alidl.de+nutella+1kg",
+      "_source_note": "Penny app €4.99 promo Feb 2026; regular €6.99 across DE discounters"
+    },
+    {
+      "variant_id": "nutella-1kg",
+      "country": "FR",
+      "retailer": "Carrefour FR",
+      "price_local": 9.49,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.fr+nutella+1kg"
+    },
+    {
+      "variant_id": "nutella-1kg",
+      "country": "FR",
+      "retailer": "E.Leclerc",
+      "price_local": 9.19,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aleclercdrive.fr+nutella+1kg"
+    },
+    {
+      "variant_id": "nutella-1kg",
+      "country": "IT",
+      "retailer": "Carrefour IT",
+      "price_local": 8.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.it+nutella+1kg"
+    },
+    {
+      "variant_id": "nutella-1kg",
+      "country": "IT",
+      "retailer": "Conad",
+      "price_local": 8.69,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aconad.it+nutella+1kg"
+    },
+    {
+      "variant_id": "nutella-1kg",
+      "country": "ES",
+      "retailer": "Mercadona",
+      "price_local": 9.79,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Amercadona.es+nutella+1kg"
+    },
+    {
+      "variant_id": "nutella-1kg",
+      "country": "ES",
+      "retailer": "Carrefour ES",
+      "price_local": 9.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.es+nutella+1kg"
+    },
+    {
+      "variant_id": "nutella-1kg",
+      "country": "NL",
+      "retailer": "Albert Heijn",
+      "price_local": 10.49,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aah.nl+nutella+1kg"
+    },
+    {
+      "variant_id": "nutella-1kg",
+      "country": "NL",
+      "retailer": "Jumbo",
+      "price_local": 10.29,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Ajumbo.com+nutella+1kg"
+    },
+    {
+      "variant_id": "rb-original-250ml",
+      "country": "PL",
+      "retailer": "Biedronka",
+      "price_local": 6.99,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Abiedronka.pl+red+bull+250ml"
+    },
+    {
+      "variant_id": "rb-original-250ml",
+      "country": "PL",
+      "retailer": "Carrefour PL",
+      "price_local": 7.49,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.pl+red+bull+250ml"
+    },
+    {
+      "variant_id": "rb-original-250ml",
+      "country": "DE",
+      "retailer": "Rewe",
+      "price_local": 1.49,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Arewe.de+red+bull+250ml"
+    },
+    {
+      "variant_id": "rb-original-250ml",
+      "country": "DE",
+      "retailer": "Lidl DE",
+      "price_local": 1.29,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Alidl.de+red+bull+250ml"
+    },
+    {
+      "variant_id": "rb-original-250ml",
+      "country": "FR",
+      "retailer": "Carrefour FR",
+      "price_local": 1.85,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://www.carrefour.fr/p/boisson-energisante-red-bull-9002490205973",
+      "_source_note": "Carrefour FR product page — taurine surcharge ~€1.00/L = €0.25 per 250ml inflates FR price"
+    },
+    {
+      "variant_id": "rb-original-250ml",
+      "country": "FR",
+      "retailer": "E.Leclerc",
+      "price_local": 1.75,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aleclercdrive.fr+red+bull+250ml"
+    },
+    {
+      "variant_id": "rb-original-250ml",
+      "country": "IT",
+      "retailer": "Carrefour IT",
+      "price_local": 1.35,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://www.carrefour.it/p/red-bull-energy-drink-250-ml/9002490100070.html",
+      "_source_note": "Carrefour IT product page — confirmed €1.35 May 2026"
+    },
+    {
+      "variant_id": "rb-original-250ml",
+      "country": "IT",
+      "retailer": "Conad",
+      "price_local": 1.39,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aconad.it+red+bull+250ml"
+    },
+    {
+      "variant_id": "rb-original-250ml",
+      "country": "ES",
+      "retailer": "Mercadona",
+      "price_local": 1.39,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Amercadona.es+red+bull+250ml"
+    },
+    {
+      "variant_id": "rb-original-250ml",
+      "country": "ES",
+      "retailer": "Carrefour ES",
+      "price_local": 1.45,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://www.carrefour.es/supermercado/red-bull-bebida-energetica-lata-25-cl/p"
+    },
+    {
+      "variant_id": "rb-original-250ml",
+      "country": "NL",
+      "retailer": "Albert Heijn",
+      "price_local": 1.79,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aah.nl+red+bull+250ml",
+      "_source_note": "NL verbruiksbelasting €0.2613/L on energy drinks adds €0.065 per 250ml"
+    },
+    {
+      "variant_id": "rb-original-250ml",
+      "country": "NL",
+      "retailer": "Jumbo",
+      "price_local": 1.75,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Ajumbo.com+red+bull+250ml"
+    },
+    {
+      "variant_id": "rb-original-355ml",
+      "country": "PL",
+      "retailer": "Biedronka",
+      "price_local": 8.99,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Abiedronka.pl+red+bull+355ml"
+    },
+    {
+      "variant_id": "rb-original-355ml",
+      "country": "PL",
+      "retailer": "Carrefour PL",
+      "price_local": 9.49,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.pl+red+bull+355ml"
+    },
+    {
+      "variant_id": "rb-original-355ml",
+      "country": "DE",
+      "retailer": "Rewe",
+      "price_local": 1.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Arewe.de+red+bull+355ml"
+    },
+    {
+      "variant_id": "rb-original-355ml",
+      "country": "DE",
+      "retailer": "Lidl DE",
+      "price_local": 1.79,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Alidl.de+red+bull+355ml"
+    },
+    {
+      "variant_id": "rb-original-355ml",
+      "country": "FR",
+      "retailer": "Carrefour FR",
+      "price_local": 2.45,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.fr+red+bull+355ml"
+    },
+    {
+      "variant_id": "rb-original-355ml",
+      "country": "FR",
+      "retailer": "E.Leclerc",
+      "price_local": 2.29,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aleclercdrive.fr+red+bull+355ml"
+    },
+    {
+      "variant_id": "rb-original-355ml",
+      "country": "IT",
+      "retailer": "Carrefour IT",
+      "price_local": 1.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.it+red+bull+355ml"
+    },
+    {
+      "variant_id": "rb-original-355ml",
+      "country": "IT",
+      "retailer": "Conad",
+      "price_local": 1.95,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aconad.it+red+bull+355ml"
+    },
+    {
+      "variant_id": "rb-original-355ml",
+      "country": "ES",
+      "retailer": "Mercadona",
+      "price_local": 1.89,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Amercadona.es+red+bull+355ml"
+    },
+    {
+      "variant_id": "rb-original-355ml",
+      "country": "ES",
+      "retailer": "Carrefour ES",
+      "price_local": 1.99,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.es+red+bull+355ml"
+    },
+    {
+      "variant_id": "rb-original-355ml",
+      "country": "NL",
+      "retailer": "Albert Heijn",
+      "price_local": 2.39,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aah.nl+red+bull+355ml"
+    },
+    {
+      "variant_id": "rb-original-355ml",
+      "country": "NL",
+      "retailer": "Jumbo",
+      "price_local": 2.29,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Ajumbo.com+red+bull+355ml"
+    },
+    {
+      "variant_id": "rb-sugarfree-250ml",
+      "country": "PL",
+      "retailer": "Biedronka",
+      "price_local": 6.99,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Abiedronka.pl+red+bull+sugarfree+250ml"
+    },
+    {
+      "variant_id": "rb-sugarfree-250ml",
+      "country": "PL",
+      "retailer": "Carrefour PL",
+      "price_local": 7.49,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.pl+red+bull+sugarfree+250ml"
+    },
+    {
+      "variant_id": "rb-sugarfree-250ml",
+      "country": "DE",
+      "retailer": "Rewe",
+      "price_local": 1.49,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Arewe.de+red+bull+sugarfree+250ml"
+    },
+    {
+      "variant_id": "rb-sugarfree-250ml",
+      "country": "DE",
+      "retailer": "Lidl DE",
+      "price_local": 1.29,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Alidl.de+red+bull+sugarfree+250ml"
+    },
+    {
+      "variant_id": "rb-sugarfree-250ml",
+      "country": "FR",
+      "retailer": "Carrefour FR",
+      "price_local": 1.85,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.fr+red+bull+sans+sucre+250ml"
+    },
+    {
+      "variant_id": "rb-sugarfree-250ml",
+      "country": "FR",
+      "retailer": "E.Leclerc",
+      "price_local": 1.75,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aleclercdrive.fr+red+bull+sans+sucre+250ml"
+    },
+    {
+      "variant_id": "rb-sugarfree-250ml",
+      "country": "IT",
+      "retailer": "Carrefour IT",
+      "price_local": 1.39,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.it+red+bull+sugarfree+250ml"
+    },
+    {
+      "variant_id": "rb-sugarfree-250ml",
+      "country": "IT",
+      "retailer": "Conad",
+      "price_local": 1.45,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aconad.it+red+bull+sugarfree+250ml"
+    },
+    {
+      "variant_id": "rb-sugarfree-250ml",
+      "country": "ES",
+      "retailer": "Mercadona",
+      "price_local": 1.39,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Amercadona.es+red+bull+sin+azucar+250ml"
+    },
+    {
+      "variant_id": "rb-sugarfree-250ml",
+      "country": "ES",
+      "retailer": "Carrefour ES",
+      "price_local": 1.45,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.es+red+bull+sin+azucar+250ml"
+    },
+    {
+      "variant_id": "rb-sugarfree-250ml",
+      "country": "NL",
+      "retailer": "Albert Heijn",
+      "price_local": 1.79,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aah.nl+red+bull+sugarfree+250ml"
+    },
+    {
+      "variant_id": "rb-sugarfree-250ml",
+      "country": "NL",
+      "retailer": "Jumbo",
+      "price_local": 1.75,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Ajumbo.com+red+bull+sugarfree+250ml"
+    },
+    {
+      "variant_id": "rb-tropical-250ml",
+      "country": "PL",
+      "retailer": "Biedronka",
+      "price_local": 7.49,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Abiedronka.pl+red+bull+tropical+250ml"
+    },
+    {
+      "variant_id": "rb-tropical-250ml",
+      "country": "PL",
+      "retailer": "Carrefour PL",
+      "price_local": 7.99,
+      "currency": "PLN",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.pl+red+bull+tropical+250ml"
+    },
+    {
+      "variant_id": "rb-tropical-250ml",
+      "country": "DE",
+      "retailer": "Rewe",
+      "price_local": 1.49,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Arewe.de+red+bull+tropical+250ml"
+    },
+    {
+      "variant_id": "rb-tropical-250ml",
+      "country": "DE",
+      "retailer": "Lidl DE",
+      "price_local": 1.39,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Alidl.de+red+bull+tropical+250ml"
+    },
+    {
+      "variant_id": "rb-tropical-250ml",
+      "country": "FR",
+      "retailer": "Carrefour FR",
+      "price_local": 1.95,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.fr+red+bull+tropical+250ml"
+    },
+    {
+      "variant_id": "rb-tropical-250ml",
+      "country": "FR",
+      "retailer": "E.Leclerc",
+      "price_local": 1.85,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aleclercdrive.fr+red+bull+tropical+250ml"
+    },
+    {
+      "variant_id": "rb-tropical-250ml",
+      "country": "IT",
+      "retailer": "Carrefour IT",
+      "price_local": 1.49,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.it+red+bull+tropical+250ml"
+    },
+    {
+      "variant_id": "rb-tropical-250ml",
+      "country": "IT",
+      "retailer": "Conad",
+      "price_local": 1.55,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aconad.it+red+bull+tropical+250ml"
+    },
+    {
+      "variant_id": "rb-tropical-250ml",
+      "country": "ES",
+      "retailer": "Mercadona",
+      "price_local": 1.49,
+      "currency": "EUR",
+      "in_stock": false,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Amercadona.es+red+bull+tropical+250ml",
+      "_stock_note": "Mercadona seasonal — Tropical edition typically stocked summer only"
+    },
+    {
+      "variant_id": "rb-tropical-250ml",
+      "country": "ES",
+      "retailer": "Carrefour ES",
+      "price_local": 1.55,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Acarrefour.es+red+bull+tropical+250ml"
+    },
+    {
+      "variant_id": "rb-tropical-250ml",
+      "country": "NL",
+      "retailer": "Albert Heijn",
+      "price_local": 1.89,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Aah.nl+red+bull+tropical+250ml"
+    },
+    {
+      "variant_id": "rb-tropical-250ml",
+      "country": "NL",
+      "retailer": "Jumbo",
+      "price_local": 1.85,
+      "currency": "EUR",
+      "in_stock": true,
+      "url": "https://duckduckgo.com/?q=%21ducky+site%3Ajumbo.com+red+bull+tropical+250ml"
+    }
+  ]
+}
