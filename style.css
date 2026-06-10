@@ -525,3 +525,25 @@ footer .sep { color: var(--line); }
   [data-reveal] { opacity: 1; transform: none; }
   .card { transform: none !important; }
 }
+
+/* ---------- Project groups (projects subpage) ---------- */
+.group-head {
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  margin: 56px 0 6px;
+}
+.page-head + .group-head { margin-top: 0; }
+.group-note {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--fg-dim);
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.group-sub {
+  color: var(--fg-dim);
+  margin: 0 0 24px;
+  font-size: 15px;
+  max-width: 640px;
+}

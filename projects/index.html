@@ -37,57 +37,10 @@
     </p>
   </div>
 
+  <h2 class="group-head" data-reveal>Demos &amp; current work</h2>
+  <p class="group-sub" data-reveal>Things you can click right now, plus what's actively in flight.</p>
+
   <div class="grid">
-
-    <a class="card" data-reveal href="/projects/poc-fmcg-arbitrage/">
-      <div class="card-head">
-        <div class="card-tag">Cross-border arbitrage</div>
-        <span class="status status-live">live demo</span>
-      </div>
-      <h3>fmcg-arbitrage &middot; Coca-Cola, Nutella, Red Bull · 6 krajów UE</h3>
-      <p>POC dla potencjalnego klienta z dystrybucji FMCG / parallel import: 13 wariantów EAN-trackowanych SKU (5 Coca-Cola, 4 Nutella, 4 Red Bull) &times; 6 krajów (PL/DE/FR/IT/ES/NL) &times; 2 retailerzy = 156 ofert. Macierz <strong>kup w X / sprzedaj w Y</strong> (30 par per wariant) z landed cost obejmującym <strong>VAT per kategoria produktowa</strong> (food spread 5-10%, sweetened beverage 5.5-23%, energy drink 5.5-23%) i <strong>sugar/excise taxes per kraj</strong>: PL opłata cukrowa (tiered formula), FR taxe soda + €1.00/L taurine surcharge na Red Bulla, NL verbruiksbelasting €0.26/L (od 2024 +200%). Toggle <strong>B2B FTL palletyzowany</strong> (33 palet/truck, units-per-pallet per wariant, weight constraint 24t) vs <strong>konsument parcel 24-pack</strong>. Real-world finding: Nutella 1kg DE Lidl &rarr; NL Albert Heijn daje &euro;1159 marży/paleta przy retail-vs-retail; Red Bull DE&rarr;FR niemal zero margin tylko z powodu francuskiego taurine surcharge.</p>
-      <div class="card-meta">Static page · 13 EAN × 6 krajów × 2 retailerzy · sugar tax + VAT + FTL palletization · B2B/consumer toggle</div>
-    </a>
-
-    <a class="card" data-reveal href="/projects/poc-gastro-sourcing/">
-      <div class="card-head">
-        <div class="card-tag">Sourcing automation</div>
-        <span class="status status-live">live demo</span>
-      </div>
-      <h3>gastro-sourcing &middot; food-cost optimizer dla steak house'u w Krakowie</h3>
-      <p>POC dla restauracji premium (steak house Butchers Grill): miesięczny koszyk 25 SKU w 7 kategoriach (mięso dry-aged, przyprawy, chemia profesjonalna, akcesoria, węgiel drzewny, świeże, suchy magazyn) × ~17 dostawców HoReCa (PL + DE). Główny widok to <strong>plan zakupów</strong> &mdash; karty per sklep z listą produktów, które tam najtaniej kupisz, plus wskaźnik <strong>−% / PLN oszczędności vs średnia rynku</strong> na każdej pozycji i sumarycznie. Reszta to matryce SKU × Dostawca per kategoria (kolumny posortowane po pokryciu). Scraper Pythonowy (httpx + bs4 + JSON-LD/microdata) pobiera ceny z 3 zweryfikowanych e-sklepów (beef.pl dry-aged 45d, bbq.pl Wagyu A5, we-are-bbq.de Don Marco's rubs); pozostali oznaczeni jako <strong>B2B login</strong> z gotowym szablonem RFQ (PL/DE) w jednym kliknięciu z karty. Real-world finding: w gastronomii ~80% hurtowni HoReCa (Makro, Selgros, Bidfood, Diversey, Ecolab, METRO) chowa ceny za loginem B2B &mdash; jedyna realna ścieżka to RFQ; transparentność per pozycja jest sama w sobie konkurencyjną przewagą dla restauratora optymalizującego food cost.</p>
-      <div class="card-meta">Static page · 25 SKU × 7 kategorii × 17 dostawców · scraper py + GH Action refresh · savings vs market avg</div>
-    </a>
-
-    <a class="card" data-reveal href="/projects/poc-electronics-arbitrage/">
-      <div class="card-head">
-        <div class="card-tag">Cross-border arbitrage</div>
-        <span class="status status-live">live demo</span>
-      </div>
-      <h3>electronics-arbitrage &middot; Apple &amp; Samsung scanner PL/DE/LT/UK</h3>
-      <p>POC dla klienta handlującego sprzętem RTV/AGD: 6 flagowców (3 Apple, 3 Samsung) &times; 4 kraje &times; ~70 ofert sklepów detalicznych. Macierz <strong>kup w X / sprzedaj w Y</strong> (12 par per SKU) z pełnym landed cost: VAT kraju źródła, VAT kraju target, cło UE z UK (HS 8517/8471/8518/9102), brokerage celny, transport. Toggle <strong>B2C / B2B z VAT-UE</strong> przełącza całą logikę podatkową &mdash; pokazuje, dlaczego UK po Brexicie jest off-table dla konsumenta (podwójny VAT), ale opłacalne dla firmy z eksportowym refundem. Real-world finding: Galaxy S25 Ultra DE→PL B2B daje ~16% marży / €236 per szt., flagowce Apple mają wąskie spready przez globalną MAP policy.</p>
-      <div class="card-meta">Static page · 6 SKU × 4 kraje × 16 sklepów · landed-cost calc · B2C/B2B toggle</div>
-    </a>
-
-    <a class="card" data-reveal href="/projects/poc-hvac-parts-pricing/">
-      <div class="card-head">
-        <div class="card-tag">Sourcing automation</div>
-        <span class="status status-live">live demo</span>
-      </div>
-      <h3>hvac-parts &middot; sourcing &amp; RFQ orchestrator dla firmy serwisowej HVAC</h3>
-      <p>POC dla małej firmy serwisowej HVAC w okolicach Krakowa: 8-SKU koszyk eksploatacyjny (filtry F7, R32, R410A, kondensatory, silniki wentylatorów, TXV, NTC, zawory serwisowe) × 15 kanałów dystrybucji (Allegro + 6 wyspecjalizowanych sklepów PL z publicznymi cenami, 5 dystrybutorów UE, 3 fabryki/agregatory CN). Macierz <strong>SKU × Dostawca</strong> z najtańszą ofertą podświetloną per wiersz. Wzór RFQ (PL/DE/EN) pod każdy kanał — z dynamicznym koszykiem, gotowy do wysłania jednym klikiem. Real-world finding: większość polskich dystrybutorów HVAC ukrywa ceny za loginem B2B / „zapytaj o cenę" — Allegro i specjalistyczne sklepy anchorują macierz realnymi PLN.</p>
-      <div class="card-meta">Static page · 8 SKU × 15 kanałów · public catalog scrape · {basket} email substitution</div>
-    </a>
-
-    <a class="card" data-reveal href="/projects/poc-hvac-scheduling/">
-      <div class="card-head">
-        <div class="card-tag">SMB automation</div>
-        <span class="status status-live">live demo + video</span>
-      </div>
-      <h3>klimapro &middot; rezerwacja wizyt HVAC online</h3>
-      <p>POC dla polskiej firmy serwisującej klimatyzacje: klient bookuje termin online, formularz waliduje adres w promieniu 100&nbsp;km od Krakowa (Nominatim + Haversine), a po potwierdzeniu wizyta trafia do Google Calendar technika. Stylistyka 1:1 z klimainwest.pl, UI po polsku, FastAPI + Jinja + HTMX. Web form jest grywalny tutaj; <strong>prawdziwy login Google (OAuth 2.0)</strong> działa lokalnie &mdash; jest video pokazujące pełen flow.</p>
-      <div class="card-meta">FastAPI · Jinja · HTMX · Google OAuth · Nominatim · video</div>
-    </a>
 
     <a class="card" data-reveal href="/projects/snake-rl/">
       <div class="card-head">
@@ -97,16 +50,6 @@
       <h3>snake-rl · beat my agent</h3>
       <p>Tiny DQN trained from scratch on Snake, exported as JSON, doing pure-JS inference in your browser. Try to beat it &mdash; or watch it play itself.</p>
       <div class="card-meta">PyTorch · DQN · Canvas · 18k params</div>
-    </a>
-
-    <a class="card" data-reveal href="/projects/kimono/">
-      <div class="card-head">
-        <div class="card-tag">Sourcing automation</div>
-        <span class="status status-live">live demo</span>
-      </div>
-      <h3>kimono · vendor sourcing for a kids' judo school</h3>
-      <p>Polish-language sourcing tool for a real client problem: a kids' judo school bulk-buying 500 kimonos. Compares 12 PL+EU vendors, live-refreshes prices and stock per vendor, and renders a personalized PL/DE discount-request email per row &mdash; pre-filled, one click into your mail app.</p>
-      <div class="card-meta">Static page · per-vendor scrapers · 12 PL+EU vendors</div>
     </a>
 
     <a class="card" data-reveal href="/projects/local-llm-offline-demo/">
@@ -149,35 +92,77 @@
       <div class="card-meta">Claude API · MLX · llama.cpp</div>
     </div>
 
-    <div class="card card-soon" data-reveal aria-disabled="true">
-      <div class="card-head">
-        <div class="card-tag">Automation</div>
-        <span class="status status-planned">planned</span>
-      </div>
-      <h3>ai-first-templates</h3>
-      <p>Reusable starters for AI-first data and automation projects — Claude Code skills, hooks, scaffolds. Turning the 20× subscription into compounding leverage.</p>
-      <div class="card-meta">Claude Code · Python · ergonomics</div>
-    </div>
+  </div>
 
-    <div class="card card-soon" data-reveal aria-disabled="true">
-      <div class="card-head">
-        <div class="card-tag">Data</div>
-        <span class="status status-planned">planned</span>
-      </div>
-      <h3>market-data-etl</h3>
-      <p>Notes and tooling around market-data sources, transformations, and ETL patterns — the unglamorous half of any quant workflow, written for humans.</p>
-      <div class="card-meta">Python · DuckDB · parquet</div>
-    </div>
+  <h2 class="group-head" data-reveal>Client POC lab <span class="group-note">early 2026 · paused</span></h2>
+  <p class="group-sub" data-reveal>
+    Rapid proofs of concept from real SMB conversations — pricing, sourcing, and scheduling
+    automation, each scoped and shipped in days. Currently paused awaiting client feedback.
+    These demonstrate approach and delivery speed, not production-grade accuracy — and they
+    are honest about that.
+  </p>
 
-    <div class="card card-soon" data-reveal aria-disabled="true">
+  <div class="grid">
+
+    <a class="card" data-reveal href="/projects/kimono/">
       <div class="card-head">
-        <div class="card-tag">OTA</div>
-        <span class="status status-planned">planned</span>
+        <div class="card-tag">Sourcing automation</div>
+        <span class="status status-live">live demo</span>
       </div>
-      <h3>ota-ml-patterns</h3>
-      <p>Generalized patterns from years of shipping production ML in online travel: feature design, evaluation under shift, and decisions that hold up at scale.</p>
-      <div class="card-meta">Python · ML · production</div>
-    </div>
+      <h3>kimono · vendor sourcing for a kids' judo school</h3>
+      <p>Polish-language sourcing tool for a real client problem: a kids' judo school bulk-buying 500 kimonos. Compares 12 PL+EU vendors, live-refreshes prices and stock per vendor, and renders a personalized PL/DE discount-request email per row &mdash; pre-filled, one click into your mail app.</p>
+      <div class="card-meta">Static page · per-vendor scrapers · 12 PL+EU vendors</div>
+    </a>
+
+    <a class="card" data-reveal href="/projects/poc-fmcg-arbitrage/">
+      <div class="card-head">
+        <div class="card-tag">Cross-border arbitrage</div>
+        <span class="status status-live">live demo</span>
+      </div>
+      <h3>fmcg-arbitrage &middot; Coca-Cola, Nutella, Red Bull · 6 krajów UE</h3>
+      <p>POC dla potencjalnego klienta z dystrybucji FMCG / parallel import: 13 wariantów EAN-trackowanych SKU (5 Coca-Cola, 4 Nutella, 4 Red Bull) &times; 6 krajów (PL/DE/FR/IT/ES/NL) &times; 2 retailerzy = 156 ofert. Macierz <strong>kup w X / sprzedaj w Y</strong> (30 par per wariant) z landed cost obejmującym <strong>VAT per kategoria produktowa</strong> (food spread 5-10%, sweetened beverage 5.5-23%, energy drink 5.5-23%) i <strong>sugar/excise taxes per kraj</strong>: PL opłata cukrowa (tiered formula), FR taxe soda + €1.00/L taurine surcharge na Red Bulla, NL verbruiksbelasting €0.26/L (od 2024 +200%). Toggle <strong>B2B FTL palletyzowany</strong> (33 palet/truck, units-per-pallet per wariant, weight constraint 24t) vs <strong>konsument parcel 24-pack</strong>. Real-world finding: Nutella 1kg DE Lidl &rarr; NL Albert Heijn daje &euro;1159 marży/paleta przy retail-vs-retail; Red Bull DE&rarr;FR niemal zero margin tylko z powodu francuskiego taurine surcharge.</p>
+      <div class="card-meta">Static page · 13 EAN × 6 krajów × 2 retailerzy · sugar tax + VAT + FTL palletization · B2B/consumer toggle</div>
+    </a>
+
+    <a class="card" data-reveal href="/projects/poc-gastro-sourcing/">
+      <div class="card-head">
+        <div class="card-tag">Sourcing automation</div>
+        <span class="status status-live">live demo</span>
+      </div>
+      <h3>gastro-sourcing &middot; food-cost optimizer dla steak house'u w Krakowie</h3>
+      <p>POC dla restauracji premium (steak house Butchers Grill): miesięczny koszyk 25 SKU w 7 kategoriach (mięso dry-aged, przyprawy, chemia profesjonalna, akcesoria, węgiel drzewny, świeże, suchy magazyn) × ~17 dostawców HoReCa (PL + DE). Główny widok to <strong>plan zakupów</strong> &mdash; karty per sklep z listą produktów, które tam najtaniej kupisz, plus wskaźnik <strong>−% / PLN oszczędności vs średnia rynku</strong> na każdej pozycji i sumarycznie. Reszta to matryce SKU × Dostawca per kategoria (kolumny posortowane po pokryciu). Scraper Pythonowy (httpx + bs4 + JSON-LD/microdata) pobiera ceny z 3 zweryfikowanych e-sklepów (beef.pl dry-aged 45d, bbq.pl Wagyu A5, we-are-bbq.de Don Marco's rubs); pozostali oznaczeni jako <strong>B2B login</strong> z gotowym szablonem RFQ (PL/DE) w jednym kliknięciu z karty. Real-world finding: w gastronomii ~80% hurtowni HoReCa (Makro, Selgros, Bidfood, Diversey, Ecolab, METRO) chowa ceny za loginem B2B &mdash; jedyna realna ścieżka to RFQ; transparentność per pozycja jest sama w sobie konkurencyjną przewagą dla restauratora optymalizującego food cost.</p>
+      <div class="card-meta">Static page · 25 SKU × 7 kategorii × 17 dostawców · scraper py + GH Action refresh · savings vs market avg</div>
+    </a>
+
+    <a class="card" data-reveal href="/projects/poc-electronics-arbitrage/">
+      <div class="card-head">
+        <div class="card-tag">Cross-border arbitrage</div>
+        <span class="status status-live">live demo</span>
+      </div>
+      <h3>electronics-arbitrage &middot; Apple &amp; Samsung scanner PL/DE/LT/UK</h3>
+      <p>POC dla klienta handlującego sprzętem RTV/AGD: 6 flagowców (3 Apple, 3 Samsung) &times; 4 kraje &times; ~70 ofert sklepów detalicznych. Macierz <strong>kup w X / sprzedaj w Y</strong> (12 par per SKU) z pełnym landed cost: VAT kraju źródła, VAT kraju target, cło UE z UK (HS 8517/8471/8518/9102), brokerage celny, transport. Toggle <strong>B2C / B2B z VAT-UE</strong> przełącza całą logikę podatkową &mdash; pokazuje, dlaczego UK po Brexicie jest off-table dla konsumenta (podwójny VAT), ale opłacalne dla firmy z eksportowym refundem. Real-world finding: Galaxy S25 Ultra DE→PL B2B daje ~16% marży / €236 per szt., flagowce Apple mają wąskie spready przez globalną MAP policy.</p>
+      <div class="card-meta">Static page · 6 SKU × 4 kraje × 16 sklepów · landed-cost calc · B2C/B2B toggle</div>
+    </a>
+
+    <a class="card" data-reveal href="/projects/poc-hvac-parts-pricing/">
+      <div class="card-head">
+        <div class="card-tag">Sourcing automation</div>
+        <span class="status status-live">live demo</span>
+      </div>
+      <h3>hvac-parts &middot; sourcing &amp; RFQ orchestrator dla firmy serwisowej HVAC</h3>
+      <p>POC dla małej firmy serwisowej HVAC w okolicach Krakowa: 8-SKU koszyk eksploatacyjny (filtry F7, R32, R410A, kondensatory, silniki wentylatorów, TXV, NTC, zawory serwisowe) × 15 kanałów dystrybucji (Allegro + 6 wyspecjalizowanych sklepów PL z publicznymi cenami, 5 dystrybutorów UE, 3 fabryki/agregatory CN). Macierz <strong>SKU × Dostawca</strong> z najtańszą ofertą podświetloną per wiersz. Wzór RFQ (PL/DE/EN) pod każdy kanał — z dynamicznym koszykiem, gotowy do wysłania jednym klikiem. Real-world finding: większość polskich dystrybutorów HVAC ukrywa ceny za loginem B2B / „zapytaj o cenę" &mdash; Allegro i specjalistyczne sklepy anchorują macierz realnymi PLN.</p>
+      <div class="card-meta">Static page · 8 SKU × 15 kanałów · public catalog scrape · {basket} email substitution</div>
+    </a>
+
+    <a class="card" data-reveal href="/projects/poc-hvac-scheduling/">
+      <div class="card-head">
+        <div class="card-tag">SMB automation</div>
+        <span class="status status-live">live demo + video</span>
+      </div>
+      <h3>klimapro &middot; rezerwacja wizyt HVAC online</h3>
+      <p>POC dla polskiej firmy serwisującej klimatyzacje: klient bookuje termin online, formularz waliduje adres w promieniu 100&nbsp;km od Krakowa (Nominatim + Haversine), a po potwierdzeniu wizyta trafia do Google Calendar technika. Stylistyka 1:1 z klimainwest.pl, UI po polsku, FastAPI + Jinja + HTMX. Web form jest grywalny tutaj; <strong>prawdziwy login Google (OAuth 2.0)</strong> działa lokalnie &mdash; jest video pokazujące pełen flow.</p>
+      <div class="card-meta">FastAPI · Jinja · HTMX · Google OAuth · Nominatim · video</div>
+    </a>
 
   </div>
 </main>
